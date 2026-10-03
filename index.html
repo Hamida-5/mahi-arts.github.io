@@ -1095,4 +1095,446 @@ function updateCart(){
 
 
     const delivery =
-        productT
+        productTotal >= 2500 ? 0 : 200;
+
+      const grandTotal =
+        productTotal + delivery;
+
+
+    summary.innerHTML = `
+
+        <div class="summary-row">
+            <span>Product Total</span>
+            <span>Rs. ${productTotal}</span>
+        </div>
+
+        <div class="summary-row">
+            <span>Delivery</span>
+            <span>
+                ${delivery === 0 ? "FREE" : "Rs. 200"}
+            </span>
+        </div>
+
+        <div class="summary-row total">
+            <span>Total</span>
+            <span>Rs. ${grandTotal}</span>
+        </div>
+
+        ${
+            productTotal < 2500
+            ?
+            `<p style="
+                font-size:12px;
+                color:#806b74;
+                margin-top:10px;">
+                Free delivery on orders of Rs. 2,500 or more.
+            </p>`
+            :
+            ""
+        }
+
+        <button
+            class="checkout-btn"
+            onclick="openCheckout()">
+            Proceed to Checkout
+        </button>
+    `;
+}
+
+
+/* =====================================================
+   QUANTITY
+   ===================================================== */
+
+function changeQuantity(index,change){
+
+    cart[index].quantity += change;
+
+    if(cart[index].quantity <= 0){
+
+        cart.splice(index,1);
+    }
+
+    updateCart();
+}
+
+
+/* =====================================================
+   REMOVE
+   ===================================================== */
+
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    updateCart();
+
+    showToast("Item removed");
+}
+
+
+/* =====================================================
+   CART OPEN/CLOSE
+   ===================================================== */
+
+function openCart(){
+
+    document
+        .getElementById("cartOverlay")
+        .classList.add("show");
+}
+
+function closeCart(){
+
+    document
+        .getElementById("cartOverlay")
+        .classList.remove("show");
+}
+
+
+/* =====================================================
+   CHECKOUT
+   ===================================================== */
+
+function openCheckout(){
+
+    if(cart.length === 0){
+
+        showToast("Your bag is empty");
+
+        return;
+    }
+
+    document
+        .getElementById("checkoutOverlay")
+        .classList.add("show");
+}
+
+
+function closeCheckout(){
+
+    document
+        .getElementById("checkoutOverlay")
+        .classList.remove("show");
+}
+
+
+/* =====================================================
+   PLACE ORDER
+   ===================================================== */
+
+async function placeOrder(event){
+
+    event.preventDefault();
+
+
+    if(cart.length === 0){
+
+        showToast("Your bag is empty");
+
+        return;
+    }
+
+
+    const button =
+        document.getElementById("placeOrderBtn");
+
+    button.disabled = true;
+
+    button.textContent = "Placing Order...";
+
+
+    const customerName =
+        document.getElementById("customerName").value.trim();
+
+    const customerEmail =
+        document.getElementById("customerEmail").value.trim();
+
+    const customerPhone =
+        document.getElementById("customerPhone").value.trim();
+
+    const customerCity =
+        document.getElementById("customerCity").value.trim();
+
+    const customerArea =
+        document.getElementById("customerArea").value.trim();
+
+    const customerAddress =
+        document.getElementById("customerAddress").value.trim();
+
+
+    const productTotal =
+        cart.reduce(
+            (sum,item)=>
+                sum + (item.product.price * item.quantity),
+            0
+        );
+
+
+    const delivery =
+        productTotal >= 2500 ? 0 : 200;
+
+
+    const grandTotal =
+        productTotal + delivery;
+
+
+    const orderId =
+        createOrderId();
+
+
+    const products =
+        cart.map(item =>
+            `${item.product.name} | ${item.colour} | ${item.size} | Qty: ${item.quantity}`
+        ).join(" || ");
+
+
+    const params = new URLSearchParams();
+
+    params.append("orderId",orderId);
+
+    params.append("customerName",customerName);
+
+    params.append("customerEmail",customerEmail);
+
+    params.append("customerPhone",customerPhone);
+
+    params.append("customerCity",customerCity);
+
+    params.append("customerArea",customerArea);
+
+    params.append("customerAddress",customerAddress);
+
+    params.append("product",products);
+
+    params.append("category","Bracelets");
+
+    params.append(
+        "colour",
+        cart.map(item=>item.colour).join(", ")
+    );
+
+    params.append(
+        "size",
+        cart.map(item=>item.size).join(", ")
+    );
+
+    params.append(
+        "quantity",
+        cart.reduce(
+            (sum,item)=>sum + item.quantity,
+            0
+        )
+    );
+
+    params.append("productTotal",productTotal);
+
+    params.append("delivery",delivery);
+
+    params.append("grandTotal",grandTotal);
+
+    params.append(
+        "paymentMethod",
+        "Cash on Delivery"
+    );
+
+
+    try{
+
+        await fetch(
+            GOOGLE_SCRIPT_URL,
+            {
+                method:"POST",
+                mode:"no-cors",
+                headers:{
+                    "Content-Type":
+                    "application/x-www-form-urlencoded"
+                },
+                body:params.toString()
+            }
+        );
+
+
+        showOrderSuccess(orderId);
+
+        cart = [];
+
+        updateCart();
+
+        document.querySelector(
+            ".checkout-modal"
+        ).scrollTop = 0;
+
+
+    }catch(error){
+
+        console.error(error);
+
+        showToast(
+            "Something went wrong. Please try again."
+        );
+
+        button.disabled = false;
+
+        button.textContent = "Place Order";
+    }
+}
+
+
+/* =====================================================
+   ORDER SUCCESS
+   ===================================================== */
+
+function showOrderSuccess(orderId){
+
+    document.getElementById("checkoutContent").innerHTML = `
+
+        <div class="success">
+
+            <h2>Order Received</h2>
+
+            <p>
+                Thank you for shopping with Mahi Arts.
+            </p>
+
+            <p style="margin-top:10px;">
+                Your Order ID is:
+                <strong>${escapeHtml(orderId)}</strong>
+            </p>
+
+            <p style="margin-top:10px;">
+                We will contact you regarding your
+                Cash on Delivery order.
+            </p>
+
+            <button
+                class="checkout-btn"
+                onclick="closeCheckout();location.reload();">
+                Continue Shopping
+            </button>
+
+        </div>
+    `;
+}
+
+
+/* =====================================================
+   ORDER ID
+   ===================================================== */
+
+function createOrderId(){
+
+    const date =
+        new Date();
+
+    const y =
+        date.getFullYear();
+
+    const m =
+        String(date.getMonth()+1).padStart(2,"0");
+
+    const d =
+        String(date.getDate()).padStart(2,"0");
+
+    const random =
+        Math.floor(1000 + Math.random()*9000);
+
+    return `MA-${y}${m}${d}-${random}`;
+}
+
+
+/* =====================================================
+   REVIEWS
+   ===================================================== */
+
+function submitReview(event){
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById("reviewName").value.trim();
+
+    const text =
+        document.getElementById("reviewText").value.trim();
+
+
+    if(!name || !text) return;
+
+
+    const review =
+        document.createElement("div");
+
+    review.className = "review-item";
+
+    review.innerHTML = `
+        <strong>${escapeHtml(name)}</strong>
+        <p style="margin-top:8px;">
+            ${escapeHtml(text)}
+        </p>
+    `;
+
+
+    document
+        .getElementById("reviewList")
+        .prepend(review);
+
+
+    document
+        .getElementById("reviewName")
+        .value = "";
+
+    document
+        .getElementById("reviewText")
+        .value = "";
+
+
+    showToast("Thank you for your review!");
+}
+
+
+/* =====================================================
+   TOAST
+   ===================================================== */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+
+    setTimeout(()=>{
+        toast.classList.remove("show");
+    },2500);
+}
+
+
+/* =====================================================
+   SECURITY
+   ===================================================== */
+
+function escapeHtml(value){
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+
+/* =====================================================
+   INITIAL
+   ===================================================== */
+
+updateCart();
+
+</script>
+
+</body>
+</html>
