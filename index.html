@@ -1099,7 +1099,7 @@ const productTotal = cart.reduce(
 );
     
     const delivery =
-       Number (productTotal) >= 2500 ? 0 : 200;
+       productTotal >= 2500 ? 0 : 200;
 
       const grandTotal =
         productTotal + delivery;
@@ -1276,7 +1276,7 @@ async function placeOrder(event){
 
 
     const delivery =
-        Number (productTotal) >= 2500 ? 0 : 200;
+        productTotal >= 2500 ? 0 : 200;
 
 
     const grandTotal =
