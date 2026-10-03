@@ -15,646 +15,597 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     font-family:'DM Sans',sans-serif;
-    background:#fff9fb;
-    color:#3d2931;
+    background:#fff8fb;
+    color:#3b2932;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
 }
 
 header{
     position:sticky;
     top:0;
-    z-index:1000;
-    background:rgba(255,249,251,.94);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid #f2dfe6;
+    z-index:100;
+    background:rgba(255,248,251,.96);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #f0dce5;
 }
 
 .navbar{
-    max-width:1250px;
+    max-width:1200px;
     margin:auto;
-    height:78px;
-    padding:0 25px;
+    padding:18px 25px;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    gap:20px;
 }
 
 .logo{
     font-family:'Playfair Display',serif;
-    font-size:30px;
+    font-size:27px;
     letter-spacing:2px;
-    color:#a65373;
+    color:#7d3d5c;
 }
 
-nav{
+.nav-links{
     display:flex;
-    gap:30px;
+    gap:25px;
 }
 
-nav a{
+.nav-links a{
     text-decoration:none;
-    color:#5c414b;
+    color:#563c47;
     font-size:14px;
 }
 
-.cart-btn{
-    border:0;
-    background:#d889a5;
-    color:white;
-    padding:11px 18px;
+.bag-btn{
+    border:1px solid #d99ab5;
+    background:#fff;
+    color:#7d3d5c;
     border-radius:30px;
-    cursor:pointer;
-    font-weight:600;
+    padding:10px 17px;
 }
-
-/* HERO */
 
 .hero{
-    min-height:560px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    max-width:1200px;
+    margin:auto;
+    padding:70px 25px 45px;
     text-align:center;
-    padding:70px 20px;
-    background:
-    radial-gradient(circle at 20% 20%,#ffe4ed,transparent 35%),
-    radial-gradient(circle at 80% 70%,#f9d4e1,transparent 35%),
-    #fff7fa;
-}
-
-.hero-content{
-    max-width:750px;
-}
-
-.small-title{
-    text-transform:uppercase;
-    letter-spacing:4px;
-    font-size:12px;
-    color:#a65373;
-    margin-bottom:20px;
 }
 
 .hero h1{
     font-family:'Playfair Display',serif;
-    font-size:72px;
-    line-height:1.05;
-    color:#492f39;
-    margin-bottom:25px;
+    font-size:52px;
+    font-weight:500;
+    color:#71364f;
 }
 
 .hero p{
-    max-width:570px;
-    margin:auto;
-    color:#765d66;
-    line-height:1.8;
+    max-width:600px;
+    margin:15px auto 0;
+    color:#806b74;
+    line-height:1.7;
 }
 
-.shop-btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:15px 30px;
-    background:#a65373;
-    color:white;
+.categories{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:10px 20px 50px;
+}
+
+.category-btn{
+    padding:11px 22px;
     border-radius:30px;
-    text-decoration:none;
+    border:1px solid #dfb1c3;
+    background:#fff;
+    color:#71364f;
 }
 
-/* PRODUCT */
+.category-btn.active,
+.category-btn:hover{
+    background:#71364f;
+    color:#fff;
+}
 
-.section{
-    max-width:1250px;
+.product-section{
+    max-width:1100px;
     margin:auto;
-    padding:85px 25px;
+    padding:0 25px 70px;
 }
 
-.section-heading{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.section-heading h2{
-    font-family:'Playfair Display',serif;
-    font-size:42px;
-    color:#4a303a;
-}
-
-.section-heading p{
-    margin-top:10px;
-    color:#806b73;
-}
-
-.product{
-    max-width:430px;
-    margin:auto;
-    background:white;
-    border:1px solid #f1dfe6;
-    border-radius:22px;
+.product-card{
+    background:#fff;
+    border:1px solid #f0dce5;
+    border-radius:24px;
     overflow:hidden;
-    box-shadow:0 12px 35px rgba(130,70,90,.08);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    box-shadow:0 15px 40px rgba(125,61,92,.08);
 }
 
-.product-img{
-    height:420px;
-    overflow:hidden;
-    background:#fff5f8;
+.product-image{
+    background:#fff4f8;
+    min-height:480px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
 }
 
-.product-img img{
+.product-image img{
     width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-    transition:.3s ease;
+    height:430px;
+    object-fit:contain;
+    border-radius:18px;
 }
 
 .product-info{
-    padding:25px;
+    padding:45px;
 }
 
-.product-info h3{
-    font-family:'Playfair Display',serif;
-    font-size:27px;
-}
-
-.category-name{
+.product-category{
     font-size:12px;
-    color:#a65373;
-    margin:7px 0;
     text-transform:uppercase;
-    letter-spacing:1px;
+    letter-spacing:2px;
+    color:#b06a86;
+    margin-bottom:12px;
 }
 
-.description{
-    color:#765d66;
-    line-height:1.7;
-    font-size:14px;
-    margin:12px 0;
+.product-info h2{
+    font-family:'Playfair Display',serif;
+    font-size:36px;
+    font-weight:500;
+    color:#71364f;
 }
 
 .price{
-    font-size:21px;
+    margin:15px 0 25px;
+    font-size:24px;
     font-weight:600;
-    margin:15px 0;
+    color:#7d3d5c;
 }
 
-.label{
-    display:block;
-    font-size:13px;
+.option-title{
+    font-size:14px;
     font-weight:600;
-    margin:18px 0 8px;
+    margin:20px 0 10px;
 }
 
 .colours{
     display:flex;
     flex-wrap:wrap;
-    gap:8px;
+    gap:9px;
 }
 
 .colour-btn{
-    padding:10px 14px;
-    border:1px solid #e5cbd4;
-    background:white;
+    border:1px solid #dfc1cc;
+    background:#fff;
+    padding:9px 13px;
     border-radius:20px;
-    cursor:pointer;
     font-size:12px;
-    transition:.2s;
 }
 
-.colour-btn:hover{
-    border-color:#a65373;
-}
-
-.colour-btn.selected{
-    background:#a65373;
-    color:white;
-    border-color:#a65373;
+.colour-btn.active{
+    background:#7d3d5c;
+    color:#fff;
+    border-color:#7d3d5c;
 }
 
 .size-select{
     width:100%;
+    border:1px solid #dfc1cc;
     padding:12px;
-    border:1px solid #e7d5dc;
     border-radius:10px;
-    background:white;
+    background:#fff;
+    outline:none;
 }
 
 .add-btn{
     width:100%;
-    margin-top:20px;
-    padding:14px;
+    margin-top:25px;
+    padding:15px;
     border:0;
-    background:#d889a5;
-    color:white;
-    border-radius:25px;
-    cursor:pointer;
+    border-radius:30px;
+    background:#7d3d5c;
+    color:#fff;
     font-weight:600;
 }
 
-/* REVIEWS */
-
-.reviews{
-    background:#fcecf2;
+.add-btn:hover{
+    background:#5f2943;
 }
 
-.review-grid{
-    max-width:900px;
-    margin:auto;
-}
-
-.review-card{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:12px;
-    border:1px solid #f1dfe6;
-}
-
-.stars{
-    color:#c97896;
-    letter-spacing:2px;
-    margin-bottom:8px;
-}
-
-.review-name{
-    font-weight:600;
-    margin-bottom:5px;
-}
-
-.review-text{
-    color:#765d66;
+.info-text{
+    margin-top:18px;
+    font-size:13px;
+    color:#806b74;
     line-height:1.6;
 }
 
-.review-form{
-    max-width:500px;
-    margin:35px auto 0;
-    background:white;
-    padding:25px;
-    border-radius:18px;
+.reviews{
+    background:#fff;
+    border-top:1px solid #f0dce5;
+    padding:70px 25px;
 }
 
-.review-form input,
-.review-form textarea,
-.review-form select{
-    width:100%;
-    padding:12px;
-    margin-bottom:12px;
-    border:1px solid #e7d5dc;
-    border-radius:10px;
-    font-family:inherit;
-}
-
-.review-form textarea{
-    min-height:90px;
-}
-
-.review-submit{
-    width:100%;
-    padding:13px;
-    border:0;
-    background:#a65373;
-    color:white;
-    border-radius:25px;
-    cursor:pointer;
-}
-
-/* ABOUT */
-
-.about{
-    background:#fff2f6;
-    text-align:center;
-}
-
-.about-content{
-    max-width:700px;
+.reviews-inner{
+    max-width:1000px;
     margin:auto;
 }
 
-.about h2{
+.reviews h2{
+    text-align:center;
     font-family:'Playfair Display',serif;
-    font-size:42px;
-    margin-bottom:20px;
+    font-size:38px;
+    color:#71364f;
+    margin-bottom:35px;
 }
 
-.about p{
-    line-height:1.9;
-    color:#725b64;
+.review-form{
+    max-width:650px;
+    margin:auto;
+    background:#fff8fb;
+    border:1px solid #f0dce5;
+    border-radius:20px;
+    padding:25px;
 }
 
-/* CART */
+.review-form input,
+.review-form textarea{
+    width:100%;
+    border:1px solid #e4c8d3;
+    border-radius:10px;
+    padding:12px;
+    margin-bottom:12px;
+    outline:none;
+}
 
-.cart-panel{
+.review-form textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.review-form button{
+    width:100%;
+    padding:13px;
+    border:0;
+    border-radius:25px;
+    background:#7d3d5c;
+    color:#fff;
+}
+
+.review-list{
+    margin-top:30px;
+    display:grid;
+    gap:15px;
+}
+
+.review-item{
+    padding:20px;
+    background:#fff8fb;
+    border:1px solid #f0dce5;
+    border-radius:15px;
+}
+
+.review-item strong{
+    color:#71364f;
+}
+
+.cart-overlay{
     position:fixed;
+    inset:0;
+    background:rgba(35,20,27,.35);
+    z-index:200;
+    display:none;
+}
+
+.cart-overlay.show{
+    display:block;
+}
+
+.cart{
+    position:absolute;
+    right:0;
     top:0;
-    right:-430px;
-    width:420px;
-    max-width:100%;
-    height:100vh;
-    background:white;
-    z-index:2000;
-    box-shadow:-10px 0 40px rgba(0,0,0,.12);
-    transition:.35s;
+    height:100%;
+    width:min(440px,100%);
+    background:#fff;
     padding:25px;
     overflow-y:auto;
-}
-
-.cart-panel.active{
-    right:0;
 }
 
 .cart-header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding-bottom:20px;
-    border-bottom:1px solid #eee;
+    margin-bottom:25px;
 }
 
 .cart-header h2{
     font-family:'Playfair Display',serif;
+    color:#71364f;
 }
 
-.close-cart{
+.close-btn{
     border:0;
     background:none;
-    font-size:25px;
-    cursor:pointer;
+    font-size:26px;
+    color:#71364f;
 }
 
 .cart-item{
-    padding:18px 0;
-    border-bottom:1px solid #eee;
+    display:flex;
+    gap:12px;
+    border-bottom:1px solid #f0dce5;
+    padding:15px 0;
+}
+
+.cart-item img{
+    width:75px;
+    height:75px;
+    object-fit:contain;
+    background:#fff8fb;
+    border-radius:10px;
+}
+
+.cart-item-info{
+    flex:1;
 }
 
 .cart-item-info h4{
-    font-size:15px;
+    color:#71364f;
+    margin-bottom:5px;
 }
 
 .cart-item-info p{
-    font-size:13px;
-    color:#765d66;
-    margin-top:5px;
+    font-size:12px;
+    color:#806b74;
+    margin-bottom:8px;
 }
 
 .qty{
     display:flex;
     align-items:center;
     gap:10px;
-    margin-top:10px;
 }
 
 .qty button{
     width:27px;
     height:27px;
-    border:1px solid #ddd;
-    background:white;
-    cursor:pointer;
+    border-radius:50%;
+    border:1px solid #dfb1c3;
+    background:#fff;
 }
 
-.remove{
-    color:#b34d6e;
+.remove-btn{
     border:0;
     background:none;
-    cursor:pointer;
+    color:#a44c6e;
     font-size:12px;
     margin-top:7px;
 }
 
-.shipping-note{
-    margin-top:15px;
-    padding:12px;
-    background:#fff5f8;
-    border-radius:10px;
-    font-size:13px;
-    color:#765d66;
-}
-
-.cart-line{
-    display:flex;
-    justify-content:space-between;
-    margin-top:10px;
-}
-
-.cart-total{
-    margin-top:20px;
-    display:flex;
-    justify-content:space-between;
-    font-weight:600;
-    font-size:18px;
-}
-
-.checkout-btn{
-    width:100%;
-    margin-top:20px;
-    padding:15px;
-    background:#a65373;
-    border:0;
-    color:white;
-    border-radius:30px;
-    cursor:pointer;
-    font-weight:600;
-}
-
-/* CHECKOUT */
-
-.checkout{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(30,15,20,.55);
-    z-index:3000;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-}
-
-.checkout.active{
-    display:flex;
-}
-
-.checkout-box{
-    width:560px;
-    max-width:100%;
-    max-height:92vh;
-    overflow-y:auto;
-    background:white;
-    border-radius:22px;
-    padding:30px;
-}
-
-.checkout-box h2{
-    font-family:'Playfair Display',serif;
-    font-size:32px;
-    margin-bottom:20px;
-}
-
-.form-group{
-    margin-bottom:15px;
-}
-
-.form-group label{
-    display:block;
-    font-size:13px;
-    margin-bottom:7px;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select{
-    width:100%;
-    padding:13px;
-    border:1px solid #e7d5dc;
-    border-radius:10px;
-    outline:none;
-    font-family:inherit;
-}
-
-.form-group textarea{
-    min-height:80px;
-    resize:vertical;
-}
-
-.cod-box{
-    padding:14px;
-    background:#fff5f8;
-    border:1px solid #efd5df;
-    border-radius:10px;
-    margin:20px 0;
-}
-
-.order-summary{
-    padding:15px;
-    background:#fff9fb;
-    border-radius:12px;
-    margin:15px 0;
+.cart-summary{
+    margin-top:25px;
+    border-top:1px solid #ead5de;
+    padding-top:20px;
 }
 
 .summary-row{
     display:flex;
     justify-content:space-between;
-    margin:8px 0;
-    font-size:14px;
+    margin:10px 0;
 }
 
-.summary-total{
+.total{
+    font-size:20px;
     font-weight:600;
-    font-size:17px;
-    padding-top:10px;
-    border-top:1px solid #ead8df;
+    color:#71364f;
+}
+
+.checkout-btn{
+    width:100%;
+    margin-top:15px;
+    padding:15px;
+    border:0;
+    border-radius:30px;
+    background:#7d3d5c;
+    color:#fff;
+    font-weight:600;
+}
+
+.empty-cart{
+    text-align:center;
+    color:#806b74;
+    padding:50px 10px;
+}
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(35,20,27,.5);
+    z-index:300;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal-overlay.show{
+    display:flex;
+}
+
+.checkout-modal{
+    width:min(600px,100%);
+    max-height:90vh;
+    overflow-y:auto;
+    background:#fff;
+    border-radius:22px;
+    padding:30px;
+}
+
+.checkout-modal h2{
+    font-family:'Playfair Display',serif;
+    color:#71364f;
+    margin-bottom:8px;
+}
+
+.checkout-subtitle{
+    color:#806b74;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.form-group{
+    margin-bottom:13px;
+}
+
+.form-group label{
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #dfc1cc;
+    border-radius:10px;
+    outline:none;
+}
+
+.form-group textarea{
+    min-height:90px;
+    resize:vertical;
+}
+
+.cod-box{
+    background:#fff8fb;
+    border:1px solid #f0dce5;
+    padding:14px;
+    border-radius:12px;
+    margin:15px 0;
+    font-size:13px;
 }
 
 .place-order{
     width:100%;
     padding:15px;
     border:0;
-    background:#a65373;
-    color:white;
     border-radius:30px;
-    cursor:pointer;
+    background:#7d3d5c;
+    color:#fff;
     font-weight:600;
 }
 
-.cancel{
+.cancel-order{
     width:100%;
-    margin-top:10px;
     padding:12px;
-    border:1px solid #ddd;
-    background:white;
-    border-radius:30px;
-    cursor:pointer;
+    border:0;
+    background:none;
+    color:#71364f;
+    margin-top:7px;
 }
 
-/* SUCCESS */
-
-.success-message{
-    display:none;
+.success{
     text-align:center;
-    padding:25px 10px;
+    padding:35px 10px;
 }
 
-.success-message.active{
-    display:block;
-}
-
-.success-icon{
-    font-size:48px;
-    margin-bottom:15px;
-}
-
-.success-message h3{
+.success h2{
     font-family:'Playfair Display',serif;
-    font-size:28px;
-    margin-bottom:10px;
-}
-
-.success-message p{
-    color:#765d66;
-    line-height:1.7;
-}
-
-.order-id-box{
-    margin:18px 0;
-    padding:13px;
-    background:#fff5f8;
-    border-radius:10px;
-    font-weight:600;
-}
-
-/* FOOTER */
-
-footer{
-    background:#3e2931;
-    color:white;
-    padding:55px 25px;
-    text-align:center;
-}
-
-footer .logo{
-    color:#ffdce8;
+    color:#71364f;
+    font-size:34px;
     margin-bottom:12px;
 }
 
-footer p{
-    color:#d8c4cb;
-    font-size:13px;
+.success p{
+    color:#806b74;
+    line-height:1.7;
 }
 
-/* RESPONSIVE */
+.toast{
+    position:fixed;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#71364f;
+    color:#fff;
+    padding:12px 20px;
+    border-radius:30px;
+    z-index:500;
+    opacity:0;
+    pointer-events:none;
+    transition:.3s;
+}
 
-@media(max-width:600px){
+.toast.show{
+    opacity:1;
+}
 
-    nav{
+footer{
+    text-align:center;
+    padding:35px 20px;
+    background:#71364f;
+    color:#fff;
+}
+
+footer p{
+    font-size:13px;
+    opacity:.85;
+}
+
+@media(max-width:800px){
+
+    .navbar{
+        padding:15px;
+    }
+
+    .nav-links{
         display:none;
     }
 
+    .hero{
+        padding-top:45px;
+    }
+
     .hero h1{
-        font-size:44px;
+        font-size:39px;
     }
 
-    .section-heading h2,
-    .about h2{
-        font-size:34px;
+    .product-card{
+        grid-template-columns:1fr;
     }
 
-    .product-img{
-        height:350px;
+    .product-image{
+        min-height:350px;
     }
 
-    .navbar{
-        padding:0 15px;
+    .product-image img{
+        height:330px;
     }
 
-    .logo{
-        font-size:25px;
+    .product-info{
+        padding:28px 22px;
     }
 
-    .cart-btn{
-        padding:9px 14px;
+    .product-info h2{
+        font-size:30px;
     }
 }
 </style>
@@ -663,648 +614,359 @@ footer p{
 <body>
 
 <header>
-<div class="navbar">
+    <div class="navbar">
+        <div class="logo">MAHI ARTS</div>
 
-<div class="logo">MAHI ARTS</div>
+        <nav class="nav-links">
+            <a href="#shop">Shop</a>
+            <a href="#reviews">Reviews</a>
+        </nav>
 
-<nav>
-<a href="#home">Home</a>
-<a href="#shop">Shop</a>
-<a href="#reviews">Reviews</a>
-<a href="#about">About</a>
-</nav>
-
-<button class="cart-btn" onclick="openCart()">
-Bag (<span id="cartCount">0</span>)
-</button>
-
-</div>
+        <button class="bag-btn" onclick="openCart()">
+            Bag (<span id="bagCount">0</span>)
+        </button>
+    </div>
 </header>
 
-
-<!-- HERO -->
-
-<section class="hero" id="home">
-
-<div class="hero-content">
-
-<div class="small-title">Handcrafted • Elegant • You</div>
-
-<h1>Little things,<br>made beautiful.</h1>
-
-<p>
-Discover our Crystal Beaded Bracelet, thoughtfully designed to add
-a delicate sparkle and a beautiful finishing touch to your everyday style.
-</p>
-
-<a href="#shop" class="shop-btn">Shop Bracelet</a>
-
-</div>
-
+<section class="hero">
+    <h1>Made With Love</h1>
+    <p>
+        Elegant handmade pieces designed to add a little sparkle
+        to your everyday style.
+    </p>
 </section>
 
+<div class="categories">
+    <button class="category-btn" onclick="showCategory('Resin',this)">
+        Resin
+    </button>
 
-<!-- PRODUCT -->
+    <button class="category-btn" onclick="showCategory('Jewellery',this)">
+        Jewellery
+    </button>
 
-<section class="section" id="shop">
-
-<div class="section-heading">
-
-<h2>Crystal Beaded Bracelet</h2>
-
-<p>A delicate everyday piece available in five beautiful colours.</p>
-
+    <button class="category-btn active" onclick="showCategory('Bracelets',this)">
+        Bracelets
+    </button>
 </div>
 
-<div class="product">
+<section class="product-section" id="shop">
 
-<div class="product-img">
+    <div class="product-card">
 
-<img
-id="braceletImage"
-src="./hot%20pink.jpg"
-alt="Crystal Beaded Bracelet">
+        <div class="product-image">
+            <img id="mainProductImage"
+                 src="./hot%20pink.jpg"
+                 alt="Crystal Beaded Bracelet">
+        </div>
 
-</div>
+        <div class="product-info">
 
-<div class="product-info">
+            <div class="product-category">
+                Bracelets
+            </div>
 
-<div class="category-name">Bracelets</div>
+            <h2>Crystal Beaded Bracelet</h2>
 
-<h3>Crystal Beaded Bracelet</h3>
+            <div class="price">
+                Rs. 399
+            </div>
 
-<div class="price">Rs. 499</div>
+            <div class="option-title">
+                Colour
+            </div>
 
-<p class="description">
-Elegant crystal-inspired beads with a delicate, polished look.
-Perfect for everyday wear, gifting, or adding a subtle sparkle
-to your outfit.
-</p>
+            <div class="colours">
 
-<label class="label">Choose Colour</label>
+                <button class="colour-btn active"
+                        onclick="selectColour('Hot Pink','./hot%20pink.jpg',this)">
+                    Hot Pink
+                </button>
 
-<div class="colours">
+                <button class="colour-btn"
+                        onclick="selectColour('Dark Green','./dark%20green.jpg',this)">
+                    Dark Green
+                </button>
 
-<button class="colour-btn selected"
-onclick="selectColour(this,'Hot Pink')">
-Hot Pink
-</button>
+                <button class="colour-btn"
+                        onclick="selectColour('Light Pink','./light%20pink.jpg',this)">
+                    Light Pink
+                </button>
 
-<button class="colour-btn"
-onclick="selectColour(this,'Dark Green')">
-Dark Green
-</button>
+                <button class="colour-btn"
+                        onclick="selectColour('Black','./black.jpg',this)">
+                    Black
+                </button>
 
-<button class="colour-btn"
-onclick="selectColour(this,'Light Pink')">
-Light Pink
-</button>
+                <button class="colour-btn"
+                        onclick="selectColour('Red','./red.jpg',this)">
+                    Red
+                </button>
 
-<button class="colour-btn"
-onclick="selectColour(this,'Black')">
-Black
-</button>
+            </div>
 
-<button class="colour-btn"
-onclick="selectColour(this,'Red')">
-Red
-</button>
+            <div class="option-title">
+                Size
+            </div>
 
-</div>
+            <select id="sizeSelect" class="size-select">
+                <option value="Adjustable">Adjustable</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+            </select>
 
-<label class="label">Size</label>
+            <button class="add-btn" onclick="addToCart()">
+                Add to Bag
+            </button>
 
-<select class="size-select" id="productSize">
-<option value="Adjustable">Adjustable</option>
-</select>
+            <p class="info-text">
+                Handmade crystal beaded bracelet.
+                Adjustable and suitable for everyday styling.
+            </p>
 
-<button class="add-btn" onclick="addBraceletToCart()">
-Add to Bag
-</button>
-
-</div>
-</div>
-
+        </div>
+    </div>
 </section>
 
+<section class="reviews" id="reviews">
 
-<!-- REVIEWS -->
+    <div class="reviews-inner">
 
-<section class="section reviews" id="reviews">
+        <h2>Customer Reviews</h2>
 
-<div class="section-heading">
+        <form class="review-form" onsubmit="submitReview(event)">
 
-<h2>Customer Reviews</h2>
+            <input
+                type="text"
+                id="reviewName"
+                placeholder="Your name"
+                required>
 
-<p>We'd love to hear about your Mahi Arts experience.</p>
+            <textarea
+                id="reviewText"
+                placeholder="Write your review..."
+                required></textarea>
 
-</div>
+            <button type="submit">
+                Submit Review
+            </button>
 
-<div class="review-grid" id="reviewGrid">
+        </form>
 
-<div class="review-card">
+        <div class="review-list" id="reviewList"></div>
 
-<div class="stars">★★★★★</div>
-
-<div class="review-name">
-Be the first to review
-</div>
-
-<div class="review-text">
-Your review will appear here after you share your experience.
-</div>
-
-</div>
-
-</div>
-
-<div class="review-form">
-
-<h3 style="margin-bottom:15px;">
-Leave a Review
-</h3>
-
-<input
-id="reviewName"
-type="text"
-placeholder="Your name">
-
-<select id="reviewRating">
-
-<option value="5">
-★★★★★ 5 Stars
-</option>
-
-<option value="4">
-★★★★☆ 4 Stars
-</option>
-
-<option value="3">
-★★★☆☆ 3 Stars
-</option>
-
-<option value="2">
-★★☆☆☆ 2 Stars
-</option>
-
-<option value="1">
-★☆☆☆☆ 1 Star
-</option>
-
-</select>
-
-<textarea
-id="reviewText"
-placeholder="Write your review..."></textarea>
-
-<button
-class="review-submit"
-onclick="submitReview()">
-Submit Review
-</button>
-
-</div>
-
+    </div>
 </section>
 
-
-<!-- ABOUT -->
-
-<section class="section about" id="about">
-
-<div class="about-content">
-
-<div class="small-title">
-The Mahi Arts Story
-</div>
-
-<h2>
-Made with a little more love.
-</h2>
-
-<p>
-Mahi Arts is created for those who believe that small details can make
-a big difference. Every piece is selected with care to bring a soft,
-elegant touch to your everyday style.
-</p>
-
-</div>
-
-</section>
+<footer>
+    <p>© 2026 Mahi Arts. Handmade with love.</p>
+</footer>
 
 
 <!-- CART -->
 
-<div class="cart-panel" id="cartPanel">
+<div class="cart-overlay" id="cartOverlay">
 
-<div class="cart-header">
+    <div class="cart">
 
-<h2>Your Bag</h2>
+        <div class="cart-header">
 
-<button
-class="close-cart"
-onclick="closeCart()">
-×
-</button>
+            <h2>Your Bag</h2>
 
-</div>
+            <button class="close-btn" onclick="closeCart()">
+                ×
+            </button>
 
-<div id="cartItems"></div>
+        </div>
 
-<div class="cart-line">
+        <div id="cartItems"></div>
 
-<span>Product Total</span>
+        <div class="cart-summary" id="cartSummary"></div>
 
-<span>
-Rs. <span id="productTotal">0</span>
-</span>
-
-</div>
-
-<div class="cart-line">
-
-<span>Delivery</span>
-
-<span id="deliveryAmount">
-Rs. 200
-</span>
-
-</div>
-
-<div
-class="shipping-note"
-id="shippingNote">
-
-Add Rs. 2,500 or more to your order to get FREE SHIPPING.
-
-</div>
-
-<div class="cart-total">
-
-<span>Grand Total</span>
-
-<span>
-Rs. <span id="cartTotal">0</span>
-</span>
-
-</div>
-
-<button
-class="checkout-btn"
-onclick="openCheckout()">
-
-Proceed to Checkout
-
-</button>
-
+    </div>
 </div>
 
 
 <!-- CHECKOUT -->
 
-<div class="checkout" id="checkout">
+<div class="modal-overlay" id="checkoutOverlay">
 
-<div class="checkout-box">
+    <div class="checkout-modal" id="checkoutContent">
 
-<div id="checkoutForm">
+        <h2>Checkout</h2>
 
-<h2>
-Complete Your Order
-</h2>
+        <p class="checkout-subtitle">
+            Enter your details for Cash on Delivery.
+        </p>
 
-<div class="form-group">
+        <form onsubmit="placeOrder(event)">
 
-<label>
-Full Name *
-</label>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input
+                    type="text"
+                    id="customerName"
+                    required>
+            </div>
 
-<input
-id="customerName"
-type="text"
-placeholder="Your full name">
+            <div class="form-group">
+                <label>Gmail / Email</label>
+                <input
+                    type="email"
+                    id="customerEmail"
+                    required>
+            </div>
 
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="03XXXXXXXXX"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label>City</label>
+                <input
+                    type="text"
+                    id="customerCity"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label>Area / Place</label>
+                <input
+                    type="text"
+                    id="customerArea"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label>Complete Address</label>
+                <textarea
+                    id="customerAddress"
+                    required></textarea>
+            </div>
+
+            <div class="cod-box">
+                <strong>Payment Method:</strong>
+                Cash on Delivery
+            </div>
+
+            <button
+                type="submit"
+                class="place-order"
+                id="placeOrderBtn">
+                Place Order
+            </button>
+
+            <button
+                type="button"
+                class="cancel-order"
+                onclick="closeCheckout()">
+                Cancel
+            </button>
+
+        </form>
+
+    </div>
 </div>
 
 
-<div class="form-group">
-
-<label>
-Gmail / Email *
-</label>
-
-<input
-id="customerEmail"
-type="email"
-placeholder="example@gmail.com">
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-Pakistan Phone Number *
-</label>
-
-<input
-id="customerPhone"
-type="tel"
-maxlength="11"
-placeholder="03XXXXXXXXX">
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-City *
-</label>
-
-<input
-id="customerCity"
-type="text"
-placeholder="Your city">
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-Area / Place *
-</label>
-
-<input
-id="customerArea"
-type="text"
-placeholder="Your area or locality">
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-Complete Address *
-</label>
-
-<textarea
-id="customerAddress"
-placeholder="House number, street, area, landmark..."></textarea>
-
-</div>
-
-
-<div class="cod-box">
-
-<strong>
-Payment Method
-</strong>
-
-<br><br>
-
-💵 Cash on Delivery (COD)
-
-<br>
-
-<small>
-No advance payment required.
-</small>
-
-</div>
-
-
-<div class="order-summary">
-
-<strong>
-Order Summary
-</strong>
-
-<div id="checkoutItems"></div>
-
-<div class="summary-row">
-
-<span>
-Product Total
-</span>
-
-<span>
-Rs. <span id="checkoutProductTotal">0</span>
-</span>
-
-</div>
-
-<div class="summary-row">
-
-<span>
-Delivery
-</span>
-
-<span id="checkoutDelivery">
-Rs. 200
-</span>
-
-</div>
-
-<div class="summary-row summary-total">
-
-<span>
-Grand Total
-</span>
-
-<span>
-Rs. <span id="checkoutGrandTotal">0</span>
-</span>
-
-</div>
-
-</div>
-
-
-<button
-class="place-order"
-id="placeOrderButton"
-onclick="placeOrder()">
-
-Place COD Order
-
-</button>
-
-
-<button
-class="cancel"
-onclick="closeCheckout()">
-
-Cancel
-
-</button>
-
-</div>
-
-
-<!-- SUCCESS -->
-
-<div
-class="success-message"
-id="successMessage">
-
-<div class="success-icon">
-✓
-</div>
-
-<h3>
-Order Received!
-</h3>
-
-<p>
-Thank you for shopping with Mahi Arts.
-Your COD order has been received successfully.
-</p>
-
-<div class="order-id-box">
-
-Order ID:
-<span id="successOrderId"></span>
-
-</div>
-
-<p>
-Please keep your phone available for delivery confirmation.
-</p>
-
-<button
-class="place-order"
-onclick="finishOrder()">
-
-Continue Shopping
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<footer>
-
-<div class="logo">
-MAHI ARTS
-</div>
-
-<p>
-Resin • Jewellery • Bracelets
-</p>
-
-<p style="margin-top:15px;">
-© 2026 Mahi Arts. All rights reserved.
-</p>
-
-</footer>
+<div class="toast" id="toast"></div>
 
 
 <script>
 
-/* ==========================================
-   APPS SCRIPT WEB APP URL
-========================================== */
+/* =====================================================
+   GOOGLE APPS SCRIPT
+   ===================================================== */
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz0T9kxWciwn0BPLDFo-JxYdk76g9I5jcGKV-TdFrhWI9eE3SnEiferoKAJ9XO1oUKN/exec";
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbz0T9kxWciwn0BPLDFo-JxYdk76g9I5jcGKV-TdFrhWI9eE3SnEiferoKAJ9XO1oUKN/exec";
 
 
-/* ==========================================
-   BRACELET
-========================================== */
+/* =====================================================
+   PRODUCT
+   ===================================================== */
 
 const bracelet = {
-
-    id: 1,
-
-    name: "Crystal Beaded Bracelet",
-
-    price: 499,
-
-    category: "Bracelets"
-
-};
-
-
-/* ==========================================
-   PRODUCT IMAGES
-========================================== */
-
-const braceletImages = {
-
-    "Hot Pink": "./hot%20pink.jpg",
-
-    "Dark Green": "./dark%20green.jpg",
-
-    "Light Pink": "./light%20pink.jpg",
-
-    "Black": "./black.jpg",
-
-    "Red": "./red.jpg"
-
+    id:1,
+    name:"Crystal Beaded Bracelet",
+    price:399,
+    category:"Bracelets"
 };
 
 
 let selectedColour = "Hot Pink";
 
+let selectedImage = "./hot%20pink.jpg";
+
 let cart = [];
 
 
-/* ==========================================
-   COLOUR SELECTION
-========================================== */
+/* =====================================================
+   COLOUR
+   ===================================================== */
 
-function selectColour(button, colour){
-
-    document
-    .querySelectorAll(".colour-btn")
-    .forEach(btn => {
-        btn.classList.remove("selected");
-    });
-
-    button.classList.add("selected");
+function selectColour(colour,image,button){
 
     selectedColour = colour;
 
-    const image =
-    document.getElementById("braceletImage");
+    selectedImage = image;
 
-    if(braceletImages[colour]){
+    document.getElementById("mainProductImage").src = image;
 
-        image.src =
-        braceletImages[colour];
+    document.querySelectorAll(".colour-btn").forEach(btn=>{
+        btn.classList.remove("active");
+    });
 
-    }
-
+    button.classList.add("active");
 }
 
 
-/* ==========================================
-   ADD TO CART
-========================================== */
+/* =====================================================
+   CATEGORY
+   ===================================================== */
 
-function addBraceletToCart(){
+function showCategory(category,button){
 
-    if(!selectedColour){
+    document.querySelectorAll(".category-btn").forEach(btn=>{
+        btn.classList.remove("active");
+    });
 
-        alert("Please select a colour first.");
+    button.classList.add("active");
+
+    if(category !== "Bracelets"){
+
+        showToast(category + " products will be added here soon.");
 
         return;
     }
 
-    const size =
-    document.getElementById("productSize").value;
+    document.getElementById("shop").scrollIntoView({
+        behavior:"smooth"
+    });
+}
 
-    const existing = cart.find(item =>
-        item.id === bracelet.id &&
-        item.colour === selectedColour &&
-        item.size === size
-    );
+
+/* =====================================================
+   ADD TO CART
+   ===================================================== */
+
+function addToCart(){
+
+    const size =
+        document.getElementById("sizeSelect").value;
+
+    const existing =
+        cart.find(item =>
+            item.product.id === bracelet.id &&
+            item.colour === selectedColour &&
+            item.size === size
+        );
 
     if(existing){
 
@@ -1314,94 +976,123 @@ function addBraceletToCart(){
 
         cart.push({
 
-            ...bracelet,
+            product:bracelet,
 
             colour:selectedColour,
+
+            image:selectedImage,
 
             size:size,
 
             quantity:1
 
         });
-
     }
 
     updateCart();
 
-    openCart();
+    showToast("Added to your bag");
 
+    openCart();
 }
 
 
-/* ==========================================
+/* =====================================================
    UPDATE CART
-========================================== */
+   ===================================================== */
 
 function updateCart(){
 
-    document.getElementById("cartCount").innerText =
-    cart.reduce(
-        (total,item) =>
-        total + item.quantity,
-        0
-    );
-
-
     const container =
-    document.getElementById("cartItems");
+        document.getElementById("cartItems");
 
-    container.innerHTML = "";
+    const summary =
+        document.getElementById("cartSummary");
+
+    const count =
+        document.getElementById("bagCount");
+
+    const totalQuantity =
+        cart.reduce((sum,item)=>sum + item.quantity,0);
+
+    count.textContent = totalQuantity;
+
+
+    if(cart.length === 0){
+
+        container.innerHTML =
+            '<div class="empty-cart">Your bag is empty.</div>';
+
+        summary.innerHTML = "";
+
+        return;
+    }
 
 
     let productTotal = 0;
 
 
-    cart.forEach((item,index)=>{
+    container.innerHTML = cart.map((item,index)=>{
 
         const itemTotal =
-        item.price * item.quantity;
+            item.product.price * item.quantity;
 
         productTotal += itemTotal;
 
 
-        container.innerHTML += `
-
+        return `
         <div class="cart-item">
+
+            <img
+                src="${item.image}"
+                alt="${item.product.name}">
 
             <div class="cart-item-info">
 
                 <h4>
-                ${item.name}
+                    ${escapeHtml(item.product.name)}
                 </h4>
 
                 <p>
-                Colour: ${item.colour}
+                    Colour: ${escapeHtml(item.colour)}
                 </p>
 
                 <p>
-                Size: ${item.size}
+                    Size: ${escapeHtml(item.size)}
                 </p>
 
                 <p>
-                Rs. ${item.price.toLocaleString()} each
+                    Rs. ${item.product.price}
                 </p>
 
                 <div class="qty">
 
-                    <button
-                    onclick="changeQuantity(${index},-1)">
-                    −
+                    <button onclick="changeQuantity(${index},-1)">
+                        −
                     </button>
 
                     <span>
-                    ${item.quantity}
+                        ${item.quantity}
                     </span>
 
-                    <button
-                    onclick="changeQuantity(${index},1)">
-                    +
+                    <button onclick="changeQuantity(${index},1)">
+                        +
                     </button>
 
                 </div>
 
-                <but
+                <button
+                    class="remove-btn"
+                    onclick="removeItem(${index})">
+                    Remove
+                </button>
+
+            </div>
+
+        </div>
+        `;
+    }).join("");
+
+
+    const delivery =
+        productT
