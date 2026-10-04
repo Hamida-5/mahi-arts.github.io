@@ -1082,6 +1082,7 @@ footer{
         >
 
         <button
+            id="placeOrderButton"
             class="place-order-btn"
             onclick="placeOrder()"
         >
@@ -1318,6 +1319,8 @@ const PRODUCTS = [
    ========================================================= */
 
 let cart = [];
+    
+let isPlacingOrder = false;
 
 let selectedCategory = "All";
 
@@ -2017,6 +2020,10 @@ function closeCheckout(){
 
 async function placeOrder(){
 
+    if(isPlacingOrder){
+        return;
+    }
+
     const name =
         document.getElementById("customerName")
         .value.trim();
@@ -2067,6 +2074,27 @@ async function placeOrder(){
     }
 
 
+    /* LOCK BUTTON IMMEDIATELY */
+
+    isPlacingOrder = true;
+
+    const placeButton =
+        document.getElementById("placeOrderButton");
+
+    if(placeButton){
+
+        placeButton.disabled = true;
+
+        placeButton.textContent =
+            "Placing Order...";
+
+        placeButton.style.opacity = "0.65";
+
+        placeButton.style.cursor = "not-allowed";
+
+    }
+
+
     const orderId =
         createOrderId();
 
@@ -2088,12 +2116,6 @@ async function placeOrder(){
     const grandTotal =
         productTotal + delivery;
 
-
-    /*
-       Each cart item is sent separately.
-       This makes it easy for Google Sheet / Apps Script
-       to receive product details.
-    */
 
     const productNames =
         cart.map(function(item){
@@ -2170,11 +2192,6 @@ async function placeOrder(){
 
     try{
 
-        /*
-           Keep this connection as it is.
-           Apps Script will handle the order on its side.
-        */
-
         await fetch(
             GOOGLE_SCRIPT_URL,
             {
@@ -2222,13 +2239,31 @@ async function placeOrder(){
 
         console.error(error);
 
+        /* UNLOCK IF ORDER FAILED */
+
+        isPlacingOrder = false;
+
+        if(placeButton){
+
+            placeButton.disabled = false;
+
+            placeButton.textContent =
+                "Place Order";
+
+            placeButton.style.opacity = "1";
+
+            placeButton.style.cursor = "pointer";
+
+        }
+
+
         showToast(
             "Something went wrong. Please try again."
         );
 
     }
 
-}
+}   
 
 
 /* =========================================================
@@ -2285,6 +2320,24 @@ function continueShopping(){
 
     document.getElementById("successModal").style.display =
         "none";
+
+    isPlacingOrder = false;
+
+    const placeButton =
+        document.getElementById("placeOrderButton");
+
+    if(placeButton){
+
+        placeButton.disabled = false;
+
+        placeButton.textContent =
+            "Place Order";
+
+        placeButton.style.opacity = "1";
+
+        placeButton.style.cursor = "pointer";
+
+    }
 
     showShop();
 
