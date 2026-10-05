@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mahi Arts | Resin • Jewellery • Bracelets</title>
+<title>Mahi Arts | Luxury Handmade Jewellery, Bracelets & More</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
@@ -15,16 +15,17 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:'DM Sans',sans-serif;
     background:#fff8fb;
     color:#33242b;
 }
 
-button,
-input,
-select,
-textarea{
+button,input,select,textarea{
     font-family:inherit;
 }
 
@@ -36,15 +37,15 @@ header{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(255,248,251,.96);
-    backdrop-filter:blur(12px);
+    background:rgba(255,248,251,.94);
+    backdrop-filter:blur(16px);
     border-bottom:1px solid #f0dce5;
 }
 
 .navbar{
     max-width:1200px;
     margin:auto;
-    padding:17px 20px;
+    padding:16px 20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -53,8 +54,8 @@ header{
 
 .logo{
     font-family:'Playfair Display',serif;
-    font-size:27px;
-    letter-spacing:2px;
+    font-size:28px;
+    letter-spacing:2.5px;
     color:#9d536f;
     text-decoration:none;
 }
@@ -72,35 +73,71 @@ header{
     font-weight:600;
 }
 
+.nav-links a:hover{
+    color:#9d536f;
+}
+
 .bag-btn{
     border:0;
     background:#9d536f;
     color:white;
-    padding:10px 15px;
+    padding:11px 16px;
     border-radius:25px;
-    font-weight:600;
+    font-weight:700;
 }
+
+.bag-btn:hover{
+    background:#82445c;
+}
+
+/* TOP FREE SHIPPING BANNER */
+
+.shipping-banner{
+    background:linear-gradient(90deg,#f9dce8,#fff0f5,#f9dce8);
+    border-bottom:1px solid #efd0dc;
+    text-align:center;
+    padding:9px 15px;
+    color:#82445c;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.3px;
+}
+
+/* HERO */
 
 .hero{
     max-width:1200px;
     margin:auto;
-    padding:65px 20px 35px;
+    padding:75px 20px 40px;
     text-align:center;
+}
+
+.hero-small{
+    color:#b36b88;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:14px;
 }
 
 .hero h1{
     font-family:'Playfair Display',serif;
-    font-size:48px;
+    font-size:56px;
     color:#7e4058;
-    margin-bottom:12px;
+    margin-bottom:15px;
+    line-height:1.1;
 }
 
 .hero p{
     color:#765c66;
-    max-width:600px;
+    max-width:650px;
     margin:auto;
-    line-height:1.7;
+    line-height:1.8;
+    font-size:15px;
 }
+
+/* SEARCH */
 
 .search-wrap{
     max-width:650px;
@@ -114,10 +151,10 @@ header{
     border:1px solid #e7ccd8;
     background:white;
     border-radius:30px;
-    padding:15px 48px 15px 20px;
+    padding:16px 50px 16px 20px;
     outline:none;
     font-size:15px;
-    box-shadow:0 5px 20px rgba(130,75,98,.06);
+    box-shadow:0 8px 30px rgba(130,75,98,.07);
 }
 
 .search-box:focus{
@@ -128,7 +165,7 @@ header{
     position:absolute;
     right:38px;
     top:14px;
-    font-size:19px;
+    font-size:20px;
     color:#9d536f;
 }
 
@@ -138,26 +175,29 @@ header{
     border:0;
     background:none;
     color:#9d536f;
-    font-weight:600;
+    font-weight:700;
 }
 
+/* CATEGORIES */
+
 .categories{
-    max-width:1000px;
-    margin:0 auto 45px;
+    max-width:1050px;
+    margin:0 auto 50px;
     padding:0 20px;
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:14px;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
 }
 
 .category-btn{
     background:white;
     border:1px solid #efd9e2;
     border-radius:18px;
-    padding:18px 10px;
+    padding:17px 10px;
     color:#6d4353;
     font-weight:600;
-    transition:.2s;
+    transition:.25s;
+    box-shadow:0 7px 22px rgba(126,64,88,.04);
 }
 
 .category-btn:hover,
@@ -169,36 +209,55 @@ header{
 
 .category-icon{
     display:block;
-    font-size:26px;
-    margin-bottom:7px;
+    font-size:24px;
+    margin-bottom:6px;
 }
+
+/* SECTION */
 
 .section{
     max-width:1200px;
     margin:auto;
-    padding:0 20px 70px;
+    padding:0 20px 75px;
 }
 
 .section-title{
     text-align:center;
     font-family:'Playfair Display',serif;
     color:#7e4058;
-    font-size:34px;
-    margin-bottom:28px;
+    font-size:36px;
+    margin-bottom:30px;
 }
+
+.section-subtitle{
+    text-align:center;
+    max-width:650px;
+    margin:-15px auto 30px;
+    color:#806873;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* PRODUCTS */
 
 .products-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:25px;
+    gap:28px;
 }
 
 .product-card{
     background:white;
     border:1px solid #f0dce5;
-    border-radius:22px;
+    border-radius:24px;
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(126,64,88,.06);
+    box-shadow:0 12px 35px rgba(126,64,88,.07);
+    transition:.25s;
+}
+
+.product-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 40px rgba(126,64,88,.11);
 }
 
 .product-image-wrap{
@@ -216,16 +275,16 @@ header{
 }
 
 .product-info{
-    padding:20px;
+    padding:21px;
 }
 
 .product-category{
     color:#a86a83;
-    font-size:12px;
+    font-size:11px;
     font-weight:700;
     text-transform:uppercase;
-    letter-spacing:1px;
-    margin-bottom:6px;
+    letter-spacing:1.5px;
+    margin-bottom:7px;
 }
 
 .product-name{
@@ -235,11 +294,18 @@ header{
     margin-bottom:8px;
 }
 
+.product-description{
+    color:#806873;
+    font-size:13px;
+    line-height:1.6;
+    margin-bottom:13px;
+}
+
 .product-price{
     font-size:18px;
     font-weight:700;
     color:#9d536f;
-    margin-bottom:16px;
+    margin-bottom:15px;
 }
 
 .option-label{
@@ -285,38 +351,120 @@ header{
     margin-top:17px;
     border:0;
     border-radius:12px;
-    padding:13px;
+    padding:14px;
     background:#9d536f;
     color:white;
     font-weight:700;
     font-size:14px;
 }
 
-.add-btn:hover,
-.bag-btn:hover{
+.add-btn:hover{
     background:#82445c;
 }
 
 .empty-state{
     display:none;
     text-align:center;
-    padding:45px 20px;
+    padding:50px 20px;
     color:#856772;
 }
 
+/* FREE DELIVERY NOTICE */
+
+.free-delivery-box{
+    max-width:760px;
+    margin:0 auto 55px;
+    padding:18px 20px;
+    background:linear-gradient(135deg,#fff,#fff0f5);
+    border:1px solid #e9c8d6;
+    border-radius:18px;
+    text-align:center;
+    color:#82445c;
+    box-shadow:0 10px 30px rgba(126,64,88,.05);
+}
+
+.free-delivery-box strong{
+    display:block;
+    font-family:'Playfair Display',serif;
+    font-size:21px;
+    margin-bottom:5px;
+}
+
+.free-delivery-box span{
+    font-size:13px;
+}
+
+/* REVIEWS */
+
 .reviews{
-    background:#fff;
+    background:linear-gradient(180deg,#fff,#fff8fb);
     border-top:1px solid #f0dce5;
     border-bottom:1px solid #f0dce5;
+    max-width:none;
+    padding-top:70px;
+}
+
+.reviews-inner{
+    max-width:1200px;
+    margin:auto;
+}
+
+.review-list{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-bottom:35px;
+}
+
+.review-card{
+    background:white;
+    border:1px solid #efdce4;
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 8px 25px rgba(126,64,88,.05);
+}
+
+.review-card-name{
+    font-weight:700;
+    color:#593744;
+    margin-bottom:6px;
+}
+
+.review-stars-display{
+    color:#d69a35;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.review-card-text{
+    color:#705963;
+    font-size:14px;
+    line-height:1.7;
+}
+
+.no-reviews{
+    text-align:center;
+    color:#876d77;
+    padding:15px;
+    margin-bottom:25px;
 }
 
 .review-form{
-    max-width:600px;
+    max-width:620px;
     margin:auto;
     background:#fff8fb;
     border:1px solid #efdce4;
-    border-radius:20px;
-    padding:22px;
+    border-radius:22px;
+    padding:24px;
+    box-shadow:0 10px 30px rgba(126,64,88,.05);
+}
+
+.form-heading{
+    text-align:center;
+    font-family:'Playfair Display',serif;
+    color:#7e4058;
+    font-size:25px;
+    margin-bottom:15px;
 }
 
 .form-input{
@@ -329,21 +477,34 @@ header{
     outline:none;
 }
 
+.form-input:focus{
+    border-color:#bd7894;
+}
+
 .review-stars{
     display:flex;
-    gap:6px;
-    margin-bottom:12px;
+    justify-content:center;
+    gap:5px;
+    margin:5px 0 15px;
 }
 
 .star-btn{
     border:0;
     background:none;
-    font-size:25px;
+    font-size:29px;
     color:#c5a2af;
+    padding:2px;
 }
 
 .star-btn.active{
     color:#d69a35;
+}
+
+.rating-text{
+    text-align:center;
+    color:#876d77;
+    font-size:12px;
+    margin-bottom:12px;
 }
 
 .submit-btn{
@@ -352,8 +513,121 @@ header{
     border-radius:11px;
     background:#9d536f;
     color:white;
-    padding:13px;
+    padding:14px;
     font-weight:700;
+}
+
+.submit-btn:hover{
+    background:#82445c;
+}
+
+/* CONTACT */
+
+.contact-section{
+    padding-top:75px;
+}
+
+.contact-box{
+    max-width:900px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:25px;
+}
+
+.contact-info,
+.contact-form{
+    background:white;
+    border:1px solid #efdce4;
+    border-radius:22px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(126,64,88,.05);
+}
+
+.contact-info h3,
+.contact-form h3{
+    font-family:'Playfair Display',serif;
+    color:#7e4058;
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.contact-info p{
+    color:#705963;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.contact-email{
+    display:inline-block;
+    margin-top:15px;
+    color:#9d536f;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.contact-note{
+    margin-top:15px;
+    padding:13px;
+    border-radius:12px;
+    background:#fff5f8;
+    color:#806873;
+    font-size:12px;
+    line-height:1.6;
+}
+
+/* SOCIAL BANNER */
+
+.social-section{
+    padding:20px 20px 70px;
+}
+
+.social-banner{
+    max-width:1050px;
+    margin:auto;
+    border-radius:26px;
+    padding:35px 25px;
+    background:linear-gradient(135deg,#f8dce8,#fff0f5,#f7d7e5);
+    border:1px solid #e8c3d1;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(126,64,88,.08);
+}
+
+.social-banner h2{
+    font-family:'Playfair Display',serif;
+    color:#7e4058;
+    font-size:31px;
+    margin-bottom:8px;
+}
+
+.social-banner p{
+    color:#765c66;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.social-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.social-link{
+    text-decoration:none;
+    background:white;
+    border:1px solid #e2bfcc;
+    color:#704052;
+    padding:12px 20px;
+    border-radius:25px;
+    font-weight:700;
+    font-size:14px;
+    transition:.2s;
+}
+
+.social-link:hover{
+    transform:translateY(-2px);
+    background:#fff8fb;
 }
 
 /* CART */
@@ -468,6 +742,17 @@ header{
     padding-top:10px;
 }
 
+.shipping-progress{
+    background:#fff4f8;
+    border:1px solid #efd9e2;
+    padding:12px;
+    border-radius:12px;
+    margin-bottom:15px;
+    color:#82445c;
+    font-size:12px;
+    line-height:1.5;
+}
+
 .checkout-btn{
     width:100%;
     border:0;
@@ -485,7 +770,7 @@ header{
     color:#846c76;
 }
 
-/* MODAL */
+/* MODALS */
 
 .modal{
     display:none;
@@ -527,6 +812,13 @@ header{
     margin:14px 0;
 }
 
+.checkout-free-note{
+    margin-top:10px;
+    color:#9d536f;
+    font-size:12px;
+    font-weight:700;
+}
+
 .place-order-btn{
     width:100%;
     border:0;
@@ -547,11 +839,21 @@ header{
     margin-top:8px;
 }
 
-/* ADMIN */
-
-.admin-link{
-    display:none;
+.success-box{
+    text-align:center;
+    padding:25px 10px;
 }
+
+.success-box h2{
+    margin-bottom:10px;
+}
+
+.success-box p{
+    color:#705963;
+    line-height:1.6;
+}
+
+/* ADMIN */
 
 .admin-section{
     display:none;
@@ -623,6 +925,7 @@ header{
     opacity:0;
     transition:.3s;
     font-size:14px;
+    text-align:center;
 }
 
 .toast.show{
@@ -630,61 +933,92 @@ header{
     transform:translateX(-50%) translateY(0);
 }
 
-.success-box{
-    text-align:center;
-    padding:25px 10px;
-}
-
-.success-box h2{
-    margin-bottom:10px;
-}
-
-.success-box p{
-    color:#705963;
-    line-height:1.6;
-}
+/* FOOTER */
 
 footer{
+    background:#fff0f5;
+    border-top:1px solid #efd5df;
     text-align:center;
-    padding:30px 20px;
+    padding:35px 20px;
     color:#876d77;
     font-size:13px;
 }
 
+.footer-logo{
+    font-family:'Playfair Display',serif;
+    font-size:25px;
+    color:#9d536f;
+    letter-spacing:2px;
+    margin-bottom:8px;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:16px;
+    margin:15px 0;
+}
+
+.footer-links a{
+    color:#704052;
+    text-decoration:none;
+    font-weight:600;
+}
+
 /* MOBILE */
 
-@media(max-width:800px){
+@media(max-width:900px){
+
     .products-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
     .categories{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:repeat(3,1fr);
     }
 
-    .hero h1{
-        font-size:39px;
+    .review-list{
+        grid-template-columns:1fr 1fr;
     }
 
-    .dashboard-grid{
+    .contact-box{
         grid-template-columns:1fr;
     }
+
 }
 
-@media(max-width:560px){
+@media(max-width:650px){
+
     .navbar{
         padding:13px 14px;
     }
 
     .nav-links{
-        gap:10px;
+        gap:8px;
     }
 
     .nav-links a{
         display:none;
     }
 
+    .hero{
+        padding-top:55px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
     .products-grid{
+        grid-template-columns:1fr;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .review-list{
         grid-template-columns:1fr;
     }
 
@@ -692,35 +1026,70 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .product-info{
-        padding:17px;
+    .social-banner h2{
+        font-size:27px;
     }
+
+    .shipping-banner{
+        font-size:11px;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- FREE DELIVERY NOTICE -->
+
+<div class="shipping-banner">
+    ✨ FREE DELIVERY ON ORDERS OF RS. 2,500 OR MORE ✨
+</div>
+
+
+<!-- HEADER -->
+
 <header>
+
     <div class="navbar">
 
-        <a href="#" class="logo" onclick="showShop();return false;">
+        <a
+            href="#"
+            class="logo"
+            onclick="showShop();return false;"
+        >
             MAHI ARTS
         </a>
 
         <div class="nav-links">
-            <a href="#" onclick="showShop();return false;">Shop</a>
+
+            <a
+                href="#shop"
+                onclick="showShop();return false;"
+            >
+                Shop
+            </a>
 
             <a href="#reviews">
                 Reviews
             </a>
 
-            <button class="bag-btn" onclick="openCart()">
+            <a href="#contact">
+                Contact
+            </a>
+
+            <button
+                class="bag-btn"
+                onclick="openCart()"
+            >
                 🛍 Bag <span id="cartCount">0</span>
             </button>
+
         </div>
 
     </div>
+
 </header>
 
 
@@ -728,11 +1097,19 @@ footer{
 
 <section class="hero" id="shop">
 
-    <h1>Made With Love</h1>
+    <div class="hero-small">
+        Mahi Arts
+    </div>
+
+    <h1>
+        Little Things,<br>
+        Made Beautiful
+    </h1>
 
     <p>
-        Handmade resin pieces, jewellery, bracelets and little creations
-        made to add something special to your day.
+        Discover beautiful handmade pieces, jewellery, bracelets
+        and charming little creations made to add something special
+        to your everyday moments.
     </p>
 
 </section>
@@ -751,7 +1128,9 @@ footer{
         oninput="searchProducts()"
     >
 
-    <span class="search-icon">⌕</span>
+    <span class="search-icon">
+        ⌕
+    </span>
 
     <button
         id="clearSearch"
@@ -815,6 +1194,19 @@ footer{
 
 <section class="section">
 
+    <div class="free-delivery-box">
+
+        <strong>
+            ✨ Free Delivery on Rs. 2,500+
+        </strong>
+
+        <span>
+            Orders below Rs. 2,500 have a Rs. 250 delivery charge.
+        </span>
+
+    </div>
+
+
     <h2 class="section-title">
         Our Collection
     </h2>
@@ -828,11 +1220,15 @@ footer{
         id="emptyState"
         class="empty-state"
     >
-        <h3>No product found</h3>
+
+        <h3>
+            No product found
+        </h3>
 
         <p id="emptyMessage">
             Try another search.
         </p>
+
     </div>
 
 </section>
@@ -840,50 +1236,267 @@ footer{
 
 <!-- REVIEWS -->
 
-<section class="section reviews" id="reviews">
+<section
+    class="section reviews"
+    id="reviews"
+>
 
-    <h2 class="section-title">
-        Customer Reviews
-    </h2>
+    <div class="reviews-inner">
 
-    <div class="review-form">
+        <h2 class="section-title">
+            Customer Love
+        </h2>
 
-        <input
-            id="reviewName"
-            class="form-input"
-            placeholder="Your name"
+        <p class="section-subtitle">
+            We would love to hear about your Mahi Arts experience.
+            Your review and star rating may be featured here after approval.
+        </p>
+
+
+        <!-- APPROVED REVIEWS APPEAR HERE -->
+
+        <div
+            id="approvedReviews"
+            class="review-list"
+        ></div>
+
+
+        <div
+            id="noReviews"
+            class="no-reviews"
         >
-
-        <div class="review-stars">
-
-            <button class="star-btn" onclick="selectReviewStar(1)">★</button>
-            <button class="star-btn" onclick="selectReviewStar(2)">★</button>
-            <button class="star-btn" onclick="selectReviewStar(3)">★</button>
-            <button class="star-btn" onclick="selectReviewStar(4)">★</button>
-            <button class="star-btn" onclick="selectReviewStar(5)">★</button>
-
+            No approved reviews yet. Be the first to share your experience 💗
         </div>
 
-        <textarea
-            id="reviewText"
-            class="form-input"
-            rows="4"
-            placeholder="Write your review..."
-        ></textarea>
 
-        <button
-            class="submit-btn"
-            onclick="submitReview()"
-        >
-            Submit Review
-        </button>
+        <!-- REVIEW FORM -->
+
+        <div class="review-form">
+
+            <div class="form-heading">
+                Leave a Review
+            </div>
+
+            <input
+                id="reviewName"
+                class="form-input"
+                placeholder="Your name"
+                maxlength="60"
+            >
+
+
+            <div class="rating-text">
+                Select your rating
+            </div>
+
+            <div class="review-stars">
+
+                <button
+                    type="button"
+                    class="star-btn"
+                    onclick="selectReviewStar(1)"
+                    aria-label="1 star"
+                >
+                    ★
+                </button>
+
+                <button
+                    type="button"
+                    class="star-btn"
+                    onclick="selectReviewStar(2)"
+                    aria-label="2 stars"
+                >
+                    ★
+                </button>
+
+                <button
+                    type="button"
+                    class="star-btn"
+                    onclick="selectReviewStar(3)"
+                    aria-label="3 stars"
+                >
+                    ★
+                </button>
+
+                <button
+                    type="button"
+                    class="star-btn"
+                    onclick="selectReviewStar(4)"
+                    aria-label="4 stars"
+                >
+                    ★
+                </button>
+
+                <button
+                    type="button"
+                    class="star-btn"
+                    onclick="selectReviewStar(5)"
+                    aria-label="5 stars"
+                >
+                    ★
+                </button>
+
+            </div>
+
+
+            <textarea
+                id="reviewText"
+                class="form-input"
+                rows="4"
+                maxlength="1000"
+                placeholder="Write your review..."
+            ></textarea>
+
+
+            <button
+                type="button"
+                class="submit-btn"
+                onclick="submitReview()"
+            >
+                Submit Review
+            </button>
+
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- ADMIN DASHBOARD -->
+<!-- CONTACT US -->
+
+<section
+    class="section contact-section"
+    id="contact"
+>
+
+    <h2 class="section-title">
+        Contact Us
+    </h2>
+
+    <p class="section-subtitle">
+        Have a question about a product, colour, size, order or anything
+        else? Send us a message and we will get back to you.
+    </p>
+
+
+    <div class="contact-box">
+
+        <div class="contact-info">
+
+            <h3>
+                We're Here For You
+            </h3>
+
+            <p>
+                If you need help understanding anything about our products
+                or your order, feel free to contact Mahi Arts.
+            </p>
+
+            <a
+                class="contact-email"
+                href="mailto:mahiarts.shop@gmail.com"
+            >
+                ✉ mahiarts.shop@gmail.com
+            </a>
+
+            <div class="contact-note">
+                You can also follow us on Instagram and TikTok for
+                new products, updates and content.
+            </div>
+
+        </div>
+
+
+        <div class="contact-form">
+
+            <h3>
+                Send Us A Message
+            </h3>
+
+            <input
+                id="contactName"
+                class="form-input"
+                placeholder="Your name"
+                maxlength="60"
+            >
+
+            <input
+                id="contactEmail"
+                class="form-input"
+                type="email"
+                placeholder="Your Gmail / Email"
+                maxlength="120"
+            >
+
+            <textarea
+                id="contactMessage"
+                class="form-input"
+                rows="6"
+                maxlength="1500"
+                placeholder="How can we help you?"
+            ></textarea>
+
+            <button
+                type="button"
+                class="submit-btn"
+                onclick="submitContactMessage()"
+            >
+                Send Message
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SOCIAL MEDIA BANNER -->
+
+<section class="social-section">
+
+    <div class="social-banner">
+
+        <h2>
+            Follow Mahi Arts
+        </h2>
+
+        <p>
+            Follow us for new arrivals, jewellery inspiration,
+            updates and beautiful little things.
+        </p>
+
+
+        <div class="social-links">
+
+            <a
+                class="social-link"
+                href="https://www.instagram.com/mahiarts.shop/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                📸 Instagram @mahiarts.shop
+            </a>
+
+
+            <a
+                class="social-link"
+                href="https://www.tiktok.com/@mahiarts.shop"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                🎵 TikTok @mahiarts.shop
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ADMIN SECTION -->
 
 <section
     id="adminSection"
@@ -946,17 +1559,18 @@ footer{
 
         <div class="admin-note">
 
-            <strong>Admin Dashboard</strong>
+            <strong>
+                Admin Dashboard
+            </strong>
 
             <p style="margin-top:8px;">
-                This dashboard is currently the website-side dashboard.
-                Real customer orders and private order information will
-                be connected securely through Google Apps Script later.
+                Customer orders, reviews and contact messages will
+                be connected through Google Apps Script.
             </p>
 
             <p style="margin-top:8px;">
-                You will not need to edit the order system every time
-                you add a new product.
+                Product additions remain simple. New products are added
+                only inside the PRODUCTS section of this website code.
             </p>
 
         </div>
@@ -966,8 +1580,52 @@ footer{
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
-    © 2026 Mahi Arts. Made with love.
+
+    <div class="footer-logo">
+        MAHI ARTS
+    </div>
+
+    <div>
+        Handmade with love 💗
+    </div>
+
+    <div class="footer-links">
+
+        <a href="#shop">
+            Shop
+        </a>
+
+        <a href="#reviews">
+            Reviews
+        </a>
+
+        <a href="#contact">
+            Contact Us
+        </a>
+
+        <a
+            href="https://www.instagram.com/mahiarts.shop/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Instagram
+        </a>
+
+        <a
+            href="https://www.tiktok.com/@mahiarts.shop"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            TikTok
+        </a>
+
+    </div>
+
+    © 2026 Mahi Arts. All rights reserved.
+
 </footer>
 
 
@@ -982,7 +1640,9 @@ footer{
 
         <div class="panel-header">
 
-            <h2>Your Bag</h2>
+            <h2>
+                Your Bag
+            </h2>
 
             <button
                 class="close-btn"
@@ -1016,7 +1676,9 @@ footer{
 
         <div class="panel-header">
 
-            <h2>Checkout</h2>
+            <h2>
+                Checkout
+            </h2>
 
             <button
                 class="close-btn"
@@ -1027,10 +1689,12 @@ footer{
 
         </div>
 
+
         <div
             id="checkoutSummary"
             class="checkout-summary"
         ></div>
+
 
         <div class="two-col">
 
@@ -1068,6 +1732,7 @@ footer{
 
         </div>
 
+
         <textarea
             id="customerAddress"
             class="form-input"
@@ -1075,11 +1740,13 @@ footer{
             placeholder="Complete Address"
         ></textarea>
 
+
         <input
             class="form-input"
             value="Cash on Delivery"
             readonly
         >
+
 
         <button
             id="placeOrderButton"
@@ -1090,8 +1757,10 @@ footer{
             Place Order
         </button>
 
+
         <button
             class="cancel-btn"
+            type="button"
             onclick="closeCheckout()"
         >
             Cancel
@@ -1111,13 +1780,16 @@ footer{
 
     <div class="modal-box success-box">
 
-        <h2>Order Placed Successfully 💗</h2>
+        <h2>
+            Order Placed Successfully 💗
+        </h2>
 
         <p id="successMessage"></p>
 
         <button
             class="place-order-btn"
             style="margin-top:20px;"
+            type="button"
             onclick="continueShopping()"
         >
             Continue Shopping
@@ -1151,22 +1823,23 @@ const DELIVERY_CHARGE = 250;
 /* =========================================================
    PRODUCTS
    =========================================================
-   
-   IMPORTANT:
 
-   Future mein new product add karne ke liye sirf is list mein
-   ek new { } object add karna hai.
+   FUTURE PRODUCTS:
 
-   Baaki website code ko touch nahi karna.
+   Sirf isi section mein new product add karna hai.
+
+   Name
+   Category
+   Price
+   Description
+   Colours + images
+   Size
+
+   Baaki website automatically handle karegi.
 
    ========================================================= */
 
 const PRODUCTS = [
-
-    /* -----------------------------------------------------
-       PRODUCT 001
-       EXISTING PRODUCT
-       ----------------------------------------------------- */
 
     {
         id: "product-001",
@@ -1176,6 +1849,9 @@ const PRODUCTS = [
         category: "Bracelets",
 
         price: 320,
+
+        description:
+        "Delicate crystal beaded bracelet designed to add a soft and elegant touch to your everyday look.",
 
         colours: [
 
@@ -1207,7 +1883,7 @@ const PRODUCTS = [
         ],
 
         sizes: [
-            "Adjustable"
+            "Small", "Medium"
         ]
 
     },
@@ -1215,102 +1891,98 @@ const PRODUCTS = [
 
     {
         id: "product-002",
+
         name: "Crystal Luxury Earrings for Women",
+
         category: "Jewellery",
+
         price: 199,
 
+        description:
+        "Elegant crystal earrings designed to add a refined sparkle to every look.",
+
         colours: [
+
             {
                 name: "Green",
                 image: "./green%20jewellery.jpg"
             },
+
             {
                 name: "Yellow",
                 image: "./yellow%20jewellery.jpg"
             },
+
             {
                 name: "Black",
                 image: "./black%20jewellery.jpg"
             },
+
             {
                 name: "White",
                 image: "./white%20jewellery.jpg"
             },
+
             {
                 name: "Navy Blue",
                 image: "./navy%20blue%20jewellery.jpg"
             }
+
         ],
 
         sizes: [
-            "One Size"
+            "Small", "Medium"
         ]
+
     },
 
 
     {
         id: "product-003",
+
         name: "Crystal Handmade Bag-Style Keychain",
+
         category: "Keychain",
+
         price: 369,
 
+        description:
+        "A charming handmade crystal keychain with a Pinterest-inspired aesthetic, crafted to bring a delicate touch of luxury to your everyday essentials.",
+
         colours: [
+
             {
                 name: "White",
                 image: "./white%20keychain.jpg"
             },
+
             {
                 name: "Brown",
                 image: "./brown%20keychain.jpg"
             },
+
             {
                 name: "Orange",
                 image: "./orange%20keychain.jpg"
             },
+
             {
                 name: "Red",
                 image: "./red%20keychain.jpg"
             },
+
             {
                 name: "Blue",
                 image: "./blue%20keychain.jpg"
             }
+
         ],
 
         sizes: [
             "One Size"
         ]
+
     }
-
-    /* -----------------------------------------------------
-       FUTURE PRODUCT EXAMPLE
-
-       Copy this structure and change details:
-
-       ,
-       {
-           id: "product-002",
-           name: "Your New Product",
-           category: "Jewellery",
-           price: 500,
-
-           colours: [
-               {
-                   name: "Gold",
-                   image: "./gold.jpg"
-               },
-               {
-                   name: "Silver",
-                   image: "./silver.jpg"
-               }
-           ],
-
-           sizes: [
-               "Free Size"
-           ]
-       }
-
-       ----------------------------------------------------- */
 
 ];
 
@@ -1320,7 +1992,7 @@ const PRODUCTS = [
    ========================================================= */
 
 let cart = [];
-    
+
 let isPlacingOrder = false;
 
 let selectedCategory = "All";
@@ -1344,6 +2016,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
     updateDashboard();
 
+    loadApprovedReviews();
+
 });
 
 
@@ -1362,7 +2036,8 @@ function renderProducts(){
     const query =
         searchInput.value.trim().toLowerCase();
 
-    let products =
+
+    const products =
         PRODUCTS.filter(function(product){
 
             const matchesCategory =
@@ -1432,8 +2107,10 @@ function renderProducts(){
                         ? "active"
                         : "";
 
+
                 return `
                     <button
+                        type="button"
                         class="colour-btn ${active}"
                         onclick="selectColour('${product.id}', '${escapeAttribute(colour.name)}')"
                     >
@@ -1445,6 +2122,7 @@ function renderProducts(){
 
 
         let sizeHTML = "";
+
 
         if(product.sizes && product.sizes.length > 0){
 
@@ -1479,9 +2157,12 @@ function renderProducts(){
         }
 
 
-        const card = document.createElement("div");
+        const card =
+            document.createElement("div");
 
-        card.className = "product-card";
+
+        card.className =
+            "product-card";
 
 
         card.innerHTML = `
@@ -1498,31 +2179,44 @@ function renderProducts(){
 
             </div>
 
+
             <div class="product-info">
 
                 <div class="product-category">
                     ${escapeHtml(product.category)}
                 </div>
 
+
                 <div class="product-name">
                     ${escapeHtml(product.name)}
                 </div>
+
+
+                <div class="product-description">
+                    ${escapeHtml(product.description || "")}
+                </div>
+
 
                 <div class="product-price">
                     Rs. ${product.price.toLocaleString()}
                 </div>
 
+
                 <label class="option-label">
                     Colour
                 </label>
+
 
                 <div class="colour-options">
                     ${colourButtons}
                 </div>
 
+
                 ${sizeHTML}
 
+
                 <button
+                    type="button"
                     class="add-btn"
                     onclick="addToCart('${product.id}')"
                 >
@@ -1563,7 +2257,8 @@ function selectColour(productId, colourName){
     if(!colour) return;
 
 
-    selectedColours[productId] = colour;
+    selectedColours[productId] =
+        colour;
 
 
     renderProducts();
@@ -1577,7 +2272,8 @@ function selectColour(productId, colourName){
 
 function selectSize(productId, size){
 
-    selectedSizes[productId] = size;
+    selectedSizes[productId] =
+        size;
 
 }
 
@@ -1588,7 +2284,8 @@ function selectSize(productId, size){
 
 function showCategory(category, button){
 
-    selectedCategory = category;
+    selectedCategory =
+        category;
 
 
     document.querySelectorAll(".category-btn")
@@ -1637,7 +2334,8 @@ function searchProducts(){
 
 function clearSearch(){
 
-    document.getElementById("searchInput").value = "";
+    document.getElementById("searchInput").value =
+        "";
 
     document.getElementById("clearSearch").style.display =
         "none";
@@ -1691,21 +2389,29 @@ function addToCart(productId){
 
         cart.push({
 
-            productId: product.id,
+            productId:
+                product.id,
 
-            name: product.name,
+            name:
+                product.name,
 
-            category: product.category,
+            category:
+                product.category,
 
-            price: product.price,
+            price:
+                product.price,
 
-            colour: colour.name,
+            colour:
+                colour.name,
 
-            image: colour.image,
+            image:
+                colour.image,
 
-            size: size,
+            size:
+                size,
 
-            quantity: 1
+            quantity:
+                1
 
         });
 
@@ -1714,7 +2420,9 @@ function addToCart(productId){
 
     updateCart();
 
-    showToast("Added to your bag 💗");
+    showToast(
+        "Added to your bag 💗"
+    );
 
 }
 
@@ -1754,7 +2462,8 @@ function updateCart(){
 
         `;
 
-        cartSummary.innerHTML = "";
+        cartSummary.innerHTML =
+            "";
 
         return;
 
@@ -1781,7 +2490,9 @@ function updateCart(){
 
                         <div class="cart-meta">
                             ${escapeHtml(item.colour)}
-                            ${item.size ? " • " + escapeHtml(item.size) : ""}
+                            ${item.size
+                                ? " • " + escapeHtml(item.size)
+                                : ""}
                         </div>
 
                         <div class="cart-meta">
@@ -1791,6 +2502,7 @@ function updateCart(){
                         <div class="qty-row">
 
                             <button
+                                type="button"
                                 class="qty-btn"
                                 onclick="changeQuantity(${index},-1)"
                             >
@@ -1802,6 +2514,7 @@ function updateCart(){
                             </strong>
 
                             <button
+                                type="button"
                                 class="qty-btn"
                                 onclick="changeQuantity(${index},1)"
                             >
@@ -1809,6 +2522,7 @@ function updateCart(){
                             </button>
 
                             <button
+                                type="button"
                                 class="remove-btn"
                                 onclick="removeItem(${index})"
                             >
@@ -1829,7 +2543,8 @@ function updateCart(){
     const productTotal =
         cart.reduce(function(total,item){
 
-            return total + (item.price * item.quantity);
+            return total +
+                (item.price * item.quantity);
 
         },0);
 
@@ -1844,30 +2559,69 @@ function updateCart(){
         productTotal + delivery;
 
 
+    let shippingMessage = "";
+
+
+    if(productTotal >= FREE_SHIPPING_LIMIT){
+
+        shippingMessage = `
+            <div class="shipping-progress">
+                🎉 Congratulations! You’ve unlocked
+                <strong>FREE DELIVERY</strong>.
+            </div>
+        `;
+
+    }else{
+
+        const remaining =
+            FREE_SHIPPING_LIMIT - productTotal;
+
+        shippingMessage = `
+            <div class="shipping-progress">
+                Add <strong>Rs. ${remaining.toLocaleString()}</strong>
+                more to unlock FREE DELIVERY.
+            </div>
+        `;
+
+    }
+
+
     cartSummary.innerHTML = `
+
+        ${shippingMessage}
 
         <div class="summary-row">
             <span>Products</span>
-            <strong>Rs. ${productTotal.toLocaleString()}</strong>
+            <strong>
+                Rs. ${productTotal.toLocaleString()}
+            </strong>
         </div>
+
 
         <div class="summary-row">
             <span>Delivery</span>
             <strong>
-                ${delivery === 0
-                    ? "FREE"
-                    : "Rs. " + delivery.toLocaleString()}
+                ${
+                    delivery === 0
+                        ? "FREE"
+                        : "Rs. " +
+                          delivery.toLocaleString()
+                }
             </strong>
         </div>
 
+
         <div class="summary-row total">
             <span>Total</span>
+
             <strong>
                 Rs. ${grandTotal.toLocaleString()}
             </strong>
         </div>
 
+
         <button
+            type="button"
             class="checkout-btn"
             onclick="openCheckout()"
         >
@@ -1888,7 +2642,8 @@ function changeQuantity(index, amount){
     if(!cart[index]) return;
 
 
-    cart[index].quantity += amount;
+    cart[index].quantity +=
+        amount;
 
 
     if(cart[index].quantity <= 0){
@@ -1948,7 +2703,9 @@ function openCheckout(){
 
     if(cart.length === 0){
 
-        showToast("Your bag is empty.");
+        showToast(
+            "Your bag is empty."
+        );
 
         return;
 
@@ -1958,7 +2715,8 @@ function openCheckout(){
     const productTotal =
         cart.reduce(function(total,item){
 
-            return total + item.price * item.quantity;
+            return total +
+                item.price * item.quantity;
 
         },0);
 
@@ -1973,9 +2731,21 @@ function openCheckout(){
         productTotal + delivery;
 
 
+    const freeNote =
+        delivery === 0
+            ? `<div class="checkout-free-note">
+                   🎉 You have unlocked FREE DELIVERY!
+               </div>`
+            : `<div class="checkout-free-note">
+                   Spend Rs. 2,500 or more for FREE DELIVERY.
+               </div>`;
+
+
     document.getElementById("checkoutSummary").innerHTML = `
 
-        <strong>Order Summary</strong>
+        <strong>
+            Order Summary
+        </strong>
 
         <div style="margin-top:8px;">
             Products:
@@ -1984,15 +2754,20 @@ function openCheckout(){
 
         <div>
             Delivery:
-            ${delivery === 0
-                ? "FREE"
-                : "Rs. " + delivery.toLocaleString()}
+            ${
+                delivery === 0
+                    ? "FREE"
+                    : "Rs. " +
+                      delivery.toLocaleString()
+            }
         </div>
 
         <div style="margin-top:6px;font-weight:700;">
             Total:
             Rs. ${total.toLocaleString()}
         </div>
+
+        ${freeNote}
 
     `;
 
@@ -2024,6 +2799,7 @@ async function placeOrder(){
     if(isPlacingOrder){
         return;
     }
+
 
     const name =
         document.getElementById("customerName")
@@ -2059,7 +2835,9 @@ async function placeOrder(){
         !address
     ){
 
-        showToast("Please fill all customer details.");
+        showToast(
+            "Please fill all customer details."
+        );
 
         return;
 
@@ -2068,7 +2846,9 @@ async function placeOrder(){
 
     if(cart.length === 0){
 
-        showToast("Your bag is empty.");
+        showToast(
+            "Your bag is empty."
+        );
 
         return;
 
@@ -2077,21 +2857,29 @@ async function placeOrder(){
 
     /* LOCK BUTTON IMMEDIATELY */
 
-    isPlacingOrder = true;
+    isPlacingOrder =
+        true;
+
 
     const placeButton =
-        document.getElementById("placeOrderButton");
+        document.getElementById(
+            "placeOrderButton"
+        );
+
 
     if(placeButton){
 
-        placeButton.disabled = true;
+        placeButton.disabled =
+            true;
 
         placeButton.textContent =
             "Placing Order...";
 
-        placeButton.style.opacity = "0.65";
+        placeButton.style.opacity =
+            "0.65";
 
-        placeButton.style.cursor = "not-allowed";
+        placeButton.style.cursor =
+            "not-allowed";
 
     }
 
@@ -2103,7 +2891,8 @@ async function placeOrder(){
     const productTotal =
         cart.reduce(function(total,item){
 
-            return total + item.price * item.quantity;
+            return total +
+                item.price * item.quantity;
 
         },0);
 
@@ -2150,43 +2939,62 @@ async function placeOrder(){
 
     const data = {
 
-        orderId: orderId,
+        orderId:
+            orderId,
 
-        date: new Date().toISOString(),
+        date:
+            new Date().toISOString(),
 
-        customerName: name,
+        customerName:
+            name,
 
-        email: email,
+        email:
+            email,
 
-        phone: phone,
+        phone:
+            phone,
 
-        city: city,
+        city:
+            city,
 
-        area: area,
+        area:
+            area,
 
-        address: address,
+        address:
+            address,
 
-        product: productNames,
+        product:
+            productNames,
 
-        category: categories,
+        category:
+            categories,
 
-        colour: colours,
+        colour:
+            colours,
 
-        size: sizes,
+        size:
+            sizes,
 
-        quantity: quantities,
+        quantity:
+            quantities,
 
-        productTotal: productTotal,
+        productTotal:
+            productTotal,
 
-        delivery: delivery,
+        delivery:
+            delivery,
 
-        grandTotal: grandTotal,
+        grandTotal:
+            grandTotal,
 
-        paymentMethod: "Cash on Delivery",
+        paymentMethod:
+            "Cash on Delivery",
 
-        status: "Pending",
+        status:
+            "Pending",
 
-        reviewEmailSent: "NO"
+        reviewEmailSent:
+            "NO"
 
     };
 
@@ -2196,22 +3004,26 @@ async function placeOrder(){
         await fetch(
             GOOGLE_SCRIPT_URL,
             {
-                method:"POST",
+                method:
+                    "POST",
 
-                mode:"no-cors",
+                mode:
+                    "no-cors",
 
                 headers:{
                     "Content-Type":
-                    "application/x-www-form-urlencoded"
+                        "application/x-www-form-urlencoded"
                 },
 
-                body:new URLSearchParams(data).toString()
+                body:
+                    new URLSearchParams(data).toString()
 
             }
         );
 
 
         cart = [];
+
 
         updateCart();
 
@@ -2220,7 +3032,9 @@ async function placeOrder(){
         closeCart();
 
 
-        document.getElementById("successMessage").innerHTML =
+        document.getElementById(
+            "successMessage"
+        ).innerHTML =
             "Thank you, " +
             escapeHtml(name) +
             "! Your order <strong>" +
@@ -2229,7 +3043,9 @@ async function placeOrder(){
             "Payment method: Cash on Delivery.";
 
 
-        document.getElementById("successModal").style.display =
+        document.getElementById(
+            "successModal"
+        ).style.display =
             "flex";
 
 
@@ -2240,20 +3056,24 @@ async function placeOrder(){
 
         console.error(error);
 
-        /* UNLOCK IF ORDER FAILED */
 
-        isPlacingOrder = false;
+        isPlacingOrder =
+            false;
+
 
         if(placeButton){
 
-            placeButton.disabled = false;
+            placeButton.disabled =
+                false;
 
             placeButton.textContent =
                 "Place Order";
 
-            placeButton.style.opacity = "1";
+            placeButton.style.opacity =
+                "1";
 
-            placeButton.style.cursor = "pointer";
+            placeButton.style.cursor =
+                "pointer";
 
         }
 
@@ -2264,7 +3084,7 @@ async function placeOrder(){
 
     }
 
-}   
+}
 
 
 /* =========================================================
@@ -2273,21 +3093,31 @@ async function placeOrder(){
 
 function createOrderId(){
 
-    const now = new Date();
+    const now =
+        new Date();
+
 
     const datePart =
         now.getFullYear().toString() +
-        String(now.getMonth()+1).padStart(2,"0") +
-        String(now.getDate()).padStart(2,"0");
+        String(
+            now.getMonth()+1
+        ).padStart(2,"0") +
+        String(
+            now.getDate()
+        ).padStart(2,"0");
 
 
     const randomPart =
         Math.floor(
-            1000 + Math.random() * 9000
+            1000 +
+            Math.random() * 9000
         );
 
 
-    return "MA-" + datePart + "-" + randomPart;
+    return "MA-" +
+        datePart +
+        "-" +
+        randomPart;
 
 }
 
@@ -2298,17 +3128,29 @@ function createOrderId(){
 
 function clearCheckoutForm(){
 
-    document.getElementById("customerName").value = "";
+    document.getElementById(
+        "customerName"
+    ).value = "";
 
-    document.getElementById("customerEmail").value = "";
+    document.getElementById(
+        "customerEmail"
+    ).value = "";
 
-    document.getElementById("customerPhone").value = "";
+    document.getElementById(
+        "customerPhone"
+    ).value = "";
 
-    document.getElementById("customerCity").value = "";
+    document.getElementById(
+        "customerCity"
+    ).value = "";
 
-    document.getElementById("customerArea").value = "";
+    document.getElementById(
+        "customerArea"
+    ).value = "";
 
-    document.getElementById("customerAddress").value = "";
+    document.getElementById(
+        "customerAddress"
+    ).value = "";
 
 }
 
@@ -2319,26 +3161,38 @@ function clearCheckoutForm(){
 
 function continueShopping(){
 
-    document.getElementById("successModal").style.display =
+    document.getElementById(
+        "successModal"
+    ).style.display =
         "none";
 
-    isPlacingOrder = false;
+
+    isPlacingOrder =
+        false;
+
 
     const placeButton =
-        document.getElementById("placeOrderButton");
+        document.getElementById(
+            "placeOrderButton"
+        );
+
 
     if(placeButton){
 
-        placeButton.disabled = false;
+        placeButton.disabled =
+            false;
 
         placeButton.textContent =
             "Place Order";
 
-        placeButton.style.opacity = "1";
+        placeButton.style.opacity =
+            "1";
 
-        placeButton.style.cursor = "pointer";
+        placeButton.style.cursor =
+            "pointer";
 
     }
+
 
     showShop();
 
@@ -2351,10 +3205,15 @@ function continueShopping(){
 
 function showShop(){
 
-    document.getElementById("adminSection").style.display =
+    document.getElementById(
+        "adminSection"
+    ).style.display =
         "none";
 
-    document.getElementById("shop").scrollIntoView({
+
+    document.getElementById(
+        "shop"
+    ).scrollIntoView({
         behavior:"smooth"
     });
 
@@ -2362,39 +3221,64 @@ function showShop(){
 
 
 /* =========================================================
-   REVIEW
+   REVIEWS
    ========================================================= */
+
+/*
+   IMPORTANT:
+
+   Customer rating:
+   1 to 5 stars
+
+   Review:
+   Written by customer
+
+   Later Apps Script will:
+   1. Save review to Google Sheet
+   2. Keep it Pending
+   3. Let you Approve it
+   4. Return only approved reviews here
+*/
 
 function selectReviewStar(number){
 
-    selectedReviewRating = number;
+    selectedReviewRating =
+        number;
 
 
-    document.querySelectorAll(".star-btn")
-        .forEach(function(btn,index){
+    document.querySelectorAll(
+        ".star-btn"
+    ).forEach(function(btn,index){
 
-            btn.classList.toggle(
-                "active",
-                index < number
-            );
+        btn.classList.toggle(
+            "active",
+            index < number
+        );
 
-        });
+    });
 
 }
 
 
-function submitReview(){
+async function submitReview(){
 
     const name =
-        document.getElementById("reviewName")
-        .value.trim();
+        document.getElementById(
+            "reviewName"
+        ).value.trim();
+
 
     const review =
-        document.getElementById("reviewText")
-        .value.trim();
+        document.getElementById(
+            "reviewText"
+        ).value.trim();
 
 
-    if(!name || !review || !selectedReviewRating){
+    if(
+        !name ||
+        !review ||
+        !selectedReviewRating
+    ){
 
         showToast(
             "Please add your name, rating and review."
@@ -2406,26 +3290,352 @@ function submitReview(){
 
 
     /*
-       Reviews are currently displayed locally.
-       Later we can connect them to Google Sheet / Apps Script.
+       Apps Script review connection
+       will be enabled in the next step.
     */
 
-    showToast("Thank you for your review 💗");
+    const reviewData = {
+
+        action:
+            "submitReview",
+
+        name:
+            name,
+
+        rating:
+            selectedReviewRating,
+
+        review:
+            review,
+
+        date:
+            new Date().toISOString(),
+
+        status:
+            "Pending"
+
+    };
 
 
-    document.getElementById("reviewName").value = "";
+    try{
 
-    document.getElementById("reviewText").value = "";
+        await fetch(
+            GOOGLE_SCRIPT_URL,
+            {
+                method:
+                    "POST",
 
-    selectedReviewRating = 0;
+                mode:
+                    "no-cors",
+
+                headers:{
+                    "Content-Type":
+                        "application/x-www-form-urlencoded"
+                },
+
+                body:
+                    new URLSearchParams(
+                        reviewData
+                    ).toString()
+
+            }
+        );
 
 
-    document.querySelectorAll(".star-btn")
-        .forEach(function(btn){
+        showToast(
+            "Thank you! Your review has been submitted for approval 💗"
+        );
 
-            btn.classList.remove("active");
+
+        document.getElementById(
+            "reviewName"
+        ).value = "";
+
+
+        document.getElementById(
+            "reviewText"
+        ).value = "";
+
+
+        selectedReviewRating =
+            0;
+
+
+        document.querySelectorAll(
+            ".star-btn"
+        ).forEach(function(btn){
+
+            btn.classList.remove(
+                "active"
+            );
 
         });
+
+
+    }catch(error){
+
+        console.error(error);
+
+        showToast(
+            "Unable to submit review right now."
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   LOAD APPROVED REVIEWS
+   ========================================================= */
+
+async function loadApprovedReviews(){
+
+    /*
+       Apps Script will later return only APPROVED reviews.
+
+       If the backend is not connected yet,
+       the website simply shows "No approved reviews yet."
+    */
+
+    try{
+
+        const response =
+            await fetch(
+                GOOGLE_SCRIPT_URL +
+                "?action=getApprovedReviews"
+            );
+
+
+        if(!response.ok){
+            return;
+        }
+
+
+        const reviews =
+            await response.json();
+
+
+        if(!Array.isArray(reviews)){
+            return;
+        }
+
+
+        displayApprovedReviews(
+            reviews
+        );
+
+
+    }catch(error){
+
+        /*
+           Safe fallback.
+           Existing website continues working.
+        */
+
+        console.log(
+            "Approved reviews are waiting for Apps Script connection."
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   DISPLAY APPROVED REVIEWS
+   ========================================================= */
+
+function displayApprovedReviews(reviews){
+
+    const container =
+        document.getElementById(
+            "approvedReviews"
+        );
+
+
+    const empty =
+        document.getElementById(
+            "noReviews"
+        );
+
+
+    if(
+        !reviews ||
+        reviews.length === 0
+    ){
+
+        container.innerHTML =
+            "";
+
+        empty.style.display =
+            "block";
+
+        return;
+
+    }
+
+
+    empty.style.display =
+        "none";
+
+
+    container.innerHTML =
+        reviews.map(function(item){
+
+            const rating =
+                Math.max(
+                    1,
+                    Math.min(
+                        5,
+                        Number(item.rating) || 5
+                    )
+                );
+
+
+            const stars =
+                "★".repeat(rating) +
+                "☆".repeat(5-rating);
+
+
+            return `
+
+                <div class="review-card">
+
+                    <div class="review-card-name">
+                        ${escapeHtml(item.name || "Customer")}
+                    </div>
+
+                    <div class="review-stars-display">
+                        ${stars}
+                    </div>
+
+                    <div class="review-card-text">
+                        ${escapeHtml(item.review || "")}
+                    </div>
+
+                </div>
+
+            `;
+
+        }).join("");
+
+}
+
+
+/* =========================================================
+   CONTACT US
+   ========================================================= */
+
+async function submitContactMessage(){
+
+    const name =
+        document.getElementById(
+            "contactName"
+        ).value.trim();
+
+
+    const email =
+        document.getElementById(
+            "contactEmail"
+        ).value.trim();
+
+
+    const message =
+        document.getElementById(
+            "contactMessage"
+        ).value.trim();
+
+
+    if(
+        !name ||
+        !email ||
+        !message
+    ){
+
+        showToast(
+            "Please fill your name, email and message."
+        );
+
+        return;
+
+    }
+
+
+    const contactData = {
+
+        action:
+            "contactMessage",
+
+        name:
+            name,
+
+        email:
+            email,
+
+        message:
+            message,
+
+        date:
+            new Date().toISOString()
+
+    };
+
+
+    try{
+
+        await fetch(
+            GOOGLE_SCRIPT_URL,
+            {
+                method:
+                    "POST",
+
+                mode:
+                    "no-cors",
+
+                headers:{
+                    "Content-Type":
+                        "application/x-www-form-urlencoded"
+                },
+
+                body:
+                    new URLSearchParams(
+                        contactData
+                    ).toString()
+
+            }
+        );
+
+
+        showToast(
+            "Your message has been sent. Thank you for contacting Mahi Arts 💗"
+        );
+
+
+        document.getElementById(
+            "contactName"
+        ).value = "";
+
+
+        document.getElementById(
+            "contactEmail"
+        ).value = "";
+
+
+        document.getElementById(
+            "contactMessage"
+        ).value = "";
+
+
+    }catch(error){
+
+        console.error(error);
+
+        showToast(
+            "Unable to send your message right now."
+        );
+
+    }
 
 }
 
@@ -2436,13 +3646,17 @@ function submitReview(){
 
 function openAdmin(){
 
-    document.getElementById("adminSection").style.display =
+    document.getElementById(
+        "adminSection"
+    ).style.display =
         "block";
 
-    document.getElementById("adminSection")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+
+    document.getElementById(
+        "adminSection"
+    ).scrollIntoView({
+        behavior:"smooth"
+    });
 
 }
 
@@ -2450,33 +3664,43 @@ function openAdmin(){
 function loginAdmin(){
 
     /*
-       TEMPORARY FRONT-END PIN.
-
-       This is NOT real security.
-       Real private dashboard authentication will be
-       connected through Apps Script later.
+       Temporary front-end PIN only.
+       Real private dashboard will be handled through Apps Script.
     */
 
     const pin =
-        document.getElementById("adminPin").value;
+        document.getElementById(
+            "adminPin"
+        ).value;
 
 
-    const TEMP_ADMIN_PIN = "MAHI2026";
+    const TEMP_ADMIN_PIN =
+        "MAHI2026";
 
 
     if(pin === TEMP_ADMIN_PIN){
 
-        document.getElementById("adminLogin").style.display =
+        document.getElementById(
+            "adminLogin"
+        ).style.display =
             "none";
 
-        document.getElementById("adminDashboard").style.display =
+
+        document.getElementById(
+            "adminDashboard"
+        ).style.display =
             "block";
 
-        showToast("Dashboard opened.");
+
+        showToast(
+            "Dashboard opened."
+        );
 
     }else{
 
-        showToast("Incorrect PIN.");
+        showToast(
+            "Incorrect PIN."
+        );
 
     }
 
@@ -2485,8 +3709,10 @@ function loginAdmin(){
 
 function updateDashboard(){
 
-    document.getElementById("dashboardProducts")
-        .textContent = PRODUCTS.length;
+    document.getElementById(
+        "dashboardProducts"
+    ).textContent =
+        PRODUCTS.length;
 
 
     const categories =
@@ -2497,38 +3723,36 @@ function updateDashboard(){
         );
 
 
-    document.getElementById("dashboardCategories")
-        .textContent = categories.size;
+    document.getElementById(
+        "dashboardCategories"
+    ).textContent =
+        categories.size;
 
 }
 
 
 /* =========================================================
    SECRET ADMIN ACCESS
-   =========================================================
-
-   Open:
-
-   yourwebsite.com/#admin
-
-   This only opens the dashboard screen.
-   It does NOT make the dashboard securely private.
-   Real authentication will be done later through Apps Script.
    ========================================================= */
 
 function checkAdminRoute(){
 
     if(
-        window.location.hash.toLowerCase() === "#admin"
+        window.location.hash.toLowerCase()
+        === "#admin"
     ){
 
-        document.getElementById("adminSection").style.display =
+        document.getElementById(
+            "adminSection"
+        ).style.display =
             "block";
 
-        document.getElementById("adminSection")
-            .scrollIntoView({
-                behavior:"smooth"
-            });
+
+        document.getElementById(
+            "adminSection"
+        ).scrollIntoView({
+            behavior:"smooth"
+        });
 
     }
 
@@ -2539,6 +3763,7 @@ window.addEventListener(
     "hashchange",
     checkAdminRoute
 );
+
 
 checkAdminRoute();
 
@@ -2553,23 +3778,33 @@ let toastTimer;
 function showToast(message){
 
     const toast =
-        document.getElementById("toast");
+        document.getElementById(
+            "toast"
+        );
 
 
-    toast.textContent = message;
+    toast.textContent =
+        message;
 
-    toast.classList.add("show");
+
+    toast.classList.add(
+        "show"
+    );
 
 
-    clearTimeout(toastTimer);
+    clearTimeout(
+        toastTimer
+    );
 
 
     toastTimer =
         setTimeout(function(){
 
-            toast.classList.remove("show");
+            toast.classList.remove(
+                "show"
+            );
 
-        },2500);
+        },3000);
 
 }
 
@@ -2600,4 +3835,3 @@ function escapeAttribute(value){
 
 </body>
 </html>
-        
