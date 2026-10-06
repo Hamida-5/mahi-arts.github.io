@@ -509,6 +509,10 @@ header{
     background:#82445c;
 }
 
+.submit-btn:disabled{
+    opacity:.7;
+}
+
 .contact-section{
     padding-top:75px;
 }
@@ -809,6 +813,10 @@ header{
     font-weight:700;
 }
 
+.place-order-btn:disabled{
+    opacity:.65;
+}
+
 .cancel-btn{
     width:100%;
     border:1px solid #dfcbd4;
@@ -1022,20 +1030,13 @@ footer{
 <header>
     <div class="navbar">
 
-        <a
-            href="#"
-            class="logo"
-            onclick="showShop();return false;"
-        >
+        <a href="#" class="logo" onclick="showShop();return false;">
             MAHI ARTS
         </a>
 
         <div class="nav-links">
 
-            <a
-                href="#shop"
-                onclick="showShop();return false;"
-            >
+            <a href="#shop" onclick="showShop();return false;">
                 Shop
             </a>
 
@@ -1047,10 +1048,7 @@ footer{
                 Contact
             </a>
 
-            <button
-                class="bag-btn"
-                onclick="openCart()"
-            >
+            <button class="bag-btn" onclick="openCart()">
                 🛍 Bag <span id="cartCount">0</span>
             </button>
 
@@ -1105,42 +1103,27 @@ footer{
 
 <div class="categories">
 
-    <button
-        class="category-btn active"
-        onclick="showCategory('All',this)"
-    >
+    <button class="category-btn active" onclick="showCategory('All',this)">
         <span class="category-icon">✨</span>
         All
     </button>
 
-    <button
-        class="category-btn"
-        onclick="showCategory('Resin',this)"
-    >
+    <button class="category-btn" onclick="showCategory('Resin',this)">
         <span class="category-icon">🫧</span>
         Resin
     </button>
 
-    <button
-        class="category-btn"
-        onclick="showCategory('Jewellery',this)"
-    >
+    <button class="category-btn" onclick="showCategory('Jewellery',this)">
         <span class="category-icon">💎</span>
         Jewellery
     </button>
 
-    <button
-        class="category-btn"
-        onclick="showCategory('Bracelets',this)"
-    >
+    <button class="category-btn" onclick="showCategory('Bracelets',this)">
         <span class="category-icon">📿</span>
         Bracelets
     </button>
 
-    <button
-        class="category-btn"
-        onclick="showCategory('Keychain',this)"
-    >
+    <button class="category-btn" onclick="showCategory('Keychain',this)">
         <span class="category-icon">🎀</span>
         Keychain
     </button>
@@ -1165,15 +1148,9 @@ footer{
         Our Collection
     </h2>
 
-    <div
-        id="productsGrid"
-        class="products-grid"
-    ></div>
+    <div id="productsGrid" class="products-grid"></div>
 
-    <div
-        id="emptyState"
-        class="empty-state"
-    >
+    <div id="emptyState" class="empty-state">
 
         <h3>
             No product found
@@ -1187,10 +1164,7 @@ footer{
 
 </section>
 
-<section
-    class="section reviews"
-    id="reviews"
->
+<section class="section reviews" id="reviews">
 
     <div class="reviews-inner">
 
@@ -1203,15 +1177,9 @@ footer{
             Your review and star rating may be featured here after approval.
         </p>
 
-        <div
-            id="approvedReviews"
-            class="review-list"
-        ></div>
+        <div id="approvedReviews" class="review-list"></div>
 
-        <div
-            id="noReviews"
-            class="no-reviews"
-        >
+        <div id="noReviews" class="no-reviews">
             No approved reviews yet. Be the first to share your experience 💗
         </div>
 
@@ -1234,40 +1202,11 @@ footer{
 
             <div class="review-stars">
 
-                <button
-                    type="button"
-                    class="star-btn"
-                    onclick="selectReviewStar(1)"
-                    aria-label="1 star"
-                >★</button>
-
-                <button
-                    type="button"
-                    class="star-btn"
-                    onclick="selectReviewStar(2)"
-                    aria-label="2 stars"
-                >★</button>
-
-                <button
-                    type="button"
-                    class="star-btn"
-                    onclick="selectReviewStar(3)"
-                    aria-label="3 stars"
-                >★</button>
-
-                <button
-                    type="button"
-                    class="star-btn"
-                    onclick="selectReviewStar(4)"
-                    aria-label="4 stars"
-                >★</button>
-
-                <button
-                    type="button"
-                    class="star-btn"
-                    onclick="selectReviewStar(5)"
-                    aria-label="5 stars"
-                >★</button>
+                <button type="button" class="star-btn" onclick="selectReviewStar(1)">★</button>
+                <button type="button" class="star-btn" onclick="selectReviewStar(2)">★</button>
+                <button type="button" class="star-btn" onclick="selectReviewStar(3)">★</button>
+                <button type="button" class="star-btn" onclick="selectReviewStar(4)">★</button>
+                <button type="button" class="star-btn" onclick="selectReviewStar(5)">★</button>
 
             </div>
 
@@ -1294,10 +1233,7 @@ footer{
 
 </section>
 
-<section
-    class="section contact-section"
-    id="contact"
->
+<section class="section contact-section" id="contact">
 
     <h2 class="section-title">
         Contact Us
@@ -1418,21 +1354,13 @@ footer{
 
 </section>
 
-<!-- SECURE ADMIN DASHBOARD ENTRY -->
-
-<section
-    id="adminSection"
-    class="admin-section"
->
+<section id="adminSection" class="admin-section">
 
     <h2 class="section-title">
         Mahi Arts Dashboard
     </h2>
 
-    <div
-        id="adminLogin"
-        class="admin-login"
-    >
+    <div id="adminLogin" class="admin-login">
 
         <p style="margin-bottom:15px;color:#765c66;">
             Secure Mahi Arts Admin Dashboard
@@ -1467,17 +1395,9 @@ footer{
 
     <div class="footer-links">
 
-        <a href="#shop">
-            Shop
-        </a>
-
-        <a href="#reviews">
-            Reviews
-        </a>
-
-        <a href="#contact">
-            Contact Us
-        </a>
+        <a href="#shop">Shop</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact Us</a>
 
         <a
             href="https://www.instagram.com/mahiarts.shop/"
@@ -1501,10 +1421,7 @@ footer{
 
 </footer>
 
-<div
-    id="cartOverlay"
-    class="overlay"
->
+<div id="cartOverlay" class="overlay">
 
     <div class="cart-panel">
 
@@ -1514,10 +1431,7 @@ footer{
                 Your Bag
             </h2>
 
-            <button
-                class="close-btn"
-                onclick="closeCart()"
-            >
+            <button class="close-btn" onclick="closeCart()">
                 ×
             </button>
 
@@ -1525,19 +1439,13 @@ footer{
 
         <div id="cartItems"></div>
 
-        <div
-            id="cartSummary"
-            class="cart-summary"
-        ></div>
+        <div id="cartSummary" class="cart-summary"></div>
 
     </div>
 
 </div>
 
-<div
-    id="checkoutModal"
-    class="modal"
->
+<div id="checkoutModal" class="modal">
 
     <div class="modal-box">
 
@@ -1547,27 +1455,17 @@ footer{
                 Checkout
             </h2>
 
-            <button
-                class="close-btn"
-                onclick="closeCheckout()"
-            >
+            <button class="close-btn" onclick="closeCheckout()">
                 ×
             </button>
 
         </div>
 
-        <div
-            id="checkoutSummary"
-            class="checkout-summary"
-        ></div>
+        <div id="checkoutSummary" class="checkout-summary"></div>
 
         <div class="two-col">
 
-            <input
-                id="customerName"
-                class="form-input"
-                placeholder="Full Name"
-            >
+            <input id="customerName" class="form-input" placeholder="Full Name">
 
             <input
                 id="customerEmail"
@@ -1631,10 +1529,7 @@ footer{
 
 </div>
 
-<div
-    id="successModal"
-    class="modal"
->
+<div id="successModal" class="modal">
 
     <div class="modal-box success-box">
 
@@ -1657,10 +1552,7 @@ footer{
 
 </div>
 
-<div
-    id="toast"
-    class="toast"
-></div>
+<div id="toast" class="toast"></div>
 
 <script>
 
@@ -1672,7 +1564,6 @@ const GOOGLE_SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbz0T9kxWciwn0BPLDFo-JxYdk76g9I5jcGKV-TdFrhWI9eE3SnEiferoKAJ9XO1oUKN/exec";
 
 const FREE_SHIPPING_LIMIT = 2500;
-
 const DELIVERY_CHARGE = 250;
 
 
@@ -1683,137 +1574,116 @@ const DELIVERY_CHARGE = 250;
 const PRODUCTS = [
 
     {
-        id: "product-001",
-        name: "Crystal Beaded Bracelet",
-        category: "Bracelets",
-        price: 320,
+        id:"product-001",
+        name:"Crystal Beaded Bracelet",
+        category:"Bracelets",
+        price:320,
 
         description:
         "Delicate crystal beaded bracelet designed to add a soft and elegant touch to your everyday look.",
 
-        colours: [
-
+        colours:[
             {
-                name: "Hot Pink",
-                image: "./hot%20pink.jpg"
+                name:"Hot Pink",
+                image:"./hot%20pink.jpg"
             },
-
             {
-                name: "Dark Green",
-                image: "./dark%20green.jpg"
+                name:"Dark Green",
+                image:"./dark%20green.jpg"
             },
-
             {
-                name: "Light Pink",
-                image: "./light%20pink.jpg"
+                name:"Light Pink",
+                image:"./light%20pink.jpg"
             },
-
             {
-                name: "Black",
-                image: "./black.jpg"
+                name:"Black",
+                image:"./black.jpg"
             },
-
             {
-                name: "Red",
-                image: "./red.jpg"
+                name:"Red",
+                image:"./red.jpg"
             }
-
         ],
 
-        sizes: [
+        sizes:[
             "Small",
             "Medium"
         ]
-
     },
 
     {
-        id: "product-002",
-        name: "Crystal Luxury Earrings for Women",
-        category: "Jewellery",
-        price: 199,
+        id:"product-002",
+        name:"Crystal Luxury Earrings for Women",
+        category:"Jewellery",
+        price:199,
 
         description:
         "Elegant crystal earrings designed to add a refined sparkle to every look.",
 
-        colours: [
-
+        colours:[
             {
-                name: "Green",
-                image: "./green%20jewellery.jpg"
+                name:"Green",
+                image:"./green%20jewellery.jpg"
             },
-
             {
-                name: "Yellow",
-                image: "./yellow%20jewellery.jpg"
+                name:"Yellow",
+                image:"./yellow%20jewellery.jpg"
             },
-
             {
-                name: "Black",
-                image: "./black%20jewellery.jpg"
+                name:"Black",
+                image:"./black%20jewellery.jpg"
             },
-
             {
-                name: "White",
-                image: "./white%20jewellery.jpg"
+                name:"White",
+                image:"./white%20jewellery.jpg"
             },
-
             {
-                name: "Navy Blue",
-                image: "./navy%20blue%20jewellery.jpg"
+                name:"Navy Blue",
+                image:"./navy%20blue%20jewellery.jpg"
             }
-
         ],
 
-        sizes: [
+        sizes:[
             "Small",
             "Medium"
         ]
-
     },
 
     {
-        id: "product-003",
-        name: "Crystal Handmade Bag-Style Keychain",
-        category: "Keychain",
-        price: 369,
+        id:"product-003",
+        name:"Crystal Handmade Bag-Style Keychain",
+        category:"Keychain",
+        price:369,
 
         description:
         "A charming handmade crystal keychain with a Pinterest-inspired aesthetic, crafted to bring a delicate touch of luxury to your everyday essentials.",
 
-        colours: [
-
+        colours:[
             {
-                name: "White",
-                image: "./white%20keychain.jpg"
+                name:"White",
+                image:"./white%20keychain.jpg"
             },
-
             {
-                name: "Brown",
-                image: "./brown%20keychain.jpg"
+                name:"Brown",
+                image:"./brown%20keychain.jpg"
             },
-
             {
-                name: "Orange",
-                image: "./orange%20keychain.jpg"
+                name:"Orange",
+                image:"./orange%20keychain.jpg"
             },
-
             {
-                name: "Red",
-                image: "./red%20keychain.jpg"
+                name:"Red",
+                image:"./red%20keychain.jpg"
             },
-
             {
-                name: "Blue",
-                image: "./blue%20keychain.jpg"
+                name:"Blue",
+                image:"./blue%20keychain.jpg"
             }
-
         ],
 
-        sizes: [
+        sizes:[
             "One Size"
         ]
-
     }
 
 ];
@@ -1831,6 +1701,10 @@ let isSubmittingReview = false;
 
 let isSubmittingContact = false;
 
+let reviewSubmitted = false;
+
+let contactSubmitted = false;
+
 let selectedCategory = "All";
 
 let selectedReviewRating = 0;
@@ -1844,7 +1718,7 @@ const selectedSizes = {};
    INITIALIZE
    ========================================================= */
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded",function(){
 
     renderProducts();
 
@@ -1944,7 +1818,7 @@ function renderProducts(){
                     <button
                         type="button"
                         class="colour-btn ${active}"
-                        onclick="selectColour('${product.id}', '${escapeAttribute(colour.name)}')"
+                        onclick="selectColour('${product.id}','${escapeAttribute(colour.name)}')"
                     >
                         ${escapeHtml(colour.name)}
                     </button>
@@ -1966,7 +1840,7 @@ function renderProducts(){
 
                 <select
                     class="size-select"
-                    onchange="selectSize('${product.id}', this.value)"
+                    onchange="selectSize('${product.id}',this.value)"
                 >
 
                     ${product.sizes.map(function(size){
@@ -2071,7 +1945,7 @@ function renderProducts(){
    COLOUR
    ========================================================= */
 
-function selectColour(productId, colourName){
+function selectColour(productId,colourName){
 
     const product =
         PRODUCTS.find(function(item){
@@ -2102,7 +1976,7 @@ function selectColour(productId, colourName){
    SIZE
    ========================================================= */
 
-function selectSize(productId, size){
+function selectSize(productId,size){
 
     selectedSizes[productId] =
         size;
@@ -2114,7 +1988,7 @@ function selectSize(productId, size){
    CATEGORY
    ========================================================= */
 
-function showCategory(category, button){
+function showCategory(category,button){
 
     selectedCategory =
         category;
@@ -2217,29 +2091,21 @@ function addToCart(productId){
 
         cart.push({
 
-            productId:
-                product.id,
+            productId:product.id,
 
-            name:
-                product.name,
+            name:product.name,
 
-            category:
-                product.category,
+            category:product.category,
 
-            price:
-                product.price,
+            price:product.price,
 
-            colour:
-                colour.name,
+            colour:colour.name,
 
-            image:
-                colour.image,
+            image:colour.image,
 
-            size:
-                size,
+            size:size,
 
-            quantity:
-                1
+            quantity:1
 
         });
 
@@ -2456,7 +2322,7 @@ function updateCart(){
    QUANTITY
    ========================================================= */
 
-function changeQuantity(index, amount){
+function changeQuantity(index,amount){
 
     if(!cart[index]) return;
 
@@ -2595,6 +2461,10 @@ function openCheckout(){
    ========================================================= */
 
 function closeCheckout(){
+
+    if(isPlacingOrder){
+        return;
+    }
 
     document.getElementById("checkoutModal").style.display =
         "none";
@@ -2744,62 +2614,43 @@ async function placeOrder(){
 
     const data = {
 
-        orderId:
-            orderId,
+        orderId:orderId,
 
-        date:
-            new Date().toISOString(),
+        date:new Date().toISOString(),
 
-        customerName:
-            name,
+        customerName:name,
 
-        email:
-            email,
+        email:email,
 
-        phone:
-            phone,
+        phone:phone,
 
-        city:
-            city,
+        city:city,
 
-        area:
-            area,
+        area:area,
 
-        address:
-            address,
+        address:address,
 
-        product:
-            productNames,
+        product:productNames,
 
-        category:
-            categories,
+        category:categories,
 
-        colour:
-            colours,
+        colour:colours,
 
-        size:
-            sizes,
+        size:sizes,
 
-        quantity:
-            quantities,
+        quantity:quantities,
 
-        productTotal:
-            productTotal,
+        productTotal:productTotal,
 
-        delivery:
-            delivery,
+        delivery:delivery,
 
-        grandTotal:
-            grandTotal,
+        grandTotal:grandTotal,
 
-        paymentMethod:
-            "Cash on Delivery",
+        paymentMethod:"Cash on Delivery",
 
-        status:
-            "Pending",
+        status:"Pending",
 
-        reviewEmailSent:
-            "NO"
+        reviewEmailSent:"NO"
 
     };
 
@@ -2820,18 +2671,25 @@ async function placeOrder(){
 
                 body:
                     new URLSearchParams(data).toString()
-
             }
         );
 
+
+        /*
+         * Apps Script receives the order.
+         * The button remains locked until the customer
+         * presses Continue Shopping.
+         */
 
         cart = [];
 
         updateCart();
 
-        closeCheckout();
+        document.getElementById("checkoutModal").style.display =
+            "none";
 
-        closeCart();
+        document.getElementById("cartOverlay").style.display =
+            "none";
 
 
         document.getElementById(
@@ -3012,7 +2870,10 @@ function showShop(){
 
 function selectReviewStar(number){
 
-    if(isSubmittingReview){
+    if(
+        isSubmittingReview ||
+        reviewSubmitted
+    ){
         return;
     }
 
@@ -3037,7 +2898,17 @@ function selectReviewStar(number){
 
 async function submitReview(){
 
-    if(isSubmittingReview){
+    /*
+     * HARD FRONTEND LOCK
+     *
+     * Once the review request has been accepted by the browser,
+     * the button stays locked for this page session.
+     */
+
+    if(
+        isSubmittingReview ||
+        reviewSubmitted
+    ){
         return;
     }
 
@@ -3069,8 +2940,6 @@ async function submitReview(){
     }
 
 
-    /* LOCK IMMEDIATELY */
-
     isSubmittingReview =
         true;
 
@@ -3092,28 +2961,25 @@ async function submitReview(){
         reviewButton.style.opacity =
             "0.65";
 
+        reviewButton.style.cursor =
+            "not-allowed";
+
     }
 
 
     const reviewData = {
 
-        action:
-            "submitReview",
+        action:"submitReview",
 
-        name:
-            name,
+        name:name,
 
-        rating:
-            selectedReviewRating,
+        rating:selectedReviewRating,
 
-        review:
-            review,
+        review:review,
 
-        date:
-            new Date().toISOString(),
+        date:new Date().toISOString(),
 
-        status:
-            "Pending"
+        status:"Pending"
 
     };
 
@@ -3123,11 +2989,9 @@ async function submitReview(){
         await fetch(
             GOOGLE_SCRIPT_URL,
             {
-                method:
-                    "POST",
+                method:"POST",
 
-                mode:
-                    "no-cors",
+                mode:"no-cors",
 
                 headers:{
                     "Content-Type":
@@ -3138,9 +3002,17 @@ async function submitReview(){
                     new URLSearchParams(
                         reviewData
                     ).toString()
-
             }
         );
+
+
+        /*
+         * IMPORTANT:
+         * Do NOT unlock after successful submission.
+         */
+
+        reviewSubmitted =
+            true;
 
 
         showToast(
@@ -3173,15 +3045,27 @@ async function submitReview(){
         });
 
 
+        if(reviewButton){
+
+            reviewButton.disabled =
+                true;
+
+            reviewButton.textContent =
+                "Review Submitted ✓";
+
+            reviewButton.style.opacity =
+                "0.65";
+
+            reviewButton.style.cursor =
+                "not-allowed";
+
+        }
+
+
     }catch(error){
 
         console.error(error);
 
-        showToast(
-            "Unable to submit review right now."
-        );
-
-    }finally{
 
         isSubmittingReview =
             false;
@@ -3198,7 +3082,15 @@ async function submitReview(){
             reviewButton.style.opacity =
                 "1";
 
+            reviewButton.style.cursor =
+                "pointer";
+
         }
+
+
+        showToast(
+            "Unable to submit review right now. Please try again."
+        );
 
     }
 
@@ -3227,16 +3119,6 @@ async function loadApprovedReviews(){
 
         const data =
             await response.json();
-
-
-        /*
-           NEW APPS SCRIPT RESPONSE:
-
-           {
-              success:true,
-              reviews:[...]
-           }
-        */
 
 
         if(
@@ -3354,7 +3236,17 @@ function displayApprovedReviews(reviews){
 
 async function submitContactMessage(){
 
-    if(isSubmittingContact){
+    /*
+     * HARD FRONTEND LOCK
+     *
+     * Once the message is accepted by the browser,
+     * the button stays locked for this page session.
+     */
+
+    if(
+        isSubmittingContact ||
+        contactSubmitted
+    ){
         return;
     }
 
@@ -3392,8 +3284,6 @@ async function submitContactMessage(){
     }
 
 
-    /* LOCK IMMEDIATELY */
-
     isSubmittingContact =
         true;
 
@@ -3415,25 +3305,23 @@ async function submitContactMessage(){
         contactButton.style.opacity =
             "0.65";
 
+        contactButton.style.cursor =
+            "not-allowed";
+
     }
 
 
     const contactData = {
 
-        action:
-            "contactMessage",
+        action:"contactMessage",
 
-        name:
-            name,
+        name:name,
 
-        email:
-            email,
+        email:email,
 
-        message:
-            message,
+        message:message,
 
-        date:
-            new Date().toISOString()
+        date:new Date().toISOString()
 
     };
 
@@ -3443,11 +3331,9 @@ async function submitContactMessage(){
         await fetch(
             GOOGLE_SCRIPT_URL,
             {
-                method:
-                    "POST",
+                method:"POST",
 
-                mode:
-                    "no-cors",
+                mode:"no-cors",
 
                 headers:{
                     "Content-Type":
@@ -3458,9 +3344,17 @@ async function submitContactMessage(){
                     new URLSearchParams(
                         contactData
                     ).toString()
-
             }
         );
+
+
+        /*
+         * IMPORTANT:
+         * Do NOT unlock after successful submission.
+         */
+
+        contactSubmitted =
+            true;
 
 
         showToast(
@@ -3483,15 +3377,27 @@ async function submitContactMessage(){
         ).value = "";
 
 
+        if(contactButton){
+
+            contactButton.disabled =
+                true;
+
+            contactButton.textContent =
+                "Message Sent ✓";
+
+            contactButton.style.opacity =
+                "0.65";
+
+            contactButton.style.cursor =
+                "not-allowed";
+
+        }
+
+
     }catch(error){
 
         console.error(error);
 
-        showToast(
-            "Unable to send your message right now."
-        );
-
-    }finally{
 
         isSubmittingContact =
             false;
@@ -3508,7 +3414,15 @@ async function submitContactMessage(){
             contactButton.style.opacity =
                 "1";
 
+            contactButton.style.cursor =
+                "pointer";
+
         }
+
+
+        showToast(
+            "Unable to send your message right now. Please try again."
+        );
 
     }
 
@@ -3535,18 +3449,6 @@ function openAdmin(){
 
 }
 
-
-/*
-   IMPORTANT:
-
-   The public GitHub website must NOT contain the real
-   admin PIN.
-
-   The actual login is handled by the Google Apps Script
-   dashboard.
-
-   This button simply opens the secure Apps Script dashboard.
-*/
 
 function openSecureDashboard(){
 
@@ -3579,7 +3481,10 @@ function updateDashboard(){
         );
 
 
-    if(!dashboardProducts || !dashboardCategories){
+    if(
+        !dashboardProducts ||
+        !dashboardCategories
+    ){
         return;
     }
 
