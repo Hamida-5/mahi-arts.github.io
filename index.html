@@ -3,1553 +3,352 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Mahi Arts | Luxury Handmade Jewellery, Bracelets & More</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'DM Sans',sans-serif;
-    background:#fff8fb;
-    color:#33242b;
-}
-
-button,input,select,textarea{
-    font-family:inherit;
-}
-
-button{
-    cursor:pointer;
-}
-
-button:disabled{
-    cursor:not-allowed;
-}
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(255,248,251,.94);
-    backdrop-filter:blur(16px);
-    border-bottom:1px solid #f0dce5;
-}
-
-.navbar{
-    max-width:1200px;
-    margin:auto;
-    padding:16px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-}
-
-.logo{
-    font-family:'Playfair Display',serif;
-    font-size:28px;
-    letter-spacing:2.5px;
-    color:#9d536f;
-    text-decoration:none;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:20px;
-}
-
-.nav-links a{
-    color:#513842;
-    text-decoration:none;
-    font-size:14px;
-    font-weight:600;
-}
-
-.nav-links a:hover{
-    color:#9d536f;
-}
-
-.bag-btn{
-    border:0;
-    background:#9d536f;
-    color:white;
-    padding:11px 16px;
-    border-radius:25px;
-    font-weight:700;
-}
-
-.bag-btn:hover{
-    background:#82445c;
-}
-
-.shipping-banner{
-    background:linear-gradient(90deg,#f9dce8,#fff0f5,#f9dce8);
-    border-bottom:1px solid #efd0dc;
-    text-align:center;
-    padding:9px 15px;
-    color:#82445c;
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:.3px;
-}
-
-.hero{
-    max-width:1200px;
-    margin:auto;
-    padding:75px 20px 40px;
-    text-align:center;
-}
-
-.hero-small{
-    color:#b36b88;
-    text-transform:uppercase;
-    letter-spacing:3px;
-    font-size:12px;
-    font-weight:700;
-    margin-bottom:14px;
-}
-
-.hero h1{
-    font-family:'Playfair Display',serif;
-    font-size:56px;
-    color:#7e4058;
-    margin-bottom:15px;
-    line-height:1.1;
-}
-
-.hero p{
-    color:#765c66;
-    max-width:650px;
-    margin:auto;
-    line-height:1.8;
-    font-size:15px;
-}
-
-.search-wrap{
-    max-width:650px;
-    margin:25px auto 35px;
-    padding:0 20px;
-    position:relative;
-}
-
-.search-box{
-    width:100%;
-    border:1px solid #e7ccd8;
-    background:white;
-    border-radius:30px;
-    padding:16px 50px 16px 20px;
-    outline:none;
-    font-size:15px;
-    box-shadow:0 8px 30px rgba(130,75,98,.07);
-}
-
-.search-box:focus{
-    border-color:#bd7894;
-}
-
-.search-icon{
-    position:absolute;
-    right:38px;
-    top:14px;
-    font-size:20px;
-    color:#9d536f;
-}
-
-.clear-search{
-    display:none;
-    margin:10px auto 0;
-    border:0;
-    background:none;
-    color:#9d536f;
-    font-weight:700;
-}
-
-.categories{
-    max-width:1050px;
-    margin:0 auto 50px;
-    padding:0 20px;
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:12px;
-}
-
-.category-btn{
-    background:white;
-    border:1px solid #efd9e2;
-    border-radius:18px;
-    padding:17px 10px;
-    color:#6d4353;
-    font-weight:600;
-    transition:.25s;
-    box-shadow:0 7px 22px rgba(126,64,88,.04);
-}
-
-.category-btn:hover,
-.category-btn.active{
-    background:#f8e5ed;
-    border-color:#dba8bb;
-    transform:translateY(-2px);
-}
-
-.category-icon{
-    display:block;
-    font-size:24px;
-    margin-bottom:6px;
-}
-
-.section{
-    max-width:1200px;
-    margin:auto;
-    padding:0 20px 75px;
-}
-
-.section-title{
-    text-align:center;
-    font-family:'Playfair Display',serif;
-    color:#7e4058;
-    font-size:36px;
-    margin-bottom:30px;
-}
-
-.section-subtitle{
-    text-align:center;
-    max-width:650px;
-    margin:-15px auto 30px;
-    color:#806873;
-    line-height:1.7;
-    font-size:14px;
-}
-
-.products-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:28px;
-}
-
-.product-card{
-    background:white;
-    border:1px solid #f0dce5;
-    border-radius:24px;
-    overflow:hidden;
-    box-shadow:0 12px 35px rgba(126,64,88,.07);
-    transition:.25s;
-}
-
-.product-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 18px 40px rgba(126,64,88,.11);
-}
-
-.product-image-wrap{
-    position:relative;
-    background:#fff4f8;
-    aspect-ratio:1/1;
-    overflow:hidden;
-}
-
-.product-image{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-}
-
-.product-info{
-    padding:21px;
-}
-
-.product-category{
-    color:#a86a83;
-    font-size:11px;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:1.5px;
-    margin-bottom:7px;
-}
-
-.product-name{
-    font-family:'Playfair Display',serif;
-    font-size:23px;
-    color:#593744;
-    margin-bottom:8px;
-}
-
-.product-description{
-    color:#806873;
-    font-size:13px;
-    line-height:1.6;
-    margin-bottom:13px;
-}
-
-.product-price{
-    font-size:18px;
-    font-weight:700;
-    color:#9d536f;
-    margin-bottom:15px;
-}
-
-.option-label{
-    display:block;
-    font-size:13px;
-    font-weight:700;
-    margin:12px 0 7px;
-    color:#65414d;
-}
-
-.colour-options{
-    display:flex;
-    flex-wrap:wrap;
-    gap:7px;
-}
-
-.colour-btn{
-    border:1px solid #dfc6d0;
-    background:white;
-    color:#5f414b;
-    border-radius:20px;
-    padding:7px 11px;
-    font-size:12px;
-}
-
-.colour-btn.active{
-    background:#9d536f;
-    color:white;
-    border-color:#9d536f;
-}
-
-.size-select{
-    width:100%;
-    padding:11px;
-    border-radius:10px;
-    border:1px solid #dfcbd4;
-    background:white;
-    outline:none;
-}
-
-.add-btn{
-    width:100%;
-    margin-top:17px;
-    border:0;
-    border-radius:12px;
-    padding:14px;
-    background:#9d536f;
-    color:white;
-    font-weight:700;
-    font-size:14px;
-}
-
-.add-btn:hover{
-    background:#82445c;
-}
-
-.empty-state{
-    display:none;
-    text-align:center;
-    padding:50px 20px;
-    color:#856772;
-}
-
-.free-delivery-box{
-    max-width:760px;
-    margin:0 auto 55px;
-    padding:18px 20px;
-    background:linear-gradient(135deg,#fff,#fff0f5);
-    border:1px solid #e9c8d6;
-    border-radius:18px;
-    text-align:center;
-    color:#82445c;
-    box-shadow:0 10px 30px rgba(126,64,88,.05);
-}
-
-.free-delivery-box strong{
-    display:block;
-    font-family:'Playfair Display',serif;
-    font-size:21px;
-    margin-bottom:5px;
-}
-
-.free-delivery-box span{
-    font-size:13px;
-}
-
-.reviews{
-    background:linear-gradient(180deg,#fff,#fff8fb);
-    border-top:1px solid #f0dce5;
-    border-bottom:1px solid #f0dce5;
-    max-width:none;
-    padding-top:70px;
-}
-
-.reviews-inner{
-    max-width:1200px;
-    margin:auto;
-}
-
-.review-list{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-    margin-bottom:35px;
-}
-
-.review-card{
-    background:white;
-    border:1px solid #efdce4;
-    border-radius:18px;
-    padding:20px;
-    box-shadow:0 8px 25px rgba(126,64,88,.05);
-}
-
-.review-card-name{
-    font-weight:700;
-    color:#593744;
-    margin-bottom:6px;
-}
-
-.review-stars-display{
-    color:#d69a35;
-    letter-spacing:2px;
-    margin-bottom:10px;
-}
-
-.review-card-text{
-    color:#705963;
-    font-size:14px;
-    line-height:1.7;
-}
-
-.no-reviews{
-    text-align:center;
-    color:#876d77;
-    padding:15px;
-    margin-bottom:25px;
-}
-
-.review-form{
-    max-width:620px;
-    margin:auto;
-    background:#fff8fb;
-    border:1px solid #efdce4;
-    border-radius:22px;
-    padding:24px;
-    box-shadow:0 10px 30px rgba(126,64,88,.05);
-}
-
-.form-heading{
-    text-align:center;
-    font-family:'Playfair Display',serif;
-    color:#7e4058;
-    font-size:25px;
-    margin-bottom:15px;
-}
-
-.form-input{
-    width:100%;
-    border:1px solid #dfcbd4;
-    background:white;
-    border-radius:10px;
-    padding:12px;
-    margin-bottom:12px;
-    outline:none;
-}
-
-.form-input:focus{
-    border-color:#bd7894;
-}
-
-.review-stars{
-    display:flex;
-    justify-content:center;
-    gap:5px;
-    margin:5px 0 15px;
-}
-
-.star-btn{
-    border:0;
-    background:none;
-    font-size:29px;
-    color:#c5a2af;
-    padding:2px;
-}
-
-.star-btn.active{
-    color:#d69a35;
-}
-
-.rating-text{
-    text-align:center;
-    color:#876d77;
-    font-size:12px;
-    margin-bottom:12px;
-}
-
-.submit-btn{
-    width:100%;
-    border:0;
-    border-radius:11px;
-    background:#9d536f;
-    color:white;
-    padding:14px;
-    font-weight:700;
-}
-
-.submit-btn:hover{
-    background:#82445c;
-}
-
-.submit-btn:disabled{
-    opacity:.7;
-}
-
-.contact-section{
-    padding-top:75px;
-}
-
-.contact-box{
-    max-width:900px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:.8fr 1.2fr;
-    gap:25px;
-}
-
-.contact-info,
-.contact-form{
-    background:white;
-    border:1px solid #efdce4;
-    border-radius:22px;
-    padding:25px;
-    box-shadow:0 10px 30px rgba(126,64,88,.05);
-}
-
-.contact-info h3,
-.contact-form h3{
-    font-family:'Playfair Display',serif;
-    color:#7e4058;
-    font-size:25px;
-    margin-bottom:12px;
-}
-
-.contact-info p{
-    color:#705963;
-    line-height:1.7;
-    font-size:14px;
-}
-
-.contact-email{
-    display:inline-block;
-    margin-top:15px;
-    color:#9d536f;
-    text-decoration:none;
-    font-weight:700;
-}
-
-.contact-note{
-    margin-top:15px;
-    padding:13px;
-    border-radius:12px;
-    background:#fff5f8;
-    color:#806873;
-    font-size:12px;
-    line-height:1.6;
-}
-
-.social-section{
-    padding:20px 20px 70px;
-}
-
-.social-banner{
-    max-width:1050px;
-    margin:auto;
-    border-radius:26px;
-    padding:35px 25px;
-    background:linear-gradient(135deg,#f8dce8,#fff0f5,#f7d7e5);
-    border:1px solid #e8c3d1;
-    text-align:center;
-    box-shadow:0 15px 40px rgba(126,64,88,.08);
-}
-
-.social-banner h2{
-    font-family:'Playfair Display',serif;
-    color:#7e4058;
-    font-size:31px;
-    margin-bottom:8px;
-}
-
-.social-banner p{
-    color:#765c66;
-    font-size:14px;
-    margin-bottom:20px;
-}
-
-.social-links{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.social-link{
-    text-decoration:none;
-    background:white;
-    border:1px solid #e2bfcc;
-    color:#704052;
-    padding:12px 20px;
-    border-radius:25px;
-    font-weight:700;
-    font-size:14px;
-    transition:.2s;
-}
-
-.social-link:hover{
-    transform:translateY(-2px);
-    background:#fff8fb;
-}
-
-.overlay{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(35,20,27,.45);
-    z-index:2000;
-}
-
-.cart-panel{
-    position:absolute;
-    right:0;
-    top:0;
-    height:100%;
-    width:min(450px,100%);
-    background:#fff;
-    padding:22px;
-    overflow-y:auto;
-}
-
-.panel-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin-bottom:20px;
-}
-
-.panel-header h2{
-    font-family:'Playfair Display',serif;
-    color:#7e4058;
-}
-
-.close-btn{
-    border:0;
-    background:#f8e8ee;
-    width:35px;
-    height:35px;
-    border-radius:50%;
-    color:#7e4058;
-    font-size:18px;
-}
-
-.cart-item{
-    display:grid;
-    grid-template-columns:70px 1fr;
-    gap:12px;
-    padding:14px 0;
-    border-bottom:1px solid #f0e0e6;
-}
-
-.cart-item img{
-    width:70px;
-    height:70px;
-    object-fit:cover;
-    border-radius:12px;
-}
-
-.cart-name{
-    font-weight:700;
-    color:#593744;
-}
-
-.cart-meta{
-    font-size:12px;
-    color:#806873;
-    margin:4px 0;
-}
-
-.qty-row{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    margin-top:8px;
-}
-
-.qty-btn{
-    border:1px solid #dec7d1;
-    background:white;
-    width:27px;
-    height:27px;
-    border-radius:7px;
-}
-
-.remove-btn{
-    border:0;
-    background:none;
-    color:#b14f67;
-    font-size:12px;
-    margin-left:8px;
-}
-
-.cart-summary{
-    margin-top:22px;
-    border-top:1px solid #ead9df;
-    padding-top:18px;
-}
-
-.summary-row{
-    display:flex;
-    justify-content:space-between;
-    margin:8px 0;
-    color:#65414d;
-}
-
-.summary-row.total{
-    font-size:18px;
-    font-weight:700;
-    color:#7e4058;
-    padding-top:10px;
-}
-
-.shipping-progress{
-    background:#fff4f8;
-    border:1px solid #efd9e2;
-    padding:12px;
-    border-radius:12px;
-    margin-bottom:15px;
-    color:#82445c;
-    font-size:12px;
-    line-height:1.5;
-}
-
-.checkout-btn{
-    width:100%;
-    border:0;
-    background:#9d536f;
-    color:white;
-    padding:14px;
-    border-radius:12px;
-    font-weight:700;
-    margin-top:14px;
-}
-
-.empty-cart{
-    text-align:center;
-    padding:50px 10px;
-    color:#846c76;
-}
-
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(35,20,27,.5);
-    z-index:3000;
-    align-items:center;
-    justify-content:center;
-    padding:18px;
-}
-
-.modal-box{
-    background:white;
-    width:min(600px,100%);
-    max-height:92vh;
-    overflow-y:auto;
-    border-radius:22px;
-    padding:25px;
-}
-
-.modal-box h2{
-    font-family:'Playfair Display',serif;
-    color:#7e4058;
-    margin-bottom:20px;
-}
-
-.two-col{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-}
-
-.checkout-summary{
-    background:#fff8fb;
-    border:1px solid #f0dce5;
-    padding:14px;
-    border-radius:12px;
-    margin:14px 0;
-}
-
-.checkout-free-note{
-    margin-top:10px;
-    color:#9d536f;
-    font-size:12px;
-    font-weight:700;
-}
-
-.place-order-btn{
-    width:100%;
-    border:0;
-    background:#9d536f;
-    color:white;
-    padding:14px;
-    border-radius:12px;
-    font-weight:700;
-}
-
-.place-order-btn:disabled{
-    opacity:.65;
-}
-
-.cancel-btn{
-    width:100%;
-    border:1px solid #dfcbd4;
-    background:white;
-    color:#684652;
-    padding:12px;
-    border-radius:12px;
-    margin-top:8px;
-}
-
-.success-box{
-    text-align:center;
-    padding:25px 10px;
-}
-
-.success-box h2{
-    margin-bottom:10px;
-}
-
-.success-box p{
-    color:#705963;
-    line-height:1.6;
-}
-
-/* ADMIN */
-
-.admin-section{
-    display:none;
-    max-width:1100px;
-    margin:auto;
-    padding:50px 20px 80px;
-}
-
-.admin-login{
-    max-width:450px;
-    margin:20px auto;
-    background:white;
-    border:1px solid #efdce4;
-    border-radius:20px;
-    padding:25px;
-    text-align:center;
-}
-
-.admin-dashboard{
-    display:none;
-}
-
-.dashboard-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-    margin:25px 0;
-}
-
-.dashboard-card{
-    background:white;
-    border:1px solid #efdce4;
-    border-radius:18px;
-    padding:20px;
-}
-
-.dashboard-card small{
-    color:#856772;
-}
-
-.dashboard-card strong{
-    display:block;
-    font-size:27px;
-    color:#9d536f;
-    margin-top:5px;
-}
-
-.admin-note{
-    background:#fff8fb;
-    border:1px solid #efdce4;
-    padding:18px;
-    border-radius:15px;
-    line-height:1.6;
-    color:#6e535d;
-}
-
-.toast{
-    position:fixed;
-    left:50%;
-    bottom:25px;
-    transform:translateX(-50%) translateY(100px);
-    background:#593744;
-    color:white;
-    padding:12px 18px;
-    border-radius:25px;
-    z-index:5000;
-    opacity:0;
-    transition:.3s;
-    font-size:14px;
-    text-align:center;
-    max-width:90%;
-}
-
-.toast.show{
-    opacity:1;
-    transform:translateX(-50%) translateY(0);
-}
-
-footer{
-    background:#fff0f5;
-    border-top:1px solid #efd5df;
-    text-align:center;
-    padding:35px 20px;
-    color:#876d77;
-    font-size:13px;
-}
-
-.footer-logo{
-    font-family:'Playfair Display',serif;
-    font-size:25px;
-    color:#9d536f;
-    letter-spacing:2px;
-    margin-bottom:8px;
-}
-
-.footer-links{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:16px;
-    margin:15px 0;
-}
-
-.footer-links a{
-    color:#704052;
-    text-decoration:none;
-    font-weight:600;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#fff8fb;color:#33242b}
+button,input,select,textarea{font-family:inherit}
+button{cursor:pointer}
+button:disabled{cursor:not-allowed}
+
+header{position:sticky;top:0;z-index:1000;background:rgba(255,248,251,.94);backdrop-filter:blur(16px);border-bottom:1px solid #f0dce5}
+.navbar{max-width:1200px;margin:auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-family:'Playfair Display',serif;font-size:28px;letter-spacing:2.5px;color:#9d536f;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:20px}
+.nav-links a{color:#513842;text-decoration:none;font-size:14px;font-weight:600}
+.nav-links a:hover{color:#9d536f}
+.bag-btn{border:0;background:#9d536f;color:white;padding:11px 16px;border-radius:25px;font-weight:700}
+.bag-btn:hover{background:#82445c}
+
+.shipping-banner{background:linear-gradient(90deg,#f9dce8,#fff0f5,#f9dce8);border-bottom:1px solid #efd0dc;text-align:center;padding:9px 15px;color:#82445c;font-size:13px;font-weight:700;letter-spacing:.3px}
+
+.hero{max-width:1200px;margin:auto;padding:75px 20px 40px;text-align:center}
+.hero-small{color:#b36b88;text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:700;margin-bottom:14px}
+.hero h1{font-family:'Playfair Display',serif;font-size:56px;color:#7e4058;margin-bottom:15px;line-height:1.1}
+.hero p{color:#765c66;max-width:650px;margin:auto;line-height:1.8;font-size:15px}
+
+.search-wrap{max-width:650px;margin:25px auto 35px;padding:0 20px;position:relative}
+.search-box{width:100%;border:1px solid #e7ccd8;background:white;border-radius:30px;padding:16px 50px 16px 20px;outline:none;font-size:15px;box-shadow:0 8px 30px rgba(130,75,98,.07)}
+.search-box:focus{border-color:#bd7894}
+.search-icon{position:absolute;right:38px;top:14px;font-size:20px;color:#9d536f}
+.clear-search{display:none;margin:10px auto 0;border:0;background:none;color:#9d536f;font-weight:700}
+
+.categories{max-width:1050px;margin:0 auto 50px;padding:0 20px;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.category-btn{background:white;border:1px solid #efd9e2;border-radius:18px;padding:17px 10px;color:#6d4353;font-weight:600;transition:.25s;box-shadow:0 7px 22px rgba(126,64,88,.04)}
+.category-btn:hover,.category-btn.active{background:#f8e5ed;border-color:#dba8bb;transform:translateY(-2px)}
+.category-icon{display:block;font-size:24px;margin-bottom:6px}
+
+.section{max-width:1200px;margin:auto;padding:0 20px 75px}
+.section-title{text-align:center;font-family:'Playfair Display',serif;color:#7e4058;font-size:36px;margin-bottom:30px}
+.section-subtitle{text-align:center;max-width:650px;margin:-15px auto 30px;color:#806873;line-height:1.7;font-size:14px}
+
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.product-card{background:white;border:1px solid #f0dce5;border-radius:24px;overflow:hidden;box-shadow:0 12px 35px rgba(126,64,88,.07);transition:.25s}
+.product-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(126,64,88,.11)}
+.product-image-wrap{position:relative;background:#fff4f8;aspect-ratio:1/1;overflow:hidden}
+.product-image{width:100%;height:100%;object-fit:cover;display:block}
+.product-info{padding:21px}
+.product-category{color:#a86a83;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:7px}
+.product-name{font-family:'Playfair Display',serif;font-size:23px;color:#593744;margin-bottom:8px}
+.product-description{color:#806873;font-size:13px;line-height:1.6;margin-bottom:13px}
+.product-price{font-size:18px;font-weight:700;color:#9d536f;margin-bottom:15px}
+.option-label{display:block;font-size:13px;font-weight:700;margin:12px 0 7px;color:#65414d}
+.colour-options{display:flex;flex-wrap:wrap;gap:7px}
+.colour-btn{border:1px solid #dfc6d0;background:white;color:#5f414b;border-radius:20px;padding:7px 11px;font-size:12px}
+.colour-btn.active{background:#9d536f;color:white;border-color:#9d536f}
+.size-select,.letter-select{width:100%;padding:11px;border-radius:10px;border:1px solid #dfcbd4;background:white;outline:none}
+.add-btn{width:100%;margin-top:17px;border:0;border-radius:12px;padding:14px;background:#9d536f;color:white;font-weight:700;font-size:14px}
+.add-btn:hover{background:#82445c}
+.empty-state{display:none;text-align:center;padding:50px 20px;color:#856772}
+
+.free-delivery-box{max-width:760px;margin:0 auto 55px;padding:18px 20px;background:linear-gradient(135deg,#fff,#fff0f5);border:1px solid #e9c8d6;border-radius:18px;text-align:center;color:#82445c;box-shadow:0 10px 30px rgba(126,64,88,.05)}
+.free-delivery-box strong{display:block;font-family:'Playfair Display',serif;font-size:21px;margin-bottom:5px}
+.free-delivery-box span{font-size:13px}
+
+.reviews{background:linear-gradient(180deg,#fff,#fff8fb);border-top:1px solid #f0dce5;border-bottom:1px solid #f0dce5;max-width:none;padding-top:70px}
+.reviews-inner{max-width:1200px;margin:auto}
+.review-list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:35px}
+.review-card{background:white;border:1px solid #efdce4;border-radius:18px;padding:20px;box-shadow:0 8px 25px rgba(126,64,88,.05)}
+.review-card-name{font-weight:700;color:#593744;margin-bottom:6px}
+.review-stars-display{color:#d69a35;letter-spacing:2px;margin-bottom:10px}
+.review-card-text{color:#705963;font-size:14px;line-height:1.7}
+.no-reviews{text-align:center;color:#876d77;padding:15px;margin-bottom:25px}
+.review-form{max-width:620px;margin:auto;background:#fff8fb;border:1px solid #efdce4;border-radius:22px;padding:24px;box-shadow:0 10px 30px rgba(126,64,88,.05)}
+.form-heading{text-align:center;font-family:'Playfair Display',serif;color:#7e4058;font-size:25px;margin-bottom:15px}
+.form-input{width:100%;border:1px solid #dfcbd4;background:white;border-radius:10px;padding:12px;margin-bottom:12px;outline:none}
+.form-input:focus{border-color:#bd7894}
+.review-stars{display:flex;justify-content:center;gap:5px;margin:5px 0 15px}
+.star-btn{border:0;background:none;font-size:29px;color:#c5a2af;padding:2px}
+.star-btn.active{color:#d69a35}
+.rating-text{text-align:center;color:#876d77;font-size:12px;margin-bottom:12px}
+.submit-btn{width:100%;border:0;border-radius:11px;background:#9d536f;color:white;padding:14px;font-weight:700}
+.submit-btn:hover{background:#82445c}
+.submit-btn:disabled{opacity:.7}
+
+.contact-section{padding-top:75px}
+.contact-box{max-width:900px;margin:auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:25px}
+.contact-info,.contact-form{background:white;border:1px solid #efdce4;border-radius:22px;padding:25px;box-shadow:0 10px 30px rgba(126,64,88,.05)}
+.contact-info h3,.contact-form h3{font-family:'Playfair Display',serif;color:#7e4058;font-size:25px;margin-bottom:12px}
+.contact-info p{color:#705963;line-height:1.7;font-size:14px}
+.contact-email{display:inline-block;margin-top:15px;color:#9d536f;text-decoration:none;font-weight:700}
+.contact-note{margin-top:15px;padding:13px;border-radius:12px;background:#fff5f8;color:#806873;font-size:12px;line-height:1.6}
+
+.social-section{padding:20px 20px 70px}
+.social-banner{max-width:1050px;margin:auto;border-radius:26px;padding:35px 25px;background:linear-gradient(135deg,#f8dce8,#fff0f5,#f7d7e5);border:1px solid #e8c3d1;text-align:center;box-shadow:0 15px 40px rgba(126,64,88,.08)}
+.social-banner h2{font-family:'Playfair Display',serif;color:#7e4058;font-size:31px;margin-bottom:8px}
+.social-banner p{color:#765c66;font-size:14px;margin-bottom:20px}
+.social-links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.social-link{text-decoration:none;background:white;border:1px solid #e2bfcc;color:#704052;padding:12px 20px;border-radius:25px;font-weight:700;font-size:14px;transition:.2s}
+.social-link:hover{transform:translateY(-2px);background:#fff8fb}
+
+.overlay{display:none;position:fixed;inset:0;background:rgba(35,20,27,.45);z-index:2000}
+.cart-panel{position:absolute;right:0;top:0;height:100%;width:min(450px,100%);background:#fff;padding:22px;overflow-y:auto}
+.panel-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.panel-header h2{font-family:'Playfair Display',serif;color:#7e4058}
+.close-btn{border:0;background:#f8e8ee;width:35px;height:35px;border-radius:50%;color:#7e4058;font-size:18px}
+.cart-item{display:grid;grid-template-columns:70px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid #f0e0e6}
+.cart-item img{width:70px;height:70px;object-fit:cover;border-radius:12px}
+.cart-name{font-weight:700;color:#593744}
+.cart-meta{font-size:12px;color:#806873;margin:4px 0}
+.qty-row{display:flex;align-items:center;gap:8px;margin-top:8px}
+.qty-btn{border:1px solid #dec7d1;background:white;width:27px;height:27px;border-radius:7px}
+.remove-btn{border:0;background:none;color:#b14f67;font-size:12px;margin-left:8px}
+.cart-summary{margin-top:22px;border-top:1px solid #ead9df;padding-top:18px}
+.summary-row{display:flex;justify-content:space-between;margin:8px 0;color:#65414d}
+.summary-row.total{font-size:18px;font-weight:700;color:#7e4058;padding-top:10px}
+.shipping-progress{background:#fff4f8;border:1px solid #efd9e2;padding:12px;border-radius:12px;margin-bottom:15px;color:#82445c;font-size:12px;line-height:1.5}
+.checkout-btn{width:100%;border:0;background:#9d536f;color:white;padding:14px;border-radius:12px;font-weight:700;margin-top:14px}
+.empty-cart{text-align:center;padding:50px 10px;color:#846c76}
+
+.modal{display:none;position:fixed;inset:0;background:rgba(35,20,27,.5);z-index:3000;align-items:center;justify-content:center;padding:18px}
+.modal-box{background:white;width:min(600px,100%);max-height:92vh;overflow-y:auto;border-radius:22px;padding:25px}
+.modal-box h2{font-family:'Playfair Display',serif;color:#7e4058;margin-bottom:20px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.checkout-summary{background:#fff8fb;border:1px solid #f0dce5;padding:14px;border-radius:12px;margin:14px 0}
+.checkout-free-note{margin-top:10px;color:#9d536f;font-size:12px;font-weight:700}
+.place-order-btn{width:100%;border:0;background:#9d536f;color:white;padding:14px;border-radius:12px;font-weight:700}
+.place-order-btn:disabled{opacity:.65}
+.cancel-btn{width:100%;border:1px solid #dfcbd4;background:white;color:#684652;padding:12px;border-radius:12px;margin-top:8px}
+.success-box{text-align:center;padding:25px 10px}
+.success-box h2{margin-bottom:10px}
+.success-box p{color:#705963;line-height:1.6}
+
+.admin-section{display:none;max-width:1100px;margin:auto;padding:50px 20px 80px}
+.admin-login{max-width:450px;margin:20px auto;background:white;border:1px solid #efdce4;border-radius:20px;padding:25px;text-align:center}
+.admin-dashboard{display:none}
+.dashboard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:25px 0}
+.dashboard-card{background:white;border:1px solid #efdce4;border-radius:18px;padding:20px}
+.dashboard-card small{color:#856772}
+.dashboard-card strong{display:block;font-size:27px;color:#9d536f;margin-top:5px}
+.admin-note{background:#fff8fb;border:1px solid #efdce4;padding:18px;border-radius:15px;line-height:1.6;color:#6e535d}
+
+.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%) translateY(100px);background:#593744;color:white;padding:12px 18px;border-radius:25px;z-index:5000;opacity:0;transition:.3s;font-size:14px;text-align:center;max-width:90%}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+footer{background:#fff0f5;border-top:1px solid #efd5df;text-align:center;padding:35px 20px;color:#876d77;font-size:13px}
+.footer-logo{font-family:'Playfair Display',serif;font-size:25px;color:#9d536f;letter-spacing:2px;margin-bottom:8px}
+.footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin:15px 0}
+.footer-links a{color:#704052;text-decoration:none;font-weight:600}
 
 @media(max-width:900px){
-
-    .products-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .categories{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    .review-list{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .contact-box{
-        grid-template-columns:1fr;
-    }
-
+.products-grid{grid-template-columns:repeat(2,1fr)}
+.categories{grid-template-columns:repeat(3,1fr)}
+.review-list{grid-template-columns:1fr 1fr}
+.contact-box{grid-template-columns:1fr}
 }
-
 @media(max-width:650px){
-
-    .navbar{
-        padding:13px 14px;
-    }
-
-    .nav-links{
-        gap:8px;
-    }
-
-    .nav-links a{
-        display:none;
-    }
-
-    .hero{
-        padding-top:55px;
-    }
-
-    .hero h1{
-        font-size:42px;
-    }
-
-    .products-grid{
-        grid-template-columns:1fr;
-    }
-
-    .categories{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .review-list{
-        grid-template-columns:1fr;
-    }
-
-    .two-col{
-        grid-template-columns:1fr;
-    }
-
-    .social-banner h2{
-        font-size:27px;
-    }
-
-    .shipping-banner{
-        font-size:11px;
-    }
-
+.navbar{padding:13px 14px}
+.nav-links{gap:8px}
+.nav-links a{display:none}
+.hero{padding-top:55px}
+.hero h1{font-size:42px}
+.products-grid{grid-template-columns:1fr}
+.categories{grid-template-columns:repeat(2,1fr)}
+.review-list{grid-template-columns:1fr}
+.two-col{grid-template-columns:1fr}
+.social-banner h2{font-size:27px}
+.shipping-banner{font-size:11px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="shipping-banner">
-    ✨ FREE DELIVERY ON ORDERS OF RS. 2,500 OR MORE ✨
-</div>
+<div class="shipping-banner">✨ FREE DELIVERY ON ORDERS OF RS. 2,500 OR MORE ✨</div>
 
 <header>
-    <div class="navbar">
-
-        <a href="#" class="logo" onclick="showShop();return false;">
-            MAHI ARTS
-        </a>
-
-        <div class="nav-links">
-
-            <a href="#shop" onclick="showShop();return false;">
-                Shop
-            </a>
-
-            <a href="#reviews">
-                Reviews
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-            <button class="bag-btn" onclick="openCart()">
-                🛍 Bag <span id="cartCount">0</span>
-            </button>
-
-        </div>
-
-    </div>
+<div class="navbar">
+<a href="#" class="logo" onclick="showShop();return false;">MAHI ARTS</a>
+<div class="nav-links">
+<a href="#shop" onclick="showShop();return false;">Shop</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+<button class="bag-btn" onclick="openCart()">🛍 Bag <span id="cartCount">0</span></button>
+</div>
+</div>
 </header>
 
 <section class="hero" id="shop">
-
-    <div class="hero-small">
-        Mahi Arts
-    </div>
-
-    <h1>
-        Little Things,<br>
-        Made Beautiful
-    </h1>
-
-    <p>
-        Discover beautiful handmade pieces, jewellery, bracelets
-        and charming little creations made to add something special
-        to your everyday moments.
-    </p>
-
+<div class="hero-small">Mahi Arts</div>
+<h1>Little Things,<br>Made Beautiful</h1>
+<p>Discover beautiful handmade pieces, jewellery, bracelets and charming little creations made to add something special to your everyday moments.</p>
 </section>
 
 <div class="search-wrap">
-
-    <input
-        id="searchInput"
-        class="search-box"
-        type="search"
-        placeholder="Search products..."
-        autocomplete="off"
-        oninput="searchProducts()"
-    >
-
-    <span class="search-icon">
-        ⌕
-    </span>
-
-    <button
-        id="clearSearch"
-        class="clear-search"
-        onclick="clearSearch()"
-    >
-        Clear Search
-    </button>
-
+<input id="searchInput" class="search-box" type="search" placeholder="Search products..." autocomplete="off" oninput="searchProducts()">
+<span class="search-icon">⌕</span>
+<button id="clearSearch" class="clear-search" onclick="clearSearch()">Clear Search</button>
 </div>
 
 <div class="categories">
-
-    <button class="category-btn active" onclick="showCategory('All',this)">
-        <span class="category-icon">✨</span>
-        All
-    </button>
-
-    <button class="category-btn" onclick="showCategory('Resin',this)">
-        <span class="category-icon">🫧</span>
-        Resin
-    </button>
-
-    <button class="category-btn" onclick="showCategory('Jewellery',this)">
-        <span class="category-icon">💎</span>
-        Jewellery
-    </button>
-
-    <button class="category-btn" onclick="showCategory('Bracelets',this)">
-        <span class="category-icon">📿</span>
-        Bracelets
-    </button>
-
-    <button class="category-btn" onclick="showCategory('Keychain',this)">
-        <span class="category-icon">🎀</span>
-        Keychain
-    </button>
-
+<button class="category-btn active" onclick="showCategory('All',this)"><span class="category-icon">✨</span>All</button>
+<button class="category-btn" onclick="showCategory('Resin',this)"><span class="category-icon">🫧</span>Resin</button>
+<button class="category-btn" onclick="showCategory('Jewellery',this)"><span class="category-icon">💎</span>Jewellery</button>
+<button class="category-btn" onclick="showCategory('Bracelets',this)"><span class="category-icon">📿</span>Bracelets</button>
+<button class="category-btn" onclick="showCategory('Keychain',this)"><span class="category-icon">🎀</span>Keychain</button>
 </div>
 
 <section class="section">
+<div class="free-delivery-box">
+<strong>✨ Free Delivery on Rs. 2,500+</strong>
+<span>Orders below Rs. 2,500 have a Rs. 250 delivery charge.</span>
+</div>
 
-    <div class="free-delivery-box">
+<h2 class="section-title">Our Collection</h2>
+<div id="productsGrid" class="products-grid"></div>
 
-        <strong>
-            ✨ Free Delivery on Rs. 2,500+
-        </strong>
-
-        <span>
-            Orders below Rs. 2,500 have a Rs. 250 delivery charge.
-        </span>
-
-    </div>
-
-    <h2 class="section-title">
-        Our Collection
-    </h2>
-
-    <div id="productsGrid" class="products-grid"></div>
-
-    <div id="emptyState" class="empty-state">
-
-        <h3>
-            No product found
-        </h3>
-
-        <p id="emptyMessage">
-            Try another search.
-        </p>
-
-    </div>
-
+<div id="emptyState" class="empty-state">
+<h3>No product found</h3>
+<p id="emptyMessage">Try another search.</p>
+</div>
 </section>
 
 <section class="section reviews" id="reviews">
+<div class="reviews-inner">
+<h2 class="section-title">Customer Love</h2>
+<p class="section-subtitle">We would love to hear about your Mahi Arts experience. Your review and star rating may be featured here after approval.</p>
 
-    <div class="reviews-inner">
+<div id="approvedReviews" class="review-list"></div>
+<div id="noReviews" class="no-reviews">No approved reviews yet. Be the first to share your experience 💗</div>
 
-        <h2 class="section-title">
-            Customer Love
-        </h2>
-
-        <p class="section-subtitle">
-            We would love to hear about your Mahi Arts experience.
-            Your review and star rating may be featured here after approval.
-        </p>
-
-        <div id="approvedReviews" class="review-list"></div>
-
-        <div id="noReviews" class="no-reviews">
-            No approved reviews yet. Be the first to share your experience 💗
-        </div>
-
-        <div class="review-form">
-
-            <div class="form-heading">
-                Leave a Review
-            </div>
-
-            <input
-                id="reviewName"
-                class="form-input"
-                placeholder="Your name"
-                maxlength="60"
-            >
-
-            <div class="rating-text">
-                Select your rating
-            </div>
-
-            <div class="review-stars">
-
-                <button type="button" class="star-btn" onclick="selectReviewStar(1)">★</button>
-                <button type="button" class="star-btn" onclick="selectReviewStar(2)">★</button>
-                <button type="button" class="star-btn" onclick="selectReviewStar(3)">★</button>
-                <button type="button" class="star-btn" onclick="selectReviewStar(4)">★</button>
-                <button type="button" class="star-btn" onclick="selectReviewStar(5)">★</button>
-
-            </div>
-
-            <textarea
-                id="reviewText"
-                class="form-input"
-                rows="4"
-                maxlength="1000"
-                placeholder="Write your review..."
-            ></textarea>
-
-            <button
-                id="submitReviewButton"
-                type="button"
-                class="submit-btn"
-                onclick="submitReview()"
-            >
-                Submit Review
-            </button>
-
-        </div>
-
-    </div>
-
+<div class="review-form">
+<div class="form-heading">Leave a Review</div>
+<input id="reviewName" class="form-input" placeholder="Your name" maxlength="60">
+<div class="rating-text">Select your rating</div>
+<div class="review-stars">
+<button type="button" class="star-btn" onclick="selectReviewStar(1)">★</button>
+<button type="button" class="star-btn" onclick="selectReviewStar(2)">★</button>
+<button type="button" class="star-btn" onclick="selectReviewStar(3)">★</button>
+<button type="button" class="star-btn" onclick="selectReviewStar(4)">★</button>
+<button type="button" class="star-btn" onclick="selectReviewStar(5)">★</button>
+</div>
+<textarea id="reviewText" class="form-input" rows="4" maxlength="1000" placeholder="Write your review..."></textarea>
+<button id="submitReviewButton" type="button" class="submit-btn" onclick="submitReview()">Submit Review</button>
+</div>
+</div>
 </section>
 
 <section class="section contact-section" id="contact">
+<h2 class="section-title">Contact Us</h2>
+<p class="section-subtitle">Have a question about a product, colour, size, order or anything else? Send us a message and we will get back to you.</p>
 
-    <h2 class="section-title">
-        Contact Us
-    </h2>
+<div class="contact-box">
+<div class="contact-info">
+<h3>We're Here For You</h3>
+<p>If you need help understanding anything about our products or your order, feel free to contact Mahi Arts.</p>
+<a class="contact-email" href="mailto:mahiarts.shop@gmail.com">✉ mahiarts.shop@gmail.com</a>
+<div class="contact-note">You can also follow us on Instagram and TikTok for new products, updates and content.</div>
+</div>
 
-    <p class="section-subtitle">
-        Have a question about a product, colour, size, order or anything
-        else? Send us a message and we will get back to you.
-    </p>
-
-    <div class="contact-box">
-
-        <div class="contact-info">
-
-            <h3>
-                We're Here For You
-            </h3>
-
-            <p>
-                If you need help understanding anything about our products
-                or your order, feel free to contact Mahi Arts.
-            </p>
-
-            <a
-                class="contact-email"
-                href="mailto:mahiarts.shop@gmail.com"
-            >
-                ✉ mahiarts.shop@gmail.com
-            </a>
-
-            <div class="contact-note">
-                You can also follow us on Instagram and TikTok for
-                new products, updates and content.
-            </div>
-
-        </div>
-
-        <div class="contact-form">
-
-            <h3>
-                Send Us A Message
-            </h3>
-
-            <input
-                id="contactName"
-                class="form-input"
-                placeholder="Your name"
-                maxlength="60"
-            >
-
-            <input
-                id="contactEmail"
-                class="form-input"
-                type="email"
-                placeholder="Your Gmail / Email"
-                maxlength="120"
-            >
-
-            <textarea
-                id="contactMessage"
-                class="form-input"
-                rows="6"
-                maxlength="1500"
-                placeholder="How can we help you?"
-            ></textarea>
-
-            <button
-                id="contactSubmitButton"
-                type="button"
-                class="submit-btn"
-                onclick="submitContactMessage()"
-            >
-                Send Message
-            </button>
-
-        </div>
-
-    </div>
-
+<div class="contact-form">
+<h3>Send Us A Message</h3>
+<input id="contactName" class="form-input" placeholder="Your name" maxlength="60">
+<input id="contactEmail" class="form-input" type="email" placeholder="Your Gmail / Email" maxlength="120">
+<textarea id="contactMessage" class="form-input" rows="6" maxlength="1500" placeholder="How can we help you?"></textarea>
+<button id="contactSubmitButton" type="button" class="submit-btn" onclick="submitContactMessage()">Send Message</button>
+</div>
+</div>
 </section>
 
 <section class="social-section">
-
-    <div class="social-banner">
-
-        <h2>
-            Follow Mahi Arts
-        </h2>
-
-        <p>
-            Follow us for new arrivals, jewellery inspiration,
-            updates and beautiful little things.
-        </p>
-
-        <div class="social-links">
-
-            <a
-                class="social-link"
-                href="https://www.instagram.com/mahiarts.shop/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                📸 Instagram @mahiarts.shop
-            </a>
-
-            <a
-                class="social-link"
-                href="https://www.tiktok.com/@mahiarts.shop"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                🎵 TikTok @mahiarts.shop
-            </a>
-
-        </div>
-
-    </div>
-
+<div class="social-banner">
+<h2>Follow Mahi Arts</h2>
+<p>Follow us for new arrivals, jewellery inspiration, updates and beautiful little things.</p>
+<div class="social-links">
+<a class="social-link" href="https://www.instagram.com/mahiarts.shop/" target="_blank" rel="noopener noreferrer">📸 Instagram @mahiarts.shop</a>
+<a class="social-link" href="https://www.tiktok.com/@mahiarts.shop" target="_blank" rel="noopener noreferrer">🎵 TikTok @mahiarts.shop</a>
+</div>
+</div>
 </section>
 
 <section id="adminSection" class="admin-section">
-
-    <h2 class="section-title">
-        Mahi Arts Dashboard
-    </h2>
-
-    <div id="adminLogin" class="admin-login">
-
-        <p style="margin-bottom:15px;color:#765c66;">
-            Secure Mahi Arts Admin Dashboard
-        </p>
-
-        <p style="font-size:13px;color:#806873;line-height:1.6;margin-bottom:18px;">
-            Your dashboard is protected through Google Apps Script.
-            The admin PIN is not stored on this public website.
-        </p>
-
-        <button
-            class="submit-btn"
-            type="button"
-            onclick="openSecureDashboard()"
-        >
-            Open Secure Dashboard
-        </button>
-
-    </div>
-
+<h2 class="section-title">Mahi Arts Dashboard</h2>
+<div id="adminLogin" class="admin-login">
+<p style="margin-bottom:15px;color:#765c66;">Secure Mahi Arts Admin Dashboard</p>
+<p style="font-size:13px;color:#806873;line-height:1.6;margin-bottom:18px;">Your dashboard is protected through Google Apps Script. The admin PIN is not stored on this public website.</p>
+<button class="submit-btn" type="button" onclick="openSecureDashboard()">Open Secure Dashboard</button>
+</div>
 </section>
 
 <footer>
-
-    <div class="footer-logo">
-        MAHI ARTS
-    </div>
-
-    <div>
-        Handmade with love 💗
-    </div>
-
-    <div class="footer-links">
-
-        <a href="#shop">Shop</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact Us</a>
-
-        <a
-            href="https://www.instagram.com/mahiarts.shop/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Instagram
-        </a>
-
-        <a
-            href="https://www.tiktok.com/@mahiarts.shop"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            TikTok
-        </a>
-
-    </div>
-
-    © 2026 Mahi Arts. All rights reserved.
-
+<div class="footer-logo">MAHI ARTS</div>
+<div>Handmade with love 💗</div>
+<div class="footer-links">
+<a href="#shop">Shop</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact Us</a>
+<a href="https://www.instagram.com/mahiarts.shop/" target="_blank" rel="noopener noreferrer">Instagram</a>
+<a href="https://www.tiktok.com/@mahiarts.shop" target="_blank" rel="noopener noreferrer">TikTok</a>
+</div>
+© 2026 Mahi Arts. All rights reserved.
 </footer>
 
 <div id="cartOverlay" class="overlay">
-
-    <div class="cart-panel">
-
-        <div class="panel-header">
-
-            <h2>
-                Your Bag
-            </h2>
-
-            <button class="close-btn" onclick="closeCart()">
-                ×
-            </button>
-
-        </div>
-
-        <div id="cartItems"></div>
-
-        <div id="cartSummary" class="cart-summary"></div>
-
-    </div>
-
+<div class="cart-panel">
+<div class="panel-header">
+<h2>Your Bag</h2>
+<button class="close-btn" onclick="closeCart()">×</button>
+</div>
+<div id="cartItems"></div>
+<div id="cartSummary" class="cart-summary"></div>
+</div>
 </div>
 
 <div id="checkoutModal" class="modal">
+<div class="modal-box">
+<div class="panel-header">
+<h2>Checkout</h2>
+<button class="close-btn" onclick="closeCheckout()">×</button>
+</div>
 
-    <div class="modal-box">
+<div id="checkoutSummary" class="checkout-summary"></div>
 
-        <div class="panel-header">
+<div class="two-col">
+<input id="customerName" class="form-input" placeholder="Full Name">
+<input id="customerEmail" class="form-input" type="email" placeholder="Gmail / Email">
+<input id="customerPhone" class="form-input" type="tel" placeholder="Pakistan Phone Number">
+<input id="customerCity" class="form-input" placeholder="City">
+<input id="customerArea" class="form-input" placeholder="Area / Place">
+</div>
 
-            <h2>
-                Checkout
-            </h2>
+<textarea id="customerAddress" class="form-input" rows="4" placeholder="Complete Address"></textarea>
+<input class="form-input" value="Cash on Delivery" readonly>
 
-            <button class="close-btn" onclick="closeCheckout()">
-                ×
-            </button>
-
-        </div>
-
-        <div id="checkoutSummary" class="checkout-summary"></div>
-
-        <div class="two-col">
-
-            <input id="customerName" class="form-input" placeholder="Full Name">
-
-            <input
-                id="customerEmail"
-                class="form-input"
-                type="email"
-                placeholder="Gmail / Email"
-            >
-
-            <input
-                id="customerPhone"
-                class="form-input"
-                type="tel"
-                placeholder="Pakistan Phone Number"
-            >
-
-            <input
-                id="customerCity"
-                class="form-input"
-                placeholder="City"
-            >
-
-            <input
-                id="customerArea"
-                class="form-input"
-                placeholder="Area / Place"
-            >
-
-        </div>
-
-        <textarea
-            id="customerAddress"
-            class="form-input"
-            rows="4"
-            placeholder="Complete Address"
-        ></textarea>
-
-        <input
-            class="form-input"
-            value="Cash on Delivery"
-            readonly
-        >
-
-        <button
-            id="placeOrderButton"
-            class="place-order-btn"
-            type="button"
-            onclick="placeOrder()"
-        >
-            Place Order
-        </button>
-
-        <button
-            class="cancel-btn"
-            type="button"
-            onclick="closeCheckout()"
-        >
-            Cancel
-        </button>
-
-    </div>
-
+<button id="placeOrderButton" class="place-order-btn" type="button" onclick="placeOrder()">Place Order</button>
+<button class="cancel-btn" type="button" onclick="closeCheckout()">Cancel</button>
+</div>
 </div>
 
 <div id="successModal" class="modal">
-
-    <div class="modal-box success-box">
-
-        <h2>
-            Order Placed Successfully 💗
-        </h2>
-
-        <p id="successMessage"></p>
-
-        <button
-            class="place-order-btn"
-            style="margin-top:20px;"
-            type="button"
-            onclick="continueShopping()"
-        >
-            Continue Shopping
-        </button>
-
-    </div>
-
+<div class="modal-box success-box">
+<h2>Order Placed Successfully 💗</h2>
+<p id="successMessage"></p>
+<button class="place-order-btn" style="margin-top:20px;" type="button" onclick="continueShopping()">Continue Shopping</button>
+</div>
 </div>
 
 <div id="toast" class="toast"></div>
@@ -1568,512 +367,279 @@ const DELIVERY_CHARGE = 250;
 
 
 /* =========================================================
-   PRODUCTS
+   PRODUCTS - FIXED
    ========================================================= */
 
 const PRODUCTS = [
 
-    {
-        id:"product-001",
-        name:"Crystal Beaded Bracelet",
-        category:"Bracelets",
-        price:320,
-
-        description:
-        "Delicate crystal beaded bracelet designed to add a soft and elegant touch to your everyday look.",
-
-        colours:[
-            {
-                name:"Hot Pink",
-                image:"./hot%20pink.jpg"
-            },
-            {
-                name:"Dark Green",
-                image:"./dark%20green.jpg"
-            },
-            {
-                name:"Light Pink",
-                image:"./light%20pink.jpg"
-            },
-            {
-                name:"Black",
-                image:"./black.jpg"
-            },
-            {
-                name:"Red",
-                image:"./red.jpg"
-            }
-        ],
-
-        sizes:[
-            "Small",
-            "Medium"
-        ]
-    },
-
-    {
-        id:"product-002",
-        name:"Crystal Luxury Earrings for Women",
-        category:"Jewellery",
-        price:199,
-
-        description:
-        "Elegant crystal earrings designed to add a refined sparkle to every look.",
-
-        colours:[
-            {
-                name:"Green",
-                image:"./green%20jewellery.jpg"
-            },
-            {
-                name:"Yellow",
-                image:"./yellow%20jewellery.jpg"
-            },
-            {
-                name:"Black",
-                image:"./black%20jewellery.jpg"
-            },
-            {
-                name:"White",
-                image:"./white%20jewellery.jpg"
-            },
-            {
-                name:"Navy Blue",
-                image:"./navy%20blue%20jewellery.jpg"
-            }
-        ],
-
-        sizes:[
-            "Small",
-            "Medium"
-        ]
-    },
-
-    {
-        id:"product-003",
-        name:"Crystal Handmade Bag-Style Keychain",
-        category:"Keychain",
-        price:369,
-
-        description:
-        "A charming handmade crystal keychain with a Pinterest-inspired aesthetic, crafted to bring a delicate touch of luxury to your everyday essentials.",
-
-        colours:[
-            {
-                name:"White",
-                image:"./white%20keychain.jpg"
-            },
-            {
-                name:"Brown",
-                image:"./brown%20keychain.jpg"
-            },
-            {
-                name:"Orange",
-                image:"./orange%20keychain.jpg"
-            },
-            {
-                name:"Red",
-                image:"./red%20keychain.jpg"
-            },
-            {
-                name:"Blue",
-                image:"./blue%20keychain.jpg"
-            }
-        ],
-
-        sizes:[
-            "One Size"
-        ]
-    },
-
-    {
-  id: "product-004",
-  name: "Custom Name Resin Pen and Keychain Set",
-  category: "Resin",
-  price: 579,
-
-  description:
-    "This beautiful handmade set includes 1 glossy resin pen and 1 matching keychain, both customised with your name or any name you want.",
-
-  colours: [
-    {
-      name: "Black",
-      image: "./p1.jpg"
-    },
-    {
-      name: "Purple",
-      image: "./p2.jpg"
-    },
-    {
-      name: "Pink",
-      image: "./p3.jpg"
-    }
-  ],
-
-  sizes: []
+{
+id:"product-001",
+name:"Crystal Beaded Bracelet",
+categories:["Bracelets"],
+price:320,
+description:"Delicate crystal beaded bracelet designed to add a soft and elegant touch to your everyday look.",
+colours:[
+{name:"Hot Pink",image:"./hot%20pink.jpg"},
+{name:"Dark Green",image:"./dark%20green.jpg"},
+{name:"Light Pink",image:"./light%20pink.jpg"},
+{name:"Black",image:"./black.jpg"},
+{name:"Red",image:"./red.jpg"}
+],
+sizes:["Small","Medium"]
 },
 
 {
-  id: "product-005",
-  name: "Resin Circle Keychain (Customised Text)",
-  category: 
-    "Resin",
-    "Keychain" ,
-  price: 499,
-
-  description:
-    "Each keychain is handmade with premium clear resin, sparkly glitter and dried flowers. Customised with any colour and text you want.",
-
-  colours: [
-    {
-      name: "Custom",
-      image: "./p4.jpg"
-    }
-  ],
-
-  sizes: []
+id:"product-002",
+name:"Crystal Luxury Earrings for Women",
+categories:["Jewellery"],
+price:199,
+description:"Elegant crystal earrings designed to add a refined sparkle to every look.",
+colours:[
+{name:"Green",image:"./green%20jewellery.jpg"},
+{name:"Yellow",image:"./yellow%20jewellery.jpg"},
+{name:"Black",image:"./black%20jewellery.jpg"},
+{name:"White",image:"./white%20jewellery.jpg"},
+{name:"Navy Blue",image:"./navy%20blue%20jewellery.jpg"}
+],
+sizes:["Small","Medium"]
 },
 
 {
-  id: "product-006",
-  name: "Rainbow Gajra with Jumpke",
-
-  category:
-    "Jewellery",
-    "Bracelets",
-  price: 1499,
-
-  description:
-    "Add a pop of colour to your festival look with our viral rainbow gajra with jumpke.",
-
-  colours: [
-    {
-      name: "Rainbow",
-      image: "./p5.jpg"
-    }
-  ],
-
-  sizes: []
+id:"product-003",
+name:"Crystal Handmade Bag-Style Keychain",
+categories:["Keychain"],
+price:369,
+description:"A charming handmade crystal keychain with a Pinterest-inspired aesthetic, crafted to bring a delicate touch of luxury to your everyday essentials.",
+colours:[
+{name:"White",image:"./white%20keychain.jpg"},
+{name:"Brown",image:"./brown%20keychain.jpg"},
+{name:"Orange",image:"./orange%20keychain.jpg"},
+{name:"Red",image:"./red%20keychain.jpg"},
+{name:"Blue",image:"./blue%20keychain.jpg"}
+],
+sizes:["One Size"]
 },
 
 {
-  id: "product-007",
-  name: "Custom Alphabet Resin Flower Keychain",
-
-  category:
-    "Resin",
-    "Keychain",
-  price: 269,
-
-  description:
-    "Material: Premium clear epoxy resin. Design: Alphabet A-Z letter keychain.",
-
-  colours: [],
-
-  sizes: [],
-
-  letters: [
-    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
-    "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
-    "U", "V", "W", "X", "Y", "Z"
-  ],
-
-  image: "./p6.jpg"
+id:"product-004",
+name:"Custom Name Resin Pen and Keychain Set",
+categories:["Resin"],
+price:579,
+description:"This beautiful handmade set includes 1 glossy resin pen and 1 matching keychain, both customised with your name or any name you want.",
+colours:[
+{name:"Black",image:"./p1.jpg"},
+{name:"Purple",image:"./p2.jpg"},
+{name:"Pink",image:"./p3.jpg"}
+],
+sizes:[]
 },
 
 {
-  id: "product-008",
-  name: "Custom Alphabet Letter Glitter Keychain",
-
-  category:
-    "Resin",
-    "Keychain",
-  price: 269,
-
-  description:
-    "Material: Premium clear epoxy resin. Design: Alphabet A-Z letter keychain.",
-
-  colours: [],
-
-  sizes: [],
-
-  letters: [
-    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
-    "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
-    "U", "V", "W", "X", "Y", "Z"
-  ],
-
-  image: "./p7.jpg"
+id:"product-005",
+name:"Resin Circle Keychain (Customised Text)",
+categories:["Resin","Keychain"],
+price:499,
+description:"Each keychain is handmade with premium clear resin, sparkly glitter and dried flowers. Customised with any colour and text you want.",
+colours:[
+{name:"Custom",image:"./p4.jpg"}
+],
+sizes:[]
 },
 
 {
-  id: "product-009",
-  name: "Custom Alphabet Letter Glitter Keychain",
-
-  category:
-    "Resin",
-    "Keychain",
-  price: 269,
-
-  description:
-    "Material: Premium clear epoxy resin. Design: Alphabet A-Z letter keychain.",
-
-  colours: [],
-
-  sizes: [],
-
-  letters: [
-    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
-    "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
-    "U", "V", "W", "X", "Y", "Z"
-  ],
-
-  image: "./p8.jpg"
+id:"product-006",
+name:"Rainbow Gajra with Jumpke",
+categories:["Jewellery","Bracelets"],
+price:1499,
+description:"Add a pop of colour to your festival look with our viral rainbow gajra with jumpke.",
+colours:[
+{name:"Rainbow",image:"./p5.jpg"}
+],
+sizes:[]
 },
 
 {
-  id: "product-010",
-  name: "Trendy Resin Kangan Set",
-
-  category:
-    "Resin",
-    "Jewellery",
-  price: 1199,
-
-  description:
-    "Our resin kangan set for girls who love that pop of colour without the noise of heavy bangles. You can also get it customised with your preferred colour or flower.",
-
-  colours: [],
-
-  sizes: [
-    "58 MM"
-  ],
-
-  image: "./p9.jpg"
+id:"product-007",
+name:"Custom Alphabet Resin Flower Keychain",
+categories:["Resin","Keychain"],
+price:269,
+description:"Material: Premium clear epoxy resin. Design: Alphabet A-Z letter keychain.",
+colours:[],
+sizes:[],
+letters:["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
+image:"./p6.jpg"
 },
 
 {
-  id: "product-011",
-  name: "Resin Rectangular Drop Earrings",
-
-  category:
-    "Resin",
-    "Jewellery",
-  price: 260,
-
-  description:
-    "Minimal Korean Pinterest-inspired resin earrings.",
-
-  colours: [
-    {
-      name: "Blue",
-      image: "./p10.jpg"
-    },
-    {
-      name: "Red",
-      image: "./p11.jpg"
-    }
-  ],
-
-  sizes: []
+id:"product-008",
+name:"Custom Alphabet Letter Glitter Keychain",
+categories:["Resin","Keychain"],
+price:269,
+description:"Material: Premium clear epoxy resin. Design: Alphabet A-Z letter keychain.",
+colours:[],
+sizes:[],
+letters:["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
+image:"./p7.jpg"
 },
 
 {
-  id: "product-012",
-  name: "Traditional Jhumka Earrings",
-
-  category:
-    "Jewellery",
-  price: 229,
-
-  description:
-    "Our traditional jhumka earrings are designed to give you that perfect desi girl glow.",
-
-  colours: [
-    {
-      name: "Silver",
-      image: "./p12.jpg"
-    },
-    {
-      name: "Golden",
-      image: "./p13.jpg"
-    }
-  ],
-
-  sizes: []
+id:"product-009",
+name:"Custom Alphabet Letter Glitter Keychain",
+categories:["Resin","Keychain"],
+price:269,
+description:"Material: Premium clear epoxy resin. Design: Alphabet A-Z letter keychain.",
+colours:[],
+sizes:[],
+letters:["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
+image:"./p8.jpg"
 },
 
 {
-  id: "product-013",
-  name: "Resin Heart Keychain (Custom Text)",
-
-  category:
-    "Resin",
-    "Keychain",
-  price: 499,
-
-  description:
-    "Each keychain is handmade with premium clear epoxy resin. Customise it with any colour and text you want.",
-
-  colours: [
-    {
-      name: "Custom",
-      image: "./p14.jpg"
-    }
-  ],
-
-  sizes: []
+id:"product-010",
+name:"Trendy Resin Kangan Set",
+categories:["Resin","Jewellery"],
+price:1199,
+description:"Our resin kangan set for girls who love that pop of colour without the noise of heavy bangles. You can also get it customised with your preferred colour or flower.",
+colours:[],
+sizes:["58 MM"],
+image:"./p9.jpg"
 },
 
 {
-  id: "product-014",
-  name: "Pack of 2 Artificial Hand Gajra for Girls",
-
-  category:
-    "Jewellery",
-    "Bracelets",
-  price: 1199,
-
-  description:
-    "Premium quality artificial hand gajra with beautiful floral design.",
-
-  colours: [
-    {
-      name: "Lilac",
-      image: "./p15.jpg"
-    },
-    {
-      name: "White",
-      image: "./p16.jpg"
-    },
-    {
-      name: "Black",
-      image: "./p17.jpg"
-    },
-    {
-      name: "Red",
-      image: "./p18.jpg"
-    },
-    {
-      name: "Green",
-      image: "./p19.jpg"
-    },
-    {
-      name: "Purple",
-      image: "./p20.jpg"
-    },
-    {
-      name: "Blue",
-      image: "./p21.jpg"
-    },
-    {
-      name: "Mustard Yellow",
-      image: "./p22.jpg"
-    },
-    {
-      name: "Pink & White",
-      image: "./p23.jpg"
-    }
-  ],
-
-  sizes: [
-    "Small",
-    "Medium",
-    "Large"
-  ]
+id:"product-011",
+name:"Resin Rectangular Drop Earrings",
+categories:["Resin","Jewellery"],
+price:260,
+description:"Minimal Korean Pinterest-inspired resin earrings.",
+colours:[
+{name:"Blue",image:"./p10.jpg"},
+{name:"Red",image:"./p11.jpg"}
+],
+sizes:[]
 },
 
 {
-  id: "product-015",
-  name: "3 in 1 Beaded Bracelet Set for Girls",
-
-  category:
-    "Bracelets",
-  price: 260,
-
-  description:
-    "Adjustable multilayer friendship charm beads wristband jewellery trio pack.",
-
-  colours: [
-    {
-      name: "Red",
-      image: "./p24.jpg"
-    },
-    {
-      name: "Pink",
-      image: "./p25.jpg"
-    },
-    {
-      name: "Black",
-      image: "./p26.jpg"
-    },
-    {
-      name: "Light Pink",
-      image: "./p27.jpg"
-    },
-    {
-      name: "Purple",
-      image: "./p28.jpg"
-    },
-    {
-      name: "Teal Green",
-      image: "./p29.jpg"
-    }
-  ],
-
-  sizes: [
-    "Small",
-    "Medium"
-  ]
+id:"product-012",
+name:"Traditional Jhumka Earrings",
+categories:["Jewellery"],
+price:229,
+description:"Our traditional jhumka earrings are designed to give you that perfect desi girl glow.",
+colours:[
+{name:"Silver",image:"./p12.jpg"},
+{name:"Golden",image:"./p13.jpg"}
+],
+sizes:[]
 },
 
 {
-  id: "product-016",
-  name: "Resin Jhumka for Desi Girls",
+id:"product-013",
+name:"Resin Heart Keychain (Custom Text)",
+categories:["Resin","Keychain"],
+price:499,
+description:"Each keychain is handmade with premium clear epoxy resin. Customise it with any colour and text you want.",
+colours:[
+{name:"Custom",image:"./p14.jpg"}
+],
+sizes:[]
+},
 
-  category:
-    "Jewellery",
-  price: 949,
+{
+id:"product-014",
+name:"Pack of 2 Artificial Hand Gajra for Girls",
+categories:["Jewellery","Bracelets"],
+price:1199,
+description:"Premium quality artificial hand gajra with beautiful floral design.",
+colours:[
+{name:"Lilac",image:"./p15.jpg"},
+{name:"White",image:"./p16.jpg"},
+{name:"Black",image:"./p17.jpg"},
+{name:"Red",image:"./p18.jpg"},
+{name:"Green",image:"./p19.jpg"},
+{name:"Purple",image:"./p20.jpg"},
+{name:"Blue",image:"./p21.jpg"},
+{name:"Mustard Yellow",image:"./p22.jpg"},
+{name:"Pink & White",image:"./p23.jpg"}
+],
+sizes:["Small","Medium","Large"]
+},
 
-  description:
-    "Stainless steel jhumka earrings.",
+{
+id:"product-015",
+name:"3 in 1 Beaded Bracelet Set for Girls",
+categories:["Bracelets"],
+price:260,
+description:"Adjustable multilayer friendship charm beads wristband jewellery trio pack.",
+colours:[
+{name:"Red",image:"./p24.jpg"},
+{name:"Pink",image:"./p25.jpg"},
+{name:"Black",image:"./p26.jpg"},
+{name:"Light Pink",image:"./p27.jpg"},
+{name:"Purple",image:"./p28.jpg"},
+{name:"Teal Green",image:"./p29.jpg"}
+],
+sizes:["Small","Medium"]
+},
 
-  colours: [
-    {
-      name: "Design",
-      image: "./p30.jpg"
-    }
-  ],
-
-  sizes: []
-  }
+{
+id:"product-016",
+name:"Resin Jhumka for Desi Girls",
+categories:["Jewellery"],
+price:949,
+description:"Stainless steel jhumka earrings.",
+colours:[
+{name:"Design",image:"./p30.jpg"}
+],
+sizes:[]
+}
 
 ];
 
 
 /* =========================================================
-   WEBSITE STATE
+   STATE
    ========================================================= */
 
-let cart = [];
+let cart=[];
+let isPlacingOrder=false;
+let isSubmittingReview=false;
+let isSubmittingContact=false;
+let reviewSubmitted=false;
+let contactSubmitted=false;
+let selectedCategory="All";
+let selectedReviewRating=0;
 
-let isPlacingOrder = false;
+const selectedColours={};
+const selectedSizes={};
+const selectedLetters={};
 
-let isSubmittingReview = false;
 
-let isSubmittingContact = false;
+/* =========================================================
+   HELPERS
+   ========================================================= */
 
-let reviewSubmitted = false;
+function getProductCategories(product){
+    if(Array.isArray(product.categories)){
+        return product.categories;
+    }
 
-let contactSubmitted = false;
+    if(product.category){
+        return [product.category];
+    }
 
-let selectedCategory = "All";
+    return [];
+}
 
-let selectedReviewRating = 0;
+function getProductImage(product){
+    if(product.image){
+        return product.image;
+    }
 
-const selectedColours = {};
+    if(product.colours && product.colours.length){
+        return product.colours[0].image || "";
+    }
 
-const selectedSizes = {};
+    return "";
+}
 
 
 /* =========================================================
@@ -2083,11 +649,8 @@ const selectedSizes = {};
 document.addEventListener("DOMContentLoaded",function(){
 
     renderProducts();
-
     updateCart();
-
     updateDashboard();
-
     loadApprovedReviews();
 
 });
@@ -2099,84 +662,94 @@ document.addEventListener("DOMContentLoaded",function(){
 
 function renderProducts(){
 
-    const grid =
-        document.getElementById("productsGrid");
+    const grid=document.getElementById("productsGrid");
+    const searchInput=document.getElementById("searchInput");
+    const query=searchInput.value.trim().toLowerCase();
 
-    const searchInput =
-        document.getElementById("searchInput");
+    const products=PRODUCTS.filter(function(product){
 
-    const query =
-        searchInput.value.trim().toLowerCase();
+        const categories=getProductCategories(product);
 
+        const matchesCategory =
+            selectedCategory==="All" ||
+            categories.includes(selectedCategory);
 
-    const products =
-        PRODUCTS.filter(function(product){
+        const searchableCategories=
+            categories.join(" ").toLowerCase();
 
-            const matchesCategory =
-                selectedCategory === "All" ||
-                product.category === selectedCategory;
+        const matchesSearch =
+            query==="" ||
+            product.name.toLowerCase().includes(query) ||
+            searchableCategories.includes(query) ||
+            product.id.toLowerCase().includes(query);
 
-            const matchesSearch =
-                query === "" ||
-                product.name.toLowerCase().includes(query) ||
-                product.category.toLowerCase().includes(query) ||
-                product.id.toLowerCase().includes(query);
+        return matchesCategory && matchesSearch;
 
-            return matchesCategory && matchesSearch;
+    });
 
-        });
+    grid.innerHTML="";
 
+    if(products.length===0){
 
-    grid.innerHTML = "";
+        document.getElementById("emptyState").style.display="block";
 
-
-    if(products.length === 0){
-
-        document.getElementById("emptyState").style.display =
-            "block";
-
-        document.getElementById("emptyMessage").textContent =
+        document.getElementById("emptyMessage").textContent=
             query
-                ? 'No product found for "' + searchInput.value + '".'
-                : "No products available in this category.";
+            ? 'No product found for "'+searchInput.value+'".'
+            : "No products available in this category.";
 
         return;
-
     }
 
-
-    document.getElementById("emptyState").style.display =
-        "none";
-
+    document.getElementById("emptyState").style.display="none";
 
     products.forEach(function(product){
 
-        if(!selectedColours[product.id]){
-            selectedColours[product.id] =
-                product.colours[0];
-        }
+        if(!selectedColours[product.id] &&
+           product.colours &&
+           product.colours.length){
 
+            selectedColours[product.id]=product.colours[0];
+
+        }
 
         if(!selectedSizes[product.id]){
-            selectedSizes[product.id] =
-                product.sizes[0] || "";
+            selectedSizes[product.id]=
+                product.sizes && product.sizes.length
+                ? product.sizes[0]
+                : "";
         }
 
+        if(!selectedLetters[product.id] &&
+           product.letters &&
+           product.letters.length){
 
-        const selectedColour =
-            selectedColours[product.id];
+            selectedLetters[product.id]=product.letters[0];
 
+        }
 
-        const colourButtons =
-            product.colours.map(function(colour){
+        const selectedColour=
+            selectedColours[product.id] || null;
 
-                const active =
-                    selectedColour.name === colour.name
+        const image=
+            selectedColour && selectedColour.image
+            ? selectedColour.image
+            : getProductImage(product);
+
+        let colourHTML="";
+
+        if(product.colours && product.colours.length){
+
+            const colourButtons=
+                product.colours.map(function(colour){
+
+                    const active=
+                        selectedColour &&
+                        selectedColour.name===colour.name
                         ? "active"
                         : "";
 
-
-                return `
+                    return `
                     <button
                         type="button"
                         class="colour-btn ${active}"
@@ -2184,104 +757,118 @@ function renderProducts(){
                     >
                         ${escapeHtml(colour.name)}
                     </button>
-                `;
+                    `;
 
-            }).join("");
+                }).join("");
 
+            colourHTML=`
+                <label class="option-label">Colour</label>
+                <div class="colour-options">
+                    ${colourButtons}
+                </div>
+            `;
+        }
 
-        let sizeHTML = "";
+        let sizeHTML="";
 
+        if(product.sizes && product.sizes.length){
 
-        if(product.sizes && product.sizes.length > 0){
-
-            sizeHTML = `
-
-                <label class="option-label">
-                    Size
-                </label>
+            sizeHTML=`
+                <label class="option-label">Size</label>
 
                 <select
                     class="size-select"
                     onchange="selectSize('${product.id}',this.value)"
                 >
-
                     ${product.sizes.map(function(size){
 
                         return `
-                            <option
-                                value="${escapeAttribute(size)}"
-                                ${selectedSizes[product.id] === size ? "selected" : ""}
-                            >
-                                ${escapeHtml(size)}
-                            </option>
+                        <option
+                            value="${escapeAttribute(size)}"
+                            ${selectedSizes[product.id]===size?"selected":""}
+                        >
+                            ${escapeHtml(size)}
+                        </option>
                         `;
 
                     }).join("")}
-
                 </select>
-
             `;
-
         }
 
+        let letterHTML="";
 
-        const card =
-            document.createElement("div");
+        if(product.letters && product.letters.length){
 
+            letterHTML=`
+                <label class="option-label">
+                    Select Letter
+                </label>
 
-        card.className =
-            "product-card";
+                <select
+                    class="letter-select"
+                    onchange="selectLetter('${product.id}',this.value)"
+                >
+                    ${product.letters.map(function(letter){
 
+                        return `
+                        <option
+                            value="${letter}"
+                            ${selectedLetters[product.id]===letter?"selected":""}
+                        >
+                            ${letter}
+                        </option>
+                        `;
 
-        card.innerHTML = `
+                    }).join("")}
+                </select>
+            `;
+        }
+
+        const categoryText=
+            getProductCategories(product).join(" • ");
+
+        const card=document.createElement("div");
+
+        card.className="product-card";
+
+        card.innerHTML=`
 
             <div class="product-image-wrap">
 
                 <img
                     id="image-${product.id}"
                     class="product-image"
-                    src="${selectedColour.image}"
+                    src="${escapeAttribute(image)}"
                     alt="${escapeAttribute(product.name)}"
                     onerror="this.style.display='none'"
                 >
 
             </div>
 
-
             <div class="product-info">
 
                 <div class="product-category">
-                    ${escapeHtml(product.category)}
+                    ${escapeHtml(categoryText)}
                 </div>
-
 
                 <div class="product-name">
                     ${escapeHtml(product.name)}
                 </div>
 
-
                 <div class="product-description">
                     ${escapeHtml(product.description || "")}
                 </div>
-
 
                 <div class="product-price">
                     Rs. ${product.price.toLocaleString()}
                 </div>
 
+                ${colourHTML}
 
-                <label class="option-label">
-                    Colour
-                </label>
-
-
-                <div class="colour-options">
-                    ${colourButtons}
-                </div>
-
+                ${letterHTML}
 
                 ${sizeHTML}
-
 
                 <button
                     type="button"
@@ -2292,14 +879,11 @@ function renderProducts(){
                 </button>
 
             </div>
-
         `;
-
 
         grid.appendChild(card);
 
     });
-
 }
 
 
@@ -2309,28 +893,21 @@ function renderProducts(){
 
 function selectColour(productId,colourName){
 
-    const product =
-        PRODUCTS.find(function(item){
-            return item.id === productId;
-        });
+    const product=PRODUCTS.find(function(item){
+        return item.id===productId;
+    });
 
-    if(!product) return;
+    if(!product || !product.colours) return;
 
-
-    const colour =
-        product.colours.find(function(item){
-            return item.name === colourName;
-        });
+    const colour=product.colours.find(function(item){
+        return item.name===colourName;
+    });
 
     if(!colour) return;
 
-
-    selectedColours[productId] =
-        colour;
-
+    selectedColours[productId]=colour;
 
     renderProducts();
-
 }
 
 
@@ -2339,10 +916,16 @@ function selectColour(productId,colourName){
    ========================================================= */
 
 function selectSize(productId,size){
+    selectedSizes[productId]=size;
+}
 
-    selectedSizes[productId] =
-        size;
 
+/* =========================================================
+   LETTER
+   ========================================================= */
+
+function selectLetter(productId,letter){
+    selectedLetters[productId]=letter;
 }
 
 
@@ -2352,23 +935,17 @@ function selectSize(productId,size){
 
 function showCategory(category,button){
 
-    selectedCategory =
-        category;
+    selectedCategory=category;
 
-
-    document.querySelectorAll(".category-btn")
-        .forEach(function(btn){
-            btn.classList.remove("active");
-        });
-
+    document.querySelectorAll(".category-btn").forEach(function(btn){
+        btn.classList.remove("active");
+    });
 
     if(button){
         button.classList.add("active");
     }
 
-
     renderProducts();
-
 }
 
 
@@ -2378,72 +955,77 @@ function showCategory(category,button){
 
 function searchProducts(){
 
-    const query =
-        document.getElementById("searchInput")
-        .value.trim();
+    const query=document.getElementById("searchInput").value.trim();
 
-
-    document.getElementById("clearSearch").style.display =
+    document.getElementById("clearSearch").style.display=
         query ? "block" : "none";
 
-
     renderProducts();
-
 }
 
-
-/* =========================================================
-   CLEAR SEARCH
-   ========================================================= */
 
 function clearSearch(){
 
-    document.getElementById("searchInput").value =
-        "";
-
-    document.getElementById("clearSearch").style.display =
-        "none";
+    document.getElementById("searchInput").value="";
+    document.getElementById("clearSearch").style.display="none";
 
     renderProducts();
-
 }
 
 
 /* =========================================================
-   ADD TO CART
+   ADD TO CART - FIXED
    ========================================================= */
 
 function addToCart(productId){
 
-    const product =
-        PRODUCTS.find(function(item){
-            return item.id === productId;
-        });
-
+    const product=PRODUCTS.find(function(item){
+        return item.id===productId;
+    });
 
     if(!product) return;
 
+    const selectedColour=
+        selectedColours[productId] || null;
 
-    const colour =
-        selectedColours[productId] ||
-        product.colours[0];
+    const colourName=
+        selectedColour
+        ? selectedColour.name
+        : "";
 
+    const image=
+        selectedColour && selectedColour.image
+        ? selectedColour.image
+        : getProductImage(product);
 
-    const size =
+    const letter=
+        selectedLetters[productId] || "";
+
+    const size=
         selectedSizes[productId] ||
-        product.sizes[0] ||
+        (product.sizes && product.sizes[0]) ||
         "";
 
+    let optionName=colourName;
 
-    const existing =
-        cart.find(function(item){
+    if(letter){
+        optionName=
+            colourName
+            ? colourName+" • Letter: "+letter
+            : "Letter: "+letter;
+    }
 
-            return item.productId === productId &&
-                   item.colour === colour.name &&
-                   item.size === size;
+    if(!optionName){
+        optionName="Custom";
+    }
 
-        });
+    const existing=cart.find(function(item){
 
+        return item.productId===productId &&
+               item.colour===optionName &&
+               item.size===size;
+
+    });
 
     if(existing){
 
@@ -2454,32 +1036,21 @@ function addToCart(productId){
         cart.push({
 
             productId:product.id,
-
             name:product.name,
-
-            category:product.category,
-
+            category:getProductCategories(product).join(", "),
             price:product.price,
-
-            colour:colour.name,
-
-            image:colour.image,
-
+            colour:optionName,
+            image:image,
             size:size,
-
             quantity:1
 
         });
 
     }
 
-
     updateCart();
 
-    showToast(
-        "Added to your bag 💗"
-    );
-
+    showToast("Added to your bag 💗");
 }
 
 
@@ -2489,182 +1060,148 @@ function addToCart(productId){
 
 function updateCart(){
 
-    const cartItems =
-        document.getElementById("cartItems");
+    const cartItems=document.getElementById("cartItems");
+    const cartSummary=document.getElementById("cartSummary");
 
-    const cartSummary =
-        document.getElementById("cartSummary");
+    const count=cart.reduce(function(total,item){
+        return total+item.quantity;
+    },0);
 
+    document.getElementById("cartCount").textContent=count;
 
-    const count =
-        cart.reduce(function(total,item){
-            return total + item.quantity;
-        },0);
+    if(cart.length===0){
 
-
-    document.getElementById("cartCount").textContent =
-        count;
-
-
-    if(cart.length === 0){
-
-        cartItems.innerHTML = `
-
+        cartItems.innerHTML=`
             <div class="empty-cart">
                 Your bag is empty 💗
             </div>
-
         `;
 
-        cartSummary.innerHTML =
-            "";
-
+        cartSummary.innerHTML="";
         return;
-
     }
 
-
-    cartItems.innerHTML =
+    cartItems.innerHTML=
         cart.map(function(item,index){
 
             return `
+            <div class="cart-item">
 
-                <div class="cart-item">
+                <img
+                    src="${escapeAttribute(item.image || "")}"
+                    alt="${escapeAttribute(item.name)}"
+                >
 
-                    <img
-                        src="${item.image}"
-                        alt="${escapeAttribute(item.name)}"
-                    >
+                <div>
 
-                    <div>
+                    <div class="cart-name">
+                        ${escapeHtml(item.name)}
+                    </div>
 
-                        <div class="cart-name">
-                            ${escapeHtml(item.name)}
-                        </div>
+                    <div class="cart-meta">
+                        ${item.colour
+                            ? escapeHtml(item.colour)
+                            : ""}
+                        ${item.size
+                            ? " • "+escapeHtml(item.size)
+                            : ""}
+                    </div>
 
-                        <div class="cart-meta">
-                            ${escapeHtml(item.colour)}
-                            ${item.size
-                                ? " • " + escapeHtml(item.size)
-                                : ""}
-                        </div>
+                    <div class="cart-meta">
+                        Rs. ${item.price.toLocaleString()}
+                    </div>
 
-                        <div class="cart-meta">
-                            Rs. ${item.price.toLocaleString()}
-                        </div>
+                    <div class="qty-row">
 
-                        <div class="qty-row">
+                        <button
+                            type="button"
+                            class="qty-btn"
+                            onclick="changeQuantity(${index},-1)"
+                        >−</button>
 
-                            <button
-                                type="button"
-                                class="qty-btn"
-                                onclick="changeQuantity(${index},-1)"
-                            >
-                                −
-                            </button>
+                        <strong>${item.quantity}</strong>
 
-                            <strong>
-                                ${item.quantity}
-                            </strong>
+                        <button
+                            type="button"
+                            class="qty-btn"
+                            onclick="changeQuantity(${index},1)"
+                        >+</button>
 
-                            <button
-                                type="button"
-                                class="qty-btn"
-                                onclick="changeQuantity(${index},1)"
-                            >
-                                +
-                            </button>
-
-                            <button
-                                type="button"
-                                class="remove-btn"
-                                onclick="removeItem(${index})"
-                            >
-                                Remove
-                            </button>
-
-                        </div>
+                        <button
+                            type="button"
+                            class="remove-btn"
+                            onclick="removeItem(${index})"
+                        >
+                            Remove
+                        </button>
 
                     </div>
 
                 </div>
 
+            </div>
             `;
 
         }).join("");
 
-
-    const productTotal =
+    const productTotal=
         cart.reduce(function(total,item){
-            return total + (item.price * item.quantity);
+            return total+(item.price*item.quantity);
         },0);
 
+    const delivery=
+        productTotal>=FREE_SHIPPING_LIMIT
+        ? 0
+        : DELIVERY_CHARGE;
 
-    const delivery =
-        productTotal >= FREE_SHIPPING_LIMIT
-            ? 0
-            : DELIVERY_CHARGE;
+    const grandTotal=
+        productTotal+delivery;
 
+    let shippingMessage="";
 
-    const grandTotal =
-        productTotal + delivery;
+    if(productTotal>=FREE_SHIPPING_LIMIT){
 
-
-    let shippingMessage = "";
-
-
-    if(productTotal >= FREE_SHIPPING_LIMIT){
-
-        shippingMessage = `
-            <div class="shipping-progress">
-                🎉 Congratulations! You’ve unlocked
-                <strong>FREE DELIVERY</strong>.
-            </div>
+        shippingMessage=`
+        <div class="shipping-progress">
+            🎉 Congratulations! You’ve unlocked
+            <strong>FREE DELIVERY</strong>.
+        </div>
         `;
 
     }else{
 
-        const remaining =
-            FREE_SHIPPING_LIMIT - productTotal;
+        const remaining=
+            FREE_SHIPPING_LIMIT-productTotal;
 
-        shippingMessage = `
-            <div class="shipping-progress">
-                Add <strong>Rs. ${remaining.toLocaleString()}</strong>
-                more to unlock FREE DELIVERY.
-            </div>
+        shippingMessage=`
+        <div class="shipping-progress">
+            Add <strong>Rs. ${remaining.toLocaleString()}</strong>
+            more to unlock FREE DELIVERY.
+        </div>
         `;
-
     }
 
-
-    cartSummary.innerHTML = `
+    cartSummary.innerHTML=`
 
         ${shippingMessage}
 
         <div class="summary-row">
             <span>Products</span>
-            <strong>
-                Rs. ${productTotal.toLocaleString()}
-            </strong>
+            <strong>Rs. ${productTotal.toLocaleString()}</strong>
         </div>
 
         <div class="summary-row">
             <span>Delivery</span>
             <strong>
-                ${
-                    delivery === 0
-                        ? "FREE"
-                        : "Rs. " + delivery.toLocaleString()
-                }
+                ${delivery===0
+                    ? "FREE"
+                    : "Rs. "+delivery.toLocaleString()}
             </strong>
         </div>
 
         <div class="summary-row total">
             <span>Total</span>
-
-            <strong>
-                Rs. ${grandTotal.toLocaleString()}
-            </strong>
+            <strong>Rs. ${grandTotal.toLocaleString()}</strong>
         </div>
 
         <button
@@ -2674,68 +1211,46 @@ function updateCart(){
         >
             Checkout
         </button>
-
     `;
-
 }
 
 
 /* =========================================================
-   QUANTITY
+   QUANTITY / REMOVE
    ========================================================= */
 
 function changeQuantity(index,amount){
 
     if(!cart[index]) return;
 
+    cart[index].quantity+=amount;
 
-    cart[index].quantity += amount;
-
-
-    if(cart[index].quantity <= 0){
+    if(cart[index].quantity<=0){
         cart.splice(index,1);
     }
 
-
     updateCart();
-
 }
 
-
-/* =========================================================
-   REMOVE
-   ========================================================= */
 
 function removeItem(index){
 
     cart.splice(index,1);
-
     updateCart();
 
 }
 
 
 /* =========================================================
-   OPEN CART
+   CART
    ========================================================= */
 
 function openCart(){
-
-    document.getElementById("cartOverlay").style.display =
-        "block";
-
+    document.getElementById("cartOverlay").style.display="block";
 }
 
-
-/* =========================================================
-   CLOSE CART
-   ========================================================= */
-
 function closeCart(){
-
-    document.getElementById("cartOverlay").style.display =
-        "none";
-
+    document.getElementById("cartOverlay").style.display="none";
 }
 
 
@@ -2745,92 +1260,59 @@ function closeCart(){
 
 function openCheckout(){
 
-    if(cart.length === 0){
-
-        showToast(
-            "Your bag is empty."
-        );
-
+    if(cart.length===0){
+        showToast("Your bag is empty.");
         return;
-
     }
 
-
-    const productTotal =
+    const productTotal=
         cart.reduce(function(total,item){
-            return total + item.price * item.quantity;
+            return total+item.price*item.quantity;
         },0);
 
+    const delivery=
+        productTotal>=FREE_SHIPPING_LIMIT
+        ? 0
+        : DELIVERY_CHARGE;
 
-    const delivery =
-        productTotal >= FREE_SHIPPING_LIMIT
-            ? 0
-            : DELIVERY_CHARGE;
+    const total=productTotal+delivery;
 
+    const freeNote=
+        delivery===0
+        ? `<div class="checkout-free-note">🎉 You have unlocked FREE DELIVERY!</div>`
+        : `<div class="checkout-free-note">Spend Rs. 2,500 or more for FREE DELIVERY.</div>`;
 
-    const total =
-        productTotal + delivery;
+    document.getElementById("checkoutSummary").innerHTML=`
 
-
-    const freeNote =
-        delivery === 0
-            ? `<div class="checkout-free-note">
-                   🎉 You have unlocked FREE DELIVERY!
-               </div>`
-            : `<div class="checkout-free-note">
-                   Spend Rs. 2,500 or more for FREE DELIVERY.
-               </div>`;
-
-
-    document.getElementById("checkoutSummary").innerHTML = `
-
-        <strong>
-            Order Summary
-        </strong>
+        <strong>Order Summary</strong>
 
         <div style="margin-top:8px;">
-            Products:
-            Rs. ${productTotal.toLocaleString()}
+            Products: Rs. ${productTotal.toLocaleString()}
         </div>
 
         <div>
             Delivery:
-            ${
-                delivery === 0
-                    ? "FREE"
-                    : "Rs. " + delivery.toLocaleString()
-            }
+            ${delivery===0
+                ? "FREE"
+                : "Rs. "+delivery.toLocaleString()}
         </div>
 
         <div style="margin-top:6px;font-weight:700;">
-            Total:
-            Rs. ${total.toLocaleString()}
+            Total: Rs. ${total.toLocaleString()}
         </div>
 
         ${freeNote}
-
     `;
 
-
-    document.getElementById("checkoutModal").style.display =
-        "flex";
-
+    document.getElementById("checkoutModal").style.display="flex";
 }
 
 
-/* =========================================================
-   CLOSE CHECKOUT
-   ========================================================= */
-
 function closeCheckout(){
 
-    if(isPlacingOrder){
-        return;
-    }
+    if(isPlacingOrder) return;
 
-    document.getElementById("checkoutModal").style.display =
-        "none";
-
+    document.getElementById("checkoutModal").style.display="none";
 }
 
 
@@ -2840,182 +1322,106 @@ function closeCheckout(){
 
 async function placeOrder(){
 
-    if(isPlacingOrder){
-        return;
-    }
+    if(isPlacingOrder) return;
 
+    const name=document.getElementById("customerName").value.trim();
+    const email=document.getElementById("customerEmail").value.trim();
+    const phone=document.getElementById("customerPhone").value.trim();
+    const city=document.getElementById("customerCity").value.trim();
+    const area=document.getElementById("customerArea").value.trim();
+    const address=document.getElementById("customerAddress").value.trim();
 
-    const name =
-        document.getElementById("customerName")
-        .value.trim();
+    if(!name || !email || !phone || !city || !area || !address){
 
-    const email =
-        document.getElementById("customerEmail")
-        .value.trim();
-
-    const phone =
-        document.getElementById("customerPhone")
-        .value.trim();
-
-    const city =
-        document.getElementById("customerCity")
-        .value.trim();
-
-    const area =
-        document.getElementById("customerArea")
-        .value.trim();
-
-    const address =
-        document.getElementById("customerAddress")
-        .value.trim();
-
-
-    if(
-        !name ||
-        !email ||
-        !phone ||
-        !city ||
-        !area ||
-        !address
-    ){
-
-        showToast(
-            "Please fill all customer details."
-        );
-
+        showToast("Please fill all customer details.");
         return;
 
     }
 
+    if(cart.length===0){
 
-    if(cart.length === 0){
-
-        showToast(
-            "Your bag is empty."
-        );
-
+        showToast("Your bag is empty.");
         return;
 
     }
 
+    isPlacingOrder=true;
 
-    isPlacingOrder =
-        true;
-
-
-    const placeButton =
+    const placeButton=
         document.getElementById("placeOrderButton");
-
 
     if(placeButton){
 
-        placeButton.disabled =
-            true;
-
-        placeButton.textContent =
-            "Placing Order...";
-
-        placeButton.style.opacity =
-            "0.65";
-
-        placeButton.style.cursor =
-            "not-allowed";
+        placeButton.disabled=true;
+        placeButton.textContent="Placing Order...";
+        placeButton.style.opacity="0.65";
+        placeButton.style.cursor="not-allowed";
 
     }
 
+    const orderId=createOrderId();
 
-    const orderId =
-        createOrderId();
-
-
-    const productTotal =
+    const productTotal=
         cart.reduce(function(total,item){
-            return total + item.price * item.quantity;
+            return total+item.price*item.quantity;
         },0);
 
+    const delivery=
+        productTotal>=FREE_SHIPPING_LIMIT
+        ? 0
+        : DELIVERY_CHARGE;
 
-    const delivery =
-        productTotal >= FREE_SHIPPING_LIMIT
-            ? 0
-            : DELIVERY_CHARGE;
+    const grandTotal=
+        productTotal+delivery;
 
-
-    const grandTotal =
-        productTotal + delivery;
-
-
-    const productNames =
+    const productNames=
         cart.map(function(item){
             return item.name;
         }).join(", ");
 
-
-    const categories =
+    const categories=
         cart.map(function(item){
             return item.category;
         }).join(", ");
 
-
-    const colours =
+    const colours=
         cart.map(function(item){
             return item.colour;
         }).join(", ");
 
-
-    const sizes =
+    const sizes=
         cart.map(function(item){
             return item.size;
         }).join(", ");
 
-
-    const quantities =
+    const quantities=
         cart.map(function(item){
             return item.quantity;
         }).join(", ");
 
-
-    const data = {
+    const data={
 
         orderId:orderId,
-
         date:new Date().toISOString(),
-
         customerName:name,
-
         email:email,
-
         phone:phone,
-
         city:city,
-
         area:area,
-
         address:address,
-
         product:productNames,
-
         category:categories,
-
         colour:colours,
-
         size:sizes,
-
         quantity:quantities,
-
         productTotal:productTotal,
-
         delivery:delivery,
-
         grandTotal:grandTotal,
-
         paymentMethod:"Cash on Delivery",
-
         status:"Pending",
-
         reviewEmailSent:"NO"
 
     };
-
 
     try{
 
@@ -3023,89 +1429,52 @@ async function placeOrder(){
             GOOGLE_SCRIPT_URL,
             {
                 method:"POST",
-
                 mode:"no-cors",
-
                 headers:{
                     "Content-Type":
-                        "application/x-www-form-urlencoded"
+                    "application/x-www-form-urlencoded"
                 },
-
-                body:
-                    new URLSearchParams(data).toString()
+                body:new URLSearchParams(data).toString()
             }
         );
 
-
-        /*
-         * Apps Script receives the order.
-         * The button remains locked until the customer
-         * presses Continue Shopping.
-         */
-
-        cart = [];
+        cart=[];
 
         updateCart();
 
-        document.getElementById("checkoutModal").style.display =
-            "none";
+        document.getElementById("checkoutModal").style.display="none";
+        document.getElementById("cartOverlay").style.display="none";
 
-        document.getElementById("cartOverlay").style.display =
-            "none";
-
-
-        document.getElementById(
-            "successMessage"
-        ).innerHTML =
-            "Thank you, " +
-            escapeHtml(name) +
-            "! Your order <strong>" +
-            escapeHtml(orderId) +
-            "</strong> has been received.<br><br>" +
+        document.getElementById("successMessage").innerHTML=
+            "Thank you, "+
+            escapeHtml(name)+
+            "! Your order <strong>"+
+            escapeHtml(orderId)+
+            "</strong> has been received.<br><br>"+
             "Payment method: Cash on Delivery.";
 
-
-        document.getElementById(
-            "successModal"
-        ).style.display =
-            "flex";
-
+        document.getElementById("successModal").style.display="flex";
 
         clearCheckoutForm();
-
 
     }catch(error){
 
         console.error(error);
 
-
-        isPlacingOrder =
-            false;
-
+        isPlacingOrder=false;
 
         if(placeButton){
 
-            placeButton.disabled =
-                false;
-
-            placeButton.textContent =
-                "Place Order";
-
-            placeButton.style.opacity =
-                "1";
-
-            placeButton.style.cursor =
-                "pointer";
+            placeButton.disabled=false;
+            placeButton.textContent="Place Order";
+            placeButton.style.opacity="1";
+            placeButton.style.cursor="pointer";
 
         }
 
-
-        showToast(
-            "Something went wrong. Please try again."
-        );
+        showToast("Something went wrong. Please try again.");
 
     }
-
 }
 
 
@@ -3115,48 +1484,32 @@ async function placeOrder(){
 
 function createOrderId(){
 
-    const now =
-        new Date();
+    const now=new Date();
 
-
-    const datePart =
-        now.getFullYear().toString() +
-        String(now.getMonth()+1).padStart(2,"0") +
+    const datePart=
+        now.getFullYear().toString()+
+        String(now.getMonth()+1).padStart(2,"0")+
         String(now.getDate()).padStart(2,"0");
 
+    const randomPart=
+        Math.floor(1000+Math.random()*9000);
 
-    const randomPart =
-        Math.floor(
-            1000 +
-            Math.random() * 9000
-        );
-
-
-    return "MA-" +
-        datePart +
-        "-" +
-        randomPart;
-
+    return "MA-"+datePart+"-"+randomPart;
 }
 
 
 /* =========================================================
-   CLEAR CHECKOUT FORM
+   CLEAR CHECKOUT
    ========================================================= */
 
 function clearCheckoutForm(){
 
-    document.getElementById("customerName").value = "";
-
-    document.getElementById("customerEmail").value = "";
-
-    document.getElementById("customerPhone").value = "";
-
-    document.getElementById("customerCity").value = "";
-
-    document.getElementById("customerArea").value = "";
-
-    document.getElementById("customerAddress").value = "";
+    document.getElementById("customerName").value="";
+    document.getElementById("customerEmail").value="";
+    document.getElementById("customerPhone").value="";
+    document.getElementById("customerCity").value="";
+    document.getElementById("customerArea").value="";
+    document.getElementById("customerAddress").value="";
 
 }
 
@@ -3167,59 +1520,35 @@ function clearCheckoutForm(){
 
 function continueShopping(){
 
-    document.getElementById(
-        "successModal"
-    ).style.display =
-        "none";
+    document.getElementById("successModal").style.display="none";
 
+    isPlacingOrder=false;
 
-    isPlacingOrder =
-        false;
-
-
-    const placeButton =
-        document.getElementById(
-            "placeOrderButton"
-        );
-
+    const placeButton=
+        document.getElementById("placeOrderButton");
 
     if(placeButton){
 
-        placeButton.disabled =
-            false;
-
-        placeButton.textContent =
-            "Place Order";
-
-        placeButton.style.opacity =
-            "1";
-
-        placeButton.style.cursor =
-            "pointer";
+        placeButton.disabled=false;
+        placeButton.textContent="Place Order";
+        placeButton.style.opacity="1";
+        placeButton.style.cursor="pointer";
 
     }
 
-
     showShop();
-
 }
 
 
 /* =========================================================
-   SHOW SHOP
+   SHOP
    ========================================================= */
 
 function showShop(){
 
-    document.getElementById(
-        "adminSection"
-    ).style.display =
-        "none";
+    document.getElementById("adminSection").style.display="none";
 
-
-    document.getElementById(
-        "shop"
-    ).scrollIntoView({
+    document.getElementById("shop").scrollIntoView({
         behavior:"smooth"
     });
 
@@ -3232,119 +1561,64 @@ function showShop(){
 
 function selectReviewStar(number){
 
-    if(
-        isSubmittingReview ||
-        reviewSubmitted
-    ){
-        return;
-    }
+    if(isSubmittingReview || reviewSubmitted) return;
 
+    selectedReviewRating=number;
 
-    selectedReviewRating =
-        number;
-
-
-    document.querySelectorAll(
-        ".star-btn"
-    ).forEach(function(btn,index){
+    document.querySelectorAll(".star-btn").forEach(function(btn,index){
 
         btn.classList.toggle(
             "active",
-            index < number
+            index<number
         );
 
     });
-
 }
 
 
 async function submitReview(){
 
-    /*
-     * HARD FRONTEND LOCK
-     *
-     * Once the review request has been accepted by the browser,
-     * the button stays locked for this page session.
-     */
+    if(isSubmittingReview || reviewSubmitted) return;
 
-    if(
-        isSubmittingReview ||
-        reviewSubmitted
-    ){
-        return;
-    }
+    const name=
+        document.getElementById("reviewName").value.trim();
 
+    const review=
+        document.getElementById("reviewText").value.trim();
 
-    const name =
-        document.getElementById(
-            "reviewName"
-        ).value.trim();
-
-
-    const review =
-        document.getElementById(
-            "reviewText"
-        ).value.trim();
-
-
-    if(
-        !name ||
-        !review ||
-        !selectedReviewRating
-    ){
+    if(!name || !review || !selectedReviewRating){
 
         showToast(
             "Please add your name, rating and review."
         );
 
         return;
-
     }
 
+    isSubmittingReview=true;
 
-    isSubmittingReview =
-        true;
-
-
-    const reviewButton =
-        document.getElementById(
-            "submitReviewButton"
-        );
-
+    const reviewButton=
+        document.getElementById("submitReviewButton");
 
     if(reviewButton){
 
-        reviewButton.disabled =
-            true;
-
-        reviewButton.textContent =
-            "Submitting...";
-
-        reviewButton.style.opacity =
-            "0.65";
-
-        reviewButton.style.cursor =
-            "not-allowed";
+        reviewButton.disabled=true;
+        reviewButton.textContent="Submitting...";
+        reviewButton.style.opacity="0.65";
+        reviewButton.style.cursor="not-allowed";
 
     }
 
-
-    const reviewData = {
+    const reviewData={
 
         action:"submitReview",
-
         name:name,
-
         rating:selectedReviewRating,
-
         review:review,
-
         date:new Date().toISOString(),
-
         status:"Pending"
 
     };
-
 
     try{
 
@@ -3352,152 +1626,89 @@ async function submitReview(){
             GOOGLE_SCRIPT_URL,
             {
                 method:"POST",
-
                 mode:"no-cors",
-
                 headers:{
                     "Content-Type":
-                        "application/x-www-form-urlencoded"
+                    "application/x-www-form-urlencoded"
                 },
-
-                body:
-                    new URLSearchParams(
-                        reviewData
-                    ).toString()
+                body:new URLSearchParams(reviewData).toString()
             }
         );
 
-
-        /*
-         * IMPORTANT:
-         * Do NOT unlock after successful submission.
-         */
-
-        reviewSubmitted =
-            true;
-
+        reviewSubmitted=true;
 
         showToast(
             "Thank you! Your review has been submitted for approval 💗"
         );
 
+        document.getElementById("reviewName").value="";
+        document.getElementById("reviewText").value="";
 
-        document.getElementById(
-            "reviewName"
-        ).value = "";
+        selectedReviewRating=0;
 
-
-        document.getElementById(
-            "reviewText"
-        ).value = "";
-
-
-        selectedReviewRating =
-            0;
-
-
-        document.querySelectorAll(
-            ".star-btn"
-        ).forEach(function(btn){
-
-            btn.classList.remove(
-                "active"
-            );
-
+        document.querySelectorAll(".star-btn").forEach(function(btn){
+            btn.classList.remove("active");
         });
-
 
         if(reviewButton){
 
-            reviewButton.disabled =
-                true;
-
-            reviewButton.textContent =
-                "Review Submitted ✓";
-
-            reviewButton.style.opacity =
-                "0.65";
-
-            reviewButton.style.cursor =
-                "not-allowed";
+            reviewButton.disabled=true;
+            reviewButton.textContent="Review Submitted ✓";
+            reviewButton.style.opacity="0.65";
+            reviewButton.style.cursor="not-allowed";
 
         }
-
 
     }catch(error){
 
         console.error(error);
 
-
-        isSubmittingReview =
-            false;
-
+        isSubmittingReview=false;
 
         if(reviewButton){
 
-            reviewButton.disabled =
-                false;
-
-            reviewButton.textContent =
-                "Submit Review";
-
-            reviewButton.style.opacity =
-                "1";
-
-            reviewButton.style.cursor =
-                "pointer";
+            reviewButton.disabled=false;
+            reviewButton.textContent="Submit Review";
+            reviewButton.style.opacity="1";
+            reviewButton.style.cursor="pointer";
 
         }
-
 
         showToast(
             "Unable to submit review right now. Please try again."
         );
 
     }
-
 }
 
 
 /* =========================================================
-   LOAD APPROVED REVIEWS
+   APPROVED REVIEWS
    ========================================================= */
 
 async function loadApprovedReviews(){
 
     try{
 
-        const response =
+        const response=
             await fetch(
-                GOOGLE_SCRIPT_URL +
+                GOOGLE_SCRIPT_URL+
                 "?action=getApprovedReviews"
             );
 
+        if(!response.ok) return;
 
-        if(!response.ok){
-            return;
-        }
-
-
-        const data =
-            await response.json();
-
+        const data=await response.json();
 
         if(
             !data ||
-            data.success !== true ||
+            data.success!==true ||
             !Array.isArray(data.reviews)
         ){
-
             return;
-
         }
 
-
-        displayApprovedReviews(
-            data.reviews
-        );
-
+        displayApprovedReviews(data.reviews);
 
     }catch(error){
 
@@ -3507,186 +1718,114 @@ async function loadApprovedReviews(){
         );
 
     }
-
 }
 
 
-/* =========================================================
-   DISPLAY APPROVED REVIEWS
-   ========================================================= */
-
 function displayApprovedReviews(reviews){
 
-    const container =
-        document.getElementById(
-            "approvedReviews"
-        );
+    const container=
+        document.getElementById("approvedReviews");
 
+    const empty=
+        document.getElementById("noReviews");
 
-    const empty =
-        document.getElementById(
-            "noReviews"
-        );
+    if(!reviews || reviews.length===0){
 
-
-    if(
-        !reviews ||
-        reviews.length === 0
-    ){
-
-        container.innerHTML =
-            "";
-
-        empty.style.display =
-            "block";
-
+        container.innerHTML="";
+        empty.style.display="block";
         return;
 
     }
 
+    empty.style.display="none";
 
-    empty.style.display =
-        "none";
-
-
-    container.innerHTML =
+    container.innerHTML=
         reviews.map(function(item){
 
-            const rating =
+            const rating=
                 Math.max(
                     1,
                     Math.min(
                         5,
-                        Number(item.rating) || 5
+                        Number(item.rating)||5
                     )
                 );
 
-
-            const stars =
-                "★".repeat(rating) +
+            const stars=
+                "★".repeat(rating)+
                 "☆".repeat(5-rating);
 
-
             return `
+            <div class="review-card">
 
-                <div class="review-card">
-
-                    <div class="review-card-name">
-                        ${escapeHtml(item.name || "Customer")}
-                    </div>
-
-                    <div class="review-stars-display">
-                        ${stars}
-                    </div>
-
-                    <div class="review-card-text">
-                        ${escapeHtml(item.review || "")}
-                    </div>
-
+                <div class="review-card-name">
+                    ${escapeHtml(item.name || "Customer")}
                 </div>
 
+                <div class="review-stars-display">
+                    ${stars}
+                </div>
+
+                <div class="review-card-text">
+                    ${escapeHtml(item.review || "")}
+                </div>
+
+            </div>
             `;
 
         }).join("");
-
 }
 
 
 /* =========================================================
-   CONTACT US
+   CONTACT
    ========================================================= */
 
 async function submitContactMessage(){
 
-    /*
-     * HARD FRONTEND LOCK
-     *
-     * Once the message is accepted by the browser,
-     * the button stays locked for this page session.
-     */
+    if(isSubmittingContact || contactSubmitted) return;
 
-    if(
-        isSubmittingContact ||
-        contactSubmitted
-    ){
-        return;
-    }
+    const name=
+        document.getElementById("contactName").value.trim();
 
+    const email=
+        document.getElementById("contactEmail").value.trim();
 
-    const name =
-        document.getElementById(
-            "contactName"
-        ).value.trim();
+    const message=
+        document.getElementById("contactMessage").value.trim();
 
-
-    const email =
-        document.getElementById(
-            "contactEmail"
-        ).value.trim();
-
-
-    const message =
-        document.getElementById(
-            "contactMessage"
-        ).value.trim();
-
-
-    if(
-        !name ||
-        !email ||
-        !message
-    ){
+    if(!name || !email || !message){
 
         showToast(
             "Please fill your name, email and message."
         );
 
         return;
-
     }
 
+    isSubmittingContact=true;
 
-    isSubmittingContact =
-        true;
-
-
-    const contactButton =
-        document.getElementById(
-            "contactSubmitButton"
-        );
-
+    const contactButton=
+        document.getElementById("contactSubmitButton");
 
     if(contactButton){
 
-        contactButton.disabled =
-            true;
-
-        contactButton.textContent =
-            "Sending...";
-
-        contactButton.style.opacity =
-            "0.65";
-
-        contactButton.style.cursor =
-            "not-allowed";
+        contactButton.disabled=true;
+        contactButton.textContent="Sending...";
+        contactButton.style.opacity="0.65";
+        contactButton.style.cursor="not-allowed";
 
     }
 
-
-    const contactData = {
+    const contactData={
 
         action:"contactMessage",
-
         name:name,
-
         email:email,
-
         message:message,
-
         date:new Date().toISOString()
 
     };
-
 
     try{
 
@@ -3694,118 +1833,66 @@ async function submitContactMessage(){
             GOOGLE_SCRIPT_URL,
             {
                 method:"POST",
-
                 mode:"no-cors",
-
                 headers:{
                     "Content-Type":
-                        "application/x-www-form-urlencoded"
+                    "application/x-www-form-urlencoded"
                 },
-
-                body:
-                    new URLSearchParams(
-                        contactData
-                    ).toString()
+                body:new URLSearchParams(contactData).toString()
             }
         );
 
-
-        /*
-         * IMPORTANT:
-         * Do NOT unlock after successful submission.
-         */
-
-        contactSubmitted =
-            true;
-
+        contactSubmitted=true;
 
         showToast(
             "Your message has been sent. Thank you for contacting Mahi Arts 💗"
         );
 
-
-        document.getElementById(
-            "contactName"
-        ).value = "";
-
-
-        document.getElementById(
-            "contactEmail"
-        ).value = "";
-
-
-        document.getElementById(
-            "contactMessage"
-        ).value = "";
-
+        document.getElementById("contactName").value="";
+        document.getElementById("contactEmail").value="";
+        document.getElementById("contactMessage").value="";
 
         if(contactButton){
 
-            contactButton.disabled =
-                true;
-
-            contactButton.textContent =
-                "Message Sent ✓";
-
-            contactButton.style.opacity =
-                "0.65";
-
-            contactButton.style.cursor =
-                "not-allowed";
+            contactButton.disabled=true;
+            contactButton.textContent="Message Sent ✓";
+            contactButton.style.opacity="0.65";
+            contactButton.style.cursor="not-allowed";
 
         }
-
 
     }catch(error){
 
         console.error(error);
 
-
-        isSubmittingContact =
-            false;
-
+        isSubmittingContact=false;
 
         if(contactButton){
 
-            contactButton.disabled =
-                false;
-
-            contactButton.textContent =
-                "Send Message";
-
-            contactButton.style.opacity =
-                "1";
-
-            contactButton.style.cursor =
-                "pointer";
+            contactButton.disabled=false;
+            contactButton.textContent="Send Message";
+            contactButton.style.opacity="1";
+            contactButton.style.cursor="pointer";
 
         }
-
 
         showToast(
             "Unable to send your message right now. Please try again."
         );
 
     }
-
 }
 
 
 /* =========================================================
-   SECURE ADMIN DASHBOARD
+   ADMIN
    ========================================================= */
 
 function openAdmin(){
 
-    document.getElementById(
-        "adminSection"
-    ).style.display =
-        "block";
+    document.getElementById("adminSection").style.display="block";
 
-
-    document.getElementById(
-        "adminSection"
-    ).scrollIntoView({
+    document.getElementById("adminSection").scrollIntoView({
         behavior:"smooth"
     });
 
@@ -3827,81 +1914,60 @@ function openSecureDashboard(){
 
 
 /* =========================================================
-   DASHBOARD PRODUCT INFO
+   DASHBOARD
    ========================================================= */
 
 function updateDashboard(){
 
-    const dashboardProducts =
-        document.getElementById(
-            "dashboardProducts"
-        );
+    const dashboardProducts=
+        document.getElementById("dashboardProducts");
 
-    const dashboardCategories =
-        document.getElementById(
-            "dashboardCategories"
-        );
+    const dashboardCategories=
+        document.getElementById("dashboardCategories");
 
-
-    if(
-        !dashboardProducts ||
-        !dashboardCategories
-    ){
+    if(!dashboardProducts || !dashboardCategories){
         return;
     }
 
+    dashboardProducts.textContent=PRODUCTS.length;
 
-    dashboardProducts.textContent =
-        PRODUCTS.length;
+    const categories=new Set();
 
+    PRODUCTS.forEach(function(product){
 
-    const categories =
-        new Set(
-            PRODUCTS.map(function(product){
-                return product.category;
-            })
-        );
+        getProductCategories(product).forEach(function(category){
+            categories.add(category);
+        });
 
+    });
 
-    dashboardCategories.textContent =
-        categories.size;
-
+    dashboardCategories.textContent=categories.size;
 }
 
 
 /* =========================================================
-   SECRET ADMIN ACCESS
+   ADMIN ROUTE
    ========================================================= */
 
 function checkAdminRoute(){
 
     if(
-        window.location.hash.toLowerCase()
-        === "#admin"
+        window.location.hash.toLowerCase()==="#admin"
     ){
 
-        document.getElementById(
-            "adminSection"
-        ).style.display =
-            "block";
+        document.getElementById("adminSection").style.display="block";
 
-
-        document.getElementById(
-            "adminSection"
-        ).scrollIntoView({
+        document.getElementById("adminSection").scrollIntoView({
             behavior:"smooth"
         });
 
     }
-
 }
-
 
 window.addEventListener(
     "hashchange",
     checkAdminRoute
 );
-
 
 checkAdminRoute();
 
@@ -3912,43 +1978,27 @@ checkAdminRoute();
 
 let toastTimer;
 
-
 function showToast(message){
 
-    const toast =
-        document.getElementById(
-            "toast"
-        );
+    const toast=
+        document.getElementById("toast");
 
+    toast.textContent=message;
 
-    toast.textContent =
-        message;
+    toast.classList.add("show");
 
+    clearTimeout(toastTimer);
 
-    toast.classList.add(
-        "show"
-    );
+    toastTimer=setTimeout(function(){
 
+        toast.classList.remove("show");
 
-    clearTimeout(
-        toastTimer
-    );
-
-
-    toastTimer =
-        setTimeout(function(){
-
-            toast.classList.remove(
-                "show"
-            );
-
-        },3000);
-
+    },3000);
 }
 
 
 /* =========================================================
-   SECURITY / HTML HELPERS
+   SECURITY HELPERS
    ========================================================= */
 
 function escapeHtml(value){
@@ -3962,11 +2012,8 @@ function escapeHtml(value){
 
 }
 
-
 function escapeAttribute(value){
-
     return escapeHtml(value);
-
 }
 
 </script>
