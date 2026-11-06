@@ -1,4 +1,4 @@
-y<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -160,19 +160,78 @@ footer{background:#fff0f5;border-top:1px solid #efd5df;text-align:center;padding
 .review-list{grid-template-columns:1fr 1fr}
 .contact-box{grid-template-columns:1fr}
 }
+
 @media(max-width:650px){
 .navbar{padding:13px 14px}
 .nav-links{gap:8px}
 .nav-links a{display:none}
 .hero{padding-top:55px}
 .hero h1{font-size:42px}
-.products-grid{grid-template-columns:1fr}
+.products-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.product-card{border-radius:15px}
+.product-info{padding:11px}
+.product-name{font-size:16px;line-height:1.35}
+.product-description{font-size:11px;line-height:1.5}
+.product-price{font-size:15px}
+.colour-btn{padding:6px 8px;font-size:10px}
+.add-btn{padding:11px 5px;font-size:12px}
 .categories{grid-template-columns:repeat(2,1fr)}
 .review-list{grid-template-columns:1fr}
 .two-col{grid-template-columns:1fr}
 .social-banner h2{font-size:27px}
 .shipping-banner{font-size:11px}
 }
+
+/* CONTINUOUS CUSTOMER REVIEWS SLIDER */
+#approvedReviews.review-list{
+display:block;
+width:100%;
+overflow:hidden;
+margin-bottom:35px;
+}
+.ma-review-track{
+display:flex;
+width:max-content;
+gap:18px;
+animation:maReviewScroll 35s linear infinite;
+will-change:transform;
+}
+.ma-review-card{
+flex:0 0 300px;
+width:300px;
+min-height:170px;
+background:white;
+border:1px solid #efdce4;
+border-radius:18px;
+padding:20px;
+box-shadow:0 8px 25px rgba(126,64,88,.05);
+white-space:normal;
+}
+.ma-review-card .review-card-name{
+font-weight:700;
+color:#593744;
+margin-bottom:8px;
+}
+.ma-review-card .review-stars-display{
+color:#d69a35;
+letter-spacing:2px;
+margin-bottom:10px;
+}
+.ma-review-card .review-card-text{
+color:#705963;
+font-size:14px;
+line-height:1.7;
+overflow-wrap:anywhere;
+}
+@keyframes maReviewScroll{
+from{transform:translateX(0)}
+to{transform:translateX(-33.333333%)}
+}
+@media(max-width:650px){
+.ma-review-card{flex-basis:260px;width:260px}
+.ma-review-track{gap:12px}
+}
+
 </style>
 </head>
 
@@ -217,10 +276,8 @@ footer{background:#fff0f5;border-top:1px solid #efd5df;text-align:center;padding
 <strong>✨ Free Delivery on Rs. 2,500+</strong>
 <span>Orders below Rs. 2,500 have a Rs. 250 delivery charge.</span>
 </div>
-
 <h2 class="section-title">Our Collection</h2>
 <div id="productsGrid" class="products-grid"></div>
-
 <div id="emptyState" class="empty-state">
 <h3>No product found</h3>
 <p id="emptyMessage">Try another search.</p>
@@ -231,10 +288,8 @@ footer{background:#fff0f5;border-top:1px solid #efd5df;text-align:center;padding
 <div class="reviews-inner">
 <h2 class="section-title">Customer Love</h2>
 <p class="section-subtitle">We would love to hear about your Mahi Arts experience. Your review and star rating may be featured here after approval.</p>
-
 <div id="approvedReviews" class="review-list"></div>
 <div id="noReviews" class="no-reviews">No approved reviews yet. Be the first to share your experience 💗</div>
-
 <div class="review-form">
 <div class="form-heading">Leave a Review</div>
 <input id="reviewName" class="form-input" placeholder="Your name" maxlength="60">
@@ -255,7 +310,6 @@ footer{background:#fff0f5;border-top:1px solid #efd5df;text-align:center;padding
 <section class="section contact-section" id="contact">
 <h2 class="section-title">Contact Us</h2>
 <p class="section-subtitle">Have a question about a product, colour, size, order or anything else? Send us a message and we will get back to you.</p>
-
 <div class="contact-box">
 <div class="contact-info">
 <h3>We're Here For You</h3>
@@ -263,7 +317,6 @@ footer{background:#fff0f5;border-top:1px solid #efd5df;text-align:center;padding
 <a class="contact-email" href="mailto:mahiarts.shop@gmail.com">✉ mahiarts.shop@gmail.com</a>
 <div class="contact-note">You can also follow us on Instagram and TikTok for new products, updates and content.</div>
 </div>
-
 <div class="contact-form">
 <h3>Send Us A Message</h3>
 <input id="contactName" class="form-input" placeholder="Your name" maxlength="60">
@@ -324,9 +377,7 @@ footer{background:#fff0f5;border-top:1px solid #efd5df;text-align:center;padding
 <h2>Checkout</h2>
 <button class="close-btn" onclick="closeCheckout()">×</button>
 </div>
-
 <div id="checkoutSummary" class="checkout-summary"></div>
-
 <div class="two-col">
 <input id="customerName" class="form-input" placeholder="Full Name">
 <input id="customerEmail" class="form-input" type="email" placeholder="Gmail / Email">
@@ -334,10 +385,8 @@ footer{background:#fff0f5;border-top:1px solid #efd5df;text-align:center;padding
 <input id="customerCity" class="form-input" placeholder="City">
 <input id="customerArea" class="form-input" placeholder="Area / Place">
 </div>
-
 <textarea id="customerAddress" class="form-input" rows="4" placeholder="Complete Address"></textarea>
 <input class="form-input" value="Cash on Delivery" readonly>
-
 <button id="placeOrderButton" class="place-order-btn" type="button" onclick="placeOrder()">Place Order</button>
 <button class="cancel-btn" type="button" onclick="closeCheckout()">Cancel</button>
 </div>
@@ -354,29 +403,14 @@ footer{background:#fff0f5;border-top:1px solid #efd5df;text-align:center;padding
 <div id="toast" class="toast"></div>
 
 <script>
-
-/* =========================================================
-   MAHI ARTS SETTINGS
-   ========================================================= */
-
 const GOOGLE_SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbz0T9kxWciwn0BPLDFo-JxYdk76g9I5jcGKV-TdFrhWI9eE3SnEiferoKAJ9XO1oUKN/exec";
 
 const FREE_SHIPPING_LIMIT = 2500;
 const DELIVERY_CHARGE = 250;
 
-
-/* =========================================================
-   PRODUCTS - FIXED
-   ========================================================= */
-
-const PRODUCTS = [
-
-{
-id:"product-001",
-name:"Crystal Beaded Bracelet",
-categories:["Bracelets"],
-price:320,
+const PRODUCTS = [{
+id:"product-001",name:"Crystal Beaded Bracelet",categories:["Bracelets"],price:320,
 description:"Delicate crystal beaded bracelet designed to add a soft and elegant touch to your everyday look.",
 colours:[
 {name:"Hot Pink",image:"./hot%20pink.jpg"},
@@ -384,15 +418,10 @@ colours:[
 {name:"Light Pink",image:"./light%20pink.jpg"},
 {name:"Black",image:"./black.jpg"},
 {name:"Red",image:"./red.jpg"}
-],
-sizes:["Small","Medium"]
+],sizes:["Small","Medium"]
 },
-
 {
-id:"product-002",
-name:"Crystal Luxury Earrings for Women",
-categories:["Jewellery"],
-price:199,
+id:"product-002",name:"Crystal Luxury Earrings for Women",categories:["Jewellery"],price:199,
 description:"Elegant crystal earrings designed to add a refined sparkle to every look.",
 colours:[
 {name:"Green",image:"./green%20jewellery.jpg"},
@@ -401,15 +430,10 @@ colours:[
 {name:"White",image:"./white%20jewellery.jpg"},
 {name:"Navy Blue",image:"./navy%20blue%20jewellery.jpg"},
 {name:"Sky Blue",image:"./p31.jpg"}
-],
-sizes:["Small","Medium"]
+],sizes:["Small","Medium"]
 },
-
 {
-id:"product-003",
-name:"Crystal Handmade Bag-Style Keychain",
-categories:["Keychain"],
-price:369,
+id:"product-003",name:"Crystal Handmade Bag-Style Keychain",categories:["Keychain"],price:369,
 description:"A charming handmade crystal keychain with a Pinterest-inspired aesthetic, crafted to bring a delicate touch of luxury to your everyday essentials.",
 colours:[
 {name:"White",image:"./white%20keychain.jpg"},
@@ -417,138 +441,76 @@ colours:[
 {name:"Orange",image:"./orange%20keychain.jpg"},
 {name:"Red",image:"./red%20keychain.jpg"},
 {name:"Blue",image:"./blue%20keychain.jpg"}
-],
-sizes:["One Size"]
+],sizes:["One Size"]
 },
-
 {
-id:"product-004",
-name:"Custom Name Resin Pen and Keychain Set",
-categories:["Resin"],
-price:579,
+id:"product-004",name:"Custom Name Resin Pen and Keychain Set",categories:["Resin"],price:579,
 description:"This beautiful handmade set includes 1 glossy resin pen and 1 matching keychain, both customised with your name or any name you want.",
 colours:[
 {name:"Black",image:"./p1.jpg"},
 {name:"Purple",image:"./p2.jpg"},
 {name:"Pink",image:"./p3.jpg"}
-],
-sizes:[]
+],sizes:[]
 },
-
 {
-id:"product-005",
-name:"Resin Circle Keychain (Customised Text)",
-categories:["Resin","Keychain"],
-price:499,
+id:"product-005",name:"Resin Circle Keychain (Customised Text)",categories:["Resin","Keychain"],price:499,
 description:"Each keychain is handmade with premium clear resin, sparkly glitter and dried flowers. Customised with any colour and text you want.",
-colours:[
-{name:"Custom",image:"./p4.jpg"}
-],
-sizes:[]
+colours:[{name:"Custom",image:"./p4.jpg"}],sizes:[]
 },
-
 {
-id:"product-006",
-name:"Rainbow Gajra with Jumpke",
-categories:["Jewellery","Bracelets"],
-price:1499,
+id:"product-006",name:"Rainbow Gajra with Jumpke",categories:["Jewellery","Bracelets"],price:1499,
 description:"Add a pop of colour to your festival look with our viral rainbow gajra with jumpke.",
-colours:[
-{name:"Rainbow",image:"./p5.jpg"}
-],
-sizes:[]
+colours:[{name:"Rainbow",image:"./p5.jpg"}],sizes:[]
 },
-
 {
-id:"product-007",
-name:"Custom Alphabet Resin Flower Keychain",
-categories:["Resin","Keychain"],
-price:269,
+id:"product-007",name:"Custom Alphabet Resin Flower Keychain",categories:["Resin","Keychain"],price:269,
 description:"Material: Premium clear epoxy resin. Design: Alphabet A-Z letter keychain.",
-colours:[],
-sizes:[],
+colours:[],sizes:[],
 letters:["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
 image:"./p6.jpg"
 },
-
 {
-id:"product-008",
-name:"Custom Alphabet Letter Glitter Keychain",
-categories:["Resin","Keychain"],
-price:269,
+id:"product-008",name:"Custom Alphabet Letter Glitter Keychain",categories:["Resin","Keychain"],price:269,
 description:"Material: Premium clear epoxy resin. Design: Alphabet A-Z letter keychain.",
-colours:[],
-sizes:[],
+colours:[],sizes:[],
 letters:["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
 image:"./p7.jpg"
 },
-
 {
-id:"product-009",
-name:"Custom Alphabet Letter Glitter Keychain",
-categories:["Resin","Keychain"],
-price:269,
+id:"product-009",name:"Custom Alphabet Letter Glitter Keychain",categories:["Resin","Keychain"],price:269,
 description:"Material: Premium clear epoxy resin. Design: Alphabet A-Z letter keychain.",
-colours:[],
-sizes:[],
+colours:[],sizes:[],
 letters:["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
 image:"./p8.jpg"
 },
-
 {
-id:"product-010",
-name:"Trendy Resin Kangan Set",
-categories:["Resin","Jewellery"],
-price:1199,
+id:"product-010",name:"Trendy Resin Kangan Set",categories:["Resin","Jewellery"],price:1199,
 description:"Our resin kangan set for girls who love that pop of colour without the noise of heavy bangles. You can also get it customised with your preferred colour or flower.",
-colours:[],
-sizes:["58 MM"],
-image:"./p9.jpg"
+colours:[],sizes:["58 MM"],image:"./p9.jpg"
 },
-
 {
-id:"product-011",
-name:"Resin Rectangular Drop Earrings",
-categories:["Resin","Jewellery"],
-price:260,
+id:"product-011",name:"Resin Rectangular Drop Earrings",categories:["Resin","Jewellery"],price:260,
 description:"Minimal Korean Pinterest-inspired resin earrings.",
 colours:[
 {name:"Blue",image:"./p10.jpg"},
 {name:"Red",image:"./p11.jpg"}
-],
-sizes:[]
+],sizes:[]
 },
-
 {
-id:"product-012",
-name:"Traditional Jhumka Earrings",
-categories:["Jewellery"],
-price:229,
+id:"product-012",name:"Traditional Jhumka Earrings",categories:["Jewellery"],price:229,
 description:"Our traditional jhumka earrings are designed to give you that perfect desi girl glow.",
 colours:[
 {name:"Silver",image:"./p12.jpg"},
 {name:"Golden",image:"./p13.jpg"}
-],
-sizes:[]
+],sizes:[]
 },
-
 {
-id:"product-013",
-name:"Resin Heart Keychain (Custom Text)",
-categories:["Resin","Keychain"],
-price:499,
+id:"product-013",name:"Resin Heart Keychain (Custom Text)",categories:["Resin","Keychain"],price:499,
 description:"Each keychain is handmade with premium clear epoxy resin. Customise it with any colour and text you want.",
-colours:[
-{name:"Custom",image:"./p14.jpg"}
-],
-sizes:[]
+colours:[{name:"Custom",image:"./p14.jpg"}],sizes:[]
 },
-
 {
-id:"product-014",
-name:"Pack of 2 Artificial Hand Gajra for Girls",
-categories:["Jewellery","Bracelets"],
-price:1199,
+id:"product-014",name:"Pack of 2 Artificial Hand Gajra for Girls",categories:["Jewellery","Bracelets"],price:1199,
 description:"Premium quality artificial hand gajra with beautiful floral design.",
 colours:[
 {name:"Lilac",image:"./p15.jpg"},
@@ -560,15 +522,10 @@ colours:[
 {name:"Blue",image:"./p21.jpg"},
 {name:"Mustard Yellow",image:"./p22.jpg"},
 {name:"Pink & White",image:"./p23.jpg"}
-],
-sizes:["Small","Medium","Large"]
+],sizes:["Small","Medium","Large"]
 },
-
 {
-id:"product-015",
-name:"3 in 1 Beaded Bracelet Set for Girls",
-categories:["Bracelets"],
-price:260,
+id:"product-015",name:"3 in 1 Beaded Bracelet Set for Girls",categories:["Bracelets"],price:260,
 description:"Adjustable multilayer friendship charm beads wristband jewellery trio pack.",
 colours:[
 {name:"Red",image:"./p24.jpg"},
@@ -577,635 +534,190 @@ colours:[
 {name:"Light Pink",image:"./p27.jpg"},
 {name:"Purple",image:"./p28.jpg"},
 {name:"Teal Green",image:"./p29.jpg"}
-],
-sizes:["Small","Medium"]
+],sizes:["Small","Medium"]
 },
-
 {
-id:"product-016",
-name:"Resin Jhumka for Desi Girls",
-categories:["Jewellery"],
-price:949,
+id:"product-016",name:"Resin Jhumka for Desi Girls",categories:["Jewellery"],price:949,
 description:"Stainless steel jhumka earrings.",
+colours:[{name:"Design",image:"./p30.jpg"}],sizes:[]
+},
+{
+id:"product-017",name:"Resin Earing for Desi Girls",categories:["Resin","Jewellery"],price:1099,
+description:"Beautiful handmade resin earrings designed for Desi girls who love a unique and elegant traditional-inspired look. Perfect for festive occasions, weddings, family gatherings and special outfits.",
 colours:[
-{name:"Design",image:"./p30.jpg"}
-],
-sizes:[]
+{name:"Pink",image:"./p32.jpg"},
+{name:"Black",image:"./p33.jpg"},
+{name:"Green",image:"./p34.jpg"}
+],sizes:[]
 },
-
- {
-  id:"product-017",
-  name:"Resin Earing for Desi Girls",
-  categories:["Resin","Jewellery"],
-  price:1099,
-  description:"Beautiful handmade resin earrings designed for Desi girls who love a unique and elegant traditional-inspired look. Perfect for festive occasions, weddings, family gatherings and special outfits.",
-  colours:[
-    {name:"Pink",image:"./p32.jpg"},
-    {name:"Black",image:"./p33.jpg"},
-    {name:"Green",image:"./p34.jpg"}
-  ],
-  sizes:[]
-},
-
 {
-  id:"product-018",
-  name:"Resin Earing for Desi Girls",
-  categories:["Resin","Jewellery"],
-  price:1499,
-  description:"A beautiful handmade resin jewellery set for Desi girls, featuring elegant earrings with matching locket. Perfect for weddings, festive celebrations, mehndi events and special occasions.",
-  colours:[
-    {name:"Design",image:"./p36.jpg"}
-  ],
-  sizes:[]
+id:"product-018",name:"Resin Earing for Desi Girls",categories:["Resin","Jewellery"],price:1499,
+description:"A beautiful handmade resin jewellery set for Desi girls, featuring elegant earrings with matching locket. Perfect for weddings, festive celebrations, mehndi events and special occasions.",
+colours:[{name:"Design",image:"./p36.jpg"}],sizes:[]
 },
-
 {
-  id:"product-019",
-  name:"Resin Double Jhumka Earing For Desi Girls",
-  categories:["Resin","Jewellery"],
-  price:1199,
-  description:"Beautiful handmade resin double jhumka earrings made for a gorgeous Desi-inspired look. The unique layered jhumka design adds an elegant and eye-catching touch to traditional and festive outfits.",
-  colours:[
-    {name:"Design",image:"./p35.jpg"}
-  ],
-  sizes:[]
+id:"product-019",name:"Resin Double Jhumka Earing For Desi Girls",categories:["Resin","Jewellery"],price:1199,
+description:"Beautiful handmade resin double jhumka earrings made for a gorgeous Desi-inspired look. The unique layered jhumka design adds an elegant and eye-catching touch to traditional and festive outfits.",
+colours:[{name:"Design",image:"./p35.jpg"}],sizes:[]
 },
-   {
-  id: "product-020",
-  name: "Pearl Beaded Bag Keychain with Cherry Charm",
-
-  categories: [
-    "Keychain"
-  ],
-
-  price: 339,
-
-  description:
-    "Add a cute and elegant touch to your everyday essentials with this pearl beaded bag keychain, finished with an adorable cherry charm. Perfect for decorating your handbag, purse or backpack, and a lovely little gift for someone special.",
-
-  colours: [
-    {
-      name: "Pearl White",
-      image: "./p37.jpg"
-    }
-  ],
-
-  sizes: []
-},
-
 {
-  id: "product-021",
-  name: "Crystal Beaded Bag Keychain with Cherry Charm",
-
-  categories: [
-    "Keychain"
-  ],
-
-  price: 339,
-
-  description:
-    "Make your bag stand out with this charming crystal beaded keychain featuring a cute cherry charm. Its sparkling beads and playful design add a stylish touch to handbags, purses and backpacks. Available in beautiful colours to match your style.",
-
-  colours: [
-    {
-      name: "White",
-      image: "./p38.jpg"
-    },
-    {
-      name: "Peach",
-      image: "./p39.jpg"
-    },
-    {
-      name: "Baby Pink",
-      image: "./p40.jpg"
-    },
-    {
-      name: "Red",
-      image: "./p41.jpg"
-    },
-    {
-      name: "Sky Blue",
-      image: "./p42.jpg"
-    },
-    {
-      name: "Hot Pink",
-      image: "./p43.jpg"
-    },
-    {
-      name: "Black",
-      image: "./p44.jpg"
-    }
-  ],
-
-  sizes: []
+id:"product-020",name:"Pearl Beaded Bag Keychain with Cherry Charm",categories:["Keychain"],price:339,
+description:"Add a cute and elegant touch to your everyday essentials with this pearl beaded bag keychain, finished with an adorable cherry charm. Perfect for decorating your handbag, purse or backpack, and a lovely little gift for someone special.",
+colours:[{name:"Pearl White",image:"./p37.jpg"}],sizes:[]
 },
-
 {
-  id: "product-022",
-  name: "10 Inch Luxury Resin Frame (Customised)",
-
-  categories: [
-    "Resin"
-  ],
-
-  price: 3499,
-
-  description:
-    "Turn your favourite memories into a beautiful keepsake with our 10-inch luxury customised resin frame. Designed with an elegant resin finish, it makes a thoughtful gift for birthdays, anniversaries and special occasions. Choose your preferred colour for a personal touch.",
-
-  colours: [
-    {
-      name: "Pink",
-      image: "./p45.jpg"
-    },
-    {
-      name: "Blue",
-      image: "./p46.jpg"
-    }
-  ],
-
-  sizes: []
+id:"product-021",name:"Crystal Beaded Bag Keychain with Cherry Charm",categories:["Keychain"],price:339,
+description:"Make your bag stand out with this charming crystal beaded keychain featuring a cute cherry charm. Its sparkling beads and playful design add a stylish touch to handbags, purses and backpacks. Available in beautiful colours to match your style.",
+colours:[
+{name:"White",image:"./p38.jpg"},
+{name:"Peach",image:"./p39.jpg"},
+{name:"Baby Pink",image:"./p40.jpg"},
+{name:"Red",image:"./p41.jpg"},
+{name:"Sky Blue",image:"./p42.jpg"},
+{name:"Hot Pink",image:"./p43.jpg"},
+{name:"Black",image:"./p44.jpg"}
+],sizes:[]
 },
-
 {
-  id: "product-023",
-  name: "10 Inch Luxury Resin Frame (Customised)",
-
-  categories: [
-    "Resin"
-  ],
-
-  price: 3499,
-
-  description:
-    "Make your special moments unforgettable with this 10-inch luxury customised resin frame. Choose from three beautiful designs to create a personalised keepsake for yourself or a loved one. A unique decorative piece for memorable occasions.",
-
-  colours: [
-    {
-      name: "Option A",
-      image: "./p48.jpg"
-    },
-    {
-      name: "Option B",
-      image: "./p47.jpg"
-    },
-    {
-      name: "Option C",
-      image: "./p49.jpg"
-    }
-  ],
-
-  sizes: []
+id:"product-022",name:"10 Inch Luxury Resin Frame (Customised)",categories:["Resin"],price:3499,
+description:"Turn your favourite memories into a beautiful 10-inch luxury customised resin frame. Designed with an elegant resin finish, it makes a thoughtful gift for birthdays, anniversaries and special occasions. Choose your preferred colour for a personal touch.",
+colours:[
+{name:"Pink",image:"./p45.jpg"},
+{name:"Blue",image:"./p46.jpg"}
+],sizes:[]
 },
-
 {
-  id: "product-024",
-  name: "5 Inch Luxury Resin Frame (Customised)",
-
-  categories: [
-    "Resin"
-  ],
-
-  price: 1699,
-
-  description:
-    "A little frame filled with special memories. This 5-inch luxury resin frame is a beautiful personalised keepsake and a thoughtful gift for someone dear. Select your favourite design to make your special moments even more memorable.",
-
-  colours: [
-    {
-      name: "Option A",
-      image: "./p50.jpg"
-    },
-    {
-      name: "Option B",
-      image: "./p51.jpg"
-    },
-    {
-      name: "Option C",
-      image: "./p52.jpg"
-    }
-  ],
-
-  sizes: []
+id:"product-023",name:"10 Inch Luxury Resin Frame (Customised)",categories:["Resin"],price:3499,
+description:"Make your special moments unforgettable with this 10-inch luxury customised resin frame. Choose from three beautiful designs to create a personalised keepsake for yourself or a loved one. A unique decorative piece for memorable occasions.",
+colours:[
+{name:"Option A",image:"./p48.jpg"},
+{name:"Option B",image:"./p47.jpg"},
+{name:"Option C",image:"./p49.jpg"}
+],sizes:[]
 },
-
 {
-  id: "product-025",
-  name: "5 Inch Luxury Flower Resin Frame (Customised)",
-
-  categories: [
-    "Resin"
-  ],
-
-  price: 1799,
-
-  description:
-    "Preserve your precious memories in a beautiful 5-inch luxury flower resin frame. Featuring an elegant floral-inspired design, this keepsake adds a delicate decorative touch to your space and makes a thoughtful gift for someone special.",
-
-  colours: [
-    {
-      name: "Floral Design",
-      image: "./p53.jpg"
-    }
-  ],
-
-  sizes: []
+id:"product-024",name:"5 Inch Luxury Resin Frame (Customised)",categories:["Resin"],price:1699,
+description:"A little frame filled with special memories. This 5-inch luxury resin frame is a beautiful personalised keepsake and a thoughtful gift for someone dear. Select your favourite design to make your special moments even more memorable.",
+colours:[
+{name:"Option A",image:"./p50.jpg"},
+{name:"Option B",image:"./p51.jpg"},
+{name:"Option C",image:"./p52.jpg"}
+],sizes:[]
 },
-
 {
-  id: "product-026",
-  name: "2 Pcs Crystal Beaded Gajra Bracelet",
-
-  categories: [
-    "Jewellery",
-    "Bracelet"
-  ],
-
-  price: 779,
-
-  description:
-    "Complete your festive and traditional look with this beautiful set of two crystal beaded gajra bracelets. Their colourful, sparkling design adds a graceful touch to wedding outfits, celebrations and special occasions. Choose your favourite shade to complement your look.",
-
-  colours: [
-    {
-      name: "Red",
-      image: "./p54.jpg"
-    },
-    {
-      name: "White",
-      image: "./p54.jpg"
-    },
-    {
-      name: "Yellow",
-      image: "./p54.jpg"
-    },
-    {
-      name: "Hot Pink",
-      image: "./p54.jpg"
-    },
-    {
-      name: "Sky Blue",
-      image: "./p54.jpg"
-    },
-    {
-      name: "Dark Green",
-      image: "./p54.jpg"
-    },
-    {
-      name: "Blue",
-      image: "./p54.jpg"
-    },
-    {
-      name: "Purple",
-      image: "./p54.jpg"
-    },
-    {
-      name: "Lilac",
-      image: "./p54.jpg"
-    },
-    {
-      name: "Mustard Yellow",
-      image: "./p54.jpg"
-    },
-    {
-      name: "Black",
-      image: "./p54.jpg"
-    }
-  ],
-
-  sizes: []
+id:"product-025",name:"5 Inch Luxury Flower Resin Frame (Customised)",categories:["Resin"],price:1799,
+description:"Preserve your precious memories in a beautiful 5-inch luxury flower resin frame. Featuring an elegant floral-inspired design, this keepsake adds a delicate decorative touch to your space and makes a thoughtful gift for someone special.",
+colours:[{name:"Floral Design",image:"./p53.jpg"}],sizes:[]
 },
-
 {
-  id: "product-027",
-  name: "2 Pcs Flower Bracelet for Girls",
-
-  categories: [
-    "Bracelet",
-    "Jewellery"
-  ],
-
-  price: 649,
-
-  description:
-    "Add a sweet floral touch to your everyday style with this set of two flower bracelets for girls. Perfect for casual outfits, festive looks and gifting, these charming bracelets bring a lovely pop of colour to your accessories collection.",
-
-  colours: [
-    {
-      name: "Hot Pink",
-      image: "./p55.jpg"
-    },
-    {
-      name: "Red",
-      image: "./p55.jpg"
-    },
-    {
-      name: "Royal Blue",
-      image: "./p55.jpg"
-    },
-    {
-      name: "Light Blue",
-      image: "./p55.jpg"
-    },
-    {
-      name: "Peach",
-      image: "./p55.jpg"
-    },
-    {
-      name: "Baby Pink",
-      image: "./p55.jpg"
-    },
-    {
-      name: "Purple Pink",
-      image: "./p55.jpg"
-    },
-    {
-      name: "Sky Blue",
-      image: "./p55.jpg"
-    },
-    {
-      name: "Butter Yellow",
-      image: "./p55.jpg"
-    },
-    {
-      name: "Sea Green",
-      image: "./p55.jpg"
-    },
-    {
-      name: "Purple",
-      image: "./p55.jpg"
-    },
-    {
-      name: "Mustard Yellow",
-      image: "./p55.jpg"
-    }
-  ],
-
-  sizes: []
+id:"product-026",name:"2 Pcs Crystal Beaded Gajra Bracelet",categories:["Jewellery","Bracelet"],price:779,
+description:"Complete your festive and traditional look with this beautiful set of two crystal beaded gajra bracelets. Their colourful, sparkling design adds a graceful touch to wedding outfits, celebrations and special occasions. Choose your favourite shade to complement your look.",
+colours:[
+{name:"Red",image:"./p54.jpg"},
+{name:"White",image:"./p54.jpg"},
+{name:"Yellow",image:"./p54.jpg"},
+{name:"Hot Pink",image:"./p54.jpg"},
+{name:"Sky Blue",image:"./p54.jpg"},
+{name:"Dark Green",image:"./p54.jpg"},
+{name:"Blue",image:"./p54.jpg"},
+{name:"Purple",image:"./p54.jpg"},
+{name:"Lilac",image:"./p54.jpg"},
+{name:"Mustard Yellow",image:"./p54.jpg"},
+{name:"Black",image:"./p54.jpg"}
+],sizes:[]
 },
-
 {
-  id: "product-028",
-  name: "2 Pcs Beaded Bracelet Minimalist for Girls",
-
-  categories: [
-    "Bracelet",
-    "Jewellery"
-  ],
-
-  price: 449,
-
-  description:
-    "Keep your style simple and trendy with this set of two minimalist beaded bracelets. Easy to pair with everyday outfits, these versatile accessories add a delicate pop of colour and make a lovely gift for friends or loved ones.",
-
-  colours: [
-    {
-      name: "Hot Pink",
-      image: "./p56.jpg"
-    },
-    {
-      name: "Red",
-      image: "./p56.jpg"
-    },
-    {
-      name: "Royal Blue",
-      image: "./p56.jpg"
-    },
-    {
-      name: "Light Blue",
-      image: "./p56.jpg"
-    },
-    {
-      name: "Peach",
-      image: "./p56.jpg"
-    },
-    {
-      name: "Baby Pink",
-      image: "./p56.jpg"
-    },
-    {
-      name: "Purple Pink",
-      image: "./p56.jpg"
-    },
-    {
-      name: "Sky Blue",
-      image: "./p56.jpg"
-    },
-    {
-      name: "Butter Yellow",
-      image: "./p56.jpg"
-    },
-    {
-      name: "Sea Green",
-      image: "./p56.jpg"
-    },
-    {
-      name: "Purple",
-      image: "./p56.jpg"
-    },
-    {
-      name: "Mustard Yellow",
-      image: "./p56.jpg"
-    }
-  ],
-
-  sizes: []
+id:"product-027",name:"2 Pcs Flower Bracelet for Girls",categories:["Bracelet","Jewellery"],price:649,
+description:"Add a sweet floral touch to your everyday style with this set of two flower bracelets for girls. Perfect for casual outfits, festive looks and gifting, these charming bracelets bring a lovely pop of colour to your accessories collection.",
+colours:[
+{name:"Hot Pink",image:"./p55.jpg"},
+{name:"Red",image:"./p55.jpg"},
+{name:"Royal Blue",image:"./p55.jpg"},
+{name:"Light Blue",image:"./p55.jpg"},
+{name:"Peach",image:"./p55.jpg"},
+{name:"Baby Pink",image:"./p55.jpg"},
+{name:"Purple Pink",image:"./p55.jpg"},
+{name:"Sky Blue",image:"./p55.jpg"},
+{name:"Butter Yellow",image:"./p55.jpg"},
+{name:"Sea Green",image:"./p55.jpg"},
+{name:"Purple",image:"./p55.jpg"},
+{name:"Mustard Yellow",image:"./p55.jpg"}
+],sizes:[]
 },
-   {
-  id: "product-029",
-  name: "Customised Resin Keychain with Name | Personalised Handmade Keychain",
-  categories: [
-    "Resin",
-    "Keychain"
-  ],
-  price: 399,
-  description:
-    "Make your everyday essentials extra special with a handmade resin keychain personalised with your chosen name. A cute and thoughtful accessory for keys, handbags and backpacks, perfect for gifting to friends and loved ones. Choose your preferred colour and name to create your own unique piece.",
-  colours: [
-    {
-      name: "Custom Colour & Name",
-      image: "./p57.jpg"
-    }
-  ],
-  sizes: []
-},
-
 {
-  id: "product-030",
-  name: "Alphabet Plate with Heart and Name | Handmade Decor Plate",
-  categories: [
-    "Resin"
-  ],
-  price: 1370,
-  description:
-    "Celebrate a special name with this beautiful handmade resin alphabet plate featuring a heart detail. Personalised with your chosen name, it makes a lovely decorative keepsake for bedrooms, dressing tables and gifting on special occasions.",
-  colours: [
-    {
-      name: "Custom Name",
-      image: "./p58.jpg"
-    }
-  ],
-  sizes: []
+id:"product-028",name:"2 Pcs Beaded Bracelet Minimalist for Girls",categories:["Bracelet","Jewellery"],price:449,
+description:"Keep your style simple and trendy with this set of two minimalist beaded bracelets. Easy to pair with everyday outfits, these versatile accessories add a delicate pop of colour and make a lovely gift for friends or loved ones.",
+colours:[
+{name:"Hot Pink",image:"./p56.jpg"},
+{name:"Red",image:"./p56.jpg"},
+{name:"Royal Blue",image:"./p56.jpg"},
+{name:"Light Blue",image:"./p56.jpg"},
+{name:"Peach",image:"./p56.jpg"},
+{name:"Baby Pink",image:"./p56.jpg"},
+{name:"Purple Pink",image:"./p56.jpg"},
+{name:"Sky Blue",image:"./p56.jpg"},
+{name:"Butter Yellow",image:"./p56.jpg"},
+{name:"Sea Green",image:"./p56.jpg"},
+{name:"Purple",image:"./p56.jpg"},
+{name:"Mustard Yellow",image:"./p56.jpg"}
+],sizes:[]
 },
-
 {
-  id: "product-031",
-  name: "Alphabet Plate with Heart | Handmade Decor Plate",
-  categories: [
-    "Resin"
-  ],
-  price: 1270,
-  description:
-    "Add a charming personal touch to your space with this handmade resin alphabet plate featuring a beautiful heart design. Its elegant decorative style makes it a lovely addition to your room or a thoughtful gift for someone special.",
-  colours: [
-    {
-      name: "One Colour",
-      image: "./p59.jpg"
-    }
-  ],
-  sizes: []
+id:"product-029",name:"Customised Resin Keychain with Name | Personalised Handmade Keychain",categories:["Resin","Keychain"],price:399,
+description:"Make your everyday essentials extra special with a handmade resin keychain personalised with your chosen name. A cute and thoughtful accessory for keys, handbags and backpacks, perfect for gifting to friends and loved ones. Choose your preferred colour and name to create your own unique piece.",
+colours:[{name:"Custom Colour & Name",image:"./p57.jpg"}],sizes:[]
 },
-
 {
-  id: "product-032",
-  name: "Customised Alphabet Name Resin Plate | Personalised Resin Decor",
-  categories: [
-    "Resin"
-  ],
-  price: 1299,
-  description:
-    "Create a decor piece that is uniquely yours with this customised alphabet name resin plate. Personalised with your chosen name and colour, it is perfect for decorating shelves, dressing tables or bedrooms and makes a memorable handmade gift.",
-  colours: [
-    {
-      name: "Custom Colour & Name only 4 alphabet",
-      image: "./p60.jpg"
-    }
-  ],
-  sizes: []
+id:"product-030",name:"Alphabet Plate with Heart and Name | Handmade Decor Plate",categories:["Resin"],price:1370,
+description:"Celebrate a special name with this beautiful handmade resin alphabet plate featuring a heart detail. Personalised with your chosen name, it makes a lovely decorative keepsake for bedrooms, dressing tables and gifting on special occasions.",
+colours:[{name:"Custom Name",image:"./p58.jpg"}],sizes:[]
 },
-
 {
-  id: "product-033",
-  name: "Resin Plate with Photo | Personalised Resin Decor",
-  categories: [
-    "Resin"
-  ],
-  price: 1250,
-  description:
-    "Turn your favourite photograph into a beautiful personalised resin decor plate. Handmade with care, this keepsake is a lovely way to celebrate special memories and makes a thoughtful gift for birthdays, anniversaries and other meaningful occasions. Choose your preferred colour.",
-  colours: [
-    {
-      name: "Custom Colour",
-      image: "./p61.jpg"
-    }
-  ],
-  sizes: []
+id:"product-031",name:"Alphabet Plate with Heart | Handmade Decor Plate",categories:["Resin"],price:1270,
+description:"Add a charming personal touch to your space with this handmade resin alphabet plate featuring a beautiful heart design. Its elegant decorative style makes it a lovely addition to your room or a thoughtful gift for someone special.",
+colours:[{name:"One Colour",image:"./p59.jpg"}],sizes:[]
 },
-
 {
-  id: "product-034",
-  name: "Resin Plate with Photo | Personalised Resin Decor",
-  categories: [
-    "Resin"
-  ],
-  price: 1250,
-  description:
-    "Keep your precious memories close with this handmade personalised resin photo plate. A beautiful decorative keepsake for your home or a special gift for someone you love. Customise the colour to match your personal style.",
-  colours: [
-    {
-      name: "Custom Colour",
-      image: "./p62.jpg"
-    }
-  ],
-  sizes: []
+id:"product-032",name:"Customised Alphabet Name Resin Plate | Personalised Resin Decor",categories:["Resin"],price:1299,
+description:"Create a decor piece that is uniquely yours with this customised alphabet name resin plate. Personalised with your chosen name and colour, it is perfect for decorating shelves, dressing tables or bedrooms and makes a memorable handmade gift.",
+colours:[{name:"Custom Colour & Name only 4 alphabet",image:"./p60.jpg"}],sizes:[]
 },
-
 {
-  id: "product-035",
-  name: "Handmade Butterfly Resin Keychain | Cute Decorative Keychain",
-  categories: [
-    "Resin",
-    "Keychain"
-  ],
-  price: 320,
-  description:
-    "Add a little sparkle to your everyday accessories with this cute handmade butterfly resin keychain. Its decorative butterfly design makes it perfect for keys, handbags and backpacks. Choose your preferred colour to create an accessory that matches your style.",
-  colours: [
-    {
-      name: "Custom Colour",
-      image: "./p63.jpg"
-    }
-  ],
-  sizes: []
+id:"product-033",name:"Resin Plate with Photo | Personalised Resin Decor",categories:["Resin"],price:1250,
+description:"Turn your favourite photograph into a beautiful personalised resin decor plate. Handmade with care, this keepsake is a lovely way to celebrate special memories and makes a thoughtful gift for birthdays, anniversaries and other meaningful occasions. Choose your preferred colour.",
+colours:[{name:"Custom Colour",image:"./p61.jpg"}],sizes:[]
 },
-
 {
-  id: "product-036",
-  name: "Handmade Resin Clock | Elegant Decorative Wall Clock only raw material",
-  categories: [
-    "Resin"
-  ],
-  price: 1499,
-  description:
-    "Give your space a stylish finishing touch with this handmade resin clock. Designed to bring charm and character to your home decor, it looks beautiful in living rooms, bedrooms or workspaces. A unique decorative piece for your own home or as a thoughtful gift.",
-  colours: [],
-  sizes: [],
-  image: "./p64.jpg"
+id:"product-034",name:"Resin Plate with Photo | Personalised Resin Decor",categories:["Resin"],price:1250,
+description:"Keep your precious memories close with this handmade personalised resin photo plate. A beautiful decorative keepsake for your home or a special gift for someone you love. Customise the colour to match your personal style.",
+colours:[{name:"Custom Colour",image:"./p62.jpg"}],sizes:[]
 },
-
 {
-  id: "product-037",
-  name: "Resin 10 Inch Photo Frame Stand",
-  categories: [
-    "Resin"
-  ],
-  price: 239,
-  description:
-    "Display your favourite memories with this 10-inch resin photo frame stand. Its decorative design makes it a lovely addition to desks, shelves and bedside tables. A thoughtful choice for displaying cherished photographs or gifting to someone special.",
-  colours: [],
-  sizes: [],
-  image: "./p65.jpg"
+id:"product-035",name:"Handmade Butterfly Resin Keychain | Cute Decorative Keychain",categories:["Resin","Keychain"],price:320,
+description:"Add a little sparkle to your everyday accessories with this cute handmade butterfly resin keychain. Its decorative butterfly design makes it perfect for keys, handbags and backpacks. Choose your preferred colour to create an accessory that matches your style.",
+colours:[{name:"Custom Colour",image:"./p63.jpg"}],sizes:[]
 },
-
 {
-  id: "product-038",
-  name: "Resin 5 Inch Photo Frame Stand",
-  categories: [
-    "Resin"
-  ],
-  price: 199,
-  description:
-    "Keep your favourite memories close with this compact 5-inch resin photo frame stand. Perfect for desks, shelves and bedside tables, it adds a sweet decorative touch without taking up much space. A lovely little keepsake or gift for someone special.",
-  colours: [],
-  sizes: [],
-  image: "./p65.jpg"
+id:"product-036",name:"Handmade Resin Clock | Elegant Decorative Wall Clock only raw material",categories:["Resin"],price:1499,
+description:"Give your space a stylish finishing touch with this handmade resin clock. Designed to bring charm and character to your home decor, it looks beautiful in living rooms, bedrooms or workspaces. A unique decorative piece for your own home or as a thoughtful gift.",
+colours:[],sizes:[],image:"./p64.jpg"
 },
-
 {
-  id: "product-039",
-  name: "Handmade Resin Quran Box only raw material",
-  categories: [
-    "Resin"
-  ],
-  price: 1700,
-  description:
-    "Keep your Quran in a beautiful handmade resin box designed with care and attention to detail. Personalise the colour to suit your preference and create a meaningful piece for your home or a thoughtful gift for a loved one.",
-  colours: [
-    {
-      name: "Custom Colour",
-      image: "./p66.jpg"
-    }
-  ],
-  sizes: []
+id:"product-037",name:"Resin 10 Inch Photo Frame Stand",categories:["Resin"],price:239,
+description:"Display your favourite memories with this 10-inch resin photo frame stand. Its decorative design makes it a lovely addition to desks, shelves and bedside tables. A thoughtful choice for displaying cherished photographs or gifting to someone special.",
+colours:[],sizes:[],image:"./p65.jpg"
+},
+{
+id:"product-038",name:"Resin 5 Inch Photo Frame Stand",categories:["Resin"],price:199,
+description:"Keep your favourite memories close with this compact 5-inch resin photo frame stand. Perfect for desks, shelves and bedside tables, it adds a sweet decorative touch without taking up much space. A lovely little keepsake or gift for someone special.",
+colours:[],sizes:[],image:"./p65.jpg"
+},
+{
+id:"product-039",name:"Handmade Resin Quran Box only raw material",categories:["Resin"],price:1700,
+description:"Keep your Quran in a beautiful handmade resin box designed with care and attention to detail. Personalise the colour to suit your preference and create a meaningful piece for your home or a thoughtful gift for a loved one.",
+colours:[{name:"Custom Colour",image:"./p66.jpg"}],sizes:[]
 }
-
-];
-
-   
-/* =========================================================
-   STATE
-   ========================================================= */
-
+];/* STATE */
 let cart=[];
 let isPlacingOrder=false;
 let isSubmittingReview=false;
@@ -1214,434 +726,271 @@ let reviewSubmitted=false;
 let contactSubmitted=false;
 let selectedCategory="All";
 let selectedReviewRating=0;
+let lastReviewsSignature="";
 
 const selectedColours={};
 const selectedSizes={};
 const selectedLetters={};
 
-
-/* =========================================================
-   HELPERS
-   ========================================================= */
-
+/* HELPERS */
 function getProductCategories(product){
-    if(Array.isArray(product.categories)){
-        return product.categories;
-    }
-
-    if(product.category){
-        return [product.category];
-    }
-
-    return [];
+    return Array.isArray(product.categories)
+        ? product.categories
+        : product.category ? [product.category] : [];
 }
 
 function getProductImage(product){
-    if(product.image){
-        return product.image;
-    }
-
-    if(product.colours && product.colours.length){
+    if(product.image) return product.image;
+    if(product.colours && product.colours.length)
         return product.colours[0].image || "";
-    }
-
     return "";
 }
 
+function escapeHtml(value){
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
 
-/* =========================================================
-   INITIALIZE
-   ========================================================= */
+function escapeAttribute(value){
+    return escapeHtml(value);
+}
 
+/* INITIALIZE */
 document.addEventListener("DOMContentLoaded",function(){
-
     renderProducts();
     updateCart();
     updateDashboard();
     loadApprovedReviews();
 
+    setInterval(function(){
+        loadApprovedReviews();
+    },30000);
 });
 
-
-/* =========================================================
-   PRODUCT RENDERING
-   ========================================================= */
-
+/* PRODUCT RENDERING */
 function renderProducts(){
-
     const grid=document.getElementById("productsGrid");
     const searchInput=document.getElementById("searchInput");
     const query=searchInput.value.trim().toLowerCase();
 
     const products=PRODUCTS.filter(function(product){
-
         const categories=getProductCategories(product);
 
-        const matchesCategory =
+        const matchesCategory=
             selectedCategory==="All" ||
-            categories.includes(selectedCategory);
+            categories.includes(selectedCategory) ||
+            (selectedCategory==="Bracelets" && categories.includes("Bracelet"));
 
-        const searchableCategories=
-            categories.join(" ").toLowerCase();
+        const searchableCategories=categories.join(" ").toLowerCase();
 
-        const matchesSearch =
+        const matchesSearch=
             query==="" ||
             product.name.toLowerCase().includes(query) ||
             searchableCategories.includes(query) ||
             product.id.toLowerCase().includes(query);
 
         return matchesCategory && matchesSearch;
-
     });
 
     grid.innerHTML="";
 
     if(products.length===0){
-
         document.getElementById("emptyState").style.display="block";
-
         document.getElementById("emptyMessage").textContent=
             query
             ? 'No product found for "'+searchInput.value+'".'
             : "No products available in this category.";
-
         return;
     }
 
     document.getElementById("emptyState").style.display="none";
 
     products.forEach(function(product){
-
-        if(!selectedColours[product.id] &&
-           product.colours &&
-           product.colours.length){
-
+        if(!selectedColours[product.id] && product.colours && product.colours.length){
             selectedColours[product.id]=product.colours[0];
-
         }
 
         if(!selectedSizes[product.id]){
             selectedSizes[product.id]=
                 product.sizes && product.sizes.length
-                ? product.sizes[0]
-                : "";
+                ? product.sizes[0] : "";
         }
 
-        if(!selectedLetters[product.id] &&
-           product.letters &&
-           product.letters.length){
-
+        if(!selectedLetters[product.id] && product.letters && product.letters.length){
             selectedLetters[product.id]=product.letters[0];
-
         }
 
-        const selectedColour=
-            selectedColours[product.id] || null;
-
-        const image=
-            selectedColour && selectedColour.image
+        const selectedColour=selectedColours[product.id] || null;
+        const image=selectedColour && selectedColour.image
             ? selectedColour.image
             : getProductImage(product);
 
         let colourHTML="";
 
         if(product.colours && product.colours.length){
-
-            const colourButtons=
-                product.colours.map(function(colour){
-
-                    const active=
-                        selectedColour &&
-                        selectedColour.name===colour.name
-                        ? "active"
-                        : "";
-
-                    return `
-                    <button
-                        type="button"
-                        class="colour-btn ${active}"
-                        onclick="selectColour('${product.id}','${escapeAttribute(colour.name)}')"
-                    >
-                        ${escapeHtml(colour.name)}
-                    </button>
-                    `;
-
-                }).join("");
-
             colourHTML=`
                 <label class="option-label">Colour</label>
                 <div class="colour-options">
-                    ${colourButtons}
-                </div>
-            `;
+                    ${product.colours.map(function(colour){
+                        const active=selectedColour &&
+                            selectedColour.name===colour.name ? "active" : "";
+
+                        return `
+                        <button type="button"
+                            class="colour-btn ${active}"
+                            onclick="selectColour('${product.id}','${escapeAttribute(colour.name)}')">
+                            ${escapeHtml(colour.name)}
+                        </button>`;
+                    }).join("")}
+                </div>`;
         }
 
         let sizeHTML="";
 
         if(product.sizes && product.sizes.length){
-
             sizeHTML=`
                 <label class="option-label">Size</label>
-
-                <select
-                    class="size-select"
-                    onchange="selectSize('${product.id}',this.value)"
-                >
+                <select class="size-select"
+                    onchange="selectSize('${product.id}',this.value)">
                     ${product.sizes.map(function(size){
-
                         return `
-                        <option
-                            value="${escapeAttribute(size)}"
-                            ${selectedSizes[product.id]===size?"selected":""}
-                        >
+                        <option value="${escapeAttribute(size)}"
+                            ${selectedSizes[product.id]===size?"selected":""}>
                             ${escapeHtml(size)}
-                        </option>
-                        `;
-
+                        </option>`;
                     }).join("")}
-                </select>
-            `;
+                </select>`;
         }
 
         let letterHTML="";
 
         if(product.letters && product.letters.length){
-
             letterHTML=`
-                <label class="option-label">
-                    Select Letter
-                </label>
-
-                <select
-                    class="letter-select"
-                    onchange="selectLetter('${product.id}',this.value)"
-                >
+                <label class="option-label">Select Letter</label>
+                <select class="letter-select"
+                    onchange="selectLetter('${product.id}',this.value)">
                     ${product.letters.map(function(letter){
-
                         return `
-                        <option
-                            value="${letter}"
-                            ${selectedLetters[product.id]===letter?"selected":""}
-                        >
+                        <option value="${letter}"
+                            ${selectedLetters[product.id]===letter?"selected":""}>
                             ${letter}
-                        </option>
-                        `;
-
+                        </option>`;
                     }).join("")}
-                </select>
-            `;
+                </select>`;
         }
 
-        const categoryText=
-            getProductCategories(product).join(" • ");
-
+        const categoryText=getProductCategories(product).join(" • ");
         const card=document.createElement("div");
-
         card.className="product-card";
 
         card.innerHTML=`
-
             <div class="product-image-wrap">
-
-                <img
-                    id="image-${product.id}"
+                <img id="image-${product.id}"
                     class="product-image"
                     src="${escapeAttribute(image)}"
                     alt="${escapeAttribute(product.name)}"
-                    onerror="this.style.display='none'"
-                >
-
+                    onerror="this.style.display='none'">
             </div>
-
             <div class="product-info">
-
-                <div class="product-category">
-                    ${escapeHtml(categoryText)}
-                </div>
-
-                <div class="product-name">
-                    ${escapeHtml(product.name)}
-                </div>
-
-                <div class="product-description">
-                    ${escapeHtml(product.description || "")}
-                </div>
-
-                <div class="product-price">
-                    Rs. ${product.price.toLocaleString()}
-                </div>
-
+                <div class="product-category">${escapeHtml(categoryText)}</div>
+                <div class="product-name">${escapeHtml(product.name)}</div>
+                <div class="product-description">${escapeHtml(product.description || "")}</div>
+                <div class="product-price">Rs. ${product.price.toLocaleString()}</div>
                 ${colourHTML}
-
                 ${letterHTML}
-
                 ${sizeHTML}
-
-                <button
-                    type="button"
-                    class="add-btn"
-                    onclick="addToCart('${product.id}')"
-                >
+                <button type="button" class="add-btn"
+                    onclick="addToCart('${product.id}')">
                     Add to Bag
                 </button>
-
-            </div>
-        `;
+            </div>`;
 
         grid.appendChild(card);
-
     });
 }
 
-
-/* =========================================================
-   COLOUR
-   ========================================================= */
-
+/* COLOUR, SIZE AND LETTER */
 function selectColour(productId,colourName){
-
-    const product=PRODUCTS.find(function(item){
-        return item.id===productId;
-    });
-
+    const product=PRODUCTS.find(item=>item.id===productId);
     if(!product || !product.colours) return;
 
-    const colour=product.colours.find(function(item){
-        return item.name===colourName;
-    });
-
+    const colour=product.colours.find(item=>item.name===colourName);
     if(!colour) return;
 
     selectedColours[productId]=colour;
-
     renderProducts();
 }
-
-
-/* =========================================================
-   SIZE
-   ========================================================= */
 
 function selectSize(productId,size){
     selectedSizes[productId]=size;
 }
 
-
-/* =========================================================
-   LETTER
-   ========================================================= */
-
 function selectLetter(productId,letter){
     selectedLetters[productId]=letter;
 }
 
-
-/* =========================================================
-   CATEGORY
-   ========================================================= */
-
+/* CATEGORY AND SEARCH */
 function showCategory(category,button){
-
     selectedCategory=category;
 
     document.querySelectorAll(".category-btn").forEach(function(btn){
         btn.classList.remove("active");
     });
 
-    if(button){
-        button.classList.add("active");
-    }
-
+    if(button) button.classList.add("active");
     renderProducts();
 }
-
-
-/* =========================================================
-   SEARCH
-   ========================================================= */
 
 function searchProducts(){
-
     const query=document.getElementById("searchInput").value.trim();
-
-    document.getElementById("clearSearch").style.display=
-        query ? "block" : "none";
-
+    document.getElementById("clearSearch").style.display=query?"block":"none";
     renderProducts();
 }
-
 
 function clearSearch(){
-
     document.getElementById("searchInput").value="";
     document.getElementById("clearSearch").style.display="none";
-
     renderProducts();
 }
 
-
-/* =========================================================
-   ADD TO CART - FIXED
-   ========================================================= */
-
+/* ADD TO CART */
 function addToCart(productId){
-
-    const product=PRODUCTS.find(function(item){
-        return item.id===productId;
-    });
-
+    const product=PRODUCTS.find(item=>item.id===productId);
     if(!product) return;
 
-    const selectedColour=
-        selectedColours[productId] || null;
+    const selectedColour=selectedColours[productId] || null;
+    const colourName=selectedColour ? selectedColour.name : "";
+    const image=selectedColour && selectedColour.image
+        ? selectedColour.image : getProductImage(product);
 
-    const colourName=
-        selectedColour
-        ? selectedColour.name
-        : "";
-
-    const image=
-        selectedColour && selectedColour.image
-        ? selectedColour.image
-        : getProductImage(product);
-
-    const letter=
-        selectedLetters[productId] || "";
-
-    const size=
-        selectedSizes[productId] ||
-        (product.sizes && product.sizes[0]) ||
-        "";
+    const letter=selectedLetters[productId] || "";
+    const size=selectedSizes[productId] ||
+        (product.sizes && product.sizes[0]) || "";
 
     let optionName=colourName;
 
     if(letter){
-        optionName=
-            colourName
+        optionName=colourName
             ? colourName+" • Letter: "+letter
             : "Letter: "+letter;
     }
 
-    if(!optionName){
-        optionName="Custom";
-    }
+    if(!optionName) optionName="Custom";
 
     const existing=cart.find(function(item){
-
         return item.productId===productId &&
-               item.colour===optionName &&
-               item.size===size;
-
+            item.colour===optionName &&
+            item.size===size;
     });
 
     if(existing){
-
         existing.quantity++;
-
     }else{
-
         cart.push({
-
             productId:product.id,
             name:product.name,
             category:getProductCategories(product).join(", "),
@@ -1650,208 +999,90 @@ function addToCart(productId){
             image:image,
             size:size,
             quantity:1
-
         });
-
     }
 
     updateCart();
-
     showToast("Added to your bag 💗");
 }
 
-
-/* =========================================================
-   UPDATE CART
-   ========================================================= */
-
+/* UPDATE CART */
 function updateCart(){
-
     const cartItems=document.getElementById("cartItems");
     const cartSummary=document.getElementById("cartSummary");
 
-    const count=cart.reduce(function(total,item){
-        return total+item.quantity;
-    },0);
-
+    const count=cart.reduce((total,item)=>total+item.quantity,0);
     document.getElementById("cartCount").textContent=count;
 
     if(cart.length===0){
-
-        cartItems.innerHTML=`
-            <div class="empty-cart">
-                Your bag is empty 💗
-            </div>
-        `;
-
+        cartItems.innerHTML=`<div class="empty-cart">Your bag is empty 💗</div>`;
         cartSummary.innerHTML="";
         return;
     }
 
-    cartItems.innerHTML=
-        cart.map(function(item,index){
-
-            return `
-            <div class="cart-item">
-
-                <img
-                    src="${escapeAttribute(item.image || "")}"
-                    alt="${escapeAttribute(item.name)}"
-                >
-
-                <div>
-
-                    <div class="cart-name">
-                        ${escapeHtml(item.name)}
-                    </div>
-
-                    <div class="cart-meta">
-                        ${item.colour
-                            ? escapeHtml(item.colour)
-                            : ""}
-                        ${item.size
-                            ? " • "+escapeHtml(item.size)
-                            : ""}
-                    </div>
-
-                    <div class="cart-meta">
-                        Rs. ${item.price.toLocaleString()}
-                    </div>
-
-                    <div class="qty-row">
-
-                        <button
-                            type="button"
-                            class="qty-btn"
-                            onclick="changeQuantity(${index},-1)"
-                        >−</button>
-
-                        <strong>${item.quantity}</strong>
-
-                        <button
-                            type="button"
-                            class="qty-btn"
-                            onclick="changeQuantity(${index},1)"
-                        >+</button>
-
-                        <button
-                            type="button"
-                            class="remove-btn"
-                            onclick="removeItem(${index})"
-                        >
-                            Remove
-                        </button>
-
-                    </div>
-
+    cartItems.innerHTML=cart.map(function(item,index){
+        return `
+        <div class="cart-item">
+            <img src="${escapeAttribute(item.image || "")}"
+                alt="${escapeAttribute(item.name)}">
+            <div>
+                <div class="cart-name">${escapeHtml(item.name)}</div>
+                <div class="cart-meta">
+                    ${item.colour?escapeHtml(item.colour):""}
+                    ${item.size?" • "+escapeHtml(item.size):""}
                 </div>
-
+                <div class="cart-meta">Rs. ${item.price.toLocaleString()}</div>
+                <div class="qty-row">
+                    <button type="button" class="qty-btn"
+                        onclick="changeQuantity(${index},-1)">−</button>
+                    <strong>${item.quantity}</strong>
+                    <button type="button" class="qty-btn"
+                        onclick="changeQuantity(${index},1)">+</button>
+                    <button type="button" class="remove-btn"
+                        onclick="removeItem(${index})">Remove</button>
+                </div>
             </div>
-            `;
+        </div>`;
+    }).join("");
 
-        }).join("");
+    const productTotal=cart.reduce((total,item)=>total+item.price*item.quantity,0);
+    const delivery=productTotal>=FREE_SHIPPING_LIMIT?0:DELIVERY_CHARGE;
+    const grandTotal=productTotal+delivery;
 
-    const productTotal=
-        cart.reduce(function(total,item){
-            return total+(item.price*item.quantity);
-        },0);
-
-    const delivery=
-        productTotal>=FREE_SHIPPING_LIMIT
-        ? 0
-        : DELIVERY_CHARGE;
-
-    const grandTotal=
-        productTotal+delivery;
-
-    let shippingMessage="";
-
-    if(productTotal>=FREE_SHIPPING_LIMIT){
-
-        shippingMessage=`
-        <div class="shipping-progress">
-            🎉 Congratulations! You’ve unlocked
-            <strong>FREE DELIVERY</strong>.
-        </div>
-        `;
-
-    }else{
-
-        const remaining=
-            FREE_SHIPPING_LIMIT-productTotal;
-
-        shippingMessage=`
-        <div class="shipping-progress">
-            Add <strong>Rs. ${remaining.toLocaleString()}</strong>
-            more to unlock FREE DELIVERY.
-        </div>
-        `;
-    }
+    const shippingMessage=productTotal>=FREE_SHIPPING_LIMIT
+        ? `<div class="shipping-progress">🎉 Congratulations! You’ve unlocked <strong>FREE DELIVERY</strong>.</div>`
+        : `<div class="shipping-progress">Add <strong>Rs. ${(FREE_SHIPPING_LIMIT-productTotal).toLocaleString()}</strong> more to unlock FREE DELIVERY.</div>`;
 
     cartSummary.innerHTML=`
-
         ${shippingMessage}
-
         <div class="summary-row">
             <span>Products</span>
             <strong>Rs. ${productTotal.toLocaleString()}</strong>
         </div>
-
         <div class="summary-row">
             <span>Delivery</span>
-            <strong>
-                ${delivery===0
-                    ? "FREE"
-                    : "Rs. "+delivery.toLocaleString()}
-            </strong>
+            <strong>${delivery===0?"FREE":"Rs. "+delivery.toLocaleString()}</strong>
         </div>
-
         <div class="summary-row total">
             <span>Total</span>
             <strong>Rs. ${grandTotal.toLocaleString()}</strong>
         </div>
-
-        <button
-            type="button"
-            class="checkout-btn"
-            onclick="openCheckout()"
-        >
-            Checkout
-        </button>
-    `;
+        <button type="button" class="checkout-btn" onclick="openCheckout()">Checkout</button>`;
 }
-
-
-/* =========================================================
-   QUANTITY / REMOVE
-   ========================================================= */
 
 function changeQuantity(index,amount){
-
     if(!cart[index]) return;
-
     cart[index].quantity+=amount;
-
-    if(cart[index].quantity<=0){
-        cart.splice(index,1);
-    }
-
+    if(cart[index].quantity<=0) cart.splice(index,1);
     updateCart();
 }
-
 
 function removeItem(index){
-
     cart.splice(index,1);
     updateCart();
-
 }
 
-
-/* =========================================================
-   CART
-   ========================================================= */
-
+/* CART OPEN/CLOSE */
 function openCart(){
     document.getElementById("cartOverlay").style.display="block";
 }
@@ -1860,75 +1091,38 @@ function closeCart(){
     document.getElementById("cartOverlay").style.display="none";
 }
 
-
-/* =========================================================
-   CHECKOUT
-   ========================================================= */
-
+/* CHECKOUT */
 function openCheckout(){
-
     if(cart.length===0){
         showToast("Your bag is empty.");
         return;
     }
 
-    const productTotal=
-        cart.reduce(function(total,item){
-            return total+item.price*item.quantity;
-        },0);
-
-    const delivery=
-        productTotal>=FREE_SHIPPING_LIMIT
-        ? 0
-        : DELIVERY_CHARGE;
-
+    const productTotal=cart.reduce((total,item)=>total+item.price*item.quantity,0);
+    const delivery=productTotal>=FREE_SHIPPING_LIMIT?0:DELIVERY_CHARGE;
     const total=productTotal+delivery;
 
-    const freeNote=
-        delivery===0
+    const freeNote=delivery===0
         ? `<div class="checkout-free-note">🎉 You have unlocked FREE DELIVERY!</div>`
         : `<div class="checkout-free-note">Spend Rs. 2,500 or more for FREE DELIVERY.</div>`;
 
     document.getElementById("checkoutSummary").innerHTML=`
-
         <strong>Order Summary</strong>
-
-        <div style="margin-top:8px;">
-            Products: Rs. ${productTotal.toLocaleString()}
-        </div>
-
-        <div>
-            Delivery:
-            ${delivery===0
-                ? "FREE"
-                : "Rs. "+delivery.toLocaleString()}
-        </div>
-
-        <div style="margin-top:6px;font-weight:700;">
-            Total: Rs. ${total.toLocaleString()}
-        </div>
-
-        ${freeNote}
-    `;
+        <div style="margin-top:8px;">Products: Rs. ${productTotal.toLocaleString()}</div>
+        <div>Delivery: ${delivery===0?"FREE":"Rs. "+delivery.toLocaleString()}</div>
+        <div style="margin-top:6px;font-weight:700;">Total: Rs. ${total.toLocaleString()}</div>
+        ${freeNote}`;
 
     document.getElementById("checkoutModal").style.display="flex";
 }
 
-
 function closeCheckout(){
-
     if(isPlacingOrder) return;
-
     document.getElementById("checkoutModal").style.display="none";
 }
 
-
-/* =========================================================
-   PLACE ORDER
-   ========================================================= */
-
+/* PLACE ORDER */
 async function placeOrder(){
-
     if(isPlacingOrder) return;
 
     const name=document.getElementById("customerName").value.trim();
@@ -1939,75 +1133,32 @@ async function placeOrder(){
     const address=document.getElementById("customerAddress").value.trim();
 
     if(!name || !email || !phone || !city || !area || !address){
-
         showToast("Please fill all customer details.");
         return;
+    }
 
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        showToast("Please enter a valid email address.");
+        return;
     }
 
     if(cart.length===0){
-
         showToast("Your bag is empty.");
         return;
-
     }
 
     isPlacingOrder=true;
 
-    const placeButton=
-        document.getElementById("placeOrderButton");
-
-    if(placeButton){
-
-        placeButton.disabled=true;
-        placeButton.textContent="Placing Order...";
-        placeButton.style.opacity="0.65";
-        placeButton.style.cursor="not-allowed";
-
-    }
+    const placeButton=document.getElementById("placeOrderButton");
+    placeButton.disabled=true;
+    placeButton.textContent="Placing Order...";
 
     const orderId=createOrderId();
-
-    const productTotal=
-        cart.reduce(function(total,item){
-            return total+item.price*item.quantity;
-        },0);
-
-    const delivery=
-        productTotal>=FREE_SHIPPING_LIMIT
-        ? 0
-        : DELIVERY_CHARGE;
-
-    const grandTotal=
-        productTotal+delivery;
-
-    const productNames=
-        cart.map(function(item){
-            return item.name;
-        }).join(", ");
-
-    const categories=
-        cart.map(function(item){
-            return item.category;
-        }).join(", ");
-
-    const colours=
-        cart.map(function(item){
-            return item.colour;
-        }).join(", ");
-
-    const sizes=
-        cart.map(function(item){
-            return item.size;
-        }).join(", ");
-
-    const quantities=
-        cart.map(function(item){
-            return item.quantity;
-        }).join(", ");
+    const productTotal=cart.reduce((total,item)=>total+item.price*item.quantity,0);
+    const delivery=productTotal>=FREE_SHIPPING_LIMIT?0:DELIVERY_CHARGE;
+    const grandTotal=productTotal+delivery;
 
     const data={
-
         orderId:orderId,
         date:new Date().toISOString(),
         customerName:name,
@@ -2016,614 +1167,324 @@ async function placeOrder(){
         city:city,
         area:area,
         address:address,
-        product:productNames,
-        category:categories,
-        colour:colours,
-        size:sizes,
-        quantity:quantities,
+        product:cart.map(item=>item.name).join(", "),
+        category:cart.map(item=>item.category).join(", "),
+        colour:cart.map(item=>item.colour).join(", "),
+        size:cart.map(item=>item.size).join(", "),
+        quantity:cart.map(item=>item.quantity).join(", "),
         productTotal:productTotal,
         delivery:delivery,
         grandTotal:grandTotal,
         paymentMethod:"Cash on Delivery",
         status:"Pending",
         reviewEmailSent:"NO"
-
     };
 
     try{
-
-        await fetch(
-            GOOGLE_SCRIPT_URL,
-            {
-                method:"POST",
-                mode:"no-cors",
-                headers:{
-                    "Content-Type":
-                    "application/x-www-form-urlencoded"
-                },
-                body:new URLSearchParams(data).toString()
-            }
-        );
+        await fetch(GOOGLE_SCRIPT_URL,{
+            method:"POST",
+            mode:"no-cors",
+            headers:{"Content-Type":"application/x-www-form-urlencoded"},
+            body:new URLSearchParams(data).toString()
+        });
 
         cart=[];
-
         updateCart();
 
         document.getElementById("checkoutModal").style.display="none";
         document.getElementById("cartOverlay").style.display="none";
 
         document.getElementById("successMessage").innerHTML=
-            "Thank you, "+
-            escapeHtml(name)+
-            "! Your order <strong>"+
-            escapeHtml(orderId)+
-            "</strong> has been received.<br><br>"+
-            "Payment method: Cash on Delivery.";
+            "Thank you, "+escapeHtml(name)+
+            "! Your order <strong>"+escapeHtml(orderId)+
+            "</strong> has been received.<br><br>Payment method: Cash on Delivery.";
 
         document.getElementById("successModal").style.display="flex";
-
         clearCheckoutForm();
 
     }catch(error){
-
         console.error(error);
-
         isPlacingOrder=false;
-
-        if(placeButton){
-
-            placeButton.disabled=false;
-            placeButton.textContent="Place Order";
-            placeButton.style.opacity="1";
-            placeButton.style.cursor="pointer";
-
-        }
-
+        placeButton.disabled=false;
+        placeButton.textContent="Place Order";
         showToast("Something went wrong. Please try again.");
-
     }
 }
 
-
-/* =========================================================
-   ORDER ID
-   ========================================================= */
-
 function createOrderId(){
-
     const now=new Date();
-
-    const datePart=
-        now.getFullYear().toString()+
+    const datePart=now.getFullYear().toString()+
         String(now.getMonth()+1).padStart(2,"0")+
         String(now.getDate()).padStart(2,"0");
-
-    const randomPart=
-        Math.floor(1000+Math.random()*9000);
-
+    const randomPart=Math.floor(1000+Math.random()*9000);
     return "MA-"+datePart+"-"+randomPart;
 }
 
-
-/* =========================================================
-   CLEAR CHECKOUT
-   ========================================================= */
-
 function clearCheckoutForm(){
-
-    document.getElementById("customerName").value="";
-    document.getElementById("customerEmail").value="";
-    document.getElementById("customerPhone").value="";
-    document.getElementById("customerCity").value="";
-    document.getElementById("customerArea").value="";
-    document.getElementById("customerAddress").value="";
-
+    ["customerName","customerEmail","customerPhone","customerCity","customerArea","customerAddress"]
+    .forEach(id=>document.getElementById(id).value="");
 }
 
-
-/* =========================================================
-   CONTINUE SHOPPING
-   ========================================================= */
-
 function continueShopping(){
-
     document.getElementById("successModal").style.display="none";
-
     isPlacingOrder=false;
 
-    const placeButton=
-        document.getElementById("placeOrderButton");
-
-    if(placeButton){
-
-        placeButton.disabled=false;
-        placeButton.textContent="Place Order";
-        placeButton.style.opacity="1";
-        placeButton.style.cursor="pointer";
-
-    }
+    const placeButton=document.getElementById("placeOrderButton");
+    placeButton.disabled=false;
+    placeButton.textContent="Place Order";
 
     showShop();
 }
 
-
-/* =========================================================
-   SHOP
-   ========================================================= */
-
 function showShop(){
-
     document.getElementById("adminSection").style.display="none";
-
-    document.getElementById("shop").scrollIntoView({
-        behavior:"smooth"
-    });
-
+    document.getElementById("shop").scrollIntoView({behavior:"smooth"});
 }
 
-
-/* =========================================================
-   REVIEWS
-   ========================================================= */
-
+/* REVIEWS */
 function selectReviewStar(number){
-
     if(isSubmittingReview || reviewSubmitted) return;
 
     selectedReviewRating=number;
 
     document.querySelectorAll(".star-btn").forEach(function(btn,index){
-
-        btn.classList.toggle(
-            "active",
-            index<number
-        );
-
+        btn.classList.toggle("active",index<number);
     });
 }
 
-
 async function submitReview(){
-
     if(isSubmittingReview || reviewSubmitted) return;
 
-    const name=
-        document.getElementById("reviewName").value.trim();
-
-    const review=
-        document.getElementById("reviewText").value.trim();
+    const name=document.getElementById("reviewName").value.trim();
+    const review=document.getElementById("reviewText").value.trim();
 
     if(!name || !review || !selectedReviewRating){
-
-        showToast(
-            "Please add your name, rating and review."
-        );
-
+        showToast("Please add your name, rating and review.");
         return;
     }
 
     isSubmittingReview=true;
 
-    const reviewButton=
-        document.getElementById("submitReviewButton");
-
-    if(reviewButton){
-
-        reviewButton.disabled=true;
-        reviewButton.textContent="Submitting...";
-        reviewButton.style.opacity="0.65";
-        reviewButton.style.cursor="not-allowed";
-
-    }
+    const reviewButton=document.getElementById("submitReviewButton");
+    reviewButton.disabled=true;
+    reviewButton.textContent="Submitting...";
 
     const reviewData={
-
         action:"submitReview",
         name:name,
         rating:selectedReviewRating,
         review:review,
         date:new Date().toISOString(),
         status:"Pending"
-
     };
 
     try{
-
-        await fetch(
-            GOOGLE_SCRIPT_URL,
-            {
-                method:"POST",
-                mode:"no-cors",
-                headers:{
-                    "Content-Type":
-                    "application/x-www-form-urlencoded"
-                },
-                body:new URLSearchParams(reviewData).toString()
-            }
-        );
+        await fetch(GOOGLE_SCRIPT_URL,{
+            method:"POST",
+            mode:"no-cors",
+            headers:{"Content-Type":"application/x-www-form-urlencoded"},
+            body:new URLSearchParams(reviewData).toString()
+        });
 
         reviewSubmitted=true;
-
-        showToast(
-            "Thank you! Your review has been submitted for approval 💗"
-        );
+        showToast("Thank you! Your review has been submitted for approval 💗");
 
         document.getElementById("reviewName").value="";
         document.getElementById("reviewText").value="";
-
         selectedReviewRating=0;
 
-        document.querySelectorAll(".star-btn").forEach(function(btn){
-            btn.classList.remove("active");
-        });
+        document.querySelectorAll(".star-btn").forEach(btn=>btn.classList.remove("active"));
 
-        if(reviewButton){
-
-            reviewButton.disabled=true;
-            reviewButton.textContent="Review Submitted ✓";
-            reviewButton.style.opacity="0.65";
-            reviewButton.style.cursor="not-allowed";
-
-        }
+        reviewButton.textContent="Review Submitted ✓";
 
     }catch(error){
-
         console.error(error);
-
         isSubmittingReview=false;
-
-        if(reviewButton){
-
-            reviewButton.disabled=false;
-            reviewButton.textContent="Submit Review";
-            reviewButton.style.opacity="1";
-            reviewButton.style.cursor="pointer";
-
-        }
-
-        showToast(
-            "Unable to submit review right now. Please try again."
-        );
-
+        reviewButton.disabled=false;
+        reviewButton.textContent="Submit Review";
+        showToast("Unable to submit review right now. Please try again.");
     }
 }
 
-
-/* =========================================================
-   APPROVED REVIEWS
-   ========================================================= */
-
+/* APPROVED REVIEWS: RAW ARRAY AND OBJECT BOTH SUPPORTED */
 async function loadApprovedReviews(){
-
     try{
+        const response=await fetch(
+            GOOGLE_SCRIPT_URL+"?action=getApprovedReviews&t="+Date.now(),
+            {cache:"no-store"}
+        );
 
-        const response=
-            await fetch(
-                GOOGLE_SCRIPT_URL+
-                "?action=getApprovedReviews"
-            );
-
-        if(!response.ok) return;
+        if(!response.ok) throw new Error("Reviews could not load");
 
         const data=await response.json();
 
-        if(
-            !data ||
-            data.success!==true ||
-            !Array.isArray(data.reviews)
-        ){
-            return;
-        }
+        const reviews=Array.isArray(data)
+            ? data
+            : (data && Array.isArray(data.reviews) ? data.reviews : []);
 
-        displayApprovedReviews(data.reviews);
+        displayApprovedReviews(reviews);
 
     }catch(error){
-
-        console.log(
-            "Approved reviews could not be loaded yet.",
-            error
-        );
-
+        console.error("Approved reviews could not be loaded:",error);
     }
 }
 
-
 function displayApprovedReviews(reviews){
+    const container=document.getElementById("approvedReviews");
+    const empty=document.getElementById("noReviews");
 
-    const container=
-        document.getElementById("approvedReviews");
+    if(!container || !empty) return;
 
-    const empty=
-        document.getElementById("noReviews");
-
-    if(!reviews || reviews.length===0){
-
+    if(!Array.isArray(reviews) || reviews.length===0){
         container.innerHTML="";
         empty.style.display="block";
+        lastReviewsSignature="";
         return;
-
     }
 
     empty.style.display="none";
 
-    container.innerHTML=
-        reviews.map(function(item){
+    const signature=JSON.stringify(reviews);
 
-            const rating=
-                Math.max(
-                    1,
-                    Math.min(
-                        5,
-                        Number(item.rating)||5
-                    )
-                );
+    /* Same reviews hon to animation dobara start nahi hogi */
+    if(signature===lastReviewsSignature) return;
+    lastReviewsSignature=signature;
 
-            const stars=
-                "★".repeat(rating)+
-                "☆".repeat(5-rating);
+    const cards=reviews.map(function(item){
+        const rating=Math.max(1,Math.min(5,Number(item.rating)||5));
+        const stars="★".repeat(rating)+"☆".repeat(5-rating);
 
-            return `
-            <div class="review-card">
-
-                <div class="review-card-name">
-                    ${escapeHtml(item.name || "Customer")}
-                </div>
-
-                <div class="review-stars-display">
-                    ${stars}
-                </div>
-
-                <div class="review-card-text">
-                    ${escapeHtml(item.review || "")}
-                </div>
-
+        return `
+        <div class="ma-review-card">
+            <div class="review-card-name">
+                ${escapeHtml(item.name || "Customer")}
             </div>
-            `;
+            <div class="review-stars-display">${stars}</div>
+            <div class="review-card-text">
+                ${escapeHtml(item.review || "")}
+            </div>
+        </div>`;
+    }).join("");
 
-        }).join("");
+    container.innerHTML=`
+        <div class="ma-review-track">
+            ${cards}${cards}${cards}
+        </div>`;
 }
 
-
-/* =========================================================
-   CONTACT
-   ========================================================= */
-
+/* CONTACT MESSAGE */
 async function submitContactMessage(){
-
     if(isSubmittingContact || contactSubmitted) return;
 
-    const name=
-        document.getElementById("contactName").value.trim();
-
-    const email=
-        document.getElementById("contactEmail").value.trim();
-
-    const message=
-        document.getElementById("contactMessage").value.trim();
+    const name=document.getElementById("contactName").value.trim();
+    const email=document.getElementById("contactEmail").value.trim();
+    const message=document.getElementById("contactMessage").value.trim();
 
     if(!name || !email || !message){
+        showToast("Please fill your name, email and message.");
+        return;
+    }
 
-        showToast(
-            "Please fill your name, email and message."
-        );
-
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        showToast("Please enter a valid email address.");
         return;
     }
 
     isSubmittingContact=true;
 
-    const contactButton=
-        document.getElementById("contactSubmitButton");
-
-    if(contactButton){
-
-        contactButton.disabled=true;
-        contactButton.textContent="Sending...";
-        contactButton.style.opacity="0.65";
-        contactButton.style.cursor="not-allowed";
-
-    }
+    const contactButton=document.getElementById("contactSubmitButton");
+    contactButton.disabled=true;
+    contactButton.textContent="Sending...";
 
     const contactData={
-
         action:"contactMessage",
         name:name,
         email:email,
         message:message,
         date:new Date().toISOString()
-
     };
 
     try{
-
-        await fetch(
-            GOOGLE_SCRIPT_URL,
-            {
-                method:"POST",
-                mode:"no-cors",
-                headers:{
-                    "Content-Type":
-                    "application/x-www-form-urlencoded"
-                },
-                body:new URLSearchParams(contactData).toString()
-            }
-        );
+        await fetch(GOOGLE_SCRIPT_URL,{
+            method:"POST",
+            mode:"no-cors",
+            headers:{"Content-Type":"application/x-www-form-urlencoded"},
+            body:new URLSearchParams(contactData).toString()
+        });
 
         contactSubmitted=true;
-
-        showToast(
-            "Your message has been sent. Thank you for contacting Mahi Arts 💗"
-        );
+        showToast("Your message has been sent. Thank you for contacting Mahi Arts 💗");
 
         document.getElementById("contactName").value="";
         document.getElementById("contactEmail").value="";
         document.getElementById("contactMessage").value="";
 
-        if(contactButton){
-
-            contactButton.disabled=true;
-            contactButton.textContent="Message Sent ✓";
-            contactButton.style.opacity="0.65";
-            contactButton.style.cursor="not-allowed";
-
-        }
+        contactButton.textContent="Message Sent ✓";
 
     }catch(error){
-
         console.error(error);
-
         isSubmittingContact=false;
-
-        if(contactButton){
-
-            contactButton.disabled=false;
-            contactButton.textContent="Send Message";
-            contactButton.style.opacity="1";
-            contactButton.style.cursor="pointer";
-
-        }
-
-        showToast(
-            "Unable to send your message right now. Please try again."
-        );
-
+        contactButton.disabled=false;
+        contactButton.textContent="Send Message";
+        showToast("Unable to send your message right now. Please try again.");
     }
 }
 
-
-/* =========================================================
-   ADMIN
-   ========================================================= */
-
+/* ADMIN */
 function openAdmin(){
-
     document.getElementById("adminSection").style.display="block";
-
-    document.getElementById("adminSection").scrollIntoView({
-        behavior:"smooth"
-    });
-
+    document.getElementById("adminSection").scrollIntoView({behavior:"smooth"});
 }
-
 
 function openSecureDashboard(){
-
-    window.open(
-        GOOGLE_SCRIPT_URL,
-        "_blank"
-    );
-
-    showToast(
-        "Secure dashboard opened in a new tab."
-    );
-
+    window.open(GOOGLE_SCRIPT_URL,"_blank");
+    showToast("Secure dashboard opened in a new tab.");
 }
 
-
-/* =========================================================
-   DASHBOARD
-   ========================================================= */
-
+/* DASHBOARD */
 function updateDashboard(){
+    const dashboardProducts=document.getElementById("dashboardProducts");
+    const dashboardCategories=document.getElementById("dashboardCategories");
 
-    const dashboardProducts=
-        document.getElementById("dashboardProducts");
-
-    const dashboardCategories=
-        document.getElementById("dashboardCategories");
-
-    if(!dashboardProducts || !dashboardCategories){
-        return;
-    }
+    if(!dashboardProducts || !dashboardCategories) return;
 
     dashboardProducts.textContent=PRODUCTS.length;
 
     const categories=new Set();
 
     PRODUCTS.forEach(function(product){
-
-        getProductCategories(product).forEach(function(category){
-            categories.add(category);
-        });
-
+        getProductCategories(product).forEach(category=>categories.add(category));
     });
 
     dashboardCategories.textContent=categories.size;
 }
 
-
-/* =========================================================
-   ADMIN ROUTE
-   ========================================================= */
-
+/* ADMIN ROUTE */
 function checkAdminRoute(){
-
-    if(
-        window.location.hash.toLowerCase()==="#admin"
-    ){
-
+    if(window.location.hash.toLowerCase()==="#admin"){
         document.getElementById("adminSection").style.display="block";
-
-        document.getElementById("adminSection").scrollIntoView({
-            behavior:"smooth"
-        });
-
+        document.getElementById("adminSection").scrollIntoView({behavior:"smooth"});
     }
 }
 
-window.addEventListener(
-    "hashchange",
-    checkAdminRoute
-);
-
+window.addEventListener("hashchange",checkAdminRoute);
 checkAdminRoute();
 
-
-/* =========================================================
-   TOAST
-   ========================================================= */
-
+/* TOAST */
 let toastTimer;
 
 function showToast(message){
-
-    const toast=
-        document.getElementById("toast");
-
+    const toast=document.getElementById("toast");
     toast.textContent=message;
-
     toast.classList.add("show");
 
     clearTimeout(toastTimer);
 
     toastTimer=setTimeout(function(){
-
         toast.classList.remove("show");
-
     },3000);
 }
 
-
-/* =========================================================
-   SECURITY HELPERS
-   ========================================================= */
-
-function escapeHtml(value){
-
-    return String(value)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
-
-}
-
-function escapeAttribute(value){
-    return escapeHtml(value);
-}
-
 </script>
-
 </body>
 </html>
