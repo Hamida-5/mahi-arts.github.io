@@ -4,107 +4,114 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mahi Arts | Luxury Handmade Jewellery, Bracelets & More</title>
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
-
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:#fff8fb;color:#33242b}
 button,input,select,textarea{font-family:inherit}
 button{cursor:pointer}
 button:disabled{cursor:not-allowed}
-
 header{position:sticky;top:0;z-index:1000;background:rgba(255,248,251,.94);backdrop-filter:blur(16px);border-bottom:1px solid #f0dce5}
 .navbar{max-width:1200px;margin:auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .logo{font-family:'Playfair Display',serif;font-size:28px;letter-spacing:2.5px;color:#9d536f;text-decoration:none}
 .nav-links{display:flex;align-items:center;gap:20px}
 .nav-links a{color:#513842;text-decoration:none;font-size:14px;font-weight:600}
-.nav-links a:hover{color:#9d536f}
 .bag-btn{border:0;background:#9d536f;color:white;padding:11px 16px;border-radius:25px;font-weight:700}
-.bag-btn:hover{background:#82445c}
-
-.shipping-banner{background:linear-gradient(90deg,#f9dce8,#fff0f5,#f9dce8);border-bottom:1px solid #efd0dc;text-align:center;padding:9px 15px;color:#82445c;font-size:13px;font-weight:700;letter-spacing:.3px}
-
-.hero{max-width:1200px;margin:auto;padding:75px 20px 40px;text-align:center}
+.shipping-banner{background:linear-gradient(90deg,#f9dce8,#fff0f5,#f9dce8);border-bottom:1px solid #efd0dc;text-align:center;padding:9px 15px;color:#82445c;font-size:13px;font-weight:700}
+.hero{max-width:1200px;margin:auto;padding:65px 20px 35px;text-align:center}
 .hero-small{color:#b36b88;text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:700;margin-bottom:14px}
 .hero h1{font-family:'Playfair Display',serif;font-size:56px;color:#7e4058;margin-bottom:15px;line-height:1.1}
 .hero p{color:#765c66;max-width:650px;margin:auto;line-height:1.8;font-size:15px}
-
 .search-wrap{max-width:650px;margin:25px auto 35px;padding:0 20px;position:relative}
-.search-box{width:100%;border:1px solid #e7ccd8;background:white;border-radius:30px;padding:16px 50px 16px 20px;outline:none;font-size:15px;box-shadow:0 8px 30px rgba(130,75,98,.07)}
-.search-box:focus{border-color:#bd7894}
+.search-box{width:100%;border:1px solid #e7ccd8;background:white;border-radius:30px;padding:16px 50px 16px 20px;outline:none;font-size:15px}
 .search-icon{position:absolute;right:38px;top:14px;font-size:20px;color:#9d536f}
-.clear-search{display:none;margin:10px auto 0;border:0;background:none;color:#9d536f;font-weight:700}
-
-.categories{max-width:1050px;margin:0 auto 50px;padding:0 20px;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.category-btn{background:white;border:1px solid #efd9e2;border-radius:18px;padding:17px 10px;color:#6d4353;font-weight:600;transition:.25s;box-shadow:0 7px 22px rgba(126,64,88,.04)}
-.category-btn:hover,.category-btn.active{background:#f8e5ed;border-color:#dba8bb;transform:translateY(-2px)}
-.category-icon{display:block;font-size:24px;margin-bottom:6px}
-
-.section{max-width:1200px;margin:auto;padding:0 20px 75px}
+.clear-search{display:none;margin:10px auto;border:0;background:none;color:#9d536f;font-weight:700}
+.categories{max-width:1050px;margin:0 auto 40px;padding:0 20px;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.category-btn{background:white;border:1px solid #efd9e2;border-radius:18px;padding:15px 10px;color:#6d4353;font-weight:600}
+.category-btn.active,.category-btn:hover{background:#f8e5ed;border-color:#dba8bb}
+.category-icon{display:block;font-size:23px;margin-bottom:6px}
+.section{max-width:1200px;margin:auto;padding:0 20px 70px}
 .section-title{text-align:center;font-family:'Playfair Display',serif;color:#7e4058;font-size:36px;margin-bottom:30px}
 .section-subtitle{text-align:center;max-width:650px;margin:-15px auto 30px;color:#806873;line-height:1.7;font-size:14px}
-
-.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.product-card{background:white;border:1px solid #f0dce5;border-radius:24px;overflow:hidden;box-shadow:0 12px 35px rgba(126,64,88,.07);transition:.25s}
-.product-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(126,64,88,.11)}
-.product-image-wrap{position:relative;background:#fff4f8;aspect-ratio:1/1;overflow:hidden}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.product-card{background:white;border:1px solid #f0dce5;border-radius:20px;overflow:hidden;cursor:pointer;box-shadow:0 10px 30px rgba(126,64,88,.06);transition:.2s}
+.product-card:hover{transform:translateY(-3px)}
+.product-image-wrap{background:#fff4f8;aspect-ratio:1/1;overflow:hidden}
 .product-image{width:100%;height:100%;object-fit:cover;display:block}
-.product-info{padding:21px}
-.product-category{color:#a86a83;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:7px}
-.product-name{font-family:'Playfair Display',serif;font-size:23px;color:#593744;margin-bottom:8px}
-.product-description{color:#806873;font-size:13px;line-height:1.6;margin-bottom:13px}
-.product-price{font-size:18px;font-weight:700;color:#9d536f;margin-bottom:15px}
-.option-label{display:block;font-size:13px;font-weight:700;margin:12px 0 7px;color:#65414d}
-.colour-options{display:flex;flex-wrap:wrap;gap:7px}
-.colour-btn{border:1px solid #dfc6d0;background:white;color:#5f414b;border-radius:20px;padding:7px 11px;font-size:12px}
-.colour-btn.active{background:#9d536f;color:white;border-color:#9d536f}
-.size-select,.letter-select{width:100%;padding:11px;border-radius:10px;border:1px solid #dfcbd4;background:white;outline:none}
-.add-btn{width:100%;margin-top:17px;border:0;border-radius:12px;padding:14px;background:#9d536f;color:white;font-weight:700;font-size:14px}
-.add-btn:hover{background:#82445c}
-.empty-state{display:none;text-align:center;padding:50px 20px;color:#856772}
-
-.free-delivery-box{max-width:760px;margin:0 auto 55px;padding:18px 20px;background:linear-gradient(135deg,#fff,#fff0f5);border:1px solid #e9c8d6;border-radius:18px;text-align:center;color:#82445c;box-shadow:0 10px 30px rgba(126,64,88,.05)}
+.product-info{padding:15px}
+.product-name{font-family:'Playfair Display',serif;font-size:19px;color:#593744;margin-bottom:8px}
+.product-price{font-size:17px;font-weight:700;color:#9d536f}
+.empty-state{display:none;text-align:center;padding:45px 20px;color:#856772}
+.free-delivery-box{max-width:760px;margin:0 auto 45px;padding:18px;background:linear-gradient(135deg,#fff,#fff0f5);border:1px solid #e9c8d6;border-radius:18px;text-align:center;color:#82445c}
 .free-delivery-box strong{display:block;font-family:'Playfair Display',serif;font-size:21px;margin-bottom:5px}
 .free-delivery-box span{font-size:13px}
 
-.reviews{background:linear-gradient(180deg,#fff,#fff8fb);border-top:1px solid #f0dce5;border-bottom:1px solid #f0dce5;max-width:none;padding-top:70px}
+/* PRODUCT DETAIL PAGE */
+#productDetailPage{display:none;max-width:1100px;margin:auto;padding:30px 20px 70px}
+.back-button{border:1px solid #e7ccd8;background:white;color:#82445c;padding:10px 17px;border-radius:25px;margin-bottom:25px;font-weight:700}
+.detail-layout{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.detail-image-box{background:#fff0f5;border-radius:22px;overflow:hidden}
+#detailImage{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.detail-info{background:white;border:1px solid #f0dce5;border-radius:22px;padding:25px}
+.detail-category{font-size:12px;color:#a86a83;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:10px}
+.detail-name{font-family:'Playfair Display',serif;color:#593744;font-size:30px;margin-bottom:12px}
+.detail-price{font-size:24px;color:#9d536f;font-weight:700;margin:15px 0}
+.detail-description{font-size:14px;color:#806873;line-height:1.8;margin-bottom:20px}
+.option-label{display:block;font-size:13px;font-weight:700;margin:15px 0 8px;color:#65414d}
+.colour-options{display:flex;flex-wrap:wrap;gap:8px}
+.colour-btn{border:1px solid #dfc6d0;background:white;color:#5f414b;border-radius:20px;padding:9px 13px;font-size:12px}
+.colour-btn.active{background:#9d536f;color:white;border-color:#9d536f}
+.size-select,.letter-select,.detail-input{width:100%;padding:12px;border-radius:10px;border:1px solid #dfcbd4;background:white;outline:none}
+.detail-input{margin-top:10px}
+.quantity-control{display:flex;align-items:center;gap:15px;margin:20px 0}
+.quantity-control button{width:38px;height:38px;border:1px solid #dfcbd4;background:#fff5f8;border-radius:10px;font-size:20px;color:#82445c}
+.quantity-control strong{font-size:18px}
+.detail-add-btn{width:100%;border:0;border-radius:12px;padding:16px;background:#9d536f;color:white;font-weight:700;font-size:15px}
+.detail-add-btn:hover{background:#82445c}
+.detail-note{font-size:12px;color:#876d77;margin-top:14px;line-height:1.6}
+
+/* REVIEWS */
+.reviews{background:linear-gradient(180deg,#fff,#fff8fb);border-top:1px solid #f0dce5;border-bottom:1px solid #f0dce5;max-width:none;padding-top:65px}
 .reviews-inner{max-width:1200px;margin:auto}
-.review-list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:35px}
-.review-card{background:white;border:1px solid #efdce4;border-radius:18px;padding:20px;box-shadow:0 8px 25px rgba(126,64,88,.05)}
-.review-card-name{font-weight:700;color:#593744;margin-bottom:6px}
-.review-stars-display{color:#d69a35;letter-spacing:2px;margin-bottom:10px}
-.review-card-text{color:#705963;font-size:14px;line-height:1.7}
+#approvedReviews{display:block;width:100%;overflow:hidden;margin-bottom:30px}
+.ma-review-track{display:flex;width:max-content;gap:18px;animation:maReviewScroll 35s linear infinite}
+.ma-review-card{flex:0 0 300px;width:300px;min-height:160px;background:white;border:1px solid #efdce4;border-radius:18px;padding:20px}
+.ma-review-card .review-card-name{font-weight:700;color:#593744;margin-bottom:8px}
+.ma-review-card .review-stars-display{color:#d69a35;letter-spacing:2px;margin-bottom:10px}
+.ma-review-card .review-card-text{color:#705963;font-size:14px;line-height:1.7;overflow-wrap:anywhere}
+@keyframes maReviewScroll{from{transform:translateX(0)}to{transform:translateX(-33.333333%)}}
 .no-reviews{text-align:center;color:#876d77;padding:15px;margin-bottom:25px}
-.review-form{max-width:620px;margin:auto;background:#fff8fb;border:1px solid #efdce4;border-radius:22px;padding:24px;box-shadow:0 10px 30px rgba(126,64,88,.05)}
+.review-form{max-width:620px;margin:auto;background:#fff8fb;border:1px solid #efdce4;border-radius:22px;padding:24px}
 .form-heading{text-align:center;font-family:'Playfair Display',serif;color:#7e4058;font-size:25px;margin-bottom:15px}
 .form-input{width:100%;border:1px solid #dfcbd4;background:white;border-radius:10px;padding:12px;margin-bottom:12px;outline:none}
-.form-input:focus{border-color:#bd7894}
 .review-stars{display:flex;justify-content:center;gap:5px;margin:5px 0 15px}
 .star-btn{border:0;background:none;font-size:29px;color:#c5a2af;padding:2px}
 .star-btn.active{color:#d69a35}
 .rating-text{text-align:center;color:#876d77;font-size:12px;margin-bottom:12px}
 .submit-btn{width:100%;border:0;border-radius:11px;background:#9d536f;color:white;padding:14px;font-weight:700}
-.submit-btn:hover{background:#82445c}
 .submit-btn:disabled{opacity:.7}
 
-.contact-section{padding-top:75px}
+/* CONTACT AND FOOTER */
+.contact-section{padding-top:70px}
 .contact-box{max-width:900px;margin:auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:25px}
-.contact-info,.contact-form{background:white;border:1px solid #efdce4;border-radius:22px;padding:25px;box-shadow:0 10px 30px rgba(126,64,88,.05)}
+.contact-info,.contact-form{background:white;border:1px solid #efdce4;border-radius:22px;padding:25px}
 .contact-info h3,.contact-form h3{font-family:'Playfair Display',serif;color:#7e4058;font-size:25px;margin-bottom:12px}
 .contact-info p{color:#705963;line-height:1.7;font-size:14px}
 .contact-email{display:inline-block;margin-top:15px;color:#9d536f;text-decoration:none;font-weight:700}
 .contact-note{margin-top:15px;padding:13px;border-radius:12px;background:#fff5f8;color:#806873;font-size:12px;line-height:1.6}
-
-.social-section{padding:20px 20px 70px}
-.social-banner{max-width:1050px;margin:auto;border-radius:26px;padding:35px 25px;background:linear-gradient(135deg,#f8dce8,#fff0f5,#f7d7e5);border:1px solid #e8c3d1;text-align:center;box-shadow:0 15px 40px rgba(126,64,88,.08)}
+.social-section{padding:20px 20px 65px}
+.social-banner{max-width:1050px;margin:auto;border-radius:26px;padding:35px 25px;background:linear-gradient(135deg,#f8dce8,#fff0f5,#f7d7e5);border:1px solid #e8c3d1;text-align:center}
 .social-banner h2{font-family:'Playfair Display',serif;color:#7e4058;font-size:31px;margin-bottom:8px}
 .social-banner p{color:#765c66;font-size:14px;margin-bottom:20px}
 .social-links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
-.social-link{text-decoration:none;background:white;border:1px solid #e2bfcc;color:#704052;padding:12px 20px;border-radius:25px;font-weight:700;font-size:14px;transition:.2s}
-.social-link:hover{transform:translateY(-2px);background:#fff8fb}
+.social-link{text-decoration:none;background:white;border:1px solid #e2bfcc;color:#704052;padding:12px 20px;border-radius:25px;font-weight:700;font-size:14px}
+footer{background:#fff0f5;border-top:1px solid #efd5df;text-align:center;padding:35px 20px;color:#876d77;font-size:13px}
+.footer-logo{font-family:'Playfair Display',serif;font-size:25px;color:#9d536f;letter-spacing:2px;margin-bottom:8px}
+.footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin:15px 0}
+.footer-links a{color:#704052;text-decoration:none;font-weight:600}
 
+/* CART AND CHECKOUT */
 .overlay{display:none;position:fixed;inset:0;background:rgba(35,20,27,.45);z-index:2000}
 .cart-panel{position:absolute;right:0;top:0;height:100%;width:min(450px,100%);background:#fff;padding:22px;overflow-y:auto}
 .panel-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
@@ -121,124 +128,39 @@ header{position:sticky;top:0;z-index:1000;background:rgba(255,248,251,.94);backd
 .summary-row{display:flex;justify-content:space-between;margin:8px 0;color:#65414d}
 .summary-row.total{font-size:18px;font-weight:700;color:#7e4058;padding-top:10px}
 .shipping-progress{background:#fff4f8;border:1px solid #efd9e2;padding:12px;border-radius:12px;margin-bottom:15px;color:#82445c;font-size:12px;line-height:1.5}
-.checkout-btn{width:100%;border:0;background:#9d536f;color:white;padding:14px;border-radius:12px;font-weight:700;margin-top:14px}
+.checkout-btn,.place-order-btn{width:100%;border:0;background:#9d536f;color:white;padding:14px;border-radius:12px;font-weight:700;margin-top:14px}
 .empty-cart{text-align:center;padding:50px 10px;color:#846c76}
-
 .modal{display:none;position:fixed;inset:0;background:rgba(35,20,27,.5);z-index:3000;align-items:center;justify-content:center;padding:18px}
 .modal-box{background:white;width:min(600px,100%);max-height:92vh;overflow-y:auto;border-radius:22px;padding:25px}
 .modal-box h2{font-family:'Playfair Display',serif;color:#7e4058;margin-bottom:20px}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .checkout-summary{background:#fff8fb;border:1px solid #f0dce5;padding:14px;border-radius:12px;margin:14px 0}
-.checkout-free-note{margin-top:10px;color:#9d536f;font-size:12px;font-weight:700}
-.place-order-btn{width:100%;border:0;background:#9d536f;color:white;padding:14px;border-radius:12px;font-weight:700}
-.place-order-btn:disabled{opacity:.65}
 .cancel-btn{width:100%;border:1px solid #dfcbd4;background:white;color:#684652;padding:12px;border-radius:12px;margin-top:8px}
 .success-box{text-align:center;padding:25px 10px}
-.success-box h2{margin-bottom:10px}
 .success-box p{color:#705963;line-height:1.6}
-
 .admin-section{display:none;max-width:1100px;margin:auto;padding:50px 20px 80px}
 .admin-login{max-width:450px;margin:20px auto;background:white;border:1px solid #efdce4;border-radius:20px;padding:25px;text-align:center}
-.admin-dashboard{display:none}
-.dashboard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:25px 0}
-.dashboard-card{background:white;border:1px solid #efdce4;border-radius:18px;padding:20px}
-.dashboard-card small{color:#856772}
-.dashboard-card strong{display:block;font-size:27px;color:#9d536f;margin-top:5px}
-.admin-note{background:#fff8fb;border:1px solid #efdce4;padding:18px;border-radius:15px;line-height:1.6;color:#6e535d}
-
 .toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%) translateY(100px);background:#593744;color:white;padding:12px 18px;border-radius:25px;z-index:5000;opacity:0;transition:.3s;font-size:14px;text-align:center;max-width:90%}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
-footer{background:#fff0f5;border-top:1px solid #efd5df;text-align:center;padding:35px 20px;color:#876d77;font-size:13px}
-.footer-logo{font-family:'Playfair Display',serif;font-size:25px;color:#9d536f;letter-spacing:2px;margin-bottom:8px}
-.footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin:15px 0}
-.footer-links a{color:#704052;text-decoration:none;font-weight:600}
-
-@media(max-width:900px){
-.products-grid{grid-template-columns:repeat(2,1fr)}
-.categories{grid-template-columns:repeat(3,1fr)}
-.review-list{grid-template-columns:1fr 1fr}
-.contact-box{grid-template-columns:1fr}
-}
-
+@media(max-width:900px){.products-grid{grid-template-columns:repeat(2,1fr)}.categories{grid-template-columns:repeat(3,1fr)}.contact-box{grid-template-columns:1fr}}
 @media(max-width:650px){
-.navbar{padding:13px 14px}
-.nav-links{gap:8px}
-.nav-links a{display:none}
-.hero{padding-top:55px}
-.hero h1{font-size:42px}
+.navbar{padding:13px 14px}.nav-links{gap:8px}.nav-links a{display:none}
+.hero{padding-top:50px}.hero h1{font-size:42px}
 .products-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.product-card{border-radius:15px}
-.product-info{padding:11px}
-.product-name{font-size:16px;line-height:1.35}
-.product-description{font-size:11px;line-height:1.5}
-.product-price{font-size:15px}
-.colour-btn{padding:6px 8px;font-size:10px}
-.add-btn{padding:11px 5px;font-size:12px}
+.product-card{border-radius:14px}.product-info{padding:11px}
+.product-name{font-size:15px;line-height:1.35}.product-price{font-size:15px}
 .categories{grid-template-columns:repeat(2,1fr)}
-.review-list{grid-template-columns:1fr}
-.two-col{grid-template-columns:1fr}
-.social-banner h2{font-size:27px}
+.ma-review-card{flex-basis:260px;width:260px}.ma-review-track{gap:12px}
+.detail-layout{grid-template-columns:1fr;gap:18px}
+.detail-info{padding:18px}.detail-name{font-size:25px}
+.two-col{grid-template-columns:1fr}.social-banner h2{font-size:27px}
 .shipping-banner{font-size:11px}
 }
-
-/* CONTINUOUS CUSTOMER REVIEWS SLIDER */
-#approvedReviews.review-list{
-display:block;
-width:100%;
-overflow:hidden;
-margin-bottom:35px;
-}
-.ma-review-track{
-display:flex;
-width:max-content;
-gap:18px;
-animation:maReviewScroll 35s linear infinite;
-will-change:transform;
-}
-.ma-review-card{
-flex:0 0 300px;
-width:300px;
-min-height:170px;
-background:white;
-border:1px solid #efdce4;
-border-radius:18px;
-padding:20px;
-box-shadow:0 8px 25px rgba(126,64,88,.05);
-white-space:normal;
-}
-.ma-review-card .review-card-name{
-font-weight:700;
-color:#593744;
-margin-bottom:8px;
-}
-.ma-review-card .review-stars-display{
-color:#d69a35;
-letter-spacing:2px;
-margin-bottom:10px;
-}
-.ma-review-card .review-card-text{
-color:#705963;
-font-size:14px;
-line-height:1.7;
-overflow-wrap:anywhere;
-}
-@keyframes maReviewScroll{
-from{transform:translateX(0)}
-to{transform:translateX(-33.333333%)}
-}
-@media(max-width:650px){
-.ma-review-card{flex-basis:260px;width:260px}
-.ma-review-track{gap:12px}
-}
-
 </style>
 </head>
-
 <body>
 
 <div class="shipping-banner">✨ FREE DELIVERY ON ORDERS OF RS. 2,500 OR MORE ✨</div>
-
 <header>
 <div class="navbar">
 <a href="#" class="logo" onclick="showShop();return false;">MAHI ARTS</a>
@@ -262,7 +184,6 @@ to{transform:translateX(-33.333333%)}
 <span class="search-icon">⌕</span>
 <button id="clearSearch" class="clear-search" onclick="clearSearch()">Clear Search</button>
 </div>
-
 <div class="categories">
 <button class="category-btn active" onclick="showCategory('All',this)"><span class="category-icon">✨</span>All</button>
 <button class="category-btn" onclick="showCategory('Resin',this)"><span class="category-icon">🫧</span>Resin</button>
@@ -271,24 +192,40 @@ to{transform:translateX(-33.333333%)}
 <button class="category-btn" onclick="showCategory('Keychain',this)"><span class="category-icon">🎀</span>Keychain</button>
 </div>
 
-<section class="section">
-<div class="free-delivery-box">
-<strong>✨ Free Delivery on Rs. 2,500+</strong>
-<span>Orders below Rs. 2,500 have a Rs. 250 delivery charge.</span>
-</div>
+<section class="section" id="shopCollection">
+<div class="free-delivery-box"><strong>✨ Free Delivery on Rs. 2,500+</strong><span>Orders below Rs. 2,500 have a Rs. 250 delivery charge.</span></div>
 <h2 class="section-title">Our Collection</h2>
 <div id="productsGrid" class="products-grid"></div>
-<div id="emptyState" class="empty-state">
-<h3>No product found</h3>
-<p id="emptyMessage">Try another search.</p>
+<div id="emptyState" class="empty-state"><h3>No product found</h3><p id="emptyMessage">Try another search.</p></div>
+</section>
+
+<!-- SEPARATE PRODUCT DETAIL VIEW -->
+<section id="productDetailPage">
+<button class="back-button" onclick="backToShop()">← Back to Shop</button>
+<div class="detail-layout">
+<div class="detail-image-box"><img id="detailImage" src="" alt="Product image"></div>
+<div class="detail-info">
+<div id="detailCategory" class="detail-category"></div>
+<h1 id="detailName" class="detail-name"></h1>
+<div id="detailPrice" class="detail-price"></div>
+<p id="detailDescription" class="detail-description"></p>
+<div id="detailOptions"></div>
+<div class="quantity-control">
+<button type="button" onclick="changeDetailQuantity(-1)">−</button>
+<strong id="detailQuantity">1</strong>
+<button type="button" onclick="changeDetailQuantity(1)">+</button>
+</div>
+<button class="detail-add-btn" onclick="addDetailToCart()">Add to Bag</button>
+<div class="detail-note">Cash on Delivery available. Delivery Rs.250. Free delivery on orders of Rs.2,500 or more.</div>
+</div>
 </div>
 </section>
 
 <section class="section reviews" id="reviews">
 <div class="reviews-inner">
 <h2 class="section-title">Customer Love</h2>
-<p class="section-subtitle">We would love to hear about your Mahi Arts experience. Your review and star rating may be featured here after approval.</p>
-<div id="approvedReviews" class="review-list"></div>
+<p class="section-subtitle">We would love to hear about your Mahi Arts experience. Your review may be featured here after approval.</p>
+<div id="approvedReviews"></div>
 <div id="noReviews" class="no-reviews">No approved reviews yet. Be the first to share your experience 💗</div>
 <div class="review-form">
 <div class="form-heading">Leave a Review</div>
@@ -309,13 +246,13 @@ to{transform:translateX(-33.333333%)}
 
 <section class="section contact-section" id="contact">
 <h2 class="section-title">Contact Us</h2>
-<p class="section-subtitle">Have a question about a product, colour, size, order or anything else? Send us a message and we will get back to you.</p>
+<p class="section-subtitle">Have a question about a product, colour, size, order or anything else? Send us a message.</p>
 <div class="contact-box">
 <div class="contact-info">
 <h3>We're Here For You</h3>
 <p>If you need help understanding anything about our products or your order, feel free to contact Mahi Arts.</p>
 <a class="contact-email" href="mailto:mahiarts.shop@gmail.com">✉ mahiarts.shop@gmail.com</a>
-<div class="contact-note">You can also follow us on Instagram and TikTok for new products, updates and content.</div>
+<div class="contact-note">Follow us on Instagram and TikTok for new products and updates.</div>
 </div>
 <div class="contact-form">
 <h3>Send Us A Message</h3>
@@ -327,22 +264,20 @@ to{transform:translateX(-33.333333%)}
 </div>
 </section>
 
-<section class="social-section">
-<div class="social-banner">
+<section class="social-section"><div class="social-banner">
 <h2>Follow Mahi Arts</h2>
 <p>Follow us for new arrivals, jewellery inspiration, updates and beautiful little things.</p>
 <div class="social-links">
 <a class="social-link" href="https://www.instagram.com/mahiarts.shop/" target="_blank" rel="noopener noreferrer">📸 Instagram @mahiarts.shop</a>
 <a class="social-link" href="https://www.tiktok.com/@mahiarts.shop" target="_blank" rel="noopener noreferrer">🎵 TikTok @mahiarts.shop</a>
 </div>
-</div>
-</section>
+</div></section>
 
 <section id="adminSection" class="admin-section">
 <h2 class="section-title">Mahi Arts Dashboard</h2>
-<div id="adminLogin" class="admin-login">
-<p style="margin-bottom:15px;color:#765c66;">Secure Mahi Arts Admin Dashboard</p>
-<p style="font-size:13px;color:#806873;line-height:1.6;margin-bottom:18px;">Your dashboard is protected through Google Apps Script. The admin PIN is not stored on this public website.</p>
+<div class="admin-login">
+<p style="margin-bottom:15px;color:#765c66">Secure Mahi Arts Admin Dashboard</p>
+<p style="font-size:13px;color:#806873;line-height:1.6;margin-bottom:18px">Your dashboard is protected through Google Apps Script.</p>
 <button class="submit-btn" type="button" onclick="openSecureDashboard()">Open Secure Dashboard</button>
 </div>
 </section>
@@ -351,32 +286,23 @@ to{transform:translateX(-33.333333%)}
 <div class="footer-logo">MAHI ARTS</div>
 <div>Handmade with love 💗</div>
 <div class="footer-links">
-<a href="#shop">Shop</a>
-<a href="#reviews">Reviews</a>
-<a href="#contact">Contact Us</a>
-<a href="https://www.instagram.com/mahiarts.shop/" target="_blank" rel="noopener noreferrer">Instagram</a>
-<a href="https://www.tiktok.com/@mahiarts.shop" target="_blank" rel="noopener noreferrer">TikTok</a>
+<a href="#shop" onclick="showShop();return false;">Shop</a>
+<a href="#reviews">Reviews</a><a href="#contact">Contact Us</a>
+<a href="https://www.instagram.com/mahiarts.shop/" target="_blank">Instagram</a>
+<a href="https://www.tiktok.com/@mahiarts.shop" target="_blank">TikTok</a>
 </div>
 © 2026 Mahi Arts. All rights reserved.
 </footer>
 
 <div id="cartOverlay" class="overlay">
 <div class="cart-panel">
-<div class="panel-header">
-<h2>Your Bag</h2>
-<button class="close-btn" onclick="closeCart()">×</button>
-</div>
-<div id="cartItems"></div>
-<div id="cartSummary" class="cart-summary"></div>
-</div>
-</div>
+<div class="panel-header"><h2>Your Bag</h2><button class="close-btn" onclick="closeCart()">×</button></div>
+<div id="cartItems"></div><div id="cartSummary" class="cart-summary"></div>
+</div></div>
 
 <div id="checkoutModal" class="modal">
 <div class="modal-box">
-<div class="panel-header">
-<h2>Checkout</h2>
-<button class="close-btn" onclick="closeCheckout()">×</button>
-</div>
+<div class="panel-header"><h2>Checkout</h2><button class="close-btn" onclick="closeCheckout()">×</button></div>
 <div id="checkoutSummary" class="checkout-summary"></div>
 <div class="two-col">
 <input id="customerName" class="form-input" placeholder="Full Name">
@@ -389,25 +315,19 @@ to{transform:translateX(-33.333333%)}
 <input class="form-input" value="Cash on Delivery" readonly>
 <button id="placeOrderButton" class="place-order-btn" type="button" onclick="placeOrder()">Place Order</button>
 <button class="cancel-btn" type="button" onclick="closeCheckout()">Cancel</button>
-</div>
-</div>
+</div></div>
 
 <div id="successModal" class="modal">
 <div class="modal-box success-box">
-<h2>Order Placed Successfully 💗</h2>
-<p id="successMessage"></p>
-<button class="place-order-btn" style="margin-top:20px;" type="button" onclick="continueShopping()">Continue Shopping</button>
-</div>
-</div>
-
+<h2>Order Placed Successfully 💗</h2><p id="successMessage"></p>
+<button class="place-order-btn" type="button" onclick="continueShopping()">Continue Shopping</button>
+</div></div>
 <div id="toast" class="toast"></div>
 
 <script>
-const GOOGLE_SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbz0T9kxWciwn0BPLDFo-JxYdk76g9I5jcGKV-TdFrhWI9eE3SnEiferoKAJ9XO1oUKN/exec";
-
-const FREE_SHIPPING_LIMIT = 2500;
-const DELIVERY_CHARGE = 250;
+const GOOGLE_SCRIPT_URL="https://script.google.com/macros/s/AKfycbz0T9kxWciwn0BPLDFo-JxYdk76g9I5jcGKV-TdFrhWI9eE3SnEiferoKAJ9XO1oUKN/exec";
+const FREE_SHIPPING_LIMIT=2500;
+const DELIVERY_CHARGE=250;
 
 const PRODUCTS = [{
 id:"product-001",name:"Crystal Beaded Bracelet",categories:["Bracelets"],price:320,
@@ -466,21 +386,21 @@ colours:[{name:"Rainbow",image:"./p5.jpg"}],sizes:[]
 id:"product-007",name:"Custom Alphabet Resin Flower Keychain",categories:["Resin","Keychain"],price:269,
 description:"Material: Premium clear epoxy resin. Design: Alphabet A-Z letter keychain.",
 colours:[],sizes:[],
-letters:["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
+letters:"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),
 image:"./p6.jpg"
 },
 {
 id:"product-008",name:"Custom Alphabet Letter Glitter Keychain",categories:["Resin","Keychain"],price:269,
 description:"Material: Premium clear epoxy resin. Design: Alphabet A-Z letter keychain.",
 colours:[],sizes:[],
-letters:["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
+letters:"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),
 image:"./p7.jpg"
 },
 {
 id:"product-009",name:"Custom Alphabet Letter Glitter Keychain",categories:["Resin","Keychain"],price:269,
 description:"Material: Premium clear epoxy resin. Design: Alphabet A-Z letter keychain.",
 colours:[],sizes:[],
-letters:["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
+letters:"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),
 image:"./p8.jpg"
 },
 {
@@ -610,56 +530,39 @@ description:"Preserve your precious memories in a beautiful 5-inch luxury flower
 colours:[{name:"Floral Design",image:"./p53.jpg"}],sizes:[]
 },
 {
-id:"product-026",name:"2 Pcs Crystal Beaded Gajra Bracelet",categories:["Jewellery","Bracelet"],price:779,
+id:"product-026",name:"2 Pcs Crystal Beaded Gajra Bracelet",categories:["Jewellery","Bracelets"],price:779,
 description:"Complete your festive and traditional look with this beautiful set of two crystal beaded gajra bracelets. Their colourful, sparkling design adds a graceful touch to wedding outfits, celebrations and special occasions. Choose your favourite shade to complement your look.",
 colours:[
-{name:"Red",image:"./p54.jpg"},
-{name:"White",image:"./p54.jpg"},
-{name:"Yellow",image:"./p54.jpg"},
-{name:"Hot Pink",image:"./p54.jpg"},
-{name:"Sky Blue",image:"./p54.jpg"},
-{name:"Dark Green",image:"./p54.jpg"},
-{name:"Blue",image:"./p54.jpg"},
-{name:"Purple",image:"./p54.jpg"},
-{name:"Lilac",image:"./p54.jpg"},
-{name:"Mustard Yellow",image:"./p54.jpg"},
+{name:"Red",image:"./p54.jpg"},{name:"White",image:"./p54.jpg"},
+{name:"Yellow",image:"./p54.jpg"},{name:"Hot Pink",image:"./p54.jpg"},
+{name:"Sky Blue",image:"./p54.jpg"},{name:"Dark Green",image:"./p54.jpg"},
+{name:"Blue",image:"./p54.jpg"},{name:"Purple",image:"./p54.jpg"},
+{name:"Lilac",image:"./p54.jpg"},{name:"Mustard Yellow",image:"./p54.jpg"},
 {name:"Black",image:"./p54.jpg"}
 ],sizes:[]
 },
 {
-id:"product-027",name:"2 Pcs Flower Bracelet for Girls",categories:["Bracelet","Jewellery"],price:649,
+id:"product-027",name:"2 Pcs Flower Bracelet for Girls",categories:["Bracelets","Jewellery"],price:649,
 description:"Add a sweet floral touch to your everyday style with this set of two flower bracelets for girls. Perfect for casual outfits, festive looks and gifting, these charming bracelets bring a lovely pop of colour to your accessories collection.",
 colours:[
-{name:"Hot Pink",image:"./p55.jpg"},
-{name:"Red",image:"./p55.jpg"},
-{name:"Royal Blue",image:"./p55.jpg"},
-{name:"Light Blue",image:"./p55.jpg"},
-{name:"Peach",image:"./p55.jpg"},
-{name:"Baby Pink",image:"./p55.jpg"},
-{name:"Purple Pink",image:"./p55.jpg"},
-{name:"Sky Blue",image:"./p55.jpg"},
-{name:"Butter Yellow",image:"./p55.jpg"},
-{name:"Sea Green",image:"./p55.jpg"},
-{name:"Purple",image:"./p55.jpg"},
-{name:"Mustard Yellow",image:"./p55.jpg"}
+{name:"Hot Pink",image:"./p55.jpg"},{name:"Red",image:"./p55.jpg"},
+{name:"Royal Blue",image:"./p55.jpg"},{name:"Light Blue",image:"./p55.jpg"},
+{name:"Peach",image:"./p55.jpg"},{name:"Baby Pink",image:"./p55.jpg"},
+{name:"Purple Pink",image:"./p55.jpg"},{name:"Sky Blue",image:"./p55.jpg"},
+{name:"Butter Yellow",image:"./p55.jpg"},{name:"Sea Green",image:"./p55.jpg"},
+{name:"Purple",image:"./p55.jpg"},{name:"Mustard Yellow",image:"./p55.jpg"}
 ],sizes:[]
 },
 {
-id:"product-028",name:"2 Pcs Beaded Bracelet Minimalist for Girls",categories:["Bracelet","Jewellery"],price:449,
+id:"product-028",name:"2 Pcs Beaded Bracelet Minimalist for Girls",categories:["Bracelets","Jewellery"],price:449,
 description:"Keep your style simple and trendy with this set of two minimalist beaded bracelets. Easy to pair with everyday outfits, these versatile accessories add a delicate pop of colour and make a lovely gift for friends or loved ones.",
 colours:[
-{name:"Hot Pink",image:"./p56.jpg"},
-{name:"Red",image:"./p56.jpg"},
-{name:"Royal Blue",image:"./p56.jpg"},
-{name:"Light Blue",image:"./p56.jpg"},
-{name:"Peach",image:"./p56.jpg"},
-{name:"Baby Pink",image:"./p56.jpg"},
-{name:"Purple Pink",image:"./p56.jpg"},
-{name:"Sky Blue",image:"./p56.jpg"},
-{name:"Butter Yellow",image:"./p56.jpg"},
-{name:"Sea Green",image:"./p56.jpg"},
-{name:"Purple",image:"./p56.jpg"},
-{name:"Mustard Yellow",image:"./p56.jpg"}
+{name:"Hot Pink",image:"./p56.jpg"},{name:"Red",image:"./p56.jpg"},
+{name:"Royal Blue",image:"./p56.jpg"},{name:"Light Blue",image:"./p56.jpg"},
+{name:"Peach",image:"./p56.jpg"},{name:"Baby Pink",image:"./p56.jpg"},
+{name:"Purple Pink",image:"./p56.jpg"},{name:"Sky Blue",image:"./p56.jpg"},
+{name:"Butter Yellow",image:"./p56.jpg"},{name:"Sea Green",image:"./p56.jpg"},
+{name:"Purple",image:"./p56.jpg"},{name:"Mustard Yellow",image:"./p56.jpg"}
 ],sizes:[]
 },
 {
@@ -670,17 +573,20 @@ colours:[{name:"Custom Colour & Name",image:"./p57.jpg"}],sizes:[]
 {
 id:"product-030",name:"Alphabet Plate with Heart and Name | Handmade Decor Plate",categories:["Resin"],price:1370,
 description:"Celebrate a special name with this beautiful handmade resin alphabet plate featuring a heart detail. Personalised with your chosen name, it makes a lovely decorative keepsake for bedrooms, dressing tables and gifting on special occasions.",
-colours:[{name:"Custom Name",image:"./p58.jpg"}],sizes:[]
+colours:[{name:"Custom Name",image:"./p58.jpg"}],sizes:[],
+letters:"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 },
 {
 id:"product-031",name:"Alphabet Plate with Heart | Handmade Decor Plate",categories:["Resin"],price:1270,
 description:"Add a charming personal touch to your space with this handmade resin alphabet plate featuring a beautiful heart design. Its elegant decorative style makes it a lovely addition to your room or a thoughtful gift for someone special.",
-colours:[{name:"One Colour",image:"./p59.jpg"}],sizes:[]
+colours:[{name:"One Colour",image:"./p59.jpg"}],sizes:[],
+letters:"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 },
 {
 id:"product-032",name:"Customised Alphabet Name Resin Plate | Personalised Resin Decor",categories:["Resin"],price:1299,
 description:"Create a decor piece that is uniquely yours with this customised alphabet name resin plate. Personalised with your chosen name and colour, it is perfect for decorating shelves, dressing tables or bedrooms and makes a memorable handmade gift.",
-colours:[{name:"Custom Colour & Name only 4 alphabet",image:"./p60.jpg"}],sizes:[]
+colours:[{name:"Custom Colour & Name only 4 alphabet",image:"./p60.jpg"}],sizes:[],
+letters:"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 },
 {
 id:"product-033",name:"Resin Plate with Photo | Personalised Resin Decor",categories:["Resin"],price:1250,
@@ -717,7 +623,8 @@ id:"product-039",name:"Handmade Resin Quran Box only raw material",categories:["
 description:"Keep your Quran in a beautiful handmade resin box designed with care and attention to detail. Personalise the colour to suit your preference and create a meaningful piece for your home or a thoughtful gift for a loved one.",
 colours:[{name:"Custom Colour",image:"./p66.jpg"}],sizes:[]
 }
-];/* STATE */
+];
+
 let cart=[];
 let isPlacingOrder=false;
 let isSubmittingReview=false;
@@ -727,764 +634,634 @@ let contactSubmitted=false;
 let selectedCategory="All";
 let selectedReviewRating=0;
 let lastReviewsSignature="";
+let currentDetailProduct=null;
+let detailQuantity=1;
+let detailColour="";
+let detailSize="";
+let detailLetter="";
+let detailCustom="";
 
 const selectedColours={};
 const selectedSizes={};
 const selectedLetters={};
 
-/* HELPERS */
 function getProductCategories(product){
-    return Array.isArray(product.categories)
-        ? product.categories
-        : product.category ? [product.category] : [];
+return Array.isArray(product.categories)?product.categories:
+product.category?[product.category]:[];
 }
 
 function getProductImage(product){
-    if(product.image) return product.image;
-    if(product.colours && product.colours.length)
-        return product.colours[0].image || "";
-    return "";
+if(product.image)return product.image;
+if(product.colours&&product.colours.length)return product.colours[0].image||"";
+return "";
 }
 
 function escapeHtml(value){
-    return String(value)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
+return String(value??"").replace(/&/g,"&amp;").replace(/</g,"&lt;")
+.replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");
 }
 
-function escapeAttribute(value){
-    return escapeHtml(value);
-}
-
-/* INITIALIZE */
 document.addEventListener("DOMContentLoaded",function(){
-    renderProducts();
-    updateCart();
-    updateDashboard();
-    loadApprovedReviews();
-
-    setInterval(function(){
-        loadApprovedReviews();
-    },30000);
+renderProducts();
+updateCart();
+loadApprovedReviews();
+setInterval(loadApprovedReviews,30000);
+if(location.hash.startsWith("#product=")){
+openProduct(decodeURIComponent(location.hash.split("=")[1]),false);
+}
 });
 
-/* PRODUCT RENDERING */
 function renderProducts(){
-    const grid=document.getElementById("productsGrid");
-    const searchInput=document.getElementById("searchInput");
-    const query=searchInput.value.trim().toLowerCase();
+const grid=document.getElementById("productsGrid");
+const query=document.getElementById("searchInput").value.trim().toLowerCase();
 
-    const products=PRODUCTS.filter(function(product){
-        const categories=getProductCategories(product);
+const products=PRODUCTS.filter(product=>{
+const categories=getProductCategories(product);
+const matchCategory=selectedCategory==="All"||
+categories.includes(selectedCategory)||
+(selectedCategory==="Bracelets"&&categories.includes("Bracelet"));
+const matchSearch=!query||product.name.toLowerCase().includes(query)||
+categories.join(" ").toLowerCase().includes(query)||
+product.id.toLowerCase().includes(query);
+return matchCategory&&matchSearch;
+});
 
-        const matchesCategory=
-            selectedCategory==="All" ||
-            categories.includes(selectedCategory) ||
-            (selectedCategory==="Bracelets" && categories.includes("Bracelet"));
+grid.innerHTML="";
+document.getElementById("emptyState").style.display=products.length?"none":"block";
+document.getElementById("emptyMessage").textContent=query?
+'No product found for "'+escapeHtml(query)+'".':
+"No products available in this category.";
 
-        const searchableCategories=categories.join(" ").toLowerCase();
-
-        const matchesSearch=
-            query==="" ||
-            product.name.toLowerCase().includes(query) ||
-            searchableCategories.includes(query) ||
-            product.id.toLowerCase().includes(query);
-
-        return matchesCategory && matchesSearch;
-    });
-
-    grid.innerHTML="";
-
-    if(products.length===0){
-        document.getElementById("emptyState").style.display="block";
-        document.getElementById("emptyMessage").textContent=
-            query
-            ? 'No product found for "'+searchInput.value+'".'
-            : "No products available in this category.";
-        return;
-    }
-
-    document.getElementById("emptyState").style.display="none";
-
-    products.forEach(function(product){
-        if(!selectedColours[product.id] && product.colours && product.colours.length){
-            selectedColours[product.id]=product.colours[0];
-        }
-
-        if(!selectedSizes[product.id]){
-            selectedSizes[product.id]=
-                product.sizes && product.sizes.length
-                ? product.sizes[0] : "";
-        }
-
-        if(!selectedLetters[product.id] && product.letters && product.letters.length){
-            selectedLetters[product.id]=product.letters[0];
-        }
-
-        const selectedColour=selectedColours[product.id] || null;
-        const image=selectedColour && selectedColour.image
-            ? selectedColour.image
-            : getProductImage(product);
-
-        let colourHTML="";
-
-        if(product.colours && product.colours.length){
-            colourHTML=`
-                <label class="option-label">Colour</label>
-                <div class="colour-options">
-                    ${product.colours.map(function(colour){
-                        const active=selectedColour &&
-                            selectedColour.name===colour.name ? "active" : "";
-
-                        return `
-                        <button type="button"
-                            class="colour-btn ${active}"
-                            onclick="selectColour('${product.id}','${escapeAttribute(colour.name)}')">
-                            ${escapeHtml(colour.name)}
-                        </button>`;
-                    }).join("")}
-                </div>`;
-        }
-
-        let sizeHTML="";
-
-        if(product.sizes && product.sizes.length){
-            sizeHTML=`
-                <label class="option-label">Size</label>
-                <select class="size-select"
-                    onchange="selectSize('${product.id}',this.value)">
-                    ${product.sizes.map(function(size){
-                        return `
-                        <option value="${escapeAttribute(size)}"
-                            ${selectedSizes[product.id]===size?"selected":""}>
-                            ${escapeHtml(size)}
-                        </option>`;
-                    }).join("")}
-                </select>`;
-        }
-
-        let letterHTML="";
-
-        if(product.letters && product.letters.length){
-            letterHTML=`
-                <label class="option-label">Select Letter</label>
-                <select class="letter-select"
-                    onchange="selectLetter('${product.id}',this.value)">
-                    ${product.letters.map(function(letter){
-                        return `
-                        <option value="${letter}"
-                            ${selectedLetters[product.id]===letter?"selected":""}>
-                            ${letter}
-                        </option>`;
-                    }).join("")}
-                </select>`;
-        }
-
-        const categoryText=getProductCategories(product).join(" • ");
-        const card=document.createElement("div");
-        card.className="product-card";
-
-        card.innerHTML=`
-            <div class="product-image-wrap">
-                <img id="image-${product.id}"
-                    class="product-image"
-                    src="${escapeAttribute(image)}"
-                    alt="${escapeAttribute(product.name)}"
-                    onerror="this.style.display='none'">
-            </div>
-            <div class="product-info">
-                <div class="product-category">${escapeHtml(categoryText)}</div>
-                <div class="product-name">${escapeHtml(product.name)}</div>
-                <div class="product-description">${escapeHtml(product.description || "")}</div>
-                <div class="product-price">Rs. ${product.price.toLocaleString()}</div>
-                ${colourHTML}
-                ${letterHTML}
-                ${sizeHTML}
-                <button type="button" class="add-btn"
-                    onclick="addToCart('${product.id}')">
-                    Add to Bag
-                </button>
-            </div>`;
-
-        grid.appendChild(card);
-    });
+products.forEach(product=>{
+const image=getProductImage(product);
+const card=document.createElement("article");
+card.className="product-card";
+card.setAttribute("role","button");
+card.setAttribute("tabindex","0");
+card.setAttribute("aria-label","View "+product.name);
+card.onclick=()=>openProduct(product.id);
+card.onkeydown=event=>{
+if(event.key==="Enter"||event.key===" "){event.preventDefault();openProduct(product.id);}
+};
+card.innerHTML=`
+<div class="product-image-wrap">
+<img class="product-image" src="${escapeHtml(image)}" alt="${escapeHtml(product.name)}" loading="lazy">
+</div>
+<div class="product-info">
+<div class="product-name">${escapeHtml(product.name)}</div>
+<div class="product-price">Rs. ${product.price.toLocaleString()}</div>
+</div>`;
+grid.appendChild(card);
+});
 }
 
-/* COLOUR, SIZE AND LETTER */
-function selectColour(productId,colourName){
-    const product=PRODUCTS.find(item=>item.id===productId);
-    if(!product || !product.colours) return;
-
-    const colour=product.colours.find(item=>item.name===colourName);
-    if(!colour) return;
-
-    selectedColours[productId]=colour;
-    renderProducts();
-}
-
-function selectSize(productId,size){
-    selectedSizes[productId]=size;
-}
-
-function selectLetter(productId,letter){
-    selectedLetters[productId]=letter;
-}
-
-/* CATEGORY AND SEARCH */
 function showCategory(category,button){
-    selectedCategory=category;
-
-    document.querySelectorAll(".category-btn").forEach(function(btn){
-        btn.classList.remove("active");
-    });
-
-    if(button) button.classList.add("active");
-    renderProducts();
+selectedCategory=category;
+document.querySelectorAll(".category-btn").forEach(btn=>btn.classList.remove("active"));
+if(button)button.classList.add("active");
+renderProducts();
 }
 
 function searchProducts(){
-    const query=document.getElementById("searchInput").value.trim();
-    document.getElementById("clearSearch").style.display=query?"block":"none";
-    renderProducts();
+const query=document.getElementById("searchInput").value.trim();
+document.getElementById("clearSearch").style.display=query?"block":"none";
+renderProducts();
 }
 
 function clearSearch(){
-    document.getElementById("searchInput").value="";
-    document.getElementById("clearSearch").style.display="none";
-    renderProducts();
+document.getElementById("searchInput").value="";
+document.getElementById("clearSearch").style.display="none";
+renderProducts();
 }
 
-/* ADD TO CART */
-function addToCart(productId){
-    const product=PRODUCTS.find(item=>item.id===productId);
-    if(!product) return;
+function openProduct(productId,changeHash=true){
+const product=PRODUCTS.find(item=>item.id===productId);
+if(!product)return;
 
-    const selectedColour=selectedColours[productId] || null;
-    const colourName=selectedColour ? selectedColour.name : "";
-    const image=selectedColour && selectedColour.image
-        ? selectedColour.image : getProductImage(product);
+currentDetailProduct=product;
+detailQuantity=1;
+detailColour=product.colours?.[0]?.name||"";
+detailSize=product.sizes?.[0]||"";
+detailLetter=product.letters?.[0]||"";
+detailCustom="";
 
-    const letter=selectedLetters[productId] || "";
-    const size=selectedSizes[productId] ||
-        (product.sizes && product.sizes[0]) || "";
+document.getElementById("shopCollection").style.display="none";
+document.querySelector(".categories").style.display="none";
+document.querySelector(".search-wrap").style.display="none";
+document.getElementById("productDetailPage").style.display="block";
 
-    let optionName=colourName;
+document.getElementById("detailName").textContent=product.name;
+document.getElementById("detailPrice").textContent="Rs. "+product.price.toLocaleString();
+document.getElementById("detailDescription").textContent=product.description||"";
+document.getElementById("detailCategory").textContent=getProductCategories(product).join(" • ");
+renderDetailOptions();
+updateDetailImage();
 
-    if(letter){
-        optionName=colourName
-            ? colourName+" • Letter: "+letter
-            : "Letter: "+letter;
-    }
-
-    if(!optionName) optionName="Custom";
-
-    const existing=cart.find(function(item){
-        return item.productId===productId &&
-            item.colour===optionName &&
-            item.size===size;
-    });
-
-    if(existing){
-        existing.quantity++;
-    }else{
-        cart.push({
-            productId:product.id,
-            name:product.name,
-            category:getProductCategories(product).join(", "),
-            price:product.price,
-            colour:optionName,
-            image:image,
-            size:size,
-            quantity:1
-        });
-    }
-
-    updateCart();
-    showToast("Added to your bag 💗");
+if(changeHash)history.pushState({productId:productId},"","#product="+productId);
+window.scrollTo({top:0,behavior:"smooth"});
 }
 
-/* UPDATE CART */
+function renderDetailOptions(){
+const product=currentDetailProduct;
+const area=document.getElementById("detailOptions");
+let html="";
+
+if(product.colours&&product.colours.length){
+html+=`<label class="option-label">Choose Colour / Design</label><div class="colour-options">`;
+product.colours.forEach(colour=>{
+html+=`<button type="button" class="colour-btn ${detailColour===colour.name?"active":""}"
+onclick="chooseDetailColour('${escapeHtml(colour.name)}')">${escapeHtml(colour.name)}</button>`;
+});
+html+="</div>";
+}
+
+if(product.sizes&&product.sizes.length){
+html+=`<label class="option-label">Select Size</label><select class="size-select" onchange="detailSize=this.value">`;
+product.sizes.forEach(size=>{
+html+=`<option value="${escapeHtml(size)}" ${detailSize===size?"selected":""}>${escapeHtml(size)}</option>`;
+});
+html+="</select>";
+}
+
+if(product.letters&&product.letters.length){
+html+=`<label class="option-label">Select Alphabet</label><select class="letter-select" onchange="detailLetter=this.value">`;
+product.letters.forEach(letter=>{
+html+=`<option value="${letter}" ${detailLetter===letter?"selected":""}>${letter}</option>`;
+});
+html+="</select>";
+}
+
+const needsCustom=/custom|name|photo|personal|text|alphabet/i.test(product.name+" "+product.description);
+if(needsCustom){
+const placeholder=/photo/i.test(product.name)?"Photo details or instructions":
+/alphabet/i.test(product.name)?"Enter name or extra customisation details":
+"Enter your name or customisation details";
+html+=`<label class="option-label">Customisation Details</label>
+<textarea class="detail-input" id="detailCustomInput" rows="3" maxlength="300"
+placeholder="${placeholder}" oninput="detailCustom=this.value"></textarea>`;
+}
+
+area.innerHTML=html;
+}
+
+function chooseDetailColour(name){
+detailColour=name;
+renderDetailOptions();
+updateDetailImage();
+}
+
+function updateDetailImage(){
+const product=currentDetailProduct;
+if(!product)return;
+const colour=product.colours?.find(item=>item.name===detailColour);
+document.getElementById("detailImage").src=colour?.image||getProductImage(product);
+}
+
+function changeDetailQuantity(amount){
+detailQuantity=Math.max(1,Math.min(99,detailQuantity+amount));
+document.getElementById("detailQuantity").textContent=detailQuantity;
+}
+
+function addDetailToCart(){
+if(!currentDetailProduct)return;
+const product=currentDetailProduct;
+const customInput=document.getElementById("detailCustomInput");
+if(customInput)detailCustom=customInput.value.trim();
+
+if(/custom|name|photo|personal|text|alphabet/i.test(product.name+" "+product.description)&&!detailCustom&&product.id!=="product-007"&&product.id!=="product-008"&&product.id!=="product-009"){
+showToast("Please enter your customisation details.");
+return;
+}
+
+const colour=detailColour||"";
+const letter=detailLetter||"";
+const options=[colour,letter?"Letter: "+letter:"",detailCustom?"Details: "+detailCustom:""].filter(Boolean).join(" | ");
+const size=detailSize||"";
+const image=product.colours?.find(item=>item.name===colour)?.image||getProductImage(product);
+
+const existing=cart.find(item=>item.productId===product.id&&item.colour===options&&item.size===size);
+if(existing)existing.quantity+=detailQuantity;
+else cart.push({
+productId:product.id,name:product.name,category:getProductCategories(product).join(", "),
+price:product.price,colour:options||"Standard",image:image,size:size,quantity:detailQuantity
+});
+
+updateCart();
+showToast("Added to your bag 💗");
+openCart();
+}
+
+function backToShop(){
+currentDetailProduct=null;
+document.getElementById("productDetailPage").style.display="none";
+document.getElementById("shopCollection").style.display="block";
+document.querySelector(".categories").style.display="grid";
+document.querySelector(".search-wrap").style.display="block";
+if(location.hash.startsWith("#product="))history.pushState({},"",location.pathname+location.search);
+window.scrollTo({top:0,behavior:"smooth"});
+}
+
+window.addEventListener("popstate",function(){
+if(location.hash.startsWith("#product=")){
+openProduct(decodeURIComponent(location.hash.split("=")[1]),false);
+}else if(currentDetailProduct){
+backToShop();
+}
+});/* CART */
 function updateCart(){
-    const cartItems=document.getElementById("cartItems");
-    const cartSummary=document.getElementById("cartSummary");
+const cartItems=document.getElementById("cartItems");
+const cartSummary=document.getElementById("cartSummary");
+const count=cart.reduce((total,item)=>total+item.quantity,0);
+document.getElementById("cartCount").textContent=count;
 
-    const count=cart.reduce((total,item)=>total+item.quantity,0);
-    document.getElementById("cartCount").textContent=count;
+if(cart.length===0){
+cartItems.innerHTML='<div class="empty-cart">Your bag is empty 💗</div>';
+cartSummary.innerHTML="";
+return;
+}
 
-    if(cart.length===0){
-        cartItems.innerHTML=`<div class="empty-cart">Your bag is empty 💗</div>`;
-        cartSummary.innerHTML="";
-        return;
-    }
+cartItems.innerHTML=cart.map((item,index)=>`
+<div class="cart-item">
+<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.name)}">
+<div>
+<div class="cart-name">${escapeHtml(item.name)}</div>
+<div class="cart-meta">${escapeHtml(item.colour||"")}${item.size?" • "+escapeHtml(item.size):""}</div>
+<div class="cart-meta">Rs. ${item.price.toLocaleString()}</div>
+<div class="qty-row">
+<button class="qty-btn" onclick="changeQuantity(${index},-1)">−</button>
+<strong>${item.quantity}</strong>
+<button class="qty-btn" onclick="changeQuantity(${index},1)">+</button>
+<button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+</div>
+</div>
+</div>`).join("");
 
-    cartItems.innerHTML=cart.map(function(item,index){
-        return `
-        <div class="cart-item">
-            <img src="${escapeAttribute(item.image || "")}"
-                alt="${escapeAttribute(item.name)}">
-            <div>
-                <div class="cart-name">${escapeHtml(item.name)}</div>
-                <div class="cart-meta">
-                    ${item.colour?escapeHtml(item.colour):""}
-                    ${item.size?" • "+escapeHtml(item.size):""}
-                </div>
-                <div class="cart-meta">Rs. ${item.price.toLocaleString()}</div>
-                <div class="qty-row">
-                    <button type="button" class="qty-btn"
-                        onclick="changeQuantity(${index},-1)">−</button>
-                    <strong>${item.quantity}</strong>
-                    <button type="button" class="qty-btn"
-                        onclick="changeQuantity(${index},1)">+</button>
-                    <button type="button" class="remove-btn"
-                        onclick="removeItem(${index})">Remove</button>
-                </div>
-            </div>
-        </div>`;
-    }).join("");
+const productTotal=cart.reduce((sum,item)=>sum+item.price*item.quantity,0);
+const delivery=productTotal>=FREE_SHIPPING_LIMIT?0:DELIVERY_CHARGE;
+const total=productTotal+delivery;
 
-    const productTotal=cart.reduce((total,item)=>total+item.price*item.quantity,0);
-    const delivery=productTotal>=FREE_SHIPPING_LIMIT?0:DELIVERY_CHARGE;
-    const grandTotal=productTotal+delivery;
-
-    const shippingMessage=productTotal>=FREE_SHIPPING_LIMIT
-        ? `<div class="shipping-progress">🎉 Congratulations! You’ve unlocked <strong>FREE DELIVERY</strong>.</div>`
-        : `<div class="shipping-progress">Add <strong>Rs. ${(FREE_SHIPPING_LIMIT-productTotal).toLocaleString()}</strong> more to unlock FREE DELIVERY.</div>`;
-
-    cartSummary.innerHTML=`
-        ${shippingMessage}
-        <div class="summary-row">
-            <span>Products</span>
-            <strong>Rs. ${productTotal.toLocaleString()}</strong>
-        </div>
-        <div class="summary-row">
-            <span>Delivery</span>
-            <strong>${delivery===0?"FREE":"Rs. "+delivery.toLocaleString()}</strong>
-        </div>
-        <div class="summary-row total">
-            <span>Total</span>
-            <strong>Rs. ${grandTotal.toLocaleString()}</strong>
-        </div>
-        <button type="button" class="checkout-btn" onclick="openCheckout()">Checkout</button>`;
+cartSummary.innerHTML=`
+<div class="shipping-progress">
+${delivery===0?"🎉 FREE DELIVERY unlocked!":
+"Add Rs. "+(FREE_SHIPPING_LIMIT-productTotal).toLocaleString()+" more for FREE DELIVERY."}
+</div>
+<div class="summary-row"><span>Products</span><strong>Rs. ${productTotal.toLocaleString()}</strong></div>
+<div class="summary-row"><span>Delivery</span><strong>${delivery===0?"FREE":"Rs. "+delivery.toLocaleString()}</strong></div>
+<div class="summary-row total"><span>Total</span><strong>Rs. ${total.toLocaleString()}</strong></div>
+<button class="checkout-btn" onclick="openCheckout()">Checkout</button>`;
 }
 
 function changeQuantity(index,amount){
-    if(!cart[index]) return;
-    cart[index].quantity+=amount;
-    if(cart[index].quantity<=0) cart.splice(index,1);
-    updateCart();
+if(!cart[index])return;
+cart[index].quantity+=amount;
+if(cart[index].quantity<=0)cart.splice(index,1);
+updateCart();
 }
 
 function removeItem(index){
-    cart.splice(index,1);
-    updateCart();
+cart.splice(index,1);
+updateCart();
 }
 
-/* CART OPEN/CLOSE */
 function openCart(){
-    document.getElementById("cartOverlay").style.display="block";
+document.getElementById("cartOverlay").style.display="block";
 }
 
 function closeCart(){
-    document.getElementById("cartOverlay").style.display="none";
+document.getElementById("cartOverlay").style.display="none";
 }
 
 /* CHECKOUT */
 function openCheckout(){
-    if(cart.length===0){
-        showToast("Your bag is empty.");
-        return;
-    }
+if(!cart.length){showToast("Your bag is empty.");return;}
 
-    const productTotal=cart.reduce((total,item)=>total+item.price*item.quantity,0);
-    const delivery=productTotal>=FREE_SHIPPING_LIMIT?0:DELIVERY_CHARGE;
-    const total=productTotal+delivery;
+const productTotal=cart.reduce((sum,item)=>sum+item.price*item.quantity,0);
+const delivery=productTotal>=FREE_SHIPPING_LIMIT?0:DELIVERY_CHARGE;
+const total=productTotal+delivery;
 
-    const freeNote=delivery===0
-        ? `<div class="checkout-free-note">🎉 You have unlocked FREE DELIVERY!</div>`
-        : `<div class="checkout-free-note">Spend Rs. 2,500 or more for FREE DELIVERY.</div>`;
+document.getElementById("checkoutSummary").innerHTML=`
+<strong>Order Summary</strong>
+<div style="margin-top:8px">Products: Rs. ${productTotal.toLocaleString()}</div>
+<div>Delivery: ${delivery===0?"FREE":"Rs. "+delivery.toLocaleString()}</div>
+<div style="margin-top:6px;font-weight:700">Total: Rs. ${total.toLocaleString()}</div>
+<div style="margin-top:8px;color:#9d536f;font-size:12px;font-weight:700">
+${delivery===0?"🎉 FREE DELIVERY unlocked!":"Spend Rs. 2,500 or more for FREE DELIVERY."}
+</div>`;
 
-    document.getElementById("checkoutSummary").innerHTML=`
-        <strong>Order Summary</strong>
-        <div style="margin-top:8px;">Products: Rs. ${productTotal.toLocaleString()}</div>
-        <div>Delivery: ${delivery===0?"FREE":"Rs. "+delivery.toLocaleString()}</div>
-        <div style="margin-top:6px;font-weight:700;">Total: Rs. ${total.toLocaleString()}</div>
-        ${freeNote}`;
-
-    document.getElementById("checkoutModal").style.display="flex";
+document.getElementById("checkoutModal").style.display="flex";
 }
 
 function closeCheckout(){
-    if(isPlacingOrder) return;
-    document.getElementById("checkoutModal").style.display="none";
+if(isPlacingOrder)return;
+document.getElementById("checkoutModal").style.display="none";
 }
 
-/* PLACE ORDER */
 async function placeOrder(){
-    if(isPlacingOrder) return;
+if(isPlacingOrder)return;
 
-    const name=document.getElementById("customerName").value.trim();
-    const email=document.getElementById("customerEmail").value.trim();
-    const phone=document.getElementById("customerPhone").value.trim();
-    const city=document.getElementById("customerCity").value.trim();
-    const area=document.getElementById("customerArea").value.trim();
-    const address=document.getElementById("customerAddress").value.trim();
+const name=document.getElementById("customerName").value.trim();
+const email=document.getElementById("customerEmail").value.trim();
+const phone=document.getElementById("customerPhone").value.trim();
+const city=document.getElementById("customerCity").value.trim();
+const area=document.getElementById("customerArea").value.trim();
+const address=document.getElementById("customerAddress").value.trim();
 
-    if(!name || !email || !phone || !city || !area || !address){
-        showToast("Please fill all customer details.");
-        return;
-    }
+if(!name||!email||!phone||!city||!area||!address){
+showToast("Please fill all customer details.");
+return;
+}
 
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-        showToast("Please enter a valid email address.");
-        return;
-    }
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+showToast("Please enter a valid email address.");
+return;
+}
 
-    if(cart.length===0){
-        showToast("Your bag is empty.");
-        return;
-    }
+if(!cart.length){showToast("Your bag is empty.");return;}
 
-    isPlacingOrder=true;
+isPlacingOrder=true;
+const button=document.getElementById("placeOrderButton");
+button.disabled=true;
+button.textContent="Placing Order...";
 
-    const placeButton=document.getElementById("placeOrderButton");
-    placeButton.disabled=true;
-    placeButton.textContent="Placing Order...";
+const orderId=createOrderId();
+const productTotal=cart.reduce((sum,item)=>sum+item.price*item.quantity,0);
+const delivery=productTotal>=FREE_SHIPPING_LIMIT?0:DELIVERY_CHARGE;
 
-    const orderId=createOrderId();
-    const productTotal=cart.reduce((total,item)=>total+item.price*item.quantity,0);
-    const delivery=productTotal>=FREE_SHIPPING_LIMIT?0:DELIVERY_CHARGE;
-    const grandTotal=productTotal+delivery;
+const data={
+orderId:orderId,
+date:new Date().toISOString(),
+customerName:name,
+email:email,
+phone:phone,
+city:city,
+area:area,
+address:address,
+product:cart.map(item=>item.name+(item.colour?" ["+item.colour+"]":"")+(item.size?" ["+item.size+"]":"")).join(", "),
+category:cart.map(item=>item.category).join(", "),
+colour:cart.map(item=>item.colour).join(", "),
+size:cart.map(item=>item.size).join(", "),
+quantity:cart.map(item=>item.quantity).join(", "),
+productTotal:productTotal,
+delivery:delivery,
+grandTotal:productTotal+delivery,
+paymentMethod:"Cash on Delivery",
+status:"Pending",
+reviewEmailSent:"NO"
+};
 
-    const data={
-        orderId:orderId,
-        date:new Date().toISOString(),
-        customerName:name,
-        email:email,
-        phone:phone,
-        city:city,
-        area:area,
-        address:address,
-        product:cart.map(item=>item.name).join(", "),
-        category:cart.map(item=>item.category).join(", "),
-        colour:cart.map(item=>item.colour).join(", "),
-        size:cart.map(item=>item.size).join(", "),
-        quantity:cart.map(item=>item.quantity).join(", "),
-        productTotal:productTotal,
-        delivery:delivery,
-        grandTotal:grandTotal,
-        paymentMethod:"Cash on Delivery",
-        status:"Pending",
-        reviewEmailSent:"NO"
-    };
+try{
+await fetch(GOOGLE_SCRIPT_URL,{
+method:"POST",
+mode:"no-cors",
+headers:{"Content-Type":"application/x-www-form-urlencoded"},
+body:new URLSearchParams(data).toString()
+});
 
-    try{
-        await fetch(GOOGLE_SCRIPT_URL,{
-            method:"POST",
-            mode:"no-cors",
-            headers:{"Content-Type":"application/x-www-form-urlencoded"},
-            body:new URLSearchParams(data).toString()
-        });
+cart=[];
+updateCart();
+document.getElementById("checkoutModal").style.display="none";
+document.getElementById("cartOverlay").style.display="none";
 
-        cart=[];
-        updateCart();
+document.getElementById("successMessage").innerHTML=
+"Thank you, "+escapeHtml(name)+"! Your order <strong>"+
+escapeHtml(orderId)+"</strong> has been submitted.<br><br>Payment: Cash on Delivery.";
 
-        document.getElementById("checkoutModal").style.display="none";
-        document.getElementById("cartOverlay").style.display="none";
+document.getElementById("successModal").style.display="flex";
+clearCheckoutForm();
 
-        document.getElementById("successMessage").innerHTML=
-            "Thank you, "+escapeHtml(name)+
-            "! Your order <strong>"+escapeHtml(orderId)+
-            "</strong> has been received.<br><br>Payment method: Cash on Delivery.";
-
-        document.getElementById("successModal").style.display="flex";
-        clearCheckoutForm();
-
-    }catch(error){
-        console.error(error);
-        isPlacingOrder=false;
-        placeButton.disabled=false;
-        placeButton.textContent="Place Order";
-        showToast("Something went wrong. Please try again.");
-    }
+}catch(error){
+console.error(error);
+isPlacingOrder=false;
+button.disabled=false;
+button.textContent="Place Order";
+showToast("Something went wrong. Please try again.");
+}
 }
 
 function createOrderId(){
-    const now=new Date();
-    const datePart=now.getFullYear().toString()+
-        String(now.getMonth()+1).padStart(2,"0")+
-        String(now.getDate()).padStart(2,"0");
-    const randomPart=Math.floor(1000+Math.random()*9000);
-    return "MA-"+datePart+"-"+randomPart;
+const now=new Date();
+const date=now.getFullYear().toString()+
+String(now.getMonth()+1).padStart(2,"0")+
+String(now.getDate()).padStart(2,"0");
+return "MA-"+date+"-"+Math.floor(1000+Math.random()*9000);
 }
 
 function clearCheckoutForm(){
-    ["customerName","customerEmail","customerPhone","customerCity","customerArea","customerAddress"]
-    .forEach(id=>document.getElementById(id).value="");
+["customerName","customerEmail","customerPhone","customerCity","customerArea","customerAddress"]
+.forEach(id=>document.getElementById(id).value="");
 }
 
 function continueShopping(){
-    document.getElementById("successModal").style.display="none";
-    isPlacingOrder=false;
-
-    const placeButton=document.getElementById("placeOrderButton");
-    placeButton.disabled=false;
-    placeButton.textContent="Place Order";
-
-    showShop();
+document.getElementById("successModal").style.display="none";
+isPlacingOrder=false;
+const button=document.getElementById("placeOrderButton");
+button.disabled=false;
+button.textContent="Place Order";
+showShop();
 }
 
 function showShop(){
-    document.getElementById("adminSection").style.display="none";
-    document.getElementById("shop").scrollIntoView({behavior:"smooth"});
+currentDetailProduct=null;
+document.getElementById("adminSection").style.display="none";
+document.getElementById("productDetailPage").style.display="none";
+document.getElementById("shopCollection").style.display="block";
+document.querySelector(".categories").style.display="grid";
+document.querySelector(".search-wrap").style.display="block";
+if(location.hash.startsWith("#product=")){
+history.pushState({},"",location.pathname+location.search);
+}
+window.scrollTo({top:0,behavior:"smooth"});
 }
 
 /* REVIEWS */
 function selectReviewStar(number){
-    if(isSubmittingReview || reviewSubmitted) return;
-
-    selectedReviewRating=number;
-
-    document.querySelectorAll(".star-btn").forEach(function(btn,index){
-        btn.classList.toggle("active",index<number);
-    });
+if(isSubmittingReview||reviewSubmitted)return;
+selectedReviewRating=number;
+document.querySelectorAll(".star-btn").forEach((btn,index)=>{
+btn.classList.toggle("active",index<number);
+});
 }
 
 async function submitReview(){
-    if(isSubmittingReview || reviewSubmitted) return;
+if(isSubmittingReview||reviewSubmitted)return;
 
-    const name=document.getElementById("reviewName").value.trim();
-    const review=document.getElementById("reviewText").value.trim();
+const name=document.getElementById("reviewName").value.trim();
+const review=document.getElementById("reviewText").value.trim();
 
-    if(!name || !review || !selectedReviewRating){
-        showToast("Please add your name, rating and review.");
-        return;
-    }
-
-    isSubmittingReview=true;
-
-    const reviewButton=document.getElementById("submitReviewButton");
-    reviewButton.disabled=true;
-    reviewButton.textContent="Submitting...";
-
-    const reviewData={
-        action:"submitReview",
-        name:name,
-        rating:selectedReviewRating,
-        review:review,
-        date:new Date().toISOString(),
-        status:"Pending"
-    };
-
-    try{
-        await fetch(GOOGLE_SCRIPT_URL,{
-            method:"POST",
-            mode:"no-cors",
-            headers:{"Content-Type":"application/x-www-form-urlencoded"},
-            body:new URLSearchParams(reviewData).toString()
-        });
-
-        reviewSubmitted=true;
-        showToast("Thank you! Your review has been submitted for approval 💗");
-
-        document.getElementById("reviewName").value="";
-        document.getElementById("reviewText").value="";
-        selectedReviewRating=0;
-
-        document.querySelectorAll(".star-btn").forEach(btn=>btn.classList.remove("active"));
-
-        reviewButton.textContent="Review Submitted ✓";
-
-    }catch(error){
-        console.error(error);
-        isSubmittingReview=false;
-        reviewButton.disabled=false;
-        reviewButton.textContent="Submit Review";
-        showToast("Unable to submit review right now. Please try again.");
-    }
+if(!name||!review||!selectedReviewRating){
+showToast("Please add your name, rating and review.");
+return;
 }
 
-/* APPROVED REVIEWS: RAW ARRAY AND OBJECT BOTH SUPPORTED */
+isSubmittingReview=true;
+const button=document.getElementById("submitReviewButton");
+button.disabled=true;
+button.textContent="Submitting...";
+
+const data={
+action:"submitReview",
+name:name,
+rating:selectedReviewRating,
+review:review,
+date:new Date().toISOString(),
+status:"Pending"
+};
+
+try{
+await fetch(GOOGLE_SCRIPT_URL,{
+method:"POST",
+mode:"no-cors",
+headers:{"Content-Type":"application/x-www-form-urlencoded"},
+body:new URLSearchParams(data).toString()
+});
+
+reviewSubmitted=true;
+showToast("Thank you! Your review has been submitted for approval 💗");
+document.getElementById("reviewName").value="";
+document.getElementById("reviewText").value="";
+selectedReviewRating=0;
+document.querySelectorAll(".star-btn").forEach(btn=>btn.classList.remove("active"));
+button.textContent="Review Submitted ✓";
+
+}catch(error){
+console.error(error);
+isSubmittingReview=false;
+button.disabled=false;
+button.textContent="Submit Review";
+showToast("Unable to submit review. Please try again.");
+}
+}
+
 async function loadApprovedReviews(){
-    try{
-        const response=await fetch(
-            GOOGLE_SCRIPT_URL+"?action=getApprovedReviews&t="+Date.now(),
-            {cache:"no-store"}
-        );
+try{
+const response=await fetch(
+GOOGLE_SCRIPT_URL+"?action=getApprovedReviews&t="+Date.now(),
+{cache:"no-store"}
+);
+if(!response.ok)throw new Error("Reviews could not load");
 
-        if(!response.ok) throw new Error("Reviews could not load");
-
-        const data=await response.json();
-
-        const reviews=Array.isArray(data)
-            ? data
-            : (data && Array.isArray(data.reviews) ? data.reviews : []);
-
-        displayApprovedReviews(reviews);
-
-    }catch(error){
-        console.error("Approved reviews could not be loaded:",error);
-    }
+const data=await response.json();
+const reviews=Array.isArray(data)?data:
+(data&&Array.isArray(data.reviews)?data.reviews:[]);
+displayApprovedReviews(reviews);
+}catch(error){
+console.error("Approved reviews could not be loaded:",error);
+}
 }
 
 function displayApprovedReviews(reviews){
-    const container=document.getElementById("approvedReviews");
-    const empty=document.getElementById("noReviews");
+const container=document.getElementById("approvedReviews");
+const empty=document.getElementById("noReviews");
+if(!container||!empty)return;
 
-    if(!container || !empty) return;
-
-    if(!Array.isArray(reviews) || reviews.length===0){
-        container.innerHTML="";
-        empty.style.display="block";
-        lastReviewsSignature="";
-        return;
-    }
-
-    empty.style.display="none";
-
-    const signature=JSON.stringify(reviews);
-
-    /* Same reviews hon to animation dobara start nahi hogi */
-    if(signature===lastReviewsSignature) return;
-    lastReviewsSignature=signature;
-
-    const cards=reviews.map(function(item){
-        const rating=Math.max(1,Math.min(5,Number(item.rating)||5));
-        const stars="★".repeat(rating)+"☆".repeat(5-rating);
-
-        return `
-        <div class="ma-review-card">
-            <div class="review-card-name">
-                ${escapeHtml(item.name || "Customer")}
-            </div>
-            <div class="review-stars-display">${stars}</div>
-            <div class="review-card-text">
-                ${escapeHtml(item.review || "")}
-            </div>
-        </div>`;
-    }).join("");
-
-    container.innerHTML=`
-        <div class="ma-review-track">
-            ${cards}${cards}${cards}
-        </div>`;
+if(!Array.isArray(reviews)||reviews.length===0){
+container.innerHTML="";
+empty.style.display="block";
+lastReviewsSignature="";
+return;
 }
 
-/* CONTACT MESSAGE */
+empty.style.display="none";
+const signature=JSON.stringify(reviews);
+if(signature===lastReviewsSignature)return;
+lastReviewsSignature=signature;
+
+const cards=reviews.map(item=>{
+const rating=Math.max(1,Math.min(5,Number(item.rating)||5));
+const stars="★".repeat(rating)+"☆".repeat(5-rating);
+return `
+<div class="ma-review-card">
+<div class="review-card-name">${escapeHtml(item.name||"Customer")}</div>
+<div class="review-stars-display">${stars}</div>
+<div class="review-card-text">${escapeHtml(item.review||"")}</div>
+</div>`;
+}).join("");
+
+container.innerHTML=`
+<div class="ma-review-track">
+${cards}${cards}${cards}
+</div>`;
+}
+
+/* CONTACT FORM */
 async function submitContactMessage(){
-    if(isSubmittingContact || contactSubmitted) return;
+if(isSubmittingContact||contactSubmitted)return;
 
-    const name=document.getElementById("contactName").value.trim();
-    const email=document.getElementById("contactEmail").value.trim();
-    const message=document.getElementById("contactMessage").value.trim();
+const name=document.getElementById("contactName").value.trim();
+const email=document.getElementById("contactEmail").value.trim();
+const message=document.getElementById("contactMessage").value.trim();
 
-    if(!name || !email || !message){
-        showToast("Please fill your name, email and message.");
-        return;
-    }
+if(!name||!email||!message){
+showToast("Please fill your name, email and message.");
+return;
+}
 
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-        showToast("Please enter a valid email address.");
-        return;
-    }
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+showToast("Please enter a valid email address.");
+return;
+}
 
-    isSubmittingContact=true;
+isSubmittingContact=true;
+const button=document.getElementById("contactSubmitButton");
+button.disabled=true;
+button.textContent="Sending...";
 
-    const contactButton=document.getElementById("contactSubmitButton");
-    contactButton.disabled=true;
-    contactButton.textContent="Sending...";
+const data={
+action:"contactMessage",
+name:name,
+email:email,
+message:message,
+date:new Date().toISOString()
+};
 
-    const contactData={
-        action:"contactMessage",
-        name:name,
-        email:email,
-        message:message,
-        date:new Date().toISOString()
-    };
+try{
+await fetch(GOOGLE_SCRIPT_URL,{
+method:"POST",
+mode:"no-cors",
+headers:{"Content-Type":"application/x-www-form-urlencoded"},
+body:new URLSearchParams(data).toString()
+});
 
-    try{
-        await fetch(GOOGLE_SCRIPT_URL,{
-            method:"POST",
-            mode:"no-cors",
-            headers:{"Content-Type":"application/x-www-form-urlencoded"},
-            body:new URLSearchParams(contactData).toString()
-        });
+contactSubmitted=true;
+showToast("Your message has been submitted. Thank you 💗");
+document.getElementById("contactName").value="";
+document.getElementById("contactEmail").value="";
+document.getElementById("contactMessage").value="";
+button.textContent="Message Sent ✓";
 
-        contactSubmitted=true;
-        showToast("Your message has been sent. Thank you for contacting Mahi Arts 💗");
-
-        document.getElementById("contactName").value="";
-        document.getElementById("contactEmail").value="";
-        document.getElementById("contactMessage").value="";
-
-        contactButton.textContent="Message Sent ✓";
-
-    }catch(error){
-        console.error(error);
-        isSubmittingContact=false;
-        contactButton.disabled=false;
-        contactButton.textContent="Send Message";
-        showToast("Unable to send your message right now. Please try again.");
-    }
+}catch(error){
+console.error(error);
+isSubmittingContact=false;
+button.disabled=false;
+button.textContent="Send Message";
+showToast("Unable to send your message. Please try again.");
+}
 }
 
 /* ADMIN */
-function openAdmin(){
-    document.getElementById("adminSection").style.display="block";
-    document.getElementById("adminSection").scrollIntoView({behavior:"smooth"});
-}
-
 function openSecureDashboard(){
-    window.open(GOOGLE_SCRIPT_URL,"_blank");
-    showToast("Secure dashboard opened in a new tab.");
+window.open(GOOGLE_SCRIPT_URL,"_blank");
+showToast("Secure dashboard opened in a new tab.");
 }
 
-/* DASHBOARD */
-function updateDashboard(){
-    const dashboardProducts=document.getElementById("dashboardProducts");
-    const dashboardCategories=document.getElementById("dashboardCategories");
-
-    if(!dashboardProducts || !dashboardCategories) return;
-
-    dashboardProducts.textContent=PRODUCTS.length;
-
-    const categories=new Set();
-
-    PRODUCTS.forEach(function(product){
-        getProductCategories(product).forEach(category=>categories.add(category));
-    });
-
-    dashboardCategories.textContent=categories.size;
-}
-
-/* ADMIN ROUTE */
 function checkAdminRoute(){
-    if(window.location.hash.toLowerCase()==="#admin"){
-        document.getElementById("adminSection").style.display="block";
-        document.getElementById("adminSection").scrollIntoView({behavior:"smooth"});
-    }
+if(location.hash.toLowerCase()==="#admin"){
+document.getElementById("adminSection").style.display="block";
+document.getElementById("adminSection").scrollIntoView({behavior:"smooth"});
+}
 }
 
 window.addEventListener("hashchange",checkAdminRoute);
-checkAdminRoute();
 
 /* TOAST */
 let toastTimer;
-
 function showToast(message){
-    const toast=document.getElementById("toast");
-    toast.textContent=message;
-    toast.classList.add("show");
-
-    clearTimeout(toastTimer);
-
-    toastTimer=setTimeout(function(){
-        toast.classList.remove("show");
-    },3000);
+const toast=document.getElementById("toast");
+toast.textContent=message;
+toast.classList.add("show");
+clearTimeout(toastTimer);
+toastTimer=setTimeout(()=>toast.classList.remove("show"),3000);
 }
-
 </script>
 </body>
 </html>
