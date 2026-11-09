@@ -1082,85 +1082,106 @@ document.getElementById("checkoutModal").style.display="none";
 }
 
 async function placeOrder(){
-if(isPlacingOrder)return;
+  if(isPlacingOrder) return;
 
-const name=document.getElementById("customerName").value.trim();
-const email=document.getElementById("customerEmail").value.trim();
-const phone=document.getElementById("customerPhone").value.trim();
-const city=document.getElementById("customerCity").value.trim();
-const area=document.getElementById("customerArea").value.trim();
-const address=document.getElementById("customerAddress").value.trim();
+  const name=document.getElementById("customerName").value.trim();
+  const email=document.getElementById("customerEmail").value.trim();
+  const phone=document.getElementById("customerPhone").value.trim();
+  const city=document.getElementById("customerCity").value.trim();
+  const area=document.getElementById("customerArea").value.trim();
+  const address=document.getElementById("customerAddress").value.trim();
 
-if(!name||!email||!phone||!city||!area||!address){
-showToast("Please fill all customer details.");
-return;
-}
+  if(!name||!email||!phone||!city||!area||!address){
+    showToast("Please fill all customer details.");
+    return;
+  }
 
-if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-showToast("Please enter a valid email address.");
-return;
-}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    showToast("Please enter a valid email address.");
+    return;
+  }
 
-if(!cart.length){showToast("Your bag is empty.");return;}
+  if(!cart.length){
+    showToast("Your bag is empty.");
+    return;
+  }
 
-isPlacingOrder=true;
-const button=document.getElementById("placeOrderButton");
-button.disabled=true;
-button.textContent="Placing Order...";
+  isPlacingOrder=true;
 
-const orderId=createOrderId();
-const productTotal=cart.reduce((sum,item)=>sum+item.price*item.quantity,0);
-const delivery=productTotal>=FREE_SHIPPING_LIMIT?0:DELIVERY_CHARGE;
+  const button=document.getElementById("placeOrderButton");
+  button.disabled=true;
+  button.textContent="Placing Order...";
 
-const data={
-orderId:orderId,
-date:new Date().toISOString(),
-customerName:name,
-email:email,
-phone:phone,
-city:city,
-area:area,
-address:address,
-product:cart.map(item=>item.name+(item.colour?" ["+item.colour+"]":"")+(item.size?" ["+item.size+"]":"")).join(", "),
-category:cart.map(item=>item.category).join(", "),
-colour:cart.map(item=>item.colour).join(", "),
-size:cart.map(item=>item.size).join(", "),
-quantity:cart.map(item=>item.quantity).join(", "),
-productTotal:productTotal,
-delivery:delivery,
-grandTotal:productTotal+delivery,
-paymentMethod:"Cash on Delivery",
-status:"Pending",
-reviewEmailSent:"NO"
-};
+  const orderId=createOrderId();
 
-try{
-await fetch(GOOGLE_SCRIPT_URL,{
-method:"POST",
-mode:"no-cors",
-headers:{"Content-Type":"application/x-www-form-urlencoded"},
-body:new URLSearchParams(data).toString()
-});
+  const productTotal=cart.reduce(
+    (sum,item)=>sum+item.price*item.quantity,0
+  );
 
-cart=[];
-updateCart();
-document.getElementById("checkoutModal").style.display="none";
-document.getElementById("cartOverlay").style.display="none";
+  const delivery=productTotal>=FREE_SHIPPING_LIMIT
+    ?0:DELIVERY_CHARGE;
 
-document.getElementById("successMessage").innerHTML=
-"Thank you, "+escapeHtml(name)+"! Your order <strong>"+
-escapeHtml(orderId)+"</strong> has been submitted.<br><br>Payment: Cash on Delivery.";
+  const data={
+    action:"placeOrder",
+    orderId:orderId,
+    date:new Date().toISOString(),
+    customerName:name,
+    email:email,
+    phone:phone,
+    city:city,
+    area:area,
+    address:address,
+    product:cart.map(item=>
+      item.name+
+      (item.colour?" ["+item.colour+"]":"")+
+      (item.size?" ["+item.size+"]":"")
+    ).join(", "),
+    category:cart.map(item=>item.category).join(", "),
+    colour:cart.map(item=>item.colour).join(", "),
+    size:cart.map(item=>item.size).join(", "),
+    quantity:cart.map(item=>item.quantity).join(", "),
+    productTotal:productTotal,
+    delivery:delivery,
+    grandTotal:productTotal+delivery,
+    paymentMethod:"Cash on Delivery",
+    status:"Pending",
+    reviewEmailSent:"NO"
+  };
 
-document.getElementById("successModal").style.display="flex";
-clearCheckoutForm();
+  try{
+    await fetch(GOOGLE_SCRIPT_URL,{
+      method:"POST",
+      mode:"no-cors",
+      headers:{
+        "Content-Type":"application/x-www-form-urlencoded"
+      },
+      body:new URLSearchParams(data).toString()
+    });
 
-}catch(error){
-console.error(error);
-isPlacingOrder=false;
-button.disabled=false;
-button.textContent="Place Order";
-showToast("Something went wrong. Please try again.");
-}
+    cart=[];
+    updateCart();
+
+    document.getElementById("checkoutModal").style.display="none";
+    document.getElementById("cartOverlay").style.display="none";
+
+    document.getElementById("successMessage").innerHTML=
+      "Thank you, "+escapeHtml(name)+
+      "! Your order <strong>"+escapeHtml(orderId)+
+      "</strong> has been submitted.<br><br>"+
+      "Payment: Cash on Delivery.";
+
+    document.getElementById("successModal").style.display="flex";
+
+    clearCheckoutForm();
+
+  }catch(error){
+    console.error(error);
+    showToast("Something went wrong. Please try again.");
+  }finally{
+    isPlacingOrder=false;
+    button.disabled=false;
+    button.textContent="Place Order";
+  }
 }
 
 function createOrderId(){
